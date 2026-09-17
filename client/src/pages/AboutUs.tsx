@@ -131,7 +131,7 @@ export default function AboutUs() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", maxWidth: 700, margin: "0 auto" }}>
             {[
               { city: "Los Angeles / Orange County", state: "California" },
-              { city: "Las Vegas & Reno", state: "Nevada" },
+              { city: "Las Vegas / Reno", state: "Nevada" },
               { city: "Sacramento", state: "California" },
             ].map((m, i) => (
               <div key={i} style={{ backgroundColor: "#f7fbff", border: "1.5px solid #dde9f2", borderRadius: 12, padding: "20px 16px", textAlign: "center" }}>
