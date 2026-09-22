@@ -529,7 +529,9 @@ export default function StandardCleaning() {
                 margin: 0,
               }}
             >
-              <strong>Not included in standard:</strong> Inside oven, inside refrigerator, inside cabinets, interior windows, baseboards, walls, laundry, or dishes. These are covered in our{" "}
+              <strong>Not included in standard:</strong> Inside oven, inside refrigerator, inside cabinets, interior windows, baseboards, walls, laundry, or dishes. See the full{" "}
+              <Link href="/cleaning-checklist" style={{ color: TEAL, fontWeight: 600 }}>cleaning checklist</Link>
+              {" "}or our{" "}
               <Link href="/deep-cleaning">
                 <span style={{ color: TEAL, fontWeight: 600, cursor: "pointer" }}>
                   Deep Cleaning

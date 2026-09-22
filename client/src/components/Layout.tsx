@@ -25,12 +25,13 @@ const navLinks = [
       { label: "Move-In / Move-Out", href: "/move-in-move-out" },
       { label: "Airbnb / STR Turnover", href: "/airbnb-cleaning" },
       { label: "Commercial / Office", href: "/commercial-cleaning" },
+      { label: "Cleaning Checklist", href: "/cleaning-checklist" },
     ],
   },
   { label: "Locations", href: "/locations" },
   { label: "FAQ", href: "/faq" },
   { label: "How It Works", href: "/#how-it-works" },
-  { label: "Reviews", href: "/#reviews" },
+  { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about" },
 ];
 
@@ -449,6 +450,7 @@ export function Footer() {
     { label: "Move-In / Move-Out", href: "/move-in-move-out" },
     { label: "Airbnb / STR Turnover", href: "/airbnb-cleaning" },
     { label: "Commercial / Office", href: "/commercial-cleaning" },
+    { label: "Cleaning Checklist", href: "/cleaning-checklist" },
   ];
 
   const markets = [
@@ -456,6 +458,8 @@ export function Footer() {
     { label: "Las Vegas / Nevada", href: "/locations/las-vegas-nevada" },
     { label: "Sacramento", href: "/locations/sacramento" },
     { label: "All Locations", href: "/locations" },
+    { label: "Reviews", href: "/reviews" },
+    { label: "Cleaning Checklist", href: "/cleaning-checklist" },
     { label: "FAQ", href: "/faq" },
   ];
 

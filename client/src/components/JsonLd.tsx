@@ -57,6 +57,13 @@ export const BUSINESS_JSON_LD = {
       name: "Sacramento, California",
     },
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    bestRating: "5",
+    worstRating: "1",
+    reviewCount: "370",
+  },
   sameAs: [],
   contactPoint: {
     "@type": "ContactPoint",

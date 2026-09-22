@@ -44,7 +44,7 @@ const FAQS = [
   },
   {
     q: "What's the difference between standard and deep cleaning?",
-    a: "Standard cleaning covers major surfaces, high-traffic areas, bathrooms, kitchen, and floors on a documented checklist. Deep cleaning goes further — inside appliances, baseboards, grout, and behind fixtures. First-time clients often start with a deep clean.",
+    a: "Standard cleaning covers major surfaces, high-traffic areas, bathrooms, kitchen, and floors on a documented checklist. Deep cleaning goes further — inside appliances, baseboards, grout, and behind fixtures. First-time clients often start with a deep clean. See our Cleaning Checklist page for the full room-by-room list.",
   },
   {
     q: "Do you offer recurring cleaning?",
@@ -269,6 +269,58 @@ export default function FAQ() {
               </h2>
               <p style={{ fontSize: 14, color: "#5a6e80", margin: 0, fontFamily: "'DM Sans', sans-serif" }}>
                 Two-minute form. We call you back with clear pricing.
+              </p>
+            </div>
+          </Link>
+          <Link href="/cleaning-checklist">
+            <div
+              style={{
+                backgroundColor: "#f7fbff",
+                border: "1.5px solid #dde9f2",
+                borderRadius: 12,
+                padding: "18px",
+                cursor: "pointer",
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: 15,
+                  fontWeight: 700,
+                  color: NAVY,
+                  marginBottom: 6,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}
+              >
+                Cleaning checklist
+              </h2>
+              <p style={{ fontSize: 14, color: "#5a6e80", margin: 0, fontFamily: "'DM Sans', sans-serif" }}>
+                Room-by-room what&apos;s included for standard and deep cleans.
+              </p>
+            </div>
+          </Link>
+          <Link href="/reviews">
+            <div
+              style={{
+                backgroundColor: "#f7fbff",
+                border: "1.5px solid #dde9f2",
+                borderRadius: 12,
+                padding: "18px",
+                cursor: "pointer",
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: 15,
+                  fontWeight: 700,
+                  color: NAVY,
+                  marginBottom: 6,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}
+              >
+                Customer reviews
+              </h2>
+              <p style={{ fontSize: 14, color: "#5a6e80", margin: 0, fontFamily: "'DM Sans', sans-serif" }}>
+                Quotes from LA/OC, Las Vegas, and Sacramento clients.
               </p>
             </div>
           </Link>

@@ -19,6 +19,8 @@ import Terms from "./pages/Terms";
 import Locations from "./pages/Locations";
 import LocationMetro from "./pages/LocationMetro";
 import FAQ from "./pages/FAQ";
+import Reviews from "./pages/Reviews";
+import CleaningChecklist from "./pages/CleaningChecklist";
 
 // Scroll to top on every route change
 function ScrollToTop() {
@@ -58,6 +60,8 @@ function Router() {
         <Route path="/locations" component={Locations} />
         <Route path="/locations/:slug" component={LocationMetro} />
         <Route path="/faq" component={FAQ} />
+        <Route path="/reviews" component={Reviews} />
+        <Route path="/cleaning-checklist" component={CleaningChecklist} />
         <Route path="/get-a-quote" component={GetAQuote} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />
