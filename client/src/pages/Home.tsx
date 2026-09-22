@@ -33,6 +33,7 @@ import {
 import { Navbar, Footer } from "@/components/Layout";
 import { submitLead } from "@/lib/webhook";
 import { SEO } from "@/components/SEO";
+import { JsonLd, BUSINESS_JSON_LD } from "@/components/JsonLd";
 
 // ─── Asset URLs ────────────────────────────────────────────────────────────────
 const HERO_HOME = "https://d2xsxph8kpxj0f.cloudfront.net/310519663372141965/eBTa9t88Gofgi7UbPusL8G/hero-clean-home_4649079f.jpg";
@@ -374,6 +375,7 @@ export default function Home() {
         description="Professional house cleaning across Los Angeles, Orange County, Nevada, and Sacramento. 4.9★ with 370+ reviews. Get a free quote in 2 minutes."
         path="/"
       />
+      <JsonLd id="local-business" data={BUSINESS_JSON_LD} />
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       {/* Reduced top padding so form is closer to nav — tighter above-the-fold */}

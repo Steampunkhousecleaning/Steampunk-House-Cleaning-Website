@@ -16,6 +16,9 @@ import AboutUs from "./pages/AboutUs";
 import GetAQuote from "./pages/GetAQuote";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Locations from "./pages/Locations";
+import LocationMetro from "./pages/LocationMetro";
+import FAQ from "./pages/FAQ";
 
 // Scroll to top on every route change
 function ScrollToTop() {
@@ -52,6 +55,9 @@ function Router() {
         <Route path="/airbnb-cleaning" component={AirbnbCleaning} />
         <Route path="/commercial-cleaning" component={CommercialCleaning} />
         <Route path="/about" component={AboutUs} />
+        <Route path="/locations" component={Locations} />
+        <Route path="/locations/:slug" component={LocationMetro} />
+        <Route path="/faq" component={FAQ} />
         <Route path="/get-a-quote" component={GetAQuote} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />

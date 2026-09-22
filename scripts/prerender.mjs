@@ -16,6 +16,7 @@ import puppeteer from "puppeteer";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "dist", "public");
+const PRERENDER_SHELL = path.join(OUT_DIR, "_prerender_shell.html");
 const PORT = Number(process.env.PRERENDER_PORT || 4179);
 const ORIGIN = `http://127.0.0.1:${PORT}`;
 
@@ -29,6 +30,11 @@ const ROUTES = [
   "/airbnb-cleaning",
   "/commercial-cleaning",
   "/about",
+  "/locations",
+  "/locations/los-angeles-orange-county",
+  "/locations/las-vegas-nevada",
+  "/locations/sacramento",
+  "/faq",
   "/get-a-quote",
   "/privacy",
   "/terms",
@@ -69,7 +75,8 @@ function resolveFile(urlPath) {
   const asIndex = path.join(abs, "index.html");
   if (fs.existsSync(asIndex) && fs.statSync(asIndex).isFile()) return asIndex;
 
-  // SPA fallback while generating route HTML
+  // SPA fallback: use pristine Vite shell, not a previously prerendered route
+  if (fs.existsSync(PRERENDER_SHELL)) return PRERENDER_SHELL;
   const fallback = path.join(OUT_DIR, "index.html");
   if (fs.existsSync(fallback)) return fallback;
   return null;
@@ -220,10 +227,15 @@ async function prerenderRoute(browser, route) {
 }
 
 async function main() {
-  if (!fs.existsSync(path.join(OUT_DIR, "index.html"))) {
+  const indexHtml = path.join(OUT_DIR, "index.html");
+  if (!fs.existsSync(indexHtml)) {
     console.error(`Missing ${OUT_DIR}/index.html — run vite build first.`);
     process.exit(1);
   }
+
+  // Preserve the Vite SPA shell so later routes do not inherit head tags
+  // (JSON-LD, titles) written when "/" was prerendered first.
+  fs.copyFileSync(indexHtml, PRERENDER_SHELL);
 
   console.log(`Prerendering ${ROUTES.length} routes from ${OUT_DIR}`);
   const server = await startStaticServer();
@@ -249,6 +261,11 @@ async function main() {
   } finally {
     await browser.close();
     server.close();
+    try {
+      fs.unlinkSync(PRERENDER_SHELL);
+    } catch {
+      /* ignore */
+    }
   }
 
   // Sanity: titles must not all be identical (except we allow home == shell)
