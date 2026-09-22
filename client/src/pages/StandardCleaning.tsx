@@ -250,7 +250,7 @@ export default function StandardCleaning() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
                 {[
                   { icon: <Shield size={15} />, text: "Google Guaranteed" },
-                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 370+ Reviews" },
+                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 450+ Reviews" },
                   { icon: <CheckCircle size={15} />, text: "Background-Checked" },
                   { icon: <Clock size={15} />, text: "We Call Within Minutes" },
                 ].map((b, i) => (
@@ -380,7 +380,7 @@ export default function StandardCleaning() {
             }}
           >
             {[
-              { value: "370+", label: "Verified Google Reviews" },
+              { value: "450+", label: "Verified Google Reviews" },
               { value: "4.9★", label: "Average Rating" },
               { value: "100+", label: "Homes Cleaned/Month" },
               { value: "3", label: "Metro Markets" },
@@ -785,7 +785,7 @@ export default function StandardCleaning() {
               You've been putting this off long enough. It takes 2 minutes to get a quote, and we'll call you right away. No commitment until you're ready.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
-              {["4.9 on Google", "370+ Verified Reviews", "Google Guaranteed", "Same-Day Response"].map((b) => (
+              {["4.9 on Google", "450+ Verified Reviews", "Google Guaranteed", "Same-Day Response"].map((b) => (
                 <div
                   key={b}
                   style={{

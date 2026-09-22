@@ -70,7 +70,7 @@ function useScrollReveal() {
 
 // ─── Counter animation hook ────────────────────────────────────────────────────
 function useCountUp(target: number, duration = 1800) {
-  // Initialize to target so prerendered / crawler HTML shows real stats (370+, 100+, 3), not 0.
+  // Initialize to target so prerendered / crawler HTML shows real stats (450+, 100+, 3), not 0.
   const [count, setCount] = useState(target);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
@@ -353,7 +353,7 @@ function TealBtn({ onClick, children, fullWidth = false }: { onClick?: () => voi
 export default function Home() {
   useScrollReveal();
 
-  const reviews = useCountUp(370);
+  const reviews = useCountUp(450);
   const jobs = useCountUp(100);
   const markets = useCountUp(3);
 
@@ -393,7 +393,7 @@ export default function Home() {
       <Navbar />
       <SEO
         title="Steampunk House Cleaning | Professional Cleaners in LA, OC, Las Vegas, Reno & Sacramento"
-        description="Professional house cleaning across Los Angeles, Orange County, Las Vegas, Reno, and Sacramento. 4.9★ with 370+ reviews. Get a free quote in 2 minutes."
+        description="Professional house cleaning across Los Angeles, Orange County, Las Vegas, Reno, and Sacramento. 4.9★ with 450+ reviews. Get a free quote in 2 minutes."
         path="/"
       />
       <JsonLd id="local-business" data={BUSINESS_JSON_LD} />
@@ -450,7 +450,7 @@ export default function Home() {
                   />
                 </div>
                 {[
-                  { icon: <Star className="w-3.5 h-3.5" fill="currentColor" />, text: "4.9★ · 370+ Reviews" },
+                  { icon: <Star className="w-3.5 h-3.5" fill="currentColor" />, text: "4.9★ · 450+ Reviews" },
                   { icon: <CheckCircle2 className="w-3.5 h-3.5" />, text: "Licensed · Bonded · Insured" },
                   { icon: <Users className="w-3.5 h-3.5" />, text: "Background-Checked" },
                 ].map((badge) => (
@@ -541,7 +541,7 @@ export default function Home() {
         <div className="container">
           <div className="flex items-center gap-3 mb-6 justify-center">
             <Stars count={5} size={16} />
-            <span className="sp-body text-sm font-medium" style={{ color: NAVY }}>4.9 stars · 370+ verified Google reviews</span>
+            <span className="sp-body text-sm font-medium" style={{ color: NAVY }}>4.9 stars · 450+ verified Google reviews</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {miniReviews.map((r, i) => (
@@ -703,7 +703,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-8 animate-fade-up">
             <div className="sp-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: TEAL }}>What our clients say</div>
-            <h2 className="sp-display text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: NAVY }}>4.9 stars across 370+ verified reviews.</h2>
+            <h2 className="sp-display text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: NAVY }}>4.9 stars across 450+ verified reviews.</h2>
             <p className="sp-body text-sm mt-2"><a href="/reviews" style={{ color: TEAL, fontWeight: 600 }}>See all customer reviews →</a></p>
             <div className="flex justify-center mb-2"><Stars count={5} size={22} /></div>
             <p className="sp-body text-base" style={{ color: MUTED }}>Real reviews from real homeowners across LA, Las Vegas, Reno, and Sacramento.</p>
@@ -758,7 +758,7 @@ export default function Home() {
                   { title: "Background-checked & vetted cleaners", body: "Every cleaner goes through a thorough interview and background check before entering a client's home. Not a box-tick. A real standard." },
                   { title: "Higher pay = lower turnover = same cleaner", body: "We pay our cleaners better. That means they stay longer, care more, and you get the same familiar face, not a different stranger every visit." },
                   { title: "Documented checklists on every clean", body: "We don't guess what 'clean' means. Every service type has a documented checklist. You know exactly what's included before we arrive." },
-                  { title: "Satisfaction guarantee, no questions asked", body: "Not happy? We come back and make it right. That's how we've built 370+ five-star reviews." },
+                  { title: "Satisfaction guarantee, no questions asked", body: "Not happy? We come back and make it right. That's how we've built 450+ five-star reviews." },
                   { title: "Google Guaranteed: the highest trust badge in local search", body: "Licensed, bonded, and insured across our three metros. You're covered." },
                 ].map((item, i) => (
                   <div key={item.title} className={`animate-fade-up delay-${i + 1} flex gap-4`}>
@@ -818,7 +818,7 @@ export default function Home() {
                 Ryan and Daniel started Steampunk as short-term rental hosts who couldn't find a cleaner they could actually trust. They know what it feels like to need a reliable team and get let down instead.
               </p>
               <p className="sp-body text-lg leading-relaxed mb-7" style={{ color: MUTED }}>
-                Today, Steampunk serves 100+ homes every month across three equal metros — LA / OC, Las Vegas & Reno / Nevada, and Sacramento — with 370+ verified Google reviews and a 4.9-star average. The standard hasn't slipped, because we built it to hold.
+                Today, Steampunk serves 100+ homes every month across three equal metros — LA / OC, Las Vegas & Reno / Nevada, and Sacramento — with 450+ verified Google reviews and a 4.9-star average. The standard hasn't slipped, because we built it to hold.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 sp-body text-sm font-medium" style={{ color: NAVY }}>
@@ -884,7 +884,7 @@ export default function Home() {
               </div>
               <div>
                 <div className="sp-display text-3xl font-bold text-white">4.9 ★</div>
-                <div className="sp-body text-sm" style={{ color: SKY }}>Google Rating · 370+ reviews</div>
+                <div className="sp-body text-sm" style={{ color: SKY }}>Google Rating · 450+ reviews</div>
               </div>
             </div>
 
@@ -918,7 +918,7 @@ export default function Home() {
                 { q: "Do you serve my area?", a: "We serve three equal metros: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Select your city in the quote form and we'll confirm coverage when we call." },
                 { q: "How quickly can you get someone to my home?", a: "We typically schedule within 1–3 business days depending on your location and availability. For urgent requests, call us directly at (725) 255-3688 and we'll do our best to accommodate you." },
                 { q: "Are your cleaners background-checked?", a: "Yes. Every cleaner goes through a thorough interview process and background check before they're ever assigned to a client's home." },
-                { q: "What if I'm not happy with the clean?", a: "We'll come back and make it right. No questions asked. Our satisfaction guarantee is how we've maintained a 4.9-star average across 370+ reviews." },
+                { q: "What if I'm not happy with the clean?", a: "We'll come back and make it right. No questions asked. Our satisfaction guarantee is how we've maintained a 4.9-star average across 450+ reviews." },
               ].map((faq) => <FaqItem key={faq.q} q={faq.q} a={faq.a} />)}
               <div className="mt-6 text-center">
                 <a href="/faq" className="sp-body text-sm font-semibold underline-offset-4 hover:underline" style={{ color: TEAL }}>
@@ -943,7 +943,7 @@ export default function Home() {
                 You've been putting this off long enough. It takes 2 minutes to get a quote, and we'll call you right away. No commitment until you're ready.
               </p>
               <div className="flex flex-wrap gap-4 mb-7">
-                {["4.9★ on Google", "370+ Verified Reviews", "Google Guaranteed", "Same-Day Response"].map((badge) => (
+                {["4.9★ on Google", "450+ Verified Reviews", "Google Guaranteed", "Same-Day Response"].map((badge) => (
                   <div key={badge} className="flex items-center gap-1.5 sp-body text-sm font-medium" style={{ color: "rgba(255,255,255,0.85)" }}>
                     <CheckCircle2 className="w-4 h-4" style={{ color: TEAL }} /> {badge}
                   </div>

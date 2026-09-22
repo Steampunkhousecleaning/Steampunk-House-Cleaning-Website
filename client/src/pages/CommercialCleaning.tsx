@@ -89,7 +89,7 @@ export default function CommercialCleaning() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
                 {[
                   { icon: <Shield size={15} />, text: "Licensed and Insured" },
-                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 370+ Reviews" },
+                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 450+ Reviews" },
                   { icon: <Clock size={15} />, text: "After-Hours Available" },
                   { icon: <Users size={15} />, text: "Consistent Assigned Team" },
                 ].map((b, i) => (

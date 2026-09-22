@@ -122,7 +122,7 @@ export default function RecurringCleaning() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
                 {[
                   { icon: <Shield size={15} />, text: "No Contracts" },
-                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 370+ Reviews" },
+                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 450+ Reviews" },
                   { icon: <RefreshCw size={15} />, text: "Cancel Anytime" },
                   { icon: <Clock size={15} />, text: "Same Cleaner Every Visit" },
                 ].map((b, i) => (

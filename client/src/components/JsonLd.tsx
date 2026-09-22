@@ -42,7 +42,7 @@ export const BUSINESS_JSON_LD = {
   logo: "https://steampunkcleaning.com/logo.png",
   priceRange: "$$",
   description:
-    "Professional house cleaning across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Background-checked cleaners, documented checklists, 4.9★ with 370+ Google reviews.",
+    "Professional house cleaning across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Background-checked cleaners, documented checklists, 4.9★ with 450+ Google reviews.",
   areaServed: [
     {
       "@type": "AdministrativeArea",
@@ -62,7 +62,7 @@ export const BUSINESS_JSON_LD = {
     ratingValue: "4.9",
     bestRating: "5",
     worstRating: "1",
-    reviewCount: "370",
+    reviewCount: "450",
   },
   sameAs: [],
   contactPoint: {

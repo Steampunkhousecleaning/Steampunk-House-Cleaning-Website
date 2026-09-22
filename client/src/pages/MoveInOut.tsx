@@ -110,7 +110,7 @@ export default function MoveInOut() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
                 {[
                   { icon: <Shield size={15} />, text: "Landlord-Standard Clean" },
-                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 370+ Reviews" },
+                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 450+ Reviews" },
                   { icon: <CheckCircle size={15} />, text: "Inside Appliances Included" },
                   { icon: <Clock size={15} />, text: "Fast Scheduling" },
                 ].map((b, i) => (
