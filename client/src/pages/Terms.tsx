@@ -5,6 +5,7 @@
 
 import { Navbar, Footer } from "@/components/Layout";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -29,6 +30,11 @@ export default function Terms() {
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
+      <SEO
+        title="Terms of Service | Steampunk House Cleaning"
+        description="Terms of service for Steampunk House Cleaning website and cleaning services at steampunkcleaning.com."
+        path="/terms"
+      />
 
       <section
         className="hero-pt"

@@ -8,6 +8,7 @@ import { Navbar, Footer } from "@/components/Layout";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle, Star, Shield, Clock, Package, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -83,6 +84,11 @@ export default function MoveInOut() {
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
+      <SEO
+        title="Move-In & Move-Out Cleaning | Steampunk House Cleaning"
+        description="Move-in and move-out cleaning in LA/OC, Nevada, and Sacramento. Leave or arrive to a spotless home. Get a free quote today."
+        path="/move-in-move-out"
+      />
 
       {/* Hero */}
       <section className="hero-pt" style={{ paddingBottom: 40, background: "linear-gradient(135deg, #f0f7ff 0%, #e8f4fb 100%)", borderBottom: "1px solid #dde9f2" }}>

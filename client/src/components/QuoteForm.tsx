@@ -41,13 +41,16 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
     size: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [verified, setVerified] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setSubmitError(false);
     try {
-      await submitLead({
+      const result = await submitLead({
         name: form.name,
         phone: form.phone,
         email: form.email,
@@ -56,11 +59,13 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
         bedrooms: form.size,
         sourcePage: window.location.pathname,
       });
+      setVerified(result.verified);
+      setSubmitted(true);
     } catch (err) {
       console.error("[Webhook] Submit error:", err);
+      setSubmitError(true);
     } finally {
       setLoading(false);
-      setSubmitted(true);
     }
   };
 
@@ -90,6 +95,8 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
   if (submitted) {
     return (
       <div
+        role="status"
+        aria-live="polite"
         style={{
           backgroundColor: "#f0faf8",
           border: "2px solid " + TEAL,
@@ -108,7 +115,7 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}
         >
-          We'll call you within minutes.
+          {verified ? "We'll call you within minutes." : "Request sent"}
         </h3>
         <p
           style={{
@@ -118,7 +125,9 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
             lineHeight: 1.6,
           }}
         >
-          A real person from our team is reviewing your request right now. Check your phone.
+          {verified
+            ? "A real person from our team is reviewing your request right now. Check your phone."
+            : "Your request left this browser. If you don't hear from us within a few minutes, please call us."}
         </p>
 
         {/* Immediate contact CTA */}
@@ -165,8 +174,11 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
         className={compact ? "quote-form-grid quote-form-grid-compact" : "quote-form-grid"}
       >
         <div>
-          <label style={labelStyle}>Your name *</label>
+          <label htmlFor="qf-name" style={labelStyle}>Your name *</label>
           <input
+            id="qf-name"
+            name="name"
+            autoComplete="name"
             type="text"
             placeholder="Sarah Johnson"
             required
@@ -178,8 +190,11 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
           />
         </div>
         <div>
-          <label style={labelStyle}>Phone number *</label>
+          <label htmlFor="qf-phone" style={labelStyle}>Phone number *</label>
           <input
+            id="qf-phone"
+            name="phone"
+            autoComplete="tel"
             type="tel"
             placeholder="(310) 555-0100"
             required
@@ -191,8 +206,11 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
           />
         </div>
         <div style={{ gridColumn: "1 / -1" }}>
-          <label style={labelStyle}>Email address</label>
+          <label htmlFor="qf-email" style={labelStyle}>Email address</label>
           <input
+            id="qf-email"
+            name="email"
+            autoComplete="email"
             type="email"
             placeholder="sarah@email.com"
             value={form.email}
@@ -203,8 +221,11 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
           />
         </div>
         <div>
-          <label style={labelStyle}>Your city *</label>
+          <label htmlFor="qf-city" style={labelStyle}>Your city *</label>
           <select
+            id="qf-city"
+            name="city"
+            autoComplete="address-level2"
             required
             value={form.city}
             onChange={(e) => setForm({ ...form, city: e.target.value })}
@@ -219,8 +240,10 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
           </select>
         </div>
         <div>
-          <label style={labelStyle}>Service type *</label>
+          <label htmlFor="qf-service" style={labelStyle}>Service type *</label>
           <select
+            id="qf-service"
+            name="service"
             required
             value={form.service}
             onChange={(e) => setForm({ ...form, service: e.target.value })}
@@ -235,8 +258,11 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
           </select>
         </div>
         <div style={{ gridColumn: "1 / -1" }}>
-          <label style={labelStyle}>Home size</label>
+          <label htmlFor="qf-size" style={labelStyle}>Home size</label>
           <input
+            id="qf-size"
+            name="size"
+            autoComplete="off"
             type="text"
             placeholder="Bedrooms / sq ft (optional)"
             value={form.size}
@@ -247,6 +273,12 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
           />
         </div>
       </div>
+
+      {submitError && (
+        <p role="alert" style={{ marginTop: 14, fontSize: 13, color: "#c53030", fontFamily: "'DM Sans', sans-serif" }}>
+          We couldn't confirm your submission. Please try again or call (725) 255-3688.
+        </p>
+      )}
 
       <button
         type="submit"

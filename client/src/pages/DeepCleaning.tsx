@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -148,6 +149,11 @@ export default function DeepCleaning() {
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
+      <SEO
+        title="Deep Cleaning Services | Steampunk House Cleaning"
+        description="Thorough deep cleaning for homes in LA/OC, Nevada, and Sacramento. Baseboards, appliances, detailed bathrooms, and more. Book your free quote."
+        path="/deep-cleaning"
+      />
 
       {/* Hero */}
       <section
