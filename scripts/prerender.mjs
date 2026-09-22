@@ -37,6 +37,8 @@ const ROUTES = [
   "/faq",
   "/reviews",
   "/cleaning-checklist",
+  "/blog",
+  "/blog/house-cleaning-las-vegas-hard-water",
   "/get-a-quote",
   "/privacy",
   "/terms",
