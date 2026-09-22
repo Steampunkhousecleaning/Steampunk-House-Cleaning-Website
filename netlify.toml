@@ -17,17 +17,7 @@
 
 
 # Legacy WordPress / trailing-slash URLs → SPA routes
-[[redirects]]
-  from = "/locations/"
-  to = "/locations"
-  status = 301
-  force = true
 
-[[redirects]]
-  from = "/about/"
-  to = "/about"
-  status = 301
-  force = true
 
 [[redirects]]
   from = "/los-angeles/"
