@@ -5,6 +5,7 @@
 
 import { Navbar, Footer } from "@/components/Layout";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -37,6 +38,11 @@ export default function Privacy() {
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
+      <SEO
+        title="Privacy Policy | Steampunk House Cleaning"
+        description="Privacy policy for Steampunk House Cleaning (steampunkcleaning.com). How we collect, use, and protect your information."
+        path="/privacy"
+      />
 
       <section
         className="hero-pt"

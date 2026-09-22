@@ -6,6 +6,7 @@
 
 import { Navbar, Footer } from "@/components/Layout";
 import { CheckCircle, Star, Shield, Users, MapPin, Heart } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -17,6 +18,11 @@ export default function AboutUs() {
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
+      <SEO
+        title="About Us | Steampunk House Cleaning"
+        description="Meet the founders of Steampunk House Cleaning — reliable home cleaning across Los Angeles, Orange County, Nevada, and Sacramento."
+        path="/about"
+      />
 
       {/* Hero */}
       <section className="hero-pt" style={{ paddingBottom: 40, background: "linear-gradient(135deg, #f0f7ff 0%, #e8f4fb 100%)", borderBottom: "1px solid #dde9f2" }}>

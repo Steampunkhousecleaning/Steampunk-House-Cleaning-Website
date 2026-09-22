@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { Navbar, Footer } from "@/components/Layout";
 import { submitLead } from "@/lib/webhook";
+import { SEO } from "@/components/SEO";
 
 // ─── Asset URLs ────────────────────────────────────────────────────────────────
 const HERO_HOME = "https://d2xsxph8kpxj0f.cloudfront.net/310519663372141965/eBTa9t88Gofgi7UbPusL8G/hero-clean-home_4649079f.jpg";
@@ -329,12 +330,6 @@ function TealBtn({ onClick, children, fullWidth = false }: { onClick?: () => voi
 // ─── Main Page ─────────────────────────────────────────────────────────────────
 export default function Home() {
   useScrollReveal();
-  // SEO: set page title and meta description dynamically for SPA
-  useEffect(() => {
-    document.title = "Steampunk Cleaning Services | Book a Cleaner Today";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Professional house cleaning in LA, Nevada, Sacramento. 4.9\u2605, 370+ reviews. Get a free quote in 2 minutes.");
-  }, []);
 
   const reviews = useCountUp(370);
   const jobs = useCountUp(100);
@@ -374,6 +369,11 @@ export default function Home() {
 
       {/* ─── SHARED NAVBAR ─────────────────────────────────────────────────── */}
       <Navbar />
+      <SEO
+        title="Steampunk House Cleaning | Professional Cleaners in LA, OC, Nevada & Sacramento"
+        description="Professional house cleaning across Los Angeles, Orange County, Nevada, and Sacramento. 4.9★ with 370+ reviews. Get a free quote in 2 minutes."
+        path="/"
+      />
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       {/* Reduced top padding so form is closer to nav — tighter above-the-fold */}

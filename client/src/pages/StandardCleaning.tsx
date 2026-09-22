@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -179,6 +180,11 @@ export default function StandardCleaning() {
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
+      <SEO
+        title="Standard House Cleaning | Steampunk House Cleaning"
+        description="Reliable standard house cleaning in LA/OC, Nevada, and Sacramento. Dusting, floors, kitchen, and baths — consistent every visit. Free quote."
+        path="/standard-cleaning"
+      />
 
       {/* Hero */}
       <section
