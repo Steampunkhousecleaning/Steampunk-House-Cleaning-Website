@@ -383,7 +383,7 @@ export default function StandardCleaning() {
               { value: "370+", label: "Verified Google Reviews" },
               { value: "4.9★", label: "Average Rating" },
               { value: "100+", label: "Homes Cleaned/Month" },
-              { value: "4", label: "Metro Markets" },
+              { value: "3", label: "Metro Markets" },
             ].map((s, i) => (
               <div key={i} style={{ textAlign: "center" }}>
                 <div
@@ -602,7 +602,7 @@ export default function StandardCleaning() {
               {
                 icon: <Star size={22} />,
                 title: "Google Guaranteed",
-                body: "Licensed, bonded, and insured in all four markets. The highest local trust badge available.",
+                body: "Licensed, bonded, and insured across our three metros. The highest local trust badge available.",
               },
             ].map((item, i) => (
               <div

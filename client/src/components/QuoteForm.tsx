@@ -25,10 +25,31 @@ const services = [
 ];
 
 const cities = [
-  "Los Angeles / Orange County",
+  "Los Angeles, CA",
+  "Long Beach, CA",
+  "Santa Monica, CA",
+  "Pasadena, CA",
+  "Glendale, CA",
+  "Burbank, CA",
+  "Irvine, CA",
+  "Anaheim, CA",
+  "Huntington Beach, CA",
+  "Newport Beach, CA",
+  "Santa Ana, CA",
+  "Costa Mesa, CA",
+  "Fullerton, CA",
+  "Orange, CA",
   "Las Vegas, NV",
+  "Henderson, NV",
+  "Summerlin, NV",
+  "North Las Vegas, NV",
   "Reno, NV",
+  "Sparks, NV",
   "Sacramento, CA",
+  "Roseville, CA",
+  "Elk Grove, CA",
+  "Folsom, CA",
+  "Los Angeles / Orange County",
   "Other",
 ];
 

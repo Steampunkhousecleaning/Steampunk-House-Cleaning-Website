@@ -60,7 +60,7 @@ export default function Reviews() {
       <Navbar />
       <SEO
         title="Customer Reviews | Steampunk House Cleaning"
-        description={`Read customer reviews of Steampunk House Cleaning across LA/OC, Las Vegas, and Sacramento. ${REVIEW_STATS.ratingValue}★ average from ${REVIEW_STATS.reviewCount}+ Google reviews.`}
+        description={`Read customer reviews of Steampunk House Cleaning across LA/OC, Las Vegas & Reno, and Sacramento. ${REVIEW_STATS.ratingValue}★ average from ${REVIEW_STATS.reviewCount}+ Google reviews.`}
         path="/reviews"
       />
       <JsonLd id="reviews-aggregate" data={aggregateSchema} />
@@ -118,7 +118,7 @@ export default function Reviews() {
             }}
           >
             A selection of quotes already featured on our site from clients in Los Angeles /
-            Orange County, Las Vegas / Nevada, and Sacramento. Filter by metro below.
+            Orange County, Las Vegas & Reno / Nevada, and Sacramento. Filter by metro below — including Reno.
           </p>
         </div>
       </section>
@@ -354,7 +354,7 @@ export default function Reviews() {
                   fontFamily: "'DM Sans', sans-serif",
                 }}
               >
-                Two-minute form. We serve LA / OC, Las Vegas / Nevada, and Sacramento equally.
+                Two-minute form. We serve LA / OC, Las Vegas & Reno / Nevada, and Sacramento equally.
               </p>
             </div>
           </Link>
@@ -398,7 +398,7 @@ export default function Reviews() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            Licensed · Bonded · Insured · LA/OC · Las Vegas · Sacramento
+            Licensed · Bonded · Insured · LA/OC · Las Vegas & Reno · Sacramento
           </p>
         </div>
       </section>

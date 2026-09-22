@@ -16,7 +16,7 @@ const ICE = "#B5E1F2";
 const FAQS = [
   {
     q: "Where does Steampunk House Cleaning operate?",
-    a: "We serve three primary markets: Los Angeles / Orange County, Las Vegas / Nevada, and Sacramento. Coverage varies by zip and schedule — request a quote with your city and we will confirm.",
+    a: "We serve three equal metros: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. That includes Reno and Sparks in Northern Nevada as well as the Las Vegas Valley. Coverage varies by zip and schedule — request a quote with your city and we will confirm.",
   },
   {
     q: "How quickly can you get someone to my home?",
@@ -137,7 +137,7 @@ export default function FAQ() {
       <Navbar />
       <SEO
         title="FAQ | Steampunk House Cleaning"
-        description="Answers about Steampunk House Cleaning services, scheduling, pricing, background checks, and coverage in LA/OC, Las Vegas / Nevada, and Sacramento."
+        description="Answers about Steampunk House Cleaning services, scheduling, pricing, background checks, and coverage in LA/OC, Las Vegas & Reno / Nevada, and Sacramento."
         path="/faq"
       />
       <JsonLd id="faq-page" data={faqSchema} />
@@ -239,7 +239,7 @@ export default function FAQ() {
                 Explore locations
               </h2>
               <p style={{ fontSize: 14, color: "#5a6e80", margin: 0, fontFamily: "'DM Sans', sans-serif" }}>
-                LA / OC, Las Vegas / Nevada, and Sacramento hubs.
+                LA / OC, Las Vegas & Reno / Nevada, and Sacramento hubs.
               </p>
             </div>
           </Link>
@@ -320,7 +320,7 @@ export default function FAQ() {
                 Customer reviews
               </h2>
               <p style={{ fontSize: 14, color: "#5a6e80", margin: 0, fontFamily: "'DM Sans', sans-serif" }}>
-                Quotes from LA/OC, Las Vegas, and Sacramento clients.
+                Quotes from LA/OC, Las Vegas & Reno, and Sacramento clients.
               </p>
             </div>
           </Link>

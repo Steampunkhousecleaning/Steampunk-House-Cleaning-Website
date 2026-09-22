@@ -6,15 +6,22 @@
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { METROS } from "@/data/locations";
-import { NEIGHBORHOODS } from "@/data/neighborhoods";
+import {
+  COVERAGE_ONLY_CITIES,
+  NEIGHBORHOODS,
+  getFeaturedNeighborhoods,
+} from "@/data/neighborhoods";
 import { Link } from "wouter";
-import { MapPin, ArrowRight, Phone } from "lucide-react";
+import { useState } from "react";
+import { MapPin, ArrowRight, Phone, ChevronDown, ChevronUp } from "lucide-react";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
 const ICE = "#B5E1F2";
 
 export default function Locations() {
+  const [showAll, setShowAll] = useState(false);
+  const featured = getFeaturedNeighborhoods();
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
@@ -198,6 +205,7 @@ export default function Locations() {
       </section>
 
 
+      
       <section style={{ padding: "40px 0", backgroundColor: "#f7fbff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1.5rem" }}>
           <div style={{ textAlign: "center", marginBottom: 24 }}>
@@ -210,87 +218,182 @@ export default function Locations() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Featured cities — including Reno
+              Popular cities we serve
             </h2>
             <p
               style={{
                 fontSize: 15,
                 color: "#5a6e80",
                 fontFamily: "'DM Sans', sans-serif",
-                maxWidth: 620,
+                maxWidth: 640,
                 margin: "0 auto",
                 lineHeight: 1.65,
               }}
             >
-              Equal-weight local pages in California and Nevada. Reno is part of our Nevada market — not Vegas-only.
+              Curated dedicated pages across LA / OC, Las Vegas & Reno / Nevada, and Sacramento —
+              including Reno. Same quality bar on every city page.
             </p>
           </div>
-          {(["California", "Nevada"] as const).map((state) => {
-            const cities = NEIGHBORHOODS.filter((n) => n.stateLabel === state);
-            if (cities.length === 0) return null;
-            return (
-              <div key={state} style={{ marginBottom: 28 }}>
-                <p
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gap: "0.75rem",
+            }}
+          >
+            {featured.map((n) => (
+              <Link
+                key={n.path}
+                href={n.path}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 4,
+                  backgroundColor: "#fff",
+                  border: n.slug === "reno" ? `2px solid ${TEAL}` : "1.5px solid #dde9f2",
+                  borderRadius: 12,
+                  padding: "14px 16px",
+                  textDecoration: "none",
+                }}
+              >
+                <span
                   style={{
-                    fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "rgba(61,82,102,0.55)",
-                    marginBottom: 12,
+                    fontSize: 15,
+                    fontWeight: 800,
+                    color: NAVY,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  {state}
-                </p>
-                <div
+                  {n.name}
+                </span>
+                <span
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-                    gap: "0.75rem",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: "#8a9baa",
+                    fontFamily: "'DM Sans', sans-serif",
                   }}
                 >
-                  {cities.map((n) => (
-                    <Link
-                      key={n.path}
-                      href={n.path}
+                  {n.stateLabel === "Nevada" ? "Nevada" : n.metroSlug === "sacramento" ? "Sacramento" : "LA / OC"}
+                </span>
+                <span
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    color: TEAL,
+                    fontFamily: "'DM Sans', sans-serif",
+                  }}
+                >
+                  View page →
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 28, textAlign: "center" }}>
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                backgroundColor: "#fff",
+                color: NAVY,
+                border: "1.5px solid #dde9f2",
+                borderRadius: 8,
+                padding: "12px 20px",
+                fontSize: 14,
+                fontWeight: 700,
+                cursor: "pointer",
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              {showAll ? "Hide full city list" : "All cities we serve"}
+              {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            </button>
+          </div>
+
+          {showAll && (
+            <div style={{ marginTop: 28 }}>
+              {(
+                [
+                  { label: "Los Angeles / Orange County", metro: "los-angeles-orange-county" },
+                  { label: "Las Vegas & Reno / Nevada", metro: "las-vegas-nevada" },
+                  { label: "Sacramento", metro: "sacramento" },
+                ] as const
+              ).map((group) => {
+                const pages = NEIGHBORHOODS.filter((n) => n.metroSlug === group.metro);
+                const coverage = COVERAGE_ONLY_CITIES.filter((c) => c.metroSlug === group.metro);
+                return (
+                  <div key={group.metro} style={{ marginBottom: 24 }}>
+                    <p
                       style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 4,
-                        backgroundColor: "#fff",
-                        border: n.slug === "reno" ? `2px solid ${TEAL}` : "1.5px solid #dde9f2",
-                        borderRadius: 12,
-                        padding: "16px 18px",
-                        textDecoration: "none",
+                        fontSize: 12,
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "rgba(61,82,102,0.55)",
+                        marginBottom: 10,
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                       }}
                     >
-                      <span
-                        style={{
-                          fontSize: 16,
-                          fontWeight: 800,
-                          color: NAVY,
-                          fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        }}
-                      >
-                        {n.name}
-                      </span>
-                      <span
-                        style={{
-                          fontSize: 12,
-                          fontWeight: 600,
-                          color: TEAL,
-                          fontFamily: "'DM Sans', sans-serif",
-                        }}
-                      >
-                        View page →
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+                      {group.label}
+                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 8,
+                      }}
+                    >
+                      {pages.map((n) => (
+                        <Link
+                          key={n.path}
+                          href={n.path}
+                          style={{
+                            display: "inline-block",
+                            backgroundColor: "#fff",
+                            border: "1px solid #dde9f2",
+                            borderRadius: 999,
+                            padding: "8px 14px",
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: NAVY,
+                            textDecoration: "none",
+                            fontFamily: "'DM Sans', sans-serif",
+                          }}
+                        >
+                          {n.name}
+                        </Link>
+                      ))}
+                      {coverage.map((c) => (
+                        <Link
+                          key={c.name}
+                          href="/get-a-quote"
+                          style={{
+                            display: "inline-block",
+                            backgroundColor: "#f0f7ff",
+                            border: "1px dashed #c5d8e6",
+                            borderRadius: 999,
+                            padding: "8px 14px",
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: "#5a6e80",
+                            textDecoration: "none",
+                            fontFamily: "'DM Sans', sans-serif",
+                          }}
+                          title="Request a quote to confirm coverage"
+                        >
+                          {c.name} · quote
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
@@ -323,8 +426,9 @@ export default function Locations() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            Request a quote with your city or call us. We confirm real coverage — we do not invent
-            dozens of thin neighborhood pages.
+            We publish popular dedicated city pages plus a full coverage list across our three
+            metros. Request a quote with your city or zip and we will confirm whether we can reach
+            you — no guesswork.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
             <Link
@@ -362,7 +466,7 @@ export default function Locations() {
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              <Phone size={16} style={{ color: TEAL }} />
+              <Phone size={16} />
               (725) 255-3688
             </a>
           </div>

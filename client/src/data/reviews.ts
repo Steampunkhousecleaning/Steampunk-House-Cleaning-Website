@@ -23,7 +23,7 @@ export const REVIEW_STATS = {
 export const METRO_CHIPS: { id: MetroFilter; label: string }[] = [
   { id: "all", label: "All" },
   { id: "la-oc", label: "LA / OC" },
-  { id: "las-vegas", label: "Las Vegas" },
+  { id: "las-vegas", label: "Las Vegas & Reno" },
   { id: "sacramento", label: "Sacramento" },
 ];
 

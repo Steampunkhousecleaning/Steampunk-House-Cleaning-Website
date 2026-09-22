@@ -143,7 +143,7 @@ export default function AirbnbCleaning() {
               {[
                 { value: "370+", label: "Google Reviews" },
                 { value: "4.9★", label: "Average Rating" },
-                { value: "4", label: "STR Markets" },
+                { value: "3", label: "STR Metros" },
               ].map((s, i) => (
                 <div key={i} style={{ textAlign: "center" }}>
                   <div style={{ fontSize: 26, fontWeight: 800, color: TEAL, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.value}</div>
