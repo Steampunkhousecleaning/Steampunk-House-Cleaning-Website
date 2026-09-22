@@ -5,7 +5,60 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Existing static files (robots.txt, sitemap.xml, assets) are served as-is.
+# Only known SPA routes rewrite to index.html with 200; unknown paths get a real 404.
+
 [[redirects]]
-  from = "/*"
+  from = "/"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/standard-cleaning"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/deep-cleaning"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/recurring-cleaning"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/move-in-move-out"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/airbnb-cleaning"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/commercial-cleaning"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/get-a-quote"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/404"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
