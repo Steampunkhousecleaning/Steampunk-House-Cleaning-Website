@@ -379,7 +379,16 @@ export default function Home() {
       {/* Reduced top padding so form is closer to nav — tighter above-the-fold */}
       <section className="hero-pt min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_HOME} alt="Immaculate clean living room" className="w-full h-full object-cover" style={{ objectPosition: "center 30%" }} />
+          <img
+            src={HERO_HOME}
+            alt="Immaculate clean living room"
+            width={2752}
+            height={1536}
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 30%" }}
+          />
           <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 45%, rgba(255,255,255,0.35) 100%)" }} />
         </div>
 
@@ -507,8 +516,16 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="animate-fade-up">
-              <img src={WOMAN_RELAXING} alt="Woman relaxing in a clean home"
-                className="w-full rounded-2xl object-cover shadow-xl" style={{ maxHeight: "480px", objectPosition: "center top" }} />
+              <img
+                src={WOMAN_RELAXING}
+                alt="Woman relaxing in a clean home"
+                width={2528}
+                height={1696}
+                loading="lazy"
+                decoding="async"
+                className="w-full rounded-2xl object-cover shadow-xl"
+                style={{ maxHeight: "480px", objectPosition: "center top" }}
+              />
             </div>
             <div className="animate-fade-up delay-2">
               <div className="sp-body text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: TEAL }}>
@@ -691,8 +708,16 @@ export default function Home() {
               </div>
             </div>
             <div className="animate-fade-up delay-2 order-1 lg:order-2">
-              <img src={CLEANER_PRO} alt="Professional Steampunk cleaner"
-                className="w-full rounded-2xl object-cover shadow-xl" style={{ maxHeight: "600px", objectFit: "cover", objectPosition: "center top" }} />
+              <img
+                src={CLEANER_PRO}
+                alt="Professional Steampunk cleaner"
+                width={1792}
+                height={2400}
+                loading="lazy"
+                decoding="async"
+                className="w-full rounded-2xl object-cover shadow-xl"
+                style={{ maxHeight: "600px", objectFit: "cover", objectPosition: "center top" }}
+              />
             </div>
           </div>
         </div>
@@ -703,8 +728,16 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="animate-fade-up">
-              <img src={FOUNDERS} alt="Ryan Ng and Daniel Huynh, Steampunk Cleaning founders"
-                className="w-full rounded-2xl object-cover shadow-xl" style={{ maxHeight: "480px" }} />
+              <img
+                src={FOUNDERS}
+                alt="Ryan Ng and Daniel Huynh, Steampunk Cleaning founders"
+                width={2400}
+                height={1792}
+                loading="lazy"
+                decoding="async"
+                className="w-full rounded-2xl object-cover shadow-xl"
+                style={{ maxHeight: "480px" }}
+              />
               <div className="mt-4 text-center">
                 <p className="sp-body text-sm font-medium" style={{ color: NAVY }}>Ryan Ng & Daniel Huynh</p>
                 <p className="sp-body text-xs" style={{ color: MUTED }}>Co-founders, Steampunk Cleaning Services</p>
