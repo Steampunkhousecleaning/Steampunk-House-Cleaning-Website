@@ -35,6 +35,8 @@ const ROUTES = [
   "/locations/las-vegas-nevada",
   "/locations/sacramento",
   "/faq",
+  "/reviews",
+  "/cleaning-checklist",
   "/get-a-quote",
   "/privacy",
   "/terms",

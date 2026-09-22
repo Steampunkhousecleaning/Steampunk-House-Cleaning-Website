@@ -334,7 +334,7 @@ export default function Home() {
 
   const reviews = useCountUp(370);
   const jobs = useCountUp(100);
-  const markets = useCountUp(4);
+  const markets = useCountUp(3);
 
   const [, navigate] = useLocation();
   const scrollToForm = () => {
@@ -430,7 +430,7 @@ export default function Home() {
                 </div>
                 {[
                   { icon: <Star className="w-3.5 h-3.5" fill="currentColor" />, text: "4.9★ · 370+ Reviews" },
-                  { icon: <CheckCircle2 className="w-3.5 h-3.5" />, text: "Licensed & Insured" },
+                  { icon: <CheckCircle2 className="w-3.5 h-3.5" />, text: "Licensed · Bonded · Insured" },
                   { icon: <Users className="w-3.5 h-3.5" />, text: "Background-Checked" },
                 ].map((badge) => (
                   <div key={badge.text} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full sp-body text-xs font-medium"
@@ -457,6 +457,38 @@ export default function Home() {
             {/* Right: Lead Form */}
             <div id="lead-form" className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
               <LeadForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TRUST BAR (bonded / insured / three metros) ───────────────────────── */}
+      <section style={{ backgroundColor: WHITE, borderBottom: "1px solid #d4e8f2" }} className="py-5">
+        <div className="container">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="flex flex-wrap gap-2.5 items-center justify-center md:justify-start">
+              {[
+                "Licensed · Bonded · Insured",
+                "Background-checked cleaners",
+                "Satisfaction-focused — we make it right",
+              ].map((text) => (
+                <div
+                  key={text}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full sp-body text-xs font-semibold"
+                  style={{ backgroundColor: `${TEAL}10`, color: NAVY, border: `1px solid ${TEAL}33` }}
+                >
+                  <Shield className="w-3.5 h-3.5" style={{ color: TEAL }} />
+                  {text}
+                </div>
+              ))}
+            </div>
+            <div className="sp-body text-sm font-semibold text-center md:text-right" style={{ color: MUTED }}>
+              Serving <span style={{ color: NAVY }}>LA / OC</span>
+              {" · "}
+              <span style={{ color: NAVY }}>Las Vegas</span>
+              {" · "}
+              <span style={{ color: NAVY }}>Sacramento</span>
+              {" equally"}
             </div>
           </div>
         </div>
@@ -675,6 +707,16 @@ export default function Home() {
               </div>
             ))}
           </div>
+            <div className="text-center mt-8">
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 sp-body font-semibold text-sm"
+                style={{ color: TEAL, background: "none", border: "none", cursor: "pointer" }}
+                onClick={() => navigate("/reviews")}
+              >
+                See all reviews by metro <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
         </div>
       </section>
 
