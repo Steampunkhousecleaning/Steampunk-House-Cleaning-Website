@@ -135,7 +135,7 @@ export default function GetAQuote() {
               <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
                 {[
                   { icon: <Shield size={18} />, title: "Google Guaranteed", body: "Verified and backed by Google's guarantee program." },
-                  { icon: <Star size={18} fill={TEAL} />, title: "4.9 Stars / 370+ Reviews", body: "Hundreds of verified Google reviews across all markets." },
+                  { icon: <Star size={18} fill={TEAL} />, title: "4.9 Stars / 450+ Reviews", body: "Hundreds of verified Google reviews across all markets." },
                   { icon: <CheckCircle size={18} />, title: "Background-Checked Team", body: "Every cleaner is vetted, trained, and insured." },
                   { icon: <Clock size={18} />, title: "Same-Day Response", body: "We call back fast. Usually within minutes." },
                 ].map((b, i) => (

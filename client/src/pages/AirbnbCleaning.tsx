@@ -90,7 +90,7 @@ export default function AirbnbCleaning() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
                 {[
                   { icon: <Camera size={15} />, text: "Photo Documentation" },
-                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 370+ Reviews" },
+                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 450+ Reviews" },
                   { icon: <Clock size={15} />, text: "Tight Window Turnovers" },
                   { icon: <Shield size={15} />, text: "Google Guaranteed" },
                 ].map((b, i) => (
@@ -141,7 +141,7 @@ export default function AirbnbCleaning() {
             </p>
             <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
               {[
-                { value: "370+", label: "Google Reviews" },
+                { value: "450+", label: "Google Reviews" },
                 { value: "4.9★", label: "Average Rating" },
                 { value: "3", label: "STR Metros" },
               ].map((s, i) => (

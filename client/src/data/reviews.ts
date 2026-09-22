@@ -17,7 +17,7 @@ export type Review = {
 
 export const REVIEW_STATS = {
   ratingValue: 4.9,
-  reviewCount: 370,
+  reviewCount: 450,
 } as const;
 
 export const METRO_CHIPS: { id: MetroFilter; label: string }[] = [

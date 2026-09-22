@@ -64,7 +64,7 @@ export default function AboutUs() {
               <div className="grid-2col" style={{ gap: "1rem" }}>
                 {[
                   { value: "2021", label: "Founded" },
-                  { value: "370+", label: "Google Reviews" },
+                  { value: "450+", label: "Google Reviews" },
                   { value: "4.9★", label: "Average Rating" },
                   { value: "3", label: "Metros Served" },
                 ].map((s, i) => (

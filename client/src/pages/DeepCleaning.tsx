@@ -217,7 +217,7 @@ export default function DeepCleaning() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
                 {[
                   { icon: <Shield size={15} />, text: "Google Guaranteed" },
-                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 370+ Reviews" },
+                  { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 450+ Reviews" },
                   { icon: <CheckCircle size={15} />, text: "40-Point Checklist" },
                   { icon: <Clock size={15} />, text: "We Call Within Minutes" },
                 ].map((b, i) => (
