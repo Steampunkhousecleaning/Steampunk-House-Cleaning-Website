@@ -105,6 +105,11 @@ export const METROS: MetroLocation[] = [
       "Fullerton",
       "Orange",
       "Tustin",
+      "Mission Viejo",
+      "Pomona",
+      "Downey",
+      "Inglewood",
+      "West Hollywood",
     ],
     faqs: [
       {
@@ -155,6 +160,7 @@ export const METROS: MetroLocation[] = [
       "Henderson",
       "Summerlin",
       "Reno",
+      "Sparks",
       "North Las Vegas",
       "Paradise",
       "Spring Valley",

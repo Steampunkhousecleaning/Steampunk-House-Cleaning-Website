@@ -15,6 +15,62 @@
 # Unknown paths still get a real HTTP 404 via 404.html.
 # Client-side wouter routing continues to work after JS loads.
 
+
+# Legacy WordPress / trailing-slash URLs → SPA routes
+[[redirects]]
+  from = "/locations/"
+  to = "/locations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/los-angeles/"
+  to = "/locations/los-angeles-orange-county"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/los-angeles"
+  to = "/locations/los-angeles-orange-county"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pasadena-ca-home-cleaning-services/"
+  to = "/locations/los-angeles-orange-county/pasadena"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pasadena-ca-home-cleaning-services"
+  to = "/locations/los-angeles-orange-county/pasadena"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/long-beach-ca-home-cleaning-services/"
+  to = "/locations/los-angeles-orange-county/long-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/long-beach-ca-home-cleaning-services"
+  to = "/locations/los-angeles-orange-county/long-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/long-beach-ca-house-cleaning-services/"
+  to = "/locations/los-angeles-orange-county/long-beach"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/404.html"

@@ -66,7 +66,7 @@ export default function AboutUs() {
                   { value: "2021", label: "Founded" },
                   { value: "370+", label: "Google Reviews" },
                   { value: "4.9★", label: "Average Rating" },
-                  { value: "4", label: "Markets Served" },
+                  { value: "3", label: "Metros Served" },
                 ].map((s, i) => (
                   <div key={i} style={{ backgroundColor: "#fff", border: "1.5px solid #dde9f2", borderRadius: 10, padding: "14px 12px", textAlign: "center" }}>
                     <div style={{ fontSize: 22, fontWeight: 800, color: TEAL, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.value}</div>
@@ -132,12 +132,12 @@ export default function AboutUs() {
             Where we serve
           </h2>
           <p style={{ fontSize: 16, color: "#5a6e80", fontFamily: "'DM Sans', sans-serif", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
-            We operate across four major markets and are expanding.
+            We operate across three equal metros — LA / OC, Las Vegas & Reno / Nevada, and Sacramento.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", maxWidth: 700, margin: "0 auto" }}>
             {[
               { city: "Los Angeles / Orange County", state: "California" },
-              { city: "Las Vegas / Reno", state: "Nevada" },
+              { city: "Las Vegas & Reno", state: "Nevada" },
               { city: "Sacramento", state: "California" },
             ].map((m, i) => (
               <div key={i} style={{ backgroundColor: "#f7fbff", border: "1.5px solid #dde9f2", borderRadius: 12, padding: "20px 16px", textAlign: "center" }}>

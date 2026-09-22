@@ -70,10 +70,15 @@ function useScrollReveal() {
 
 // ─── Counter animation hook ────────────────────────────────────────────────────
 function useCountUp(target: number, duration = 1800) {
-  const [count, setCount] = useState(0);
+  // Initialize to target so prerendered / crawler HTML shows real stats (370+, 100+, 3), not 0.
+  const [count, setCount] = useState(target);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
   useEffect(() => {
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
@@ -83,8 +88,11 @@ function useCountUp(target: number, duration = 1800) {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * target));
+            // Animate up from ~60% so prerendered value never collapses to 0
+            const from = Math.floor(target * 0.6);
+            setCount(Math.floor(from + eased * (target - from)));
             if (progress < 1) requestAnimationFrame(tick);
+            else setCount(target);
           };
           requestAnimationFrame(tick);
         }
@@ -225,11 +233,23 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
             <select name="location" required value={form.location} onChange={handleChange}
               style={{ ...inputStyle, color: form.location ? NAVY : MUTED, appearance: "none" as const }}>
               <option value="" disabled>Select your city</option>
-              <option value="los-angeles">Los Angeles / Orange County</option>
-              <option value="las-vegas">Las Vegas, NV</option>
-              <option value="reno">Reno, NV</option>
-              <option value="sacramento">Sacramento</option>
-              
+              <option value="Los Angeles, CA">Los Angeles, CA</option>
+              <option value="Long Beach, CA">Long Beach, CA</option>
+              <option value="Irvine, CA">Irvine, CA</option>
+              <option value="Pasadena, CA">Pasadena, CA</option>
+              <option value="Anaheim, CA">Anaheim, CA</option>
+              <option value="Huntington Beach, CA">Huntington Beach, CA</option>
+              <option value="Los Angeles / Orange County">Los Angeles / Orange County</option>
+              <option value="Las Vegas, NV">Las Vegas, NV</option>
+              <option value="Henderson, NV">Henderson, NV</option>
+              <option value="Summerlin, NV">Summerlin, NV</option>
+              <option value="Reno, NV">Reno, NV</option>
+              <option value="Sparks, NV">Sparks, NV</option>
+              <option value="Sacramento, CA">Sacramento, CA</option>
+              <option value="Roseville, CA">Roseville, CA</option>
+              <option value="Elk Grove, CA">Elk Grove, CA</option>
+              <option value="Folsom, CA">Folsom, CA</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div>
@@ -684,12 +704,13 @@ export default function Home() {
           <div className="text-center max-w-2xl mx-auto mb-8 animate-fade-up">
             <div className="sp-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: TEAL }}>What our clients say</div>
             <h2 className="sp-display text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: NAVY }}>4.9 stars across 370+ verified reviews.</h2>
+            <p className="sp-body text-sm mt-2"><a href="/reviews" style={{ color: TEAL, fontWeight: 600 }}>See all customer reviews →</a></p>
             <div className="flex justify-center mb-2"><Stars count={5} size={22} /></div>
             <p className="sp-body text-base" style={{ color: MUTED }}>Real reviews from real homeowners across LA, Las Vegas, Reno, and Sacramento.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {allReviews.map((review, i) => (
+            {allReviews.slice(0, 3).map((review, i) => (
               <div key={review.name} className={`animate-fade-up delay-${(i % 3) + 1} rounded-xl p-6`}
                 style={{ backgroundColor: WHITE, border: "1px solid #d4e8f2" }}>
                 <Stars count={5} size={14} />
@@ -738,7 +759,7 @@ export default function Home() {
                   { title: "Higher pay = lower turnover = same cleaner", body: "We pay our cleaners better. That means they stay longer, care more, and you get the same familiar face, not a different stranger every visit." },
                   { title: "Documented checklists on every clean", body: "We don't guess what 'clean' means. Every service type has a documented checklist. You know exactly what's included before we arrive." },
                   { title: "Satisfaction guarantee, no questions asked", body: "Not happy? We come back and make it right. That's how we've built 370+ five-star reviews." },
-                  { title: "Google Guaranteed: the highest trust badge in local search", body: "Licensed, bonded, and insured in all four markets. You're covered." },
+                  { title: "Google Guaranteed: the highest trust badge in local search", body: "Licensed, bonded, and insured across our three metros. You're covered." },
                 ].map((item, i) => (
                   <div key={item.title} className={`animate-fade-up delay-${i + 1} flex gap-4`}>
                     <div className="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5" style={{ backgroundColor: `${TEAL}15` }}>
@@ -797,7 +818,7 @@ export default function Home() {
                 Ryan and Daniel started Steampunk as short-term rental hosts who couldn't find a cleaner they could actually trust. They know what it feels like to need a reliable team and get let down instead.
               </p>
               <p className="sp-body text-lg leading-relaxed mb-7" style={{ color: MUTED }}>
-                Today, Steampunk serves 100+ homes every month across four markets with 370+ verified Google reviews and a 4.9-star average. The standard hasn't slipped, because we built it to hold.
+                Today, Steampunk serves 100+ homes every month across three equal metros — LA / OC, Las Vegas & Reno / Nevada, and Sacramento — with 370+ verified Google reviews and a 4.9-star average. The standard hasn't slipped, because we built it to hold.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 sp-body text-sm font-medium" style={{ color: NAVY }}>
@@ -894,14 +915,16 @@ export default function Home() {
             </div>
             <div className="animate-fade-up">
               {[
+                { q: "Do you serve my area?", a: "We serve three equal metros: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Select your city in the quote form and we'll confirm coverage when we call." },
                 { q: "How quickly can you get someone to my home?", a: "We typically schedule within 1–3 business days depending on your location and availability. For urgent requests, call us directly at (725) 255-3688 and we'll do our best to accommodate you." },
-                { q: "Are your cleaners background-checked?", a: "Yes. Every cleaner goes through a thorough interview process and background check before they're ever assigned to a client's home. We take this seriously because we've been on the other side of it." },
-                { q: "Do I need to be home during the clean?", a: "Not at all. Most of our recurring clients give us a key or door code and come home to a clean house. We'll confirm all access details when we call to book." },
-                { q: "What if I'm not happy with the clean?", a: "We'll come back and make it right. No questions asked. Our satisfaction guarantee isn't a marketing line. It's how we've maintained a 4.9-star average across 370+ reviews." },
-                { q: "Do you bring your own supplies and equipment?", a: "Yes. Our cleaners arrive with everything they need. If you have specific products you prefer (eco-friendly, fragrance-free, etc.), just let us know when we call and we'll accommodate." },
-                { q: "How does pricing work?", a: "Pricing is based on your home size, service type, and frequency. We don't publish exact prices because every home is different, but we give you a clear, honest quote on the call. No hidden fees, ever." },
-                { q: "Do you serve my area?", a: "We currently serve Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Select your city in the quote form and we'll confirm coverage when we call." },
+                { q: "Are your cleaners background-checked?", a: "Yes. Every cleaner goes through a thorough interview process and background check before they're ever assigned to a client's home." },
+                { q: "What if I'm not happy with the clean?", a: "We'll come back and make it right. No questions asked. Our satisfaction guarantee is how we've maintained a 4.9-star average across 370+ reviews." },
               ].map((faq) => <FaqItem key={faq.q} q={faq.q} a={faq.a} />)}
+              <div className="mt-6 text-center">
+                <a href="/faq" className="sp-body text-sm font-semibold underline-offset-4 hover:underline" style={{ color: TEAL }}>
+                  See all FAQs →
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "Are you insured for commercial properties?",
-    a: "Yes. We're fully licensed, bonded, and insured in all four markets. We can provide proof of insurance on request.",
+    a: "Yes. We're fully licensed, bonded, and insured across our three metros. We can provide proof of insurance on request.",
   },
   {
     q: "What's included in a commercial clean?",
