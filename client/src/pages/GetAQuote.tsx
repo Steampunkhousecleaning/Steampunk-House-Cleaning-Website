@@ -28,7 +28,8 @@ const SERVICES = [
 
 const CITIES = [
   "Los Angeles / Orange County",
-  "Nevada",
+  "Las Vegas, NV",
+  "Reno, NV",
   "Sacramento, CA",
   "Other",
 ];
@@ -109,7 +110,7 @@ export default function GetAQuote() {
       <Navbar />
       <SEO
         title="Get a Free Cleaning Quote | Steampunk House Cleaning"
-        description="Request a free house cleaning quote for LA/OC, Nevada, or Sacramento. No commitment — we call you within minutes. Takes about 2 minutes."
+        description="Request a free house cleaning quote for LA/OC, Las Vegas, Reno, or Sacramento. No commitment — we call you within minutes. Takes about 2 minutes."
         path="/get-a-quote"
       />
 

@@ -226,7 +226,8 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
               style={{ ...inputStyle, color: form.location ? NAVY : MUTED, appearance: "none" as const }}>
               <option value="" disabled>Select your city</option>
               <option value="los-angeles">Los Angeles / Orange County</option>
-              <option value="las-vegas">Nevada</option>
+              <option value="las-vegas">Las Vegas, NV</option>
+              <option value="reno">Reno, NV</option>
               <option value="sacramento">Sacramento</option>
               
             </select>
@@ -371,8 +372,8 @@ export default function Home() {
       {/* ─── SHARED NAVBAR ─────────────────────────────────────────────────── */}
       <Navbar />
       <SEO
-        title="Steampunk House Cleaning | Professional Cleaners in LA, OC, Nevada & Sacramento"
-        description="Professional house cleaning across Los Angeles, Orange County, Nevada, and Sacramento. 4.9★ with 370+ reviews. Get a free quote in 2 minutes."
+        title="Steampunk House Cleaning | Professional Cleaners in LA, OC, Las Vegas, Reno & Sacramento"
+        description="Professional house cleaning across Los Angeles, Orange County, Las Vegas, Reno, and Sacramento. 4.9★ with 370+ reviews. Get a free quote in 2 minutes."
         path="/"
       />
       <JsonLd id="local-business" data={BUSINESS_JSON_LD} />
@@ -403,7 +404,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full sp-body text-xs font-semibold tracking-wide uppercase"
                 style={{ backgroundColor: `${TEAL}15`, color: TEAL }}>
                 <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ backgroundColor: TEAL }} />
-                Serving LA · Orange County · Nevada · Sacramento
+                Serving LA · Orange County · Las Vegas · Reno · Sacramento
               </div>
 
               {/* Headline */}
@@ -485,7 +486,7 @@ export default function Home() {
             <div className="sp-body text-sm font-semibold text-center md:text-right" style={{ color: MUTED }}>
               Serving <span style={{ color: NAVY }}>LA / OC</span>
               {" · "}
-              <span style={{ color: NAVY }}>Las Vegas</span>
+              <span style={{ color: NAVY }}>Las Vegas & Reno</span>
               {" · "}
               <span style={{ color: NAVY }}>Sacramento</span>
               {" equally"}
@@ -684,7 +685,7 @@ export default function Home() {
             <div className="sp-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: TEAL }}>What our clients say</div>
             <h2 className="sp-display text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: NAVY }}>4.9 stars across 370+ verified reviews.</h2>
             <div className="flex justify-center mb-2"><Stars count={5} size={22} /></div>
-            <p className="sp-body text-base" style={{ color: MUTED }}>Real reviews from real homeowners across LA, Nevada, Sacramento.</p>
+            <p className="sp-body text-base" style={{ color: MUTED }}>Real reviews from real homeowners across LA, Las Vegas, Reno, and Sacramento.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -800,7 +801,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 sp-body text-sm font-medium" style={{ color: NAVY }}>
-                  <MapPin className="w-4 h-4" style={{ color: TEAL }} /> 3 markets · LA, Nevada, Sacramento
+                  <MapPin className="w-4 h-4" style={{ color: TEAL }} /> 3 markets · LA/OC, Las Vegas & Reno, Sacramento
                 </div>
                 <div className="flex items-center gap-2 sp-body text-sm font-medium" style={{ color: NAVY }}>
                   <Clock className="w-4 h-4" style={{ color: TEAL }} /> We call within minutes of your request
@@ -899,7 +900,7 @@ export default function Home() {
                 { q: "What if I'm not happy with the clean?", a: "We'll come back and make it right. No questions asked. Our satisfaction guarantee isn't a marketing line. It's how we've maintained a 4.9-star average across 370+ reviews." },
                 { q: "Do you bring your own supplies and equipment?", a: "Yes. Our cleaners arrive with everything they need. If you have specific products you prefer (eco-friendly, fragrance-free, etc.), just let us know when we call and we'll accommodate." },
                 { q: "How does pricing work?", a: "Pricing is based on your home size, service type, and frequency. We don't publish exact prices because every home is different, but we give you a clear, honest quote on the call. No hidden fees, ever." },
-                { q: "Do you serve my area?", a: "We currently serve Los Angeles / Orange County, Nevada, Sacramento. Select your city in the quote form and we'll confirm coverage when we call." },
+                { q: "Do you serve my area?", a: "We currently serve Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Select your city in the quote form and we'll confirm coverage when we call." },
               ].map((faq) => <FaqItem key={faq.q} q={faq.q} a={faq.a} />)}
             </div>
           </div>
@@ -947,7 +948,7 @@ export default function Home() {
                 <img src={LOGO_URL} alt="Steampunk Cleaning Services" className="w-auto object-contain" style={{ height: 52, maxWidth: 190, filter: "brightness(0) invert(1)" }} />
               </div>
               <p className="sp-body text-sm leading-relaxed max-w-xs" style={{ color: "#7a9bb0" }}>
-                Professional, background-checked cleaning services across Los Angeles, Nevada, Sacramento. Built by homeowners who got burned, so you don't have to.
+                Professional, background-checked cleaning services across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Built by homeowners who got burned, so you don't have to.
               </p>
             </div>
             <div>
@@ -970,7 +971,7 @@ export default function Home() {
             <div>
               <h4 className="sp-body text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#7a9bb0" }}>Locations</h4>
               <ul className="space-y-2">
-                {["Los Angeles / Orange County", "Nevada", "Sacramento, CA"].map((l) => (
+                {["Los Angeles / Orange County", "Las Vegas, NV", "Reno, NV", "Sacramento, CA"].map((l) => (
                   <li key={l} className="flex items-center gap-1.5">
                     <MapPin className="w-3 h-3 flex-shrink-0" style={{ color: TEAL }} />
                     <span className="sp-body text-sm" style={{ color: "#8fb5c8" }}>{l}</span>
