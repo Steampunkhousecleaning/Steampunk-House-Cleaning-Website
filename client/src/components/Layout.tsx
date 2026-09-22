@@ -6,7 +6,7 @@
  * Mobile-first: separate mobile/desktop nav rows, no inline style overrides on grid
  */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, type CSSProperties } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, ChevronDown, ChevronUp } from "lucide-react";
 
@@ -450,18 +450,73 @@ export function Footer() {
     { label: "Move-In / Move-Out", href: "/move-in-move-out" },
     { label: "Airbnb / STR Turnover", href: "/airbnb-cleaning" },
     { label: "Commercial / Office", href: "/commercial-cleaning" },
-    { label: "Cleaning Checklist", href: "/cleaning-checklist" },
   ];
 
-  const markets = [
-    { label: "Los Angeles / Orange County", href: "/locations/los-angeles-orange-county" },
-    { label: "Las Vegas & Reno / Nevada", href: "/locations/las-vegas-nevada" },
-    { label: "Sacramento", href: "/locations/sacramento" },
-    { label: "All Locations", href: "/locations" },
+  const resources = [
     { label: "Reviews", href: "/reviews" },
     { label: "Cleaning Checklist", href: "/cleaning-checklist" },
     { label: "FAQ", href: "/faq" },
   ];
+
+  const locationGroups: { state: string; links: { label: string; href: string }[] }[] = [
+    {
+      state: "California",
+      links: [
+        { label: "Los Angeles / Orange County", href: "/locations/los-angeles-orange-county" },
+        { label: "Sacramento", href: "/locations/sacramento" },
+      ],
+    },
+    {
+      state: "Nevada",
+      links: [
+        { label: "Las Vegas & Reno", href: "/locations/las-vegas-nevada" },
+        { label: "Reno", href: "/locations/las-vegas-nevada/reno" },
+      ],
+    },
+  ];
+
+  const colHeading: CSSProperties = {
+    fontSize: 13,
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "rgba(255,255,255,0.5)",
+    marginBottom: 14,
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
+  };
+
+  const linkStyle: CSSProperties = {
+    fontSize: 14,
+    color: "rgba(255,255,255,0.72)",
+    fontFamily: "'DM Sans', sans-serif",
+    cursor: "pointer",
+    transition: "color 0.2s",
+    textDecoration: "none",
+  };
+
+  const stateHeading: CSSProperties = {
+    fontSize: 11,
+    fontWeight: 700,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    color: "rgba(255,255,255,0.42)",
+    margin: "0 0 8px",
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
+  };
+
+  const FooterLink = ({ href, label }: { href: string; label: string }) => (
+    <Link href={href}>
+      <span
+        style={linkStyle}
+        onMouseEnter={(e) => ((e.currentTarget as HTMLSpanElement).style.color = "#fff")}
+        onMouseLeave={(e) =>
+          ((e.currentTarget as HTMLSpanElement).style.color = "rgba(255,255,255,0.72)")
+        }
+      >
+        {label}
+      </span>
+    </Link>
+  );
 
   return (
     <footer style={{ backgroundColor: NAVY, color: "#fff", padding: "48px 0 24px" }}>
@@ -469,7 +524,7 @@ export function Footer() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
             gap: "2.5rem",
             marginBottom: "2.5rem",
           }}
@@ -496,83 +551,59 @@ export function Footer() {
                 maxWidth: 240,
               }}
             >
-              Professional house cleaning across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento.
+              Professional house cleaning across Los Angeles / Orange County, Las Vegas & Reno /
+              Nevada, and Sacramento.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h4
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-                marginBottom: 14,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              Services
-            </h4>
+            <h4 style={colHeading}>Services</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {services.map((s) => (
                 <li key={s.href} style={{ marginBottom: 8 }}>
-                  <Link href={s.href}>
-                    <span
-                      style={{
-                        fontSize: 14,
-                        color: "rgba(255,255,255,0.72)",
-                        fontFamily: "'DM Sans', sans-serif",
-                        cursor: "pointer",
-                        transition: "color 0.2s",
-                        textDecoration: "none",
-                      }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLSpanElement).style.color = "#fff")}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLSpanElement).style.color = "rgba(255,255,255,0.72)")}
-                    >
-                      {s.label}
-                    </span>
-                  </Link>
+                  <FooterLink href={s.href} label={s.label} />
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Markets */}
+          {/* Locations — grouped by state for scannability */}
           <div>
-            <h4
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-                marginBottom: 14,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              Locations
-            </h4>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {markets.map((m) => (
-                <li key={m.href} style={{ marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
-                  <span style={{ color: TEAL, fontSize: 10 }}>●</span>
-                  <Link href={m.href}>
-                    <span
-                      style={{
-                        fontSize: 14,
-                        color: "rgba(255,255,255,0.72)",
-                        fontFamily: "'DM Sans', sans-serif",
-                        cursor: "pointer",
-                        transition: "color 0.2s",
-                      }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLSpanElement).style.color = "#fff")}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLSpanElement).style.color = "rgba(255,255,255,0.72)")}
+            <h4 style={colHeading}>Locations</h4>
+            {locationGroups.map((group, i) => (
+              <div key={group.state} style={{ marginBottom: i === locationGroups.length - 1 ? 14 : 18 }}>
+                <p style={stateHeading}>{group.state}</p>
+                <ul style={{ listStyle: "none", padding: "0 0 0 10px", margin: 0 }}>
+                  {group.links.map((m) => (
+                    <li
+                      key={m.href}
+                      style={{ marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}
                     >
-                      {m.label}
-                    </span>
-                  </Link>
+                      <span style={{ color: TEAL, fontSize: 10, lineHeight: 1 }}>●</span>
+                      <FooterLink href={m.href} label={m.label} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div style={{ paddingTop: 2, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+              <ul style={{ listStyle: "none", padding: "10px 0 0", margin: 0 }}>
+                <li style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                  <span style={{ color: TEAL, fontSize: 10, lineHeight: 1 }}>●</span>
+                  <FooterLink href="/locations" label="All Locations" />
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Resources — Reviews / Checklist / FAQ (not under Locations) */}
+          <div>
+            <h4 style={colHeading}>Resources</h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {resources.map((r) => (
+                <li key={r.href} style={{ marginBottom: 8 }}>
+                  <FooterLink href={r.href} label={r.label} />
                 </li>
               ))}
             </ul>
@@ -580,19 +611,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-                marginBottom: 14,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              Contact
-            </h4>
+            <h4 style={colHeading}>Contact</h4>
             <a
               href="tel:7252553688"
               style={{
