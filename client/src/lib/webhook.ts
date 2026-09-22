@@ -16,6 +16,7 @@ export interface LeadPayload {
   city: string;
   serviceType: string;
   bedrooms?: string;
+  notes?: string;
   sourcePage: string;
 }
 

@@ -6,7 +6,7 @@
 
 import { Navbar, Footer } from "@/components/Layout";
 import { CheckCircle, Star, Shield, Clock, Phone } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { submitLead } from "@/lib/webhook";
 
 const NAVY = "#3D5266";
@@ -39,6 +39,15 @@ export default function GetAQuote() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // Preselect service from ?service= query if present
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
+    if (service) {
+      setForm((prev) => (prev.service ? prev : { ...prev, service }));
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -50,6 +59,7 @@ export default function GetAQuote() {
         city: form.city,
         serviceType: form.service,
         bedrooms: form.bedrooms,
+        notes: form.notes,
         sourcePage: window.location.pathname,
       });
     } catch (err) {

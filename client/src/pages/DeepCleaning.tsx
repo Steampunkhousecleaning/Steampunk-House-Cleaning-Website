@@ -375,7 +375,7 @@ export default function DeepCleaning() {
                 badgeColor: TEAL,
                 items: ["Inside appliances", "Baseboards and grout", "Interior windows", "Behind fixtures", "Full reset of every room"],
                 cta: "Book a Deep Clean",
-                href: "#",
+                href: "/get-a-quote?service=Deep%20Cleaning",
                 highlight: true,
               },
               {

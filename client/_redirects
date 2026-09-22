@@ -7,5 +7,7 @@
 /commercial-cleaning  /index.html   200
 /about                /index.html   200
 /get-a-quote          /index.html   200
+/privacy              /index.html   200
+/terms                /index.html   200
 /404                  /index.html   200
 /*                    /404.html     404

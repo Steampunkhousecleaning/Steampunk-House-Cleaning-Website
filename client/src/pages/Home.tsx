@@ -947,9 +947,8 @@ export default function Home() {
           <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
             <p className="sp-body text-xs" style={{ color: "#4a6070" }}>© 2026 Steampunk Cleaning Services. All rights reserved. Licensed · Bonded · Insured.</p>
             <div className="flex items-center gap-4">
-              {["Privacy Policy", "Terms of Service"].map((link) => (
-                <a key={link} href="#" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>{link}</a>
-              ))}
+              <a href="/privacy" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Privacy Policy</a>
+              <a href="/terms" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Terms of Service</a>
             </div>
           </div>
         </div>
