@@ -18,6 +18,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Locations from "./pages/Locations";
 import LocationMetro from "./pages/LocationMetro";
+import LocationChild from "./pages/LocationChild";
 import FAQ from "./pages/FAQ";
 import Reviews from "./pages/Reviews";
 import CleaningChecklist from "./pages/CleaningChecklist";
@@ -58,6 +59,7 @@ function Router() {
         <Route path="/commercial-cleaning" component={CommercialCleaning} />
         <Route path="/about" component={AboutUs} />
         <Route path="/locations" component={Locations} />
+        <Route path="/locations/:metro/:child" component={LocationChild} />
         <Route path="/locations/:slug" component={LocationMetro} />
         <Route path="/faq" component={FAQ} />
         <Route path="/reviews" component={Reviews} />

@@ -1,17 +1,14 @@
 /**
- * LocationMetro.tsx — /locations/:slug
- * Equal-quality metro hubs for LA/OC, Las Vegas & Reno / Nevada, Sacramento.
+ * LocationNeighborhood.tsx — /locations/:metro/:city
  */
 
-import { useState, type CSSProperties } from "react";
-import { Link, useParams } from "wouter";
+import { useState } from "react";
+import { Link } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
 import { getMetroBySlug } from "@/data/locations";
-import { getNeighborhoodsForMetro } from "@/data/neighborhoods";
-import { getServiceMetrosForMetro } from "@/data/serviceMetros";
-import NotFound from "@/pages/NotFound";
+import type { Neighborhood } from "@/data/neighborhoods";
 import {
   MapPin,
   CheckCircle,
@@ -83,37 +80,37 @@ function LocalFaq({ faqs }: { faqs: { q: string; a: string }[] }) {
   );
 }
 
-export default function LocationMetro() {
-  const params = useParams<{ slug?: string }>();
-  const metro = getMetroBySlug(params.slug);
+const SERVICE_LINKS = [
+  { label: "Standard Cleaning", slug: "standard-cleaning" },
+  { label: "Deep Cleaning", slug: "deep-cleaning" },
+  { label: "Recurring Cleaning", slug: "recurring-cleaning" },
+  { label: "Move-In / Move-Out", href: "/move-in-move-out" },
+  { label: "Airbnb / STR", href: "/airbnb-cleaning" },
+  { label: "Commercial / Office", href: "/commercial-cleaning" },
+];
 
-  if (!metro) {
-    return <NotFound />;
-  }
-
-  const neighborhoods = getNeighborhoodsForMetro(metro.slug);
-  const serviceMetros = getServiceMetrosForMetro(metro.slug);
-  const neighborhoodByName = new Map(
-    neighborhoods.map((n) => [n.name.toLowerCase(), n]),
-  );
+export default function LocationNeighborhood({
+  neighborhood,
+}: {
+  neighborhood: Neighborhood;
+}) {
+  const metro = getMetroBySlug(neighborhood.metroSlug);
+  const quoteHref = `/get-a-quote?service=${encodeURIComponent("Standard Cleaning")}&city=${encodeURIComponent(neighborhood.quoteCity)}`;
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: metro.faqs.map((f) => ({
+    mainEntity: neighborhood.faqs.map((f) => ({
       "@type": "Question",
       name: f.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: f.a,
-      },
+      acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   };
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `House Cleaning in ${metro.name}`,
+    name: `House Cleaning in ${neighborhood.name}`,
     provider: {
       "@type": "HomeAndConstructionBusiness",
       name: "Steampunk House Cleaning",
@@ -121,19 +118,23 @@ export default function LocationMetro() {
       url: "https://steampunkcleaning.com",
     },
     areaServed: {
-      "@type": "AdministrativeArea",
-      name: `${metro.name}, ${metro.stateLabel}`,
+      "@type": "City",
+      name: `${neighborhood.name}, ${neighborhood.stateLabel}`,
     },
-    url: `https://steampunkcleaning.com${metro.path}`,
-    description: metro.description,
+    url: `https://steampunkcleaning.com${neighborhood.path}`,
+    description: neighborhood.description,
   };
 
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
-      <SEO title={metro.title} description={metro.description} path={metro.path} />
-      <JsonLd id={`faq-${metro.slug}`} data={faqSchema} />
-      <JsonLd id={`service-${metro.slug}`} data={serviceSchema} />
+      <SEO
+        title={neighborhood.title}
+        description={neighborhood.description}
+        path={neighborhood.path}
+      />
+      <JsonLd id={`faq-nbh-${neighborhood.slug}`} data={faqSchema} />
+      <JsonLd id={`service-nbh-${neighborhood.slug}`} data={serviceSchema} />
 
       <section
         className="hero-pt"
@@ -157,13 +158,20 @@ export default function LocationMetro() {
               fontWeight: 700,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
-              marginBottom: 20,
+              marginBottom: 16,
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
             <MapPin size={12} />
-            {metro.stateLabel} · {metro.shortName}
+            {neighborhood.stateLabel} · {neighborhood.name}
           </div>
+          {metro && (
+            <p style={{ marginBottom: 12, fontFamily: "'DM Sans', sans-serif", fontSize: 14 }}>
+              <Link href={metro.path} style={{ color: TEAL, fontWeight: 700, textDecoration: "none" }}>
+                ← {metro.shortName} locations
+              </Link>
+            </p>
+          )}
           <h1
             style={{
               fontSize: "clamp(2rem, 4vw, 3rem)",
@@ -174,8 +182,8 @@ export default function LocationMetro() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            {metro.h1}{" "}
-            <span style={{ color: TEAL }}>{metro.h1Accent}</span>
+            {neighborhood.h1}{" "}
+            <span style={{ color: TEAL }}>{neighborhood.h1Accent}</span>
           </h1>
           <p
             style={{
@@ -187,11 +195,11 @@ export default function LocationMetro() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            {metro.intro[0]}
+            {neighborhood.intro[0]}
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
             <Link
-              href="/get-a-quote"
+              href={quoteHref}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -240,20 +248,35 @@ export default function LocationMetro() {
               fontSize: 16,
               color: "#5a6e80",
               lineHeight: 1.8,
-              marginBottom: 24,
+              marginBottom: 20,
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            {metro.intro[1]}
+            {neighborhood.intro[1]}
           </p>
+          {neighborhood.localNotes.map((note) => (
+            <p
+              key={note.slice(0, 40)}
+              style={{
+                fontSize: 16,
+                color: "#5a6e80",
+                lineHeight: 1.8,
+                marginBottom: 16,
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              {note}
+            </p>
+          ))}
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
               gap: "0.75rem",
+              marginTop: 8,
             }}
           >
-            {metro.highlights.map((h) => (
+            {neighborhood.highlights.map((h) => (
               <div
                 key={h}
                 style={{
@@ -295,7 +318,7 @@ export default function LocationMetro() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Services available in {metro.shortName}
+              Cleaning services in {neighborhood.name}
             </h2>
             <p
               style={{
@@ -306,119 +329,32 @@ export default function LocationMetro() {
                 margin: "0 auto",
               }}
             >
-              Same service menu across all three markets. Pick what you need, then request a local
-              quote.
+              Local pages for top services, plus our full service menu.
             </p>
           </div>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
               gap: "1rem",
             }}
           >
-            {metro.services.map((s) => {
-              const local = serviceMetros.find((sm) => sm.serviceLabel === s.label);
-              const href = local ? local.path : s.href;
+            {SERVICE_LINKS.map((s) => {
+              const href =
+                "slug" in s && s.slug
+                  ? `/locations/${neighborhood.metroSlug}/${s.slug}`
+                  : (s as { href: string }).href;
               return (
-              <Link key={s.href} href={href}>
-                <div
-                  style={{
-                    height: "100%",
-                    backgroundColor: "#fff",
-                    border: "1.5px solid #dde9f2",
-                    borderRadius: 12,
-                    padding: "20px",
-                    cursor: "pointer",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: NAVY,
-                      marginBottom: 8,
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    }}
-                  >
-                    {s.label}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: "#5a6e80",
-                      lineHeight: 1.6,
-                      marginBottom: 12,
-                      fontFamily: "'DM Sans', sans-serif",
-                    }}
-                  >
-                    {s.blurb}
-                  </p>
-                  <span
-                    style={{
-                      fontSize: 13,
-                      fontWeight: 700,
-                      color: TEAL,
-                      fontFamily: "'DM Sans', sans-serif",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 4,
-                    }}
-                  >
-                    Learn more <ArrowRight size={14} />
-                  </span>
-                </div>
-              </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {neighborhoods.length > 0 && (
-        <section style={{ padding: "40px 0", backgroundColor: "#fff" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1.5rem" }}>
-            <div style={{ textAlign: "center", marginBottom: 24 }}>
-              <h2
-                style={{
-                  fontSize: "clamp(1.5rem, 3vw, 2.1rem)",
-                  fontWeight: 800,
-                  color: NAVY,
-                  marginBottom: 10,
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                }}
-              >
-                Featured cities in {metro.shortName}
-              </h2>
-              <p
-                style={{
-                  fontSize: 15,
-                  color: "#5a6e80",
-                  fontFamily: "'DM Sans', sans-serif",
-                  maxWidth: 560,
-                  margin: "0 auto",
-                }}
-              >
-                Deeper local pages for high-intent cities we commonly serve.
-              </p>
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: "1rem",
-              }}
-            >
-              {neighborhoods.map((n) => (
-                <Link key={n.path} href={n.path}>
+                <Link key={s.label} href={href}>
                   <div
                     style={{
-                      backgroundColor: "#f7fbff",
+                      height: "100%",
+                      backgroundColor: "#fff",
                       border: "1.5px solid #dde9f2",
                       borderRadius: 12,
-                      padding: "18px 20px",
+                      padding: "20px",
                       cursor: "pointer",
+                      boxSizing: "border-box",
                     }}
                   >
                     <h3
@@ -426,11 +362,11 @@ export default function LocationMetro() {
                         fontSize: 16,
                         fontWeight: 700,
                         color: NAVY,
-                        marginBottom: 6,
+                        marginBottom: 8,
                         fontFamily: "'Plus Jakarta Sans', sans-serif",
                       }}
                     >
-                      {n.name}
+                      {s.label}
                     </h3>
                     <span
                       style={{
@@ -443,88 +379,17 @@ export default function LocationMetro() {
                         gap: 4,
                       }}
                     >
-                      {n.name} cleaning <ArrowRight size={14} />
+                      Learn more <ArrowRight size={14} />
                     </span>
                   </div>
                 </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <section style={{ padding: "40px 0", backgroundColor: neighborhoods.length ? "#f7fbff" : "#fff" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1.5rem" }}>
-          <div style={{ textAlign: "center", marginBottom: 24 }}>
-            <h2
-              style={{
-                fontSize: "clamp(1.5rem, 3vw, 2.1rem)",
-                fontWeight: 800,
-                color: NAVY,
-                marginBottom: 10,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              {metro.areasHeading}
-            </h2>
-            <p
-              style={{
-                fontSize: 15,
-                color: "#5a6e80",
-                fontFamily: "'DM Sans', sans-serif",
-                maxWidth: 640,
-                margin: "0 auto",
-                lineHeight: 1.65,
-              }}
-            >
-              {metro.areasNote}
-            </p>
-          </div>
-          <ul
-            style={{
-              listStyle: "none",
-              padding: 0,
-              margin: 0,
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-              gap: "0.65rem",
-            }}
-          >
-            {metro.areas.map((area) => {
-              const nbh = neighborhoodByName.get(area.toLowerCase());
-              const itemStyle: CSSProperties = {
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-                backgroundColor: neighborhoods.length ? "#fff" : "#f7fbff",
-                border: "1px solid #dde9f2",
-                borderRadius: 8,
-                padding: "10px 12px",
-                fontSize: 14,
-                color: NAVY,
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 500,
-                textDecoration: "none",
-              };
-              return nbh ? (
-                <li key={area} style={{ listStyle: "none" }}>
-                  <Link href={nbh.path} style={itemStyle}>
-                    <span style={{ color: TEAL, fontSize: 10 }}>●</span>
-                    {area}
-                  </Link>
-                </li>
-              ) : (
-                <li key={area} style={itemStyle}>
-                  <span style={{ color: TEAL, fontSize: 10 }}>●</span>
-                  {area}
-                </li>
               );
             })}
-          </ul>
+          </div>
         </div>
       </section>
 
-      <section style={{ padding: "40px 0", backgroundColor: "#f7fbff" }}>
+      <section style={{ padding: "40px 0", backgroundColor: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 1.5rem" }}>
           <h2
             style={{
@@ -536,7 +401,7 @@ export default function LocationMetro() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            {metro.shortName} cleaning FAQs
+            {neighborhood.name} cleaning FAQs
           </h2>
           <p
             style={{
@@ -547,13 +412,13 @@ export default function LocationMetro() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            Local answers for {metro.name}. More sitewide questions on our{" "}
+            More answers on our{" "}
             <Link href="/faq" style={{ color: TEAL, fontWeight: 700 }}>
               FAQ page
             </Link>
             .
           </p>
-          <LocalFaq faqs={metro.faqs} />
+          <LocalFaq faqs={neighborhood.faqs} />
         </div>
       </section>
 
@@ -568,7 +433,7 @@ export default function LocationMetro() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Ready for a clean in {metro.shortName}?
+            Ready for a clean in {neighborhood.name}?
           </h2>
           <p
             style={{
@@ -579,12 +444,12 @@ export default function LocationMetro() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            Tell us your city, home size, and service type. We call back with a clear quote — no
-            commitment until you are ready.
+            Tell us your home size and service type. We call back with a clear quote — no commitment
+            until you are ready.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
             <Link
-              href="/get-a-quote"
+              href={quoteHref}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -600,24 +465,26 @@ export default function LocationMetro() {
             >
               Get a Free Quote
             </Link>
-            <Link
-              href="/locations"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                backgroundColor: "transparent",
-                color: "#fff",
-                padding: "14px 24px",
-                borderRadius: 8,
-                fontSize: 15,
-                fontWeight: 700,
-                textDecoration: "none",
-                border: "1.5px solid rgba(255,255,255,0.35)",
-                fontFamily: "'DM Sans', sans-serif",
-              }}
-            >
-              All locations
-            </Link>
+            {metro && (
+              <Link
+                href={metro.path}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  backgroundColor: "transparent",
+                  color: "#fff",
+                  padding: "14px 24px",
+                  borderRadius: 8,
+                  fontSize: 15,
+                  fontWeight: 700,
+                  textDecoration: "none",
+                  border: "1.5px solid rgba(255,255,255,0.35)",
+                  fontFamily: "'DM Sans', sans-serif",
+                }}
+              >
+                Back to {metro.shortName}
+              </Link>
+            )}
           </div>
         </div>
       </section>

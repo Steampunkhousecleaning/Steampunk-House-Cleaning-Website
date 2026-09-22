@@ -42,12 +42,17 @@ export default function GetAQuote() {
   const [submitError, setSubmitError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Preselect service from ?service= query if present
+  // Preselect service/city from ?service= / ?city= query if present
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const service = params.get("service");
-    if (service) {
-      setForm((prev) => (prev.service ? prev : { ...prev, service }));
+    const city = params.get("city");
+    if (service || city) {
+      setForm((prev) => ({
+        ...prev,
+        service: prev.service || service || "",
+        city: prev.city || city || "",
+      }));
     }
   }, []);
 

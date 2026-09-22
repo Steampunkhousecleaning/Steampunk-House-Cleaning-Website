@@ -455,7 +455,7 @@ export function Footer() {
 
   const markets = [
     { label: "Los Angeles / Orange County", href: "/locations/los-angeles-orange-county" },
-    { label: "Las Vegas / Nevada", href: "/locations/las-vegas-nevada" },
+    { label: "Las Vegas & Reno / Nevada", href: "/locations/las-vegas-nevada" },
     { label: "Sacramento", href: "/locations/sacramento" },
     { label: "All Locations", href: "/locations" },
     { label: "Reviews", href: "/reviews" },
@@ -496,7 +496,7 @@ export function Footer() {
                 maxWidth: 240,
               }}
             >
-              Professional house cleaning across Los Angeles, Nevada, and Sacramento.
+              Professional house cleaning across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento.
             </p>
           </div>
 

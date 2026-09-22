@@ -1,6 +1,6 @@
 /**
  * Locations.tsx — /locations hub
- * Equal-weight entry to LA/OC, Las Vegas/Nevada, and Sacramento metros.
+ * Equal-weight entry to LA/OC, Las Vegas & Reno / Nevada, and Sacramento metros.
  */
 
 import { Navbar, Footer } from "@/components/Layout";
@@ -18,8 +18,8 @@ export default function Locations() {
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
       <SEO
-        title="Service Locations | LA/OC, Las Vegas, Sacramento | Steampunk"
-        description="Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas / Nevada, and Sacramento. Explore local cleaning pages and get a free quote."
+        title="Service Locations | LA/OC, Las Vegas & Reno, Sacramento | Steampunk"
+        description="Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Explore local cleaning pages and get a free quote."
         path="/locations"
       />
 
@@ -75,8 +75,8 @@ export default function Locations() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            Steampunk House Cleaning operates across Los Angeles / Orange County, Las Vegas /
-            Nevada, and Sacramento — with the same standards, checklist discipline, and booking
+            Steampunk House Cleaning operates across Los Angeles / Orange County, Las Vegas &
+            Reno / Nevada, and Sacramento — with the same standards, checklist discipline, and booking
             process in each metro.
           </p>
         </div>

@@ -9,6 +9,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle, Star, Shield, Clock, RefreshCw, ChevronDown, ChevronUp, Repeat } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { ServiceMetroLinks } from "@/components/ServiceMetroLinks";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -256,6 +257,8 @@ export default function RecurringCleaning() {
           </div>
         </div>
       </section>
+
+      <ServiceMetroLinks serviceSlug="recurring-cleaning" serviceLabel="Recurring cleaning" />
 
       <Footer />
     </div>
