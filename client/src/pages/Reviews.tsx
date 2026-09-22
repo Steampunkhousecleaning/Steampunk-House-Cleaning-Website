@@ -33,13 +33,21 @@ function Stars({ count = 5 }: { count?: number }) {
 export default function Reviews() {
   const [metro, setMetro] = useState<MetroFilter>("all");
 
-  const filtered = useMemo(
-    () =>
+  const filtered = useMemo(() => {
+    const list =
       metro === "all"
         ? SITE_REVIEWS
-        : SITE_REVIEWS.filter((r) => r.metro === metro),
-    [metro],
-  );
+        : SITE_REVIEWS.filter((r) => r.metro === metro);
+    // Same Google quote may be tagged to multiple metros for filter depth —
+    // show each unique text once on "All".
+    if (metro !== "all") return list;
+    const seen = new Set<string>();
+    return list.filter((r) => {
+      if (seen.has(r.text)) return false;
+      seen.add(r.text);
+      return true;
+    });
+  }, [metro]);
 
   const aggregateSchema = {
     "@context": "https://schema.org",
