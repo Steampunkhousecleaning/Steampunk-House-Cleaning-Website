@@ -22,6 +22,8 @@ import LocationChild from "./pages/LocationChild";
 import FAQ from "./pages/FAQ";
 import Reviews from "./pages/Reviews";
 import CleaningChecklist from "./pages/CleaningChecklist";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 // Scroll to top on every route change
 function ScrollToTop() {
@@ -64,6 +66,8 @@ function Router() {
         <Route path="/faq" component={FAQ} />
         <Route path="/reviews" component={Reviews} />
         <Route path="/cleaning-checklist" component={CleaningChecklist} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/blog" component={Blog} />
         <Route path="/get-a-quote" component={GetAQuote} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />

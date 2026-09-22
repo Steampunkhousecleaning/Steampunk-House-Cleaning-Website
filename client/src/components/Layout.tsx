@@ -453,6 +453,7 @@ export function Footer() {
   ];
 
   const resources = [
+    { label: "Blog", href: "/blog" },
     { label: "Reviews", href: "/reviews" },
     { label: "Cleaning Checklist", href: "/cleaning-checklist" },
     { label: "FAQ", href: "/faq" },
