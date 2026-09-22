@@ -6,6 +6,7 @@
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { METROS } from "@/data/locations";
+import { NEIGHBORHOODS } from "@/data/neighborhoods";
 import { Link } from "wouter";
 import { MapPin, ArrowRight, Phone } from "lucide-react";
 
@@ -180,6 +181,83 @@ export default function Locations() {
                     <ArrowRight size={16} />
                   </span>
                 </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      <section style={{ padding: "40px 0", backgroundColor: "#f7fbff" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1.5rem" }}>
+          <div style={{ textAlign: "center", marginBottom: 24 }}>
+            <h2
+              style={{
+                fontSize: "clamp(1.5rem, 3vw, 2rem)",
+                fontWeight: 800,
+                color: NAVY,
+                marginBottom: 10,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+              }}
+            >
+              Featured cities — including Reno
+            </h2>
+            <p
+              style={{
+                fontSize: 15,
+                color: "#5a6e80",
+                fontFamily: "'DM Sans', sans-serif",
+                maxWidth: 620,
+                margin: "0 auto",
+                lineHeight: 1.65,
+              }}
+            >
+              Equal-weight local pages across LA / OC, Las Vegas &amp; Reno / Nevada, and Sacramento.
+              Reno is part of our Nevada market — not Vegas-only.
+            </p>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: "0.75rem",
+            }}
+          >
+            {NEIGHBORHOODS.map((n) => (
+              <Link
+                key={n.path}
+                href={n.path}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 4,
+                  backgroundColor: "#fff",
+                  border: n.slug === "reno" ? `2px solid ${TEAL}` : "1.5px solid #dde9f2",
+                  borderRadius: 12,
+                  padding: "16px 18px",
+                  textDecoration: "none",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 800,
+                    color: NAVY,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  {n.name}
+                </span>
+                <span
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    color: TEAL,
+                    fontFamily: "'DM Sans', sans-serif",
+                  }}
+                >
+                  {n.stateLabel} · View page →
+                </span>
               </Link>
             ))}
           </div>

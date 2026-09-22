@@ -26,8 +26,9 @@ const services = [
 
 const cities = [
   "Los Angeles / Orange County",
-  "Nevada",
-  "Sacramento",
+  "Las Vegas, NV",
+  "Reno, NV",
+  "Sacramento, CA",
   "Other",
 ];
 

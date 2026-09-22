@@ -70,7 +70,7 @@ const METRO_SEEDS: MetroSeed[] = [
     metroSlug: "las-vegas-nevada",
     metroName: "Las Vegas, Reno & Nevada",
     shortName: "Nevada",
-    quoteCity: "Nevada",
+    quoteCity: "Las Vegas, NV",
     regionPhrase: "Las Vegas, Reno, and Nevada communities we can reach",
     accessNote:
       "Gate codes, HOA rules, and Valley vs. Northern Nevada logistics vary — share your city (Las Vegas, Henderson, Summerlin, Reno, or elsewhere) and zip on the quote form.",

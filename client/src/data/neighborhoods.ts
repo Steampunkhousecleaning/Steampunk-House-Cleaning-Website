@@ -145,7 +145,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
         a: "Yes. Summerlin sits inside our Las Vegas / Nevada service area — one of three equal markets with LA / Orange County and Sacramento.",
       },
     ],
-    quoteCity: "Nevada",
+    quoteCity: "Las Vegas, NV",
   },
   {
     metroSlug: "las-vegas-nevada",
@@ -187,7 +187,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
         a: "Most standard and recurring cleans can land within 1–3 business days. Peak weeks may need more lead time — call (725) 255-3688 if your date is firm.",
       },
     ],
-    quoteCity: "Nevada",
+    quoteCity: "Las Vegas, NV",
   },
   {
     metroSlug: "sacramento",
@@ -313,7 +313,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
         a: "Use Get a Quote and select Nevada (note Reno in the notes if helpful), or call (725) 255-3688. We confirm whether we can reach your address before you commit.",
       },
     ],
-    quoteCity: "Nevada",
+    quoteCity: "Reno, NV"
   },
 
 ];
