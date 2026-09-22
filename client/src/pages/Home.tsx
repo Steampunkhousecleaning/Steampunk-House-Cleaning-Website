@@ -796,7 +796,7 @@ export default function Home() {
             <div className="animate-fade-up">
               <img
                 src={FOUNDERS}
-                alt="Ryan Ng and Daniel Huynh, Steampunk Cleaning founders"
+                alt="Ryan and Daniel, Steampunk Cleaning founders"
                 width={2400}
                 height={1792}
                 loading="lazy"
@@ -805,7 +805,7 @@ export default function Home() {
                 style={{ maxHeight: "480px" }}
               />
               <div className="mt-4 text-center">
-                <p className="sp-body text-sm font-medium" style={{ color: NAVY }}>Ryan Ng & Daniel Huynh</p>
+                <p className="sp-body text-sm font-medium" style={{ color: NAVY }}>Ryan & Daniel</p>
                 <p className="sp-body text-xs" style={{ color: MUTED }}>Co-founders, Steampunk Cleaning Services</p>
               </div>
             </div>
