@@ -1,72 +1,19 @@
 [build]
-  command = "vite build"
+  # Vite client build + headless prerender of SEO routes into dist/public
+  command = "pnpm exec puppeteer browsers install chrome && vite build && node scripts/prerender.mjs"
   publish = "dist/public"
 
 [build.environment]
   NODE_VERSION = "20"
+  # Ensure puppeteer can install/use Chrome during Netlify builds
+  PUPPETEER_CACHE_DIR = "/opt/buildhome/.cache/puppeteer"
 
-# Existing static files (robots.txt, sitemap.xml, assets) are served as-is.
-# Only known SPA routes rewrite to index.html with 200; unknown paths get a real 404.
-
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/standard-cleaning"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/deep-cleaning"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/recurring-cleaning"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/move-in-move-out"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/airbnb-cleaning"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/commercial-cleaning"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/about"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/get-a-quote"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/privacy"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/terms"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/404"
-  to = "/index.html"
-  status = 200
+# Prerender writes route HTML as pretty paths:
+#   / -> index.html
+#   /about -> about/index.html
+# Netlify serves those static files first (no force redirects).
+# Unknown paths still get a real HTTP 404 via 404.html.
+# Client-side wouter routing continues to work after JS loads.
 
 [[redirects]]
   from = "/*"

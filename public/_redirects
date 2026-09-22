@@ -1,13 +1,4 @@
-/                     /index.html   200
-/standard-cleaning    /index.html   200
-/deep-cleaning        /index.html   200
-/recurring-cleaning   /index.html   200
-/move-in-move-out     /index.html   200
-/airbnb-cleaning      /index.html   200
-/commercial-cleaning  /index.html   200
-/about                /index.html   200
-/get-a-quote          /index.html   200
-/privacy              /index.html   200
-/terms                /index.html   200
-/404                  /index.html   200
-/*                    /404.html     404
+# Prerendered routes ship as directory index.html files (e.g. /about/index.html).
+# Netlify serves those static files before evaluating redirects.
+# Only unknown paths fall through to a real HTTP 404.
+/*    /404.html   404
