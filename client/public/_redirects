@@ -1,4 +1,7 @@
-# Legacy WordPress / marketing URLs (force) — must come before the 404 fallback
+# Legacy WordPress / marketing URLs (force) — must come before the 404 fallback.
+# Do NOT 301 /about/ or /locations/ — Netlify Pretty URLs already serve
+# about/index.html and locations/index.html at both slash forms; forcing
+# /about/ → /about creates an infinite redirect loop with Pretty URLs.
 /los-angeles/                                  /locations/los-angeles-orange-county              301!
 /los-angeles                                   /locations/los-angeles-orange-county              301!
 /pasadena-ca-home-cleaning-services/           /locations/los-angeles-orange-county/pasadena     301!
@@ -7,10 +10,7 @@
 /long-beach-ca-home-cleaning-services          /locations/los-angeles-orange-county/long-beach   301!
 /long-beach-ca-house-cleaning-services/        /locations/los-angeles-orange-county/long-beach   301!
 /long-beach-ca-house-cleaning-services         /locations/los-angeles-orange-county/long-beach   301!
-/locations/                                    /locations                                       301!
-/about/                                        /about                                           301!
 
 # Prerendered routes ship as directory index.html files (e.g. /about/index.html).
-# Netlify serves those static files before evaluating redirects.
 # Only unknown paths fall through to a real HTTP 404.
 /*    /404.html   404
