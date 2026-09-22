@@ -1,6 +1,6 @@
 /**
  * Locations.tsx — /locations hub
- * Equal-weight entry to LA/OC, Las Vegas & Reno / Nevada, and Sacramento metros.
+ * Equal-weight entry to metros, grouped by California and Nevada.
  */
 
 import { Navbar, Footer } from "@/components/Layout";
@@ -85,105 +85,115 @@ export default function Locations() {
 
       <section style={{ padding: "48px 0", backgroundColor: "#fff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1.5rem" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "1.25rem",
-            }}
-          >
-            {METROS.map((metro) => (
-              <Link key={metro.slug} href={metro.path}>
-                <div
+          {(["California", "Nevada"] as const).map((state) => {
+            const metros = METROS.filter((m) => m.stateLabel === state);
+            if (metros.length === 0) return null;
+            return (
+              <div key={state} style={{ marginBottom: 40 }}>
+                <p
                   style={{
-                    height: "100%",
-                    backgroundColor: "#f7fbff",
-                    border: "1.5px solid #dde9f2",
-                    borderRadius: 16,
-                    padding: "28px 24px",
-                    cursor: "pointer",
-                    transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s",
-                    boxSizing: "border-box",
-                  }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget as HTMLDivElement;
-                    el.style.borderColor = TEAL;
-                    el.style.boxShadow = "0 8px 24px rgba(26,158,143,0.12)";
-                    el.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget as HTMLDivElement;
-                    el.style.borderColor = "#dde9f2";
-                    el.style.boxShadow = "none";
-                    el.style.transform = "translateY(0)";
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "rgba(61,82,102,0.55)",
+                    marginBottom: 14,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  <div
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 10,
-                      backgroundColor: ICE,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: NAVY,
-                      marginBottom: 16,
-                    }}
-                  >
-                    <MapPin size={20} />
-                  </div>
-                  <h2
-                    style={{
-                      fontSize: 20,
-                      fontWeight: 800,
-                      color: NAVY,
-                      marginBottom: 6,
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    }}
-                  >
-                    {metro.name}
-                  </h2>
-                  <p
-                    style={{
-                      fontSize: 13,
-                      fontWeight: 600,
-                      color: TEAL,
-                      marginBottom: 12,
-                      fontFamily: "'DM Sans', sans-serif",
-                    }}
-                  >
-                    {metro.stateLabel}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: 15,
-                      color: "#5a6e80",
-                      lineHeight: 1.65,
-                      marginBottom: 18,
-                      fontFamily: "'DM Sans', sans-serif",
-                    }}
-                  >
-                    {metro.intro[0].slice(0, 140)}…
-                  </p>
-                  <span
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 6,
-                      fontSize: 14,
-                      fontWeight: 700,
-                      color: TEAL,
-                      fontFamily: "'DM Sans', sans-serif",
-                    }}
-                  >
-                    View {metro.shortName} page
-                    <ArrowRight size={16} />
-                  </span>
+                  {state}
+                </p>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                    gap: "1.25rem",
+                  }}
+                >
+                  {metros.map((metro) => (
+                    <Link key={metro.slug} href={metro.path}>
+                      <div
+                        style={{
+                          height: "100%",
+                          backgroundColor: "#f7fbff",
+                          border: "1.5px solid #dde9f2",
+                          borderRadius: 16,
+                          padding: "28px 24px",
+                          cursor: "pointer",
+                          transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s",
+                          boxSizing: "border-box",
+                        }}
+                        onMouseEnter={(e) => {
+                          const el = e.currentTarget as HTMLDivElement;
+                          el.style.borderColor = TEAL;
+                          el.style.boxShadow = "0 8px 24px rgba(26,158,143,0.12)";
+                          el.style.transform = "translateY(-2px)";
+                        }}
+                        onMouseLeave={(e) => {
+                          const el = e.currentTarget as HTMLDivElement;
+                          el.style.borderColor = "#dde9f2";
+                          el.style.boxShadow = "none";
+                          el.style.transform = "translateY(0)";
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: 44,
+                            height: 44,
+                            borderRadius: 10,
+                            backgroundColor: ICE,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: NAVY,
+                            marginBottom: 16,
+                          }}
+                        >
+                          <MapPin size={20} />
+                        </div>
+                        <h2
+                          style={{
+                            fontSize: 20,
+                            fontWeight: 800,
+                            color: NAVY,
+                            marginBottom: 10,
+                            fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          }}
+                        >
+                          {metro.name}
+                        </h2>
+                        <p
+                          style={{
+                            fontSize: 15,
+                            color: "#5a6e80",
+                            lineHeight: 1.65,
+                            marginBottom: 18,
+                            fontFamily: "'DM Sans', sans-serif",
+                          }}
+                        >
+                          {metro.intro[0].slice(0, 140)}…
+                        </p>
+                        <span
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: 6,
+                            fontSize: 14,
+                            fontWeight: 700,
+                            color: TEAL,
+                            fontFamily: "'DM Sans', sans-serif",
+                          }}
+                        >
+                          View {metro.shortName} page
+                          <ArrowRight size={16} />
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-              </Link>
-            ))}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -212,55 +222,75 @@ export default function Locations() {
                 lineHeight: 1.65,
               }}
             >
-              Equal-weight local pages across LA / OC, Las Vegas &amp; Reno / Nevada, and Sacramento.
-              Reno is part of our Nevada market — not Vegas-only.
+              Equal-weight local pages in California and Nevada. Reno is part of our Nevada market — not Vegas-only.
             </p>
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-              gap: "0.75rem",
-            }}
-          >
-            {NEIGHBORHOODS.map((n) => (
-              <Link
-                key={n.path}
-                href={n.path}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 4,
-                  backgroundColor: "#fff",
-                  border: n.slug === "reno" ? `2px solid ${TEAL}` : "1.5px solid #dde9f2",
-                  borderRadius: 12,
-                  padding: "16px 18px",
-                  textDecoration: "none",
-                }}
-              >
-                <span
+          {(["California", "Nevada"] as const).map((state) => {
+            const cities = NEIGHBORHOODS.filter((n) => n.stateLabel === state);
+            if (cities.length === 0) return null;
+            return (
+              <div key={state} style={{ marginBottom: 28 }}>
+                <p
                   style={{
-                    fontSize: 16,
-                    fontWeight: 800,
-                    color: NAVY,
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "rgba(61,82,102,0.55)",
+                    marginBottom: 12,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  {n.name}
-                </span>
-                <span
+                  {state}
+                </p>
+                <div
                   style={{
-                    fontSize: 12,
-                    fontWeight: 600,
-                    color: TEAL,
-                    fontFamily: "'DM Sans', sans-serif",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                    gap: "0.75rem",
                   }}
                 >
-                  {n.stateLabel} · View page →
-                </span>
-              </Link>
-            ))}
-          </div>
+                  {cities.map((n) => (
+                    <Link
+                      key={n.path}
+                      href={n.path}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 4,
+                        backgroundColor: "#fff",
+                        border: n.slug === "reno" ? `2px solid ${TEAL}` : "1.5px solid #dde9f2",
+                        borderRadius: 12,
+                        padding: "16px 18px",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: 16,
+                          fontWeight: 800,
+                          color: NAVY,
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        }}
+                      >
+                        {n.name}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: TEAL,
+                          fontFamily: "'DM Sans', sans-serif",
+                        }}
+                      >
+                        View page →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
