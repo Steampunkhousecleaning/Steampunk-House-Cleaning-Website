@@ -372,18 +372,18 @@ export default function Home() {
 
   // Mini review data (shown just below stats)
   const miniReviews = [
-    { name: "Jessica T.", location: "Los Angeles, CA", text: "Amazing service. Totally dependable and flexible. I don't know how I managed without them.", service: "Recurring Cleaning" },
-    { name: "Michael R.", location: "Nevada", text: "Steampunk is the first company that actually does what they say they'll do. Same quality every single visit.", service: "Standard Cleaning" },
-    { name: "Priya S.", location: "Sacramento, CA", text: "I come home on cleaning day and just exhale. Worth every penny.", service: "Bi-Weekly Recurring" },
+    { name: "Carol R.", location: "California", text: "Very happy with this cleaning service. They did a move out cleaning for us including shampooing the carpet. The realtor said they did a really good job.", service: "Move-Out Cleaning" },
+    { name: "Jennifer M.", location: "California", text: "Steampunk Cleaning was able to accommodate me with less than 24 hours notice. Crystal saved me — now it's photo ready.", service: "Move-Out Cleaning" },
+    { name: "Melanie C.", location: "California", text: "Shyanne was prompt, professional, and thoroughly cleaned my house from top to bottom. Very happy with the results.", service: "Move-Out Cleaning" },
   ];
 
   const allReviews = [
+    { name: "Carol R.", location: "California", text: "Very happy with this cleaning service. They did a move out cleaning for us including shampooing the carpet, cleaning all surfaces, refrigerator, oven etc. The realtor said they did a really good job. Happy customer.", service: "Move-Out Cleaning" },
+    { name: "Melanie C.", location: "California", text: "I highly recommend Steampunk cleaning services. Shyanne was prompt, professional, and thoroughly cleaned my house from top to bottom. The price was extremely reasonable. Very happy with the results.", service: "Move-Out Cleaning" },
+    { name: "Jennifer M.", location: "California", text: "Thank you so much Crystal for beautifying my house. Steampunk Cleaning was able to accommodate me with less than 24 hours notice. I was overwhelmed trying to get my house ready for its sales listing and Crystal saved me. Now it's photo ready.", service: "Move-Out Cleaning" },
     { name: "Jessica T.", location: "Los Angeles, CA", text: "Amazing service. They did everything I asked for and more. Totally dependable and flexible. I don't know how I managed without them. Great work, thank you guys!", service: "Recurring Cleaning" },
     { name: "Michael R.", location: "Nevada", text: "We've tried three other cleaning companies. Steampunk is the first one that actually does what they say they'll do. Same quality every single visit. That consistency is everything.", service: "Standard Cleaning" },
     { name: "Amanda K.", location: "Sacramento, CA", text: "I was skeptical because I've been burned before. But they were on time, thorough, and the communication was excellent. My kitchen looked brand new. Already booked my next clean.", service: "Deep Cleaning" },
-    { name: "David L.", location: "Los Angeles, CA", text: "As an Airbnb host, I need a team I can trust completely. Steampunk sends photos after every turnover. My cleanliness rating has been 5 stars for six months straight.", service: "Airbnb Turnover" },
-    { name: "Priya S.", location: "Sacramento, CA", text: "I work full-time and have two kids. Booking with Steampunk was the best decision I made this year. I come home on cleaning day and just exhale. Worth every penny.", service: "Bi-Weekly Recurring" },
-    { name: "Carlos M.", location: "Nevada", text: "Move-out clean was flawless. Got my full deposit back. The team was professional, fast, and thorough. I'll be using them at my new place too.", service: "Move-Out Cleaning" },
   ];
 
   return (

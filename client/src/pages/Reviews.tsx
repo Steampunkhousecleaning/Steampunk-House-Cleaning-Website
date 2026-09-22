@@ -1,6 +1,6 @@
 /**
  * Reviews.tsx — /reviews hub with metro filter chips
- * Quotes sourced only from existing site copy (see data/reviews.ts).
+ * Quotes from Google Business 5★ reviews and existing site copy (see data/reviews.ts).
  */
 
 import { useMemo, useState } from "react";

@@ -1,6 +1,7 @@
 /**
- * Customer quotes already published on the site (Home + service pages).
- * Do not invent new names or star ratings here — only reuse existing copy.
+ * Customer quotes for /reviews (and reusable elsewhere).
+ * Prefer real Google Business reviews (5★) or quotes already used on the site.
+ * Display names use first name + last initial for privacy.
  */
 
 export type MetroFilter = "all" | "la-oc" | "las-vegas" | "sacramento";
@@ -108,5 +109,37 @@ export const SITE_REVIEWS: Review[] = [
     service: "STR Turnover",
     metro: "sacramento",
     source: "AirbnbCleaning.tsx",
+  },
+  {
+    name: "Carol R.",
+    location: "California",
+    text: "Very happy with this cleaning service. They did a move out cleaning for us including shampooing the carpet, cleaning all surfaces, refrigerator, oven etc. The realtor said they did a really good job. Happy customer.",
+    service: "Move-Out Cleaning",
+    metro: "la-oc",
+    source: "Google Business (5★)",
+  },
+  {
+    name: "Melanie C.",
+    location: "California",
+    text: "I highly recommend Steampunk cleaning services. Shyanne was prompt, professional, and thoroughly cleaned my house from top to bottom. We have the move out cleaning special and the price was extremely reasonable. Very happy with the results.",
+    service: "Move-Out Cleaning",
+    metro: "la-oc",
+    source: "Google Business (5★)",
+  },
+  {
+    name: "Keefe D.",
+    location: "California",
+    text: "They did a great job with my carpet. We were really pleased with the job. Definitely would recommend.",
+    service: "Deep Cleaning",
+    metro: "la-oc",
+    source: "Google Business (5★)",
+  },
+  {
+    name: "Jennifer M.",
+    location: "California",
+    text: "Thank you so much Crystal for beautifying my house. Steampunk Cleaning was able to accommodate me with less than 24 hours notice. I was overwhelmed trying to get my house ready for its sales listing and Crystal saved me. Now it's photo ready.",
+    service: "Move-Out Cleaning",
+    metro: "la-oc",
+    source: "Google Business (5★)",
   },
 ];
