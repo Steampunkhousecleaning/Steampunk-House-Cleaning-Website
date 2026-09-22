@@ -22,6 +22,7 @@ import {
 import { useState } from "react";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import { ServiceMetroLinks } from "@/components/ServiceMetroLinks";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -852,6 +853,8 @@ export default function StandardCleaning() {
           </div>
         </div>
       </section>
+
+      <ServiceMetroLinks serviceSlug="standard-cleaning" serviceLabel="Standard cleaning" />
 
       <Footer />
     </div>
