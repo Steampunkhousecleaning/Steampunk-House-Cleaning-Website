@@ -27,6 +27,8 @@ const navLinks = [
       { label: "Commercial / Office", href: "/commercial-cleaning" },
     ],
   },
+  { label: "Locations", href: "/locations" },
+  { label: "FAQ", href: "/faq" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Reviews", href: "/#reviews" },
   { label: "About", href: "/about" },
@@ -449,7 +451,13 @@ export function Footer() {
     { label: "Commercial / Office", href: "/commercial-cleaning" },
   ];
 
-  const markets = ["Los Angeles / Orange County", "Nevada", "Sacramento"];
+  const markets = [
+    { label: "Los Angeles / Orange County", href: "/locations/los-angeles-orange-county" },
+    { label: "Las Vegas / Nevada", href: "/locations/las-vegas-nevada" },
+    { label: "Sacramento", href: "/locations/sacramento" },
+    { label: "All Locations", href: "/locations" },
+    { label: "FAQ", href: "/faq" },
+  ];
 
   return (
     <footer style={{ backgroundColor: NAVY, color: "#fff", padding: "48px 0 24px" }}>
@@ -544,11 +552,23 @@ export function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {markets.map((m) => (
-                <li key={m} style={{ marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+                <li key={m.href} style={{ marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
                   <span style={{ color: TEAL, fontSize: 10 }}>●</span>
-                  <span style={{ fontSize: 14, color: "rgba(255,255,255,0.72)", fontFamily: "'DM Sans', sans-serif" }}>
-                    {m}
-                  </span>
+                  <Link href={m.href}>
+                    <span
+                      style={{
+                        fontSize: 14,
+                        color: "rgba(255,255,255,0.72)",
+                        fontFamily: "'DM Sans', sans-serif",
+                        cursor: "pointer",
+                        transition: "color 0.2s",
+                      }}
+                      onMouseEnter={(e) => ((e.currentTarget as HTMLSpanElement).style.color = "#fff")}
+                      onMouseLeave={(e) => ((e.currentTarget as HTMLSpanElement).style.color = "rgba(255,255,255,0.72)")}
+                    >
+                      {m.label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
