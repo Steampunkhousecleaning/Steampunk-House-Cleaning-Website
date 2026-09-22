@@ -54,6 +54,16 @@
   status = 200
 
 [[redirects]]
+  from = "/privacy"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
   from = "/404"
   to = "/index.html"
   status = 200

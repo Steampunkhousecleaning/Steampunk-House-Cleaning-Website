@@ -651,19 +651,28 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Steampunk Cleaning Services. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
-            {["Privacy Policy", "Terms of Service"].map((t) => (
-              <span
-                key={t}
-                style={{
-                  fontSize: 13,
-                  color: "rgba(255,255,255,0.45)",
-                  fontFamily: "'DM Sans', sans-serif",
-                  cursor: "pointer",
-                }}
-              >
-                {t}
-              </span>
-            ))}
+            <Link
+              href="/privacy"
+              style={{
+                fontSize: 13,
+                color: "rgba(255,255,255,0.45)",
+                fontFamily: "'DM Sans', sans-serif",
+                textDecoration: "none",
+              }}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              style={{
+                fontSize: 13,
+                color: "rgba(255,255,255,0.45)",
+                fontFamily: "'DM Sans', sans-serif",
+                textDecoration: "none",
+              }}
+            >
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
