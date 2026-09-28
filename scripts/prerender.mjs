@@ -39,6 +39,7 @@ const ROUTES = [
   "/cleaning-checklist",
   "/blog",
   "/blog/house-cleaning-las-vegas-hard-water",
+  "/blog/airbnb-cleaning-irvine",
   "/get-a-quote",
   "/privacy",
   "/terms",
