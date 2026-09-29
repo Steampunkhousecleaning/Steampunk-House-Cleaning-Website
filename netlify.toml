@@ -21,43 +21,55 @@
 
 [[redirects]]
   from = "/los-angeles/"
-  to = "/locations/los-angeles-orange-county"
+  to = "/locations/los-angeles-orange-county/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/los-angeles"
-  to = "/locations/los-angeles-orange-county"
+  to = "/locations/los-angeles-orange-county/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/pasadena-ca-home-cleaning-services/"
-  to = "/locations/los-angeles-orange-county/pasadena"
+  to = "/locations/los-angeles-orange-county/pasadena/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/pasadena-ca-home-cleaning-services"
-  to = "/locations/los-angeles-orange-county/pasadena"
+  to = "/locations/los-angeles-orange-county/pasadena/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/long-beach-ca-home-cleaning-services/"
-  to = "/locations/los-angeles-orange-county/long-beach"
+  to = "/locations/los-angeles-orange-county/long-beach/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/long-beach-ca-home-cleaning-services"
-  to = "/locations/los-angeles-orange-county/long-beach"
+  to = "/locations/los-angeles-orange-county/long-beach/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/long-beach-ca-house-cleaning-services/"
-  to = "/locations/los-angeles-orange-county/long-beach"
+  to = "/locations/los-angeles-orange-county/long-beach/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reno/"
+  to = "/locations/las-vegas-nevada/reno/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reno"
+  to = "/locations/las-vegas-nevada/reno/"
   status = 301
   force = true
 
