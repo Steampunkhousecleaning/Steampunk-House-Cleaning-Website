@@ -17,7 +17,7 @@ export function PromoBadge({ variant = "note", showTerms = true }: Props) {
   if (variant === "pill") {
     return (
       <div
-        data-promo="oct15"
+        data-promo="q4-15"
         style={{
           display: "inline-block",
           backgroundColor: TEAL,
@@ -38,7 +38,7 @@ export function PromoBadge({ variant = "note", showTerms = true }: Props) {
   const dark = variant === "dark";
   return (
     <div
-      data-promo="oct15"
+      data-promo="q4-15"
       style={{
         backgroundColor: dark ? "rgba(255,255,255,0.1)" : `${TEAL}12`,
         border: dark ? "1px solid rgba(255,255,255,0.3)" : `1px solid ${TEAL}55`,
