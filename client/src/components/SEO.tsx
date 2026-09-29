@@ -52,8 +52,12 @@ export function SEO({
   ogImage = DEFAULT_OG_IMAGE,
 }: SEOProps) {
   useEffect(() => {
+    // Netlify Pretty URLs 301 /about -> /about/, so the indexable URL is the
+    // trailing-slash form. Canonical/og:url must match it (and the sitemap).
     const url =
-      path === "/" ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${path}`;
+      path === "/"
+        ? `${SITE_ORIGIN}/`
+        : `${SITE_ORIGIN}${path.replace(/\/+$/, "")}/`;
 
     document.title = title;
     upsertMeta("name", "description", description);

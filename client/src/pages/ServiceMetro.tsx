@@ -108,7 +108,7 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
       "@type": "AdministrativeArea",
       name: page.metroName,
     },
-    url: `https://steampunkcleaning.com${page.path}`,
+    url: `https://steampunkcleaning.com${page.path}/`,
     description: page.description,
   };
 
