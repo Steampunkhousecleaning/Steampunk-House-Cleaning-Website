@@ -6,6 +6,8 @@ import { Fragment, type ReactNode } from "react";
 import { Link, useParams } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
 import { PromoBadge } from "@/components/PromoBadge";
 import { getPostBySlug } from "@/data/blogPosts";
 import NotFound from "@/pages/NotFound";
@@ -103,6 +105,17 @@ export default function BlogPost() {
         title={post.metaTitle}
         description={post.metaDescription}
         path={path}
+        ogType="article"
+        publishedTime={post.date}
+        modifiedTime={post.dateModified ?? post.date}
+      />
+      <JsonLd id="blog-posting" data={blogPostingSchema(post)} />
+      <JsonLd
+        id="breadcrumb"
+        data={breadcrumbSchema([
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path },
+        ])}
       />
 
       <section

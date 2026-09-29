@@ -10,6 +10,8 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle, Star, Shield, Clock, Calendar, Camera, ChevronDown, ChevronUp, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -69,6 +71,11 @@ export default function AirbnbCleaning() {
         description="Reliable Airbnb and STR turnover cleaning in LA/OC, Nevada, and Sacramento. Guest-ready every time. Free quote."
         path="/airbnb-cleaning"
       />
+      <JsonLd
+        id="service"
+        data={serviceSchema({ path: "/airbnb-cleaning", name: "Airbnb & Short-Term Rental Cleaning", serviceType: "Airbnb and short-term rental turnover cleaning", description: "Reliable Airbnb and STR turnover cleaning in LA/OC, Nevada, and Sacramento. Guest-ready every time. Free quote." })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Airbnb & Short-Term Rental Cleaning", path: "/airbnb-cleaning" }])} />
 
       {/* Hero */}
       <section className="hero-pt" style={{ paddingBottom: 40, background: "linear-gradient(135deg, #f0f7ff 0%, #e8f4fb 100%)", borderBottom: "1px solid #dde9f2" }}>

@@ -6,6 +6,8 @@
 import { Navbar, Footer } from "@/components/Layout";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -35,6 +37,8 @@ export default function Terms() {
         description="Terms of service for Steampunk House Cleaning website and cleaning services at steampunkcleaning.com."
         path="/terms"
       />
+      <JsonLd id="webpage" data={webPageSchema({ path: "/terms", name: "Terms of Service | Steampunk House Cleaning", description: "Terms of service for Steampunk House Cleaning website and cleaning services at steampunkcleaning.com." })} />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Terms of Service", path: "/terms" }])} />
 
       <section
         className="hero-pt"

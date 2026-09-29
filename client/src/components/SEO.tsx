@@ -14,6 +14,11 @@ export type SEOProps = {
   path: string;
   noindex?: boolean;
   ogImage?: string;
+  /** Open Graph type; defaults to "website". Use "article" for blog posts. */
+  ogType?: "website" | "article";
+  /** ISO dates, only emitted when ogType is "article" */
+  publishedTime?: string;
+  modifiedTime?: string;
 };
 
 function upsertMeta(
@@ -50,6 +55,9 @@ export function SEO({
   path,
   noindex = false,
   ogImage = DEFAULT_OG_IMAGE,
+  ogType = "website",
+  publishedTime,
+  modifiedTime,
 }: SEOProps) {
   useEffect(() => {
     // Netlify Pretty URLs 301 /about -> /about/, so the indexable URL is the
@@ -66,7 +74,11 @@ export function SEO({
     upsertMeta("property", "og:title", title);
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:url", url);
-    upsertMeta("property", "og:type", "website");
+    upsertMeta("property", "og:type", ogType);
+    if (ogType === "article") {
+      if (publishedTime) upsertMeta("property", "article:published_time", publishedTime);
+      if (modifiedTime) upsertMeta("property", "article:modified_time", modifiedTime);
+    }
     upsertMeta("property", "og:image", ogImage);
     upsertMeta("property", "og:site_name", "Steampunk House Cleaning");
 
@@ -80,7 +92,7 @@ export function SEO({
       "robots",
       noindex ? "noindex, follow" : "index, follow",
     );
-  }, [title, description, path, noindex, ogImage]);
+  }, [title, description, path, noindex, ogImage, ogType, publishedTime, modifiedTime]);
 
   return null;
 }

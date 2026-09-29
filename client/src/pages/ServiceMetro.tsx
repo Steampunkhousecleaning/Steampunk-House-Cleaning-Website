@@ -9,6 +9,7 @@ import { getNeighborhood } from "@/data/neighborhoods";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
+import { BUSINESS_ID, breadcrumbSchema } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
 import type { ServiceMetro as ServiceMetroData } from "@/data/serviceMetros";
 import {
@@ -109,6 +110,7 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
     name: `${page.serviceLabel} in ${page.metroName}`,
     provider: {
       "@type": "HomeAndConstructionBusiness",
+      "@id": BUSINESS_ID,
       name: "Steampunk House Cleaning",
       telephone: "+17252553688",
       url: "https://steampunkcleaning.com",
@@ -127,6 +129,14 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
       <SEO title={page.title} description={page.description} path={page.path} />
       <JsonLd id={`faq-sm-${page.metroSlug}-${page.serviceSlug}`} data={faqSchema} />
       <JsonLd id={`service-sm-${page.metroSlug}-${page.serviceSlug}`} data={serviceSchema} />
+      <JsonLd
+        id={`breadcrumb-sm-${page.metroSlug}-${page.serviceSlug}`}
+        data={breadcrumbSchema([
+          { name: "Locations", path: "/locations" },
+          ...(metro ? [{ name: metro.name, path: metro.path }] : []),
+          { name: page.serviceLabel, path: page.path },
+        ])}
+      />
 
       <section
         className="hero-pt"

@@ -7,6 +7,8 @@
 import { Navbar, Footer } from "@/components/Layout";
 import { CheckCircle, Star, Shield, Users, MapPin, Heart } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { aboutPageSchema, breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -23,6 +25,12 @@ export default function AboutUs() {
         description="Meet the founders of Steampunk House Cleaning — reliable home cleaning across Los Angeles, Orange County, Nevada, and Sacramento."
         path="/about"
       />
+      <JsonLd
+        id="about"
+        data={aboutPageSchema({ path: "/about", name: "About Us | Steampunk House Cleaning", description: "Meet the founders of Steampunk House Cleaning — reliable home cleaning across Los Angeles, Orange County, Nevada, and Sacramento." })}
+      />
+      <JsonLd id="organization" data={organizationSchema(["Ryan", "Daniel"])} />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "About Us", path: "/about" }])} />
 
       {/* Hero */}
       <section className="hero-pt" style={{ paddingBottom: 40, background: "linear-gradient(135deg, #f0f7ff 0%, #e8f4fb 100%)", borderBottom: "1px solid #dde9f2" }}>

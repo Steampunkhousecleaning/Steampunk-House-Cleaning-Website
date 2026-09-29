@@ -9,6 +9,8 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle, Star, Shield, Clock, Package, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -89,6 +91,11 @@ export default function MoveInOut() {
         description="Move-in and move-out cleaning in LA/OC, Nevada, and Sacramento. Leave or arrive to a spotless home. Get a free quote today."
         path="/move-in-move-out"
       />
+      <JsonLd
+        id="service"
+        data={serviceSchema({ path: "/move-in-move-out", name: "Move-In & Move-Out Cleaning", serviceType: "Move-in and move-out cleaning", description: "Move-in and move-out cleaning in LA/OC, Nevada, and Sacramento. Leave or arrive to a spotless home. Get a free quote today." })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Move-In & Move-Out Cleaning", path: "/move-in-move-out" }])} />
 
       {/* Hero */}
       <section className="hero-pt" style={{ paddingBottom: 40, background: "linear-gradient(135deg, #f0f7ff 0%, #e8f4fb 100%)", borderBottom: "1px solid #dde9f2" }}>

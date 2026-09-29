@@ -8,6 +8,7 @@ import { Link, useParams } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
+import { BUSINESS_ID, breadcrumbSchema } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
 import { getNeighborhoodsForMetro } from "@/data/neighborhoods";
 import { getServiceMetrosForMetro } from "@/data/serviceMetros";
@@ -116,13 +117,16 @@ export default function LocationMetro() {
     name: `House Cleaning in ${metro.name}`,
     provider: {
       "@type": "HomeAndConstructionBusiness",
+      "@id": BUSINESS_ID,
       name: "Steampunk House Cleaning",
       telephone: "+17252553688",
       url: "https://steampunkcleaning.com",
     },
     areaServed: {
       "@type": "AdministrativeArea",
-      name: `${metro.name}, ${metro.stateLabel}`,
+      name: metro.name.endsWith(metro.stateLabel)
+        ? metro.name
+        : `${metro.name}, ${metro.stateLabel}`,
     },
     url: `https://steampunkcleaning.com${metro.path}/`,
     description: metro.description,
@@ -134,6 +138,13 @@ export default function LocationMetro() {
       <SEO title={metro.title} description={metro.description} path={metro.path} />
       <JsonLd id={`faq-${metro.slug}`} data={faqSchema} />
       <JsonLd id={`service-${metro.slug}`} data={serviceSchema} />
+      <JsonLd
+        id={`breadcrumb-${metro.slug}`}
+        data={breadcrumbSchema([
+          { name: "Locations", path: "/locations" },
+          { name: metro.name, path: metro.path },
+        ])}
+      />
 
       <section
         className="hero-pt"

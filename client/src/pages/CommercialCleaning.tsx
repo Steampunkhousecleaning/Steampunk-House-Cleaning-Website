@@ -9,6 +9,8 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle, Star, Shield, Clock, Building, Users, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -68,6 +70,11 @@ export default function CommercialCleaning() {
         description="Professional commercial and office cleaning in LA/OC, Nevada, and Sacramento. Flexible schedules, vetted team. Request a free quote."
         path="/commercial-cleaning"
       />
+      <JsonLd
+        id="service"
+        data={serviceSchema({ path: "/commercial-cleaning", name: "Commercial & Office Cleaning", serviceType: "Commercial and office cleaning", description: "Professional commercial and office cleaning in LA/OC, Nevada, and Sacramento. Flexible schedules, vetted team. Request a free quote." })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Commercial & Office Cleaning", path: "/commercial-cleaning" }])} />
 
       {/* Hero */}
       <section className="hero-pt" style={{ paddingBottom: 40, background: "linear-gradient(135deg, #f0f7ff 0%, #e8f4fb 100%)", borderBottom: "1px solid #dde9f2" }}>
