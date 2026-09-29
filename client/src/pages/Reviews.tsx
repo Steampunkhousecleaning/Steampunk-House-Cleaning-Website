@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import {
   METRO_CHIPS,
   REVIEW_STATS,
@@ -72,6 +73,7 @@ export default function Reviews() {
         path="/reviews"
       />
       <JsonLd id="reviews-aggregate" data={aggregateSchema} />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Reviews", path: "/reviews" }])} />
 
       <section
         className="hero-pt"

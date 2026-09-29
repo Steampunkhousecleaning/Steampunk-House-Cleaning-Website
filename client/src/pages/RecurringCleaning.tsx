@@ -9,6 +9,8 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle, Star, Shield, Clock, RefreshCw, ChevronDown, ChevronUp, Repeat } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { ServiceMetroLinks } from "@/components/ServiceMetroLinks";
 
 const NAVY = "#3D5266";
@@ -101,6 +103,11 @@ export default function RecurringCleaning() {
         description="Weekly, bi-weekly, and monthly recurring cleaning in LA/OC, Nevada, and Sacramento. Same trusted team, same spotless results. Free quote."
         path="/recurring-cleaning"
       />
+      <JsonLd
+        id="service"
+        data={serviceSchema({ path: "/recurring-cleaning", name: "Recurring House Cleaning", serviceType: "Recurring house cleaning", description: "Weekly, bi-weekly, and monthly recurring cleaning in LA/OC, Nevada, and Sacramento. Same trusted team, same spotless results. Free quote." })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Recurring House Cleaning", path: "/recurring-cleaning" }])} />
 
       {/* Hero */}
       <section className="hero-pt" style={{ paddingBottom: 40, background: "linear-gradient(135deg, #f0f7ff 0%, #e8f4fb 100%)", borderBottom: "1px solid #dde9f2" }}>

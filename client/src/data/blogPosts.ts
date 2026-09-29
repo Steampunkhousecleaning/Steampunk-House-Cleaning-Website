@@ -23,6 +23,8 @@ export type BlogPost = {
   metaDescription: string;
   /** ISO date YYYY-MM-DD */
   date: string;
+  /** ISO date YYYY-MM-DD of the last substantive edit; falls back to `date` in JSON-LD */
+  dateModified?: string;
   metro: string;
   primaryKeyword: string;
   secondaryKeywords: string[];

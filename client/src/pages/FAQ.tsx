@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import { HelpCircle, ChevronDown, ChevronUp, Phone, ArrowRight } from "lucide-react";
 
 const NAVY = "#3D5266";
@@ -141,6 +142,7 @@ export default function FAQ() {
         path="/faq"
       />
       <JsonLd id="faq-page" data={faqSchema} />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "FAQ", path: "/faq" }])} />
 
       <section
         className="hero-pt"

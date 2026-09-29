@@ -5,6 +5,8 @@
 import { Link } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { blogSchema, breadcrumbSchema } from "@/lib/schema";
 import { blogPosts } from "@/data/blogPosts";
 import { ArrowRight, BookOpen, MapPin, Calendar } from "lucide-react";
 
@@ -30,6 +32,11 @@ export default function Blog() {
         description="Practical house cleaning guides for Las Vegas, LA/OC, Reno, and Sacramento — hard water, deep cleans, move-outs, Airbnb turnovers, and more from Steampunk House Cleaning."
         path="/blog"
       />
+      <JsonLd
+        id="blog"
+        data={blogSchema({ name: "Blog | House Cleaning Tips by Metro | Steampunk", description: "Practical house cleaning guides for Las Vegas, LA/OC, Reno, and Sacramento — hard water, deep cleans, move-outs, Airbnb turnovers, and more from Steampunk House Cleaning.", posts: blogPosts })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Blog", path: "/blog" }])} />
 
       <section
         className="hero-pt"

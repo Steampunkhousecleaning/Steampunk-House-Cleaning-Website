@@ -5,6 +5,8 @@
 
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { absUrl, breadcrumbSchema, webPageSchema } from "@/lib/schema";
 import { METROS } from "@/data/locations";
 import {
   COVERAGE_ONLY_CITIES,
@@ -30,6 +32,27 @@ export default function Locations() {
         description="Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Explore local cleaning pages and get a free quote."
         path="/locations"
       />
+      <JsonLd
+        id="webpage"
+        data={webPageSchema({
+          type: "CollectionPage",
+          path: "/locations",
+          name: "Service Locations | LA/OC, Las Vegas & Reno, Sacramento | Steampunk",
+          description: "Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Explore local cleaning pages and get a free quote.",
+          extra: {
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: METROS.map((m, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                name: m.name,
+                url: absUrl(m.path),
+              })),
+            },
+          },
+        })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Locations", path: "/locations" }])} />
 
       <section
         className="hero-pt"

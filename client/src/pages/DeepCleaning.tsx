@@ -20,6 +20,8 @@ import {
 import { useState } from "react";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { ServiceMetroLinks } from "@/components/ServiceMetroLinks";
 
 const NAVY = "#3D5266";
@@ -155,6 +157,11 @@ export default function DeepCleaning() {
         description="Thorough deep cleaning for homes in LA/OC, Nevada, and Sacramento. Baseboards, appliances, detailed bathrooms, and more. Book your free quote."
         path="/deep-cleaning"
       />
+      <JsonLd
+        id="service"
+        data={serviceSchema({ path: "/deep-cleaning", name: "Deep Cleaning", serviceType: "Deep cleaning", description: "Thorough deep cleaning for homes in LA/OC, Nevada, and Sacramento. Baseboards, appliances, detailed bathrooms, and more. Book your free quote." })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Deep Cleaning", path: "/deep-cleaning" }])} />
 
       {/* Hero */}
       <section

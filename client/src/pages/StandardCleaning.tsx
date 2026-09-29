@@ -22,6 +22,8 @@ import {
 import { useState } from "react";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { ServiceMetroLinks } from "@/components/ServiceMetroLinks";
 
 const NAVY = "#3D5266";
@@ -186,6 +188,11 @@ export default function StandardCleaning() {
         description="Reliable standard house cleaning in LA/OC, Nevada, and Sacramento. Dusting, floors, kitchen, and baths — consistent every visit. Free quote."
         path="/standard-cleaning"
       />
+      <JsonLd
+        id="service"
+        data={serviceSchema({ path: "/standard-cleaning", name: "Standard House Cleaning", serviceType: "Standard house cleaning", description: "Reliable standard house cleaning in LA/OC, Nevada, and Sacramento. Dusting, floors, kitchen, and baths — consistent every visit. Free quote." })}
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Standard House Cleaning", path: "/standard-cleaning" }])} />
 
       {/* Hero */}
       <section
