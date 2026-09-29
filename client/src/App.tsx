@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch, useLocation } from "wouter";
+import { Route, Router as WouterRouter, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -78,13 +78,27 @@ function Router() {
   );
 }
 
+/**
+ * Netlify Pretty URLs serve every page at /path/ (and 301 /path -> /path/).
+ * Render internal hrefs with the trailing slash so crawlers never hit a redirect.
+ */
+const withTrailingSlash = (href: string) => {
+  if (!href.startsWith("/")) return href;
+  const i = href.search(/[?#]/);
+  const path = i === -1 ? href : href.slice(0, i);
+  const rest = i === -1 ? "" : href.slice(i);
+  return (path.endsWith("/") ? path : `${path}/`) + rest;
+};
+
 function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <WouterRouter hrefs={withTrailingSlash}>
+            <Router />
+          </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

@@ -176,7 +176,7 @@ export default function AboutUs() {
             Takes 2 minutes to get a quote. We'll call you right away.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/get-a-quote" style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: TEAL, color: "#fff", padding: "14px 28px", borderRadius: 8, fontSize: 16, fontWeight: 700, textDecoration: "none", fontFamily: "'Plus Jakarta Sans', sans-serif", transition: "all 0.2s" }}>
+            <a href="/get-a-quote/" style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: TEAL, color: "#fff", padding: "14px 28px", borderRadius: 8, fontSize: 16, fontWeight: 700, textDecoration: "none", fontFamily: "'Plus Jakarta Sans', sans-serif", transition: "all 0.2s" }}>
               Get My Free Quote
             </a>
             <a href="tel:7252553688" style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: "transparent", color: NAVY, padding: "14px 28px", borderRadius: 8, fontSize: 16, fontWeight: 700, textDecoration: "none", fontFamily: "'Plus Jakarta Sans', sans-serif", border: "2px solid #dde9f2" }}>

@@ -708,7 +708,7 @@ export default function Home() {
           <div className="text-center max-w-2xl mx-auto mb-8 animate-fade-up">
             <div className="sp-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: TEAL }}>What our clients say</div>
             <h2 className="sp-display text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: NAVY }}>4.9 stars across 450+ verified reviews.</h2>
-            <p className="sp-body text-sm mt-2"><a href="/reviews" style={{ color: TEAL, fontWeight: 600 }}>See all customer reviews →</a></p>
+            <p className="sp-body text-sm mt-2"><a href="/reviews/" style={{ color: TEAL, fontWeight: 600 }}>See all customer reviews →</a></p>
             <div className="flex justify-center mb-2"><Stars count={5} size={22} /></div>
             <p className="sp-body text-base" style={{ color: MUTED }}>Real reviews from real homeowners across LA, Las Vegas, Reno, and Sacramento.</p>
           </div>
@@ -925,7 +925,7 @@ export default function Home() {
                 { q: "What if I'm not happy with the clean?", a: "We'll come back and make it right. No questions asked. Our satisfaction guarantee is how we've maintained a 4.9-star average across 450+ reviews." },
               ].map((faq) => <FaqItem key={faq.q} q={faq.q} a={faq.a} />)}
               <div className="mt-6 text-center">
-                <a href="/faq" className="sp-body text-sm font-semibold underline-offset-4 hover:underline" style={{ color: TEAL }}>
+                <a href="/faq/" className="sp-body text-sm font-semibold underline-offset-4 hover:underline" style={{ color: TEAL }}>
                   See all FAQs →
                 </a>
               </div>
@@ -990,7 +990,7 @@ export default function Home() {
                     { label: "Commercial / Office", path: "/commercial-cleaning" },
                   ].map(({ label, path }) => (
                   <li key={path}>
-                    <a href={path} className="sp-body text-sm transition-colors hover:text-white" style={{ color: "#8fb5c8" }}>{label}</a>
+                    <a href={`${path}/`} className="sp-body text-sm transition-colors hover:text-white" style={{ color: "#8fb5c8" }}>{label}</a>
                   </li>
                 ))}
               </ul>
@@ -1019,8 +1019,8 @@ export default function Home() {
           <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
             <p className="sp-body text-xs" style={{ color: "#4a6070" }}>© 2026 Steampunk Cleaning Services. All rights reserved. Licensed · Bonded · Insured.</p>
             <div className="flex items-center gap-4">
-              <a href="/privacy" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Privacy Policy</a>
-              <a href="/terms" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Terms of Service</a>
+              <a href="/privacy/" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Privacy Policy</a>
+              <a href="/terms/" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Terms of Service</a>
             </div>
           </div>
         </div>

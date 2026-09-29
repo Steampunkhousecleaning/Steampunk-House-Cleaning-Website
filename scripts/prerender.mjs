@@ -82,7 +82,6 @@ const ROUTES = [
   "/locations/sacramento/elk-grove",
   "/locations/sacramento/folsom",
   "/locations/sacramento/roseville",
-  "/locations/sacramento/sacramento",
   "/locations/los-angeles-orange-county/standard-cleaning",
   "/locations/los-angeles-orange-county/deep-cleaning",
   "/locations/los-angeles-orange-county/recurring-cleaning",

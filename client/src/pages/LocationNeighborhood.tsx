@@ -8,7 +8,17 @@ import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
 import { getMetroBySlug } from "@/data/locations";
-import type { Neighborhood } from "@/data/neighborhoods";
+import { getNeighborhood, type Neighborhood } from "@/data/neighborhoods";
+import { CITY_LOCAL } from "@/data/cityLocal";
+
+/** City pages that have a directly relevant blog guide (real topical match only). */
+const RELATED_GUIDE: Record<string, { href: string; label: string }> = {
+  irvine: { href: "/blog/airbnb-cleaning-irvine", label: "Airbnb cleaning in Irvine: same-day turnover checklist" },
+  "las-vegas": { href: "/blog/house-cleaning-las-vegas-hard-water", label: "Las Vegas hard water: what a deep clean fixes" },
+  henderson: { href: "/blog/house-cleaning-las-vegas-hard-water", label: "Las Vegas hard water: what a deep clean fixes" },
+  summerlin: { href: "/blog/house-cleaning-las-vegas-hard-water", label: "Las Vegas hard water: what a deep clean fixes" },
+  "green-valley": { href: "/blog/house-cleaning-las-vegas-hard-water", label: "Las Vegas hard water: what a deep clean fixes" },
+};
 import {
   MapPin,
   CheckCircle,
@@ -97,10 +107,16 @@ export default function LocationNeighborhood({
   const metro = getMetroBySlug(neighborhood.metroSlug);
   const quoteHref = `/get-a-quote?service=${encodeURIComponent("Standard Cleaning")}&city=${encodeURIComponent(neighborhood.quoteCity)}`;
 
+  const local = CITY_LOCAL[neighborhood.slug];
+  const allFaqs = local ? [local.faq, ...neighborhood.faqs] : neighborhood.faqs;
+  const nearby = (local?.nearby ?? [])
+    .map((slug) => getNeighborhood(neighborhood.metroSlug, slug))
+    .filter((n): n is Neighborhood => Boolean(n));
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: neighborhood.faqs.map((f) => ({
+    mainEntity: allFaqs.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -243,17 +259,81 @@ export default function LocationNeighborhood({
 
       <section style={{ padding: "40px 0", backgroundColor: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 1.5rem" }}>
-          <p
-            style={{
-              fontSize: 16,
-              color: "#5a6e80",
-              lineHeight: 1.8,
-              marginBottom: 20,
-              fontFamily: "'DM Sans', sans-serif",
-            }}
-          >
-            {neighborhood.intro[1]}
-          </p>
+          {local && (
+            <>
+              <p
+                style={{
+                  fontSize: 16,
+                  color: "#5a6e80",
+                  lineHeight: 1.8,
+                  marginBottom: 20,
+                  fontFamily: "'DM Sans', sans-serif",
+                }}
+              >
+                {local.detail}
+              </p>
+              <h2
+                style={{
+                  fontSize: 20,
+                  fontWeight: 800,
+                  color: NAVY,
+                  marginBottom: 10,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}
+              >
+                Neighborhoods and areas we hear from in {neighborhood.name}
+              </h2>
+              <p
+                style={{
+                  fontSize: 16,
+                  color: "#5a6e80",
+                  lineHeight: 1.8,
+                  marginBottom: 20,
+                  fontFamily: "'DM Sans', sans-serif",
+                }}
+              >
+                {local.areas.join(" · ")}. Not sure we reach your street? Add your zip to the quote form or call and we will confirm.
+              </p>
+              {RELATED_GUIDE[neighborhood.slug] && (
+                <p
+                  style={{
+                    fontSize: 15,
+                    color: "#5a6e80",
+                    lineHeight: 1.8,
+                    marginBottom: 20,
+                    fontFamily: "'DM Sans', sans-serif",
+                  }}
+                >
+                  Related guide:{" "}
+                  <Link href={RELATED_GUIDE[neighborhood.slug].href} style={{ color: TEAL, fontWeight: 700 }}>
+                    {RELATED_GUIDE[neighborhood.slug].label}
+                  </Link>
+                </p>
+              )}
+              {nearby.length > 0 && (
+                <p
+                  style={{
+                    fontSize: 15,
+                    color: "#5a6e80",
+                    lineHeight: 1.8,
+                    marginBottom: 20,
+                    fontFamily: "'DM Sans', sans-serif",
+                  }}
+                >
+                  Also serving nearby:{" "}
+                  {nearby.map((n, i) => (
+                    <span key={n.slug}>
+                      {i > 0 && ", "}
+                      <Link href={n.path} style={{ color: TEAL, fontWeight: 700 }}>
+                        {n.name}
+                      </Link>
+                    </span>
+                  ))}
+                  .
+                </p>
+              )}
+            </>
+          )}
           {neighborhood.localNotes.map((note) => (
             <p
               key={note.slice(0, 40)}
@@ -418,7 +498,7 @@ export default function LocationNeighborhood({
             </Link>
             .
           </p>
-          <LocalFaq faqs={neighborhood.faqs} />
+          <LocalFaq faqs={allFaqs} />
         </div>
       </section>
 
