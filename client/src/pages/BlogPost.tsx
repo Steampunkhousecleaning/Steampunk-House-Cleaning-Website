@@ -88,6 +88,12 @@ export default function BlogPost() {
   }
 
   const path = `/blog/${post.slug}`;
+  // Per-post CTA (set ctaHeadline/ctaBody in blogPosts.ts); generic metro fallback.
+  const ctaHeadline =
+    post.ctaHeadline ?? `Need house cleaning in ${post.metro}?`;
+  const ctaBody =
+    post.ctaBody ??
+    "Get a free quote online or call us — real humans pick up.";
 
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
@@ -302,7 +308,7 @@ export default function BlogPost() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Ready for a hard-water reset?
+            {ctaHeadline}
           </h2>
           <p
             style={{
@@ -313,7 +319,7 @@ export default function BlogPost() {
               lineHeight: 1.6,
             }}
           >
-            Get a free quote online or call us — real humans pick up.
+            {ctaBody}
           </p>
           <div
             style={{
