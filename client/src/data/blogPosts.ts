@@ -27,6 +27,10 @@ export type BlogPost = {
   primaryKeyword: string;
   secondaryKeywords: string[];
   excerpt: string;
+  /** Footer CTA H2 — topic/city specific (required for every new post) */
+  ctaHeadline: string;
+  /** Footer CTA supporting line — must point to the quote form or phone call */
+  ctaBody: string;
   body: BlogSection[];
   relatedLinks: BlogRelatedLink[];
 };
@@ -47,6 +51,9 @@ export const blogPosts: BlogPost[] = [
       "short term rental turnover Orange County",
       "STR cleaning checklist",
     ],
+    ctaHeadline: "Need a guest-ready Irvine turnover?",
+    ctaBody:
+      "Tell us your check-out and check-in times and we will quote your Airbnb or short-term rental turnover in Irvine and Orange County. Request a free quote online or call — real humans pick up.",
     excerpt:
       "Irvine Airbnb hosts need same-day, guest-ready turnovers. Here is a practical STR cleaning checklist — and when to call a local team for Airbnb cleaning in Irvine.",
     relatedLinks: [
@@ -192,6 +199,9 @@ export const blogPosts: BlogPost[] = [
       "deep cleaning Las Vegas",
       "hard water stains bathroom",
     ],
+    ctaHeadline: "Ready for a hard-water reset?",
+    ctaBody:
+      "Get a free quote online or call us — real humans pick up. We will scope your Las Vegas or Henderson bathrooms and glass and tell you what a deep clean will fix.",
     excerpt:
       "Vegas water leaves chalky rings on glass and fixtures. Here is what house cleaning for Las Vegas hard water actually fixes — and when you need a true deep clean.",
     relatedLinks: [
