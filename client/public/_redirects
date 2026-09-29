@@ -2,14 +2,18 @@
 # Do NOT 301 /about/ or /locations/ — Netlify Pretty URLs already serve
 # about/index.html and locations/index.html at both slash forms; forcing
 # /about/ → /about creates an infinite redirect loop with Pretty URLs.
-/los-angeles/                                  /locations/los-angeles-orange-county              301!
-/los-angeles                                   /locations/los-angeles-orange-county              301!
-/pasadena-ca-home-cleaning-services/           /locations/los-angeles-orange-county/pasadena     301!
-/pasadena-ca-home-cleaning-services            /locations/los-angeles-orange-county/pasadena     301!
-/long-beach-ca-home-cleaning-services/         /locations/los-angeles-orange-county/long-beach   301!
-/long-beach-ca-home-cleaning-services          /locations/los-angeles-orange-county/long-beach   301!
-/long-beach-ca-house-cleaning-services/        /locations/los-angeles-orange-county/long-beach   301!
-/long-beach-ca-house-cleaning-services         /locations/los-angeles-orange-county/long-beach   301!
+/los-angeles/                                  /locations/los-angeles-orange-county/              301!
+/los-angeles                                   /locations/los-angeles-orange-county/              301!
+/pasadena-ca-home-cleaning-services/           /locations/los-angeles-orange-county/pasadena/     301!
+/pasadena-ca-home-cleaning-services            /locations/los-angeles-orange-county/pasadena/     301!
+/long-beach-ca-home-cleaning-services/         /locations/los-angeles-orange-county/long-beach/   301!
+/long-beach-ca-home-cleaning-services          /locations/los-angeles-orange-county/long-beach/   301!
+/long-beach-ca-house-cleaning-services/        /locations/los-angeles-orange-county/long-beach/   301!
+/long-beach-ca-house-cleaning-services         /locations/los-angeles-orange-county/long-beach/   301!
+
+# Reno: previously-indexed /reno/ URL (GSC clicks) -> canonical Reno page (single hop)
+/reno/                                         /locations/las-vegas-nevada/reno/                 301!
+/reno                                          /locations/las-vegas-nevada/reno/                 301!
 
 # Duplicate of the Sacramento metro hub — consolidate
 /locations/sacramento/sacramento/   /locations/sacramento/   301!
