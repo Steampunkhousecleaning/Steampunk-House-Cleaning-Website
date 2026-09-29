@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { Navbar, Footer } from "@/components/Layout";
 import { submitLead } from "@/lib/webhook";
+import { PromoBadge } from "@/components/PromoBadge";
 import { SEO } from "@/components/SEO";
 import { JsonLd, BUSINESS_JSON_LD } from "@/components/JsonLd";
 
@@ -202,6 +203,7 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
       <div className="px-6 pt-5 pb-4" style={{ borderBottom: "1px solid #d4e8f2" }}>
         <p className="sp-display text-xl font-semibold" style={{ color: NAVY }}>Get your free quote</p>
         <p className="sp-body text-sm mt-0.5" style={{ color: MUTED }}>Takes 2 minutes. We'll call you right away.</p>
+        <div className="mt-3"><PromoBadge /></div>
       </div>
       <div className={`p-6 ${compact ? "space-y-3" : "space-y-3.5"}`}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -426,6 +428,8 @@ export default function Home() {
                 <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ backgroundColor: TEAL }} />
                 Serving LA · Orange County · Las Vegas · Reno · Sacramento
               </div>
+
+              <PromoBadge variant="pill" />
 
               {/* Headline */}
               <h1 className="sp-display text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-4" style={{ color: NAVY }}>
