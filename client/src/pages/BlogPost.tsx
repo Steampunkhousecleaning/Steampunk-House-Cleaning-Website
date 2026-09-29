@@ -6,6 +6,7 @@ import { Fragment, type ReactNode } from "react";
 import { Link, useParams } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { PromoBadge } from "@/components/PromoBadge";
 import { getPostBySlug } from "@/data/blogPosts";
 import NotFound from "@/pages/NotFound";
 import {
@@ -321,6 +322,7 @@ export default function BlogPost() {
           >
             {ctaBody}
           </p>
+          <PromoBadge variant="dark" />
           <div
             style={{
               display: "flex",

@@ -12,6 +12,8 @@
  * UI does not pretend delivery was confirmed.
  */
 
+import { getActivePromo, promoNote } from "@/lib/promo";
+
 // ─── PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE ──────────────────────────
 export const WEBHOOK_URL =
   "https://script.google.com/macros/s/AKfycbwCd_ytuGXEWsk9EfslC33IantpKArUx0sri1FXzgRgjWR3Kqy6Dea7GsMlTDacklYllQ/exec";
@@ -25,6 +27,8 @@ export interface LeadPayload {
   serviceType: string;
   bedrooms?: string;
   notes?: string;
+  /** Promo code (e.g. OCT15) when an offer is active. */
+  promo?: string;
   sourcePage: string;
 }
 
@@ -38,8 +42,16 @@ export type SubmitLeadResult = {
  * Resolves with { verified } on send; throws only if both cors and no-cors fail.
  */
 export async function submitLead(
-  payload: LeadPayload,
+  input: LeadPayload,
 ): Promise<SubmitLeadResult> {
+  const promo = getActivePromo();
+  const payload: LeadPayload = promo
+    ? {
+        ...input,
+        promo: promo.code,
+        notes: [input.notes, promoNote()].filter(Boolean).join(" | "),
+      }
+    : input;
   const body = JSON.stringify(payload);
   // text/plain avoids a CORS preflight; Apps Script still parses JSON body.
   const headers = { "Content-Type": "text/plain;charset=utf-8" };

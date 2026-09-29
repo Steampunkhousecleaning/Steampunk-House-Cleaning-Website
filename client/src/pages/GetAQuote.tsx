@@ -9,6 +9,7 @@ import { SEO } from "@/components/SEO";
 import { CheckCircle, Star, Shield, Clock, Phone, AlertCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { submitLead } from "@/lib/webhook";
+import { PromoBadge } from "@/components/PromoBadge";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -216,6 +217,7 @@ export default function GetAQuote() {
                   <p style={{ fontSize: 13, color: "#8a9baa", marginBottom: 24, fontFamily: "'DM Sans', sans-serif" }}>
                     No commitment. We'll call you within minutes.
                   </p>
+                  <PromoBadge />
 
                   {submitError && (
                     <div
