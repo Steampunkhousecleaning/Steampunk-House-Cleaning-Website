@@ -124,7 +124,7 @@ export default function LocationMetro() {
       "@type": "AdministrativeArea",
       name: `${metro.name}, ${metro.stateLabel}`,
     },
-    url: `https://steampunkcleaning.com${metro.path}`,
+    url: `https://steampunkcleaning.com${metro.path}/`,
     description: metro.description,
   };
 

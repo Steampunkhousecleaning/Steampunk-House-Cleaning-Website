@@ -121,7 +121,7 @@ export default function LocationNeighborhood({
       "@type": "City",
       name: `${neighborhood.name}, ${neighborhood.stateLabel}`,
     },
-    url: `https://steampunkcleaning.com${neighborhood.path}`,
+    url: `https://steampunkcleaning.com${neighborhood.path}/`,
     description: neighborhood.description,
   };
 

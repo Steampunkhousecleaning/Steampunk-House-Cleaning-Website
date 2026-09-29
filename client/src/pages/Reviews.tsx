@@ -53,7 +53,7 @@ export default function Reviews() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Steampunk House Cleaning",
-    url: "https://steampunkcleaning.com/reviews",
+    url: "https://steampunkcleaning.com/reviews/",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: String(REVIEW_STATS.ratingValue),
