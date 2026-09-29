@@ -4,6 +4,8 @@
 
 import { useState } from "react";
 import { Link } from "wouter";
+import { SERVICE_METRO_LOCAL } from "@/data/serviceMetroLocal";
+import { getNeighborhood } from "@/data/neighborhoods";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
@@ -84,10 +86,17 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
   const metro = getMetroBySlug(page.metroSlug);
   const quoteHref = `/get-a-quote?service=${encodeURIComponent(page.quoteService)}&city=${encodeURIComponent(page.quoteCity)}`;
 
+  const local = SERVICE_METRO_LOCAL[`${page.metroSlug}/${page.serviceSlug}`];
+  const faqs = local ? local.faqs : page.faqs;
+  const paragraphs = local ? local.paragraphs : [page.intro[1], ...page.localAngle];
+  const cityLinks = (local?.cities ?? [])
+    .map((c) => getNeighborhood(page.metroSlug, c))
+    .filter((n): n is NonNullable<typeof n> => Boolean(n));
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: page.faqs.map((f) => ({
+    mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -232,18 +241,7 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
 
       <section style={{ padding: "40px 0", backgroundColor: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 1.5rem" }}>
-          <p
-            style={{
-              fontSize: 16,
-              color: "#5a6e80",
-              lineHeight: 1.8,
-              marginBottom: 16,
-              fontFamily: "'DM Sans', sans-serif",
-            }}
-          >
-            {page.intro[1]}
-          </p>
-          {page.localAngle.map((p) => (
+          {paragraphs.map((p) => (
             <p
               key={p.slice(0, 48)}
               style={{
@@ -257,6 +255,28 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
               {p}
             </p>
           ))}
+          {cityLinks.length > 0 && (
+            <p
+              style={{
+                fontSize: 15,
+                color: "#5a6e80",
+                lineHeight: 1.8,
+                marginBottom: 16,
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              City pages:{" "}
+              {cityLinks.map((n, i) => (
+                <span key={n.slug}>
+                  {i > 0 && ", "}
+                  <Link href={n.path} style={{ color: TEAL, fontWeight: 700 }}>
+                    {n.name}
+                  </Link>
+                </span>
+              ))}
+              .
+            </p>
+          )}
           <div
             style={{
               display: "grid",
@@ -407,7 +427,7 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
             </Link>
             .
           </p>
-          <LocalFaq faqs={page.faqs} />
+          <LocalFaq faqs={faqs} />
         </div>
       </section>
 
