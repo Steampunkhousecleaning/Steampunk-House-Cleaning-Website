@@ -11,7 +11,7 @@ export type Promo = {
   /** Sent with form submissions as `promo` and appended to notes. */
   code: string;
   percentOff: number;
-  /** ISO instant; offer shows before this. Nov 1 2026 00:00 PT (PDT, UTC-7). */
+  /** ISO instant; offer shows before this. Jan 1 2027 00:00 PST (UTC-8) = Dec 31, 2026 11:59:59 PM PT + 1s. */
   endsAt: string;
   /** Optional ISO instant when the offer starts showing (null = immediately). */
   startsAt: string | null;
@@ -21,14 +21,14 @@ export type Promo = {
 };
 
 export const PROMO: Promo | null = {
-  code: "OCT15",
+  code: "Q4-15",
   percentOff: 15,
-  endsAt: "2026-11-01T07:00:00Z", // = Oct 31, 2026 11:59:59 PM PT + 1s
+  endsAt: "2027-01-01T08:00:00Z", // PST after Nov 1, 2026 (DST ends) => UTC-8
   startsAt: null,
-  shortLabel: "Book in October and save 15%",
-  blogLine: "Book in October and save 15% on your first clean.",
+  shortLabel: "Book by Dec 31 and save 15%",
+  blogLine: "Book by Dec 31 and save 15%.",
   terms:
-    "Offer for new bookings made by Oct 31, 2026. Mention it when you call or add it to your quote request.",
+    "Offer for new bookings made Oct 1 – Dec 31, 2026. Mention it when you call or add it to your quote request.",
 };
 
 export function getActivePromo(now: Date = new Date()): Promo | null {
@@ -42,5 +42,5 @@ export function getActivePromo(now: Date = new Date()): Promo | null {
 /** Text appended to lead notes so the offer is captured even if the sheet ignores `promo`. */
 export function promoNote(): string {
   const p = getActivePromo();
-  return p ? `Promo: ${p.code} (${p.percentOff}% off, new bookings by Oct 31, 2026)` : "";
+  return p ? `Promo: ${p.code} (${p.percentOff}% off, new bookings Oct 1 – Dec 31, 2026)` : "";
 }

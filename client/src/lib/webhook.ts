@@ -27,7 +27,7 @@ export interface LeadPayload {
   serviceType: string;
   bedrooms?: string;
   notes?: string;
-  /** Promo code (e.g. OCT15) when an offer is active. */
+  /** Promo code (e.g. Q4-15) when an offer is active. */
   promo?: string;
   sourcePage: string;
 }
