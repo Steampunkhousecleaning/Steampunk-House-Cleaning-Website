@@ -45,7 +45,7 @@ const PAIRS: Pair[] = [
   {
     before: "/gallery/oven-before.jpg",
     after: "/gallery/oven-after.jpg",
-    alt: "Oven interior before and after a deep clean",
+    alt: "Oven interior before and after inside-oven cleaning (add-on)",
     caption: "Oven interior — baked-on grease, stripped back to bare metal",
   },
   {

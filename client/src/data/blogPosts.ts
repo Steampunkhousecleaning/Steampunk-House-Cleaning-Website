@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
         bullets: [
           "Standard / recurring residential clean: maintains an occupied home on a weekly or biweekly cadence",
           "STR turnover: full guest-ready reset — linens, restock, trash out, photo-level presentation under a hard deadline",
-          "Deep clean: heavier detail (baseboards, inside oven/fridge, grout-level bathrooms) between stays or after long gaps",
+          "Deep clean: heavier detail (baseboards, inside the fridge, grout-level bathrooms; inside oven cleaning is an add-on) between stays or after long gaps",
         ],
       },
       {

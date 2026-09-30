@@ -18,7 +18,6 @@ const SKY = "#72B5D3";
 const ICE = "#B5E1F2";
 
 const checklist = [
-  "Inside oven, racks, and broiler",
   "Inside refrigerator and freezer (defrosted)",
   "Inside all cabinets and drawers",
   "Inside microwave",
@@ -56,8 +55,8 @@ const faqs = [
     a: "They're the same service. Move-out is done before you hand over the keys to your landlord. Move-in is done before you unpack in your new place — so your new home meets your standards, not the last tenant's.",
   },
   {
-    q: "Do you clean inside appliances?",
-    a: "Yes. Inside oven, refrigerator, microwave, and all cabinets are included as standard in every move-in/move-out clean.",
+    q: "Do you clean inside the fridge, microwave, and oven?",
+    a: "Inside the refrigerator, microwave, and all cabinets are included as standard in every move-in/move-out clean. Inside oven cleaning is not included; it is available as an add-on. Just ask when you request your quote.",
   },
   {
     q: "How long does it take?",
@@ -111,14 +110,14 @@ export default function MoveInOut() {
                 <span style={{ color: TEAL }}>Walk into a clean start.</span>
               </h1>
               <p style={{ fontSize: 18, color: "#4a5e6e", lineHeight: 1.7, marginBottom: 28, fontFamily: "'DM Sans', sans-serif", maxWidth: 520 }}>
-                Moving is already stressful. The cleaning shouldn't be. We clean to the standard your landlord expects — inside appliances, baseboards, grout, every corner — so you can focus on the move, not the mop.
+                Moving is already stressful. The cleaning shouldn't be. We clean to the standard your landlord expects — inside the fridge and microwave, baseboards, grout, every corner — so you can focus on the move, not the mop.
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
                 {[
                   { icon: <Shield size={15} />, text: "Landlord-Standard Clean" },
                   { icon: <Star size={15} fill={TEAL} />, text: "4.9 Stars / 450+ Reviews" },
-                  { icon: <CheckCircle size={15} />, text: "Inside Appliances Included" },
+                  { icon: <CheckCircle size={15} />, text: "Inside Fridge & Microwave Included" },
                   { icon: <Clock size={15} />, text: "Fast Scheduling" },
                 ].map((b, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, backgroundColor: "#fff", border: "1.5px solid #dde9f2", borderRadius: 8, padding: "7px 13px", fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: "'DM Sans', sans-serif" }}>
@@ -181,7 +180,7 @@ export default function MoveInOut() {
               Everything included in every move-in/out clean
             </h2>
             <p style={{ fontSize: 16, color: "#5a6e80", fontFamily: "'DM Sans', sans-serif", maxWidth: 520, margin: "0 auto" }}>
-              This is the full-scope clean. No add-ons required.
+              This is the full-scope clean. Inside oven cleaning is available as an add-on.
             </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "0.75rem", maxWidth: 900, margin: "0 auto" }}>

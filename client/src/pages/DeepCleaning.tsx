@@ -31,7 +31,6 @@ const ICE = "#B5E1F2";
 
 const checklist = {
   "Kitchen (Extended)": [
-    "Clean inside oven, including racks and grates",
     "Clean inside microwave",
     "Clean inside refrigerator (shelves and drawers)",
     "Degrease stovetop and range hood",
@@ -70,8 +69,8 @@ const faqs = [
     a: "Book a deep clean if: you're hiring a cleaning service for the first time, you haven't had a professional clean in 3+ months, you're doing a seasonal refresh, you're preparing for guests or a special event, or you're an STR host refreshing between long-stay guests. After a deep clean, most clients switch to recurring standard cleaning to maintain the standard.",
   },
   {
-    q: "Do I need to empty the fridge and oven before the clean?",
-    a: "For the oven, please remove any large debris or burnt food beforehand. For the refrigerator, remove all food items so the cleaner can wipe down all shelves and drawers properly. We'll let you know exactly what to prepare when we confirm your booking.",
+    q: "Do I need to empty the fridge before the clean?",
+    a: "Yes. For the refrigerator, remove all food items so the cleaner can wipe down all shelves and drawers properly. Inside oven cleaning is not part of a deep clean; it is available as an add-on, and if you add it we'll let you know how to prepare the oven. We'll confirm exactly what to prepare when we confirm your booking.",
   },
   {
     q: "How long does a deep clean take?",
@@ -154,12 +153,12 @@ export default function DeepCleaning() {
       <Navbar />
       <SEO
         title="Deep Cleaning Services | Steampunk House Cleaning"
-        description="Thorough deep cleaning for homes in LA/OC, Nevada, and Sacramento. Baseboards, appliances, detailed bathrooms, and more. Book your free quote."
+        description="Thorough deep cleaning for homes in LA/OC, Nevada, and Sacramento. Baseboards, grout, detailed bathrooms, and more. Book your free quote."
         path="/deep-cleaning"
       />
       <JsonLd
         id="service"
-        data={serviceSchema({ path: "/deep-cleaning", name: "Deep Cleaning", serviceType: "Deep cleaning", description: "Thorough deep cleaning for homes in LA/OC, Nevada, and Sacramento. Baseboards, appliances, detailed bathrooms, and more. Book your free quote." })}
+        data={serviceSchema({ path: "/deep-cleaning", name: "Deep Cleaning", serviceType: "Deep cleaning", description: "Thorough deep cleaning for homes in LA/OC, Nevada, and Sacramento. Baseboards, grout, detailed bathrooms, and more. Book your free quote." })}
       />
       <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Deep Cleaning", path: "/deep-cleaning" }])} />
 
@@ -218,7 +217,7 @@ export default function DeepCleaning() {
                   maxWidth: 520,
                 }}
               >
-                This is where overwhelm turns into order. Inside appliances, baseboards, grout, behind fixtures — every corner, every surface, documented. This is where the mess stops.
+                This is where overwhelm turns into order. Inside the fridge and microwave, baseboards, grout, behind fixtures — every corner, every surface, documented. This is where the mess stops.
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
@@ -309,7 +308,7 @@ export default function DeepCleaning() {
             Your home didn't get this way overnight. It doesn't have to stay this way either.
           </h2>
           <p style={{ fontSize: 17, color: "#5a6e80", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.8, marginBottom: 20, maxWidth: 620, margin: "0 auto 20px" }}>
-            Life gets busy. The oven gets ignored. The grout gets darker. The baseboards collect dust you stopped noticing. A deep clean isn't a luxury — it's a reset. One afternoon, and your home feels like itself again.
+            Life gets busy. The grout gets darker. The baseboards collect dust you stopped noticing. A deep clean isn't a luxury — it's a reset. One afternoon, and your home feels like itself again.
           </p>
           <div
             style={{
@@ -387,7 +386,7 @@ export default function DeepCleaning() {
                 subtitle: "The full reset",
                 badge: "Recommended first",
                 badgeColor: TEAL,
-                items: ["Inside appliances", "Baseboards and grout", "Interior windows", "Behind fixtures", "Full reset of every room"],
+                items: ["Inside fridge and microwave", "Baseboards and grout", "Interior windows", "Behind fixtures", "Full reset of every room"],
                 cta: "Book a Deep Clean",
                 href: "/get-a-quote?service=Deep%20Cleaning",
                 highlight: true,

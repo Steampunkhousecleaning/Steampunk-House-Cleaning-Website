@@ -26,6 +26,9 @@ Rotate metros: LA/OC → Las Vegas → Reno → Sacramento → repeat.
 - Problem modifiers — hard water, desert dust, HOA / gate codes, deposit, turnover photos, pet hair, post-construction (only if you offer it)
 - Avoid ranking for pure national fluff without a metro or city
 
+## Scope accuracy (required)
+Inside-oven cleaning is an add-on, never included in standard, deep, or move-in/out cleans. Do not write "inside oven" or "inside appliances" as included in any post. See the accuracy rules in `docs/blog-published-log.md`.
+
 ## Per-post CTA (required)
 Each post needs `ctaHeadline` + `ctaBody` in `client/src/data/blogPosts.ts` matching its topic/city (see `docs/blog-published-log.md`). Suggested angles: Sacramento move-out → "Need a move-out clean that protects your deposit?"; Reno → "Looking for reliable house cleaning in Reno?"; HOA → "Need a maid service that knows your HOA rules?"
 

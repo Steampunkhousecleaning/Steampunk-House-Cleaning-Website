@@ -626,7 +626,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { title: "Standard Cleaning", desc: "Vetted cleaners, documented checklists, the same high standard on visit one and visit fifty.", tag: "Most Popular", icon: <HomeIcon className="w-6 h-6" />, copy: "When your home is handled, your head is free." },
-              { title: "Deep Cleaning", desc: "A complete reset: inside appliances, behind fixtures, baseboards, grout, every corner.", tag: "Best for First-Timers", icon: <Sparkles className="w-6 h-6" />, copy: "This is where overwhelm turns into order." },
+              { title: "Deep Cleaning", desc: "A complete reset: inside fridge and microwave, behind fixtures, baseboards, grout, every corner.", tag: "Best for First-Timers", icon: <Sparkles className="w-6 h-6" />, copy: "This is where overwhelm turns into order." },
               { title: "Recurring Cleaning", desc: "Weekly or bi-weekly. Same cleaner, same standard, zero coordination. Your home just stays clean.", tag: "Best Value", icon: <RefreshCw className="w-6 h-6" />, copy: "Stop thinking about it. It's handled." },
               { title: "Move-In / Move-Out", desc: "We work to the standard your landlord expects, so you get your deposit back and move on.", tag: "Deposit Protection", icon: <PackageOpen className="w-6 h-6" />, copy: "Pivotal moments. We don't treat them like routine jobs." },
               { title: "Airbnb / STR Turnover", desc: "We built Steampunk as hosts. We know what a 3-star cleanliness review costs. Post-clean photos on every turnover.", tag: "Host Favorite", icon: <CalendarCheck className="w-6 h-6" />, copy: "Your guests will notice. So will your reviews." },

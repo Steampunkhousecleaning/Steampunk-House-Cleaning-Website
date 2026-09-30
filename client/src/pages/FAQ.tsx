@@ -45,7 +45,7 @@ const FAQS = [
   },
   {
     q: "What's the difference between standard and deep cleaning?",
-    a: "Standard cleaning covers major surfaces, high-traffic areas, bathrooms, kitchen, and floors on a documented checklist. Deep cleaning goes further — inside appliances, baseboards, grout, and behind fixtures. First-time clients often start with a deep clean. See our Cleaning Checklist page for the full room-by-room list.",
+    a: "Standard cleaning covers major surfaces, high-traffic areas, bathrooms, kitchen, and floors on a documented checklist. Deep cleaning goes further — inside the fridge and microwave, baseboards, grout, and behind fixtures. First-time clients often start with a deep clean. See our Cleaning Checklist page for the full room-by-room list.",
   },
   {
     q: "Do you offer recurring cleaning?",

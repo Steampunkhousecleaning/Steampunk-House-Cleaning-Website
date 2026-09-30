@@ -92,7 +92,7 @@ const testimonials = [
 const faqs = [
   {
     q: "What's the difference between standard and deep cleaning?",
-    a: "Standard cleaning covers all major surfaces, high-traffic areas, bathrooms, kitchen, and floors on a documented checklist. Deep cleaning goes further: inside appliances, baseboards, grout, behind fixtures. If you're booking for the first time or haven't had a professional clean in a while, we usually recommend starting with a deep clean.",
+    a: "Standard cleaning covers all major surfaces, high-traffic areas, bathrooms, kitchen, and floors on a documented checklist. Deep cleaning goes further: inside the fridge and microwave, baseboards, grout, behind fixtures. If you're booking for the first time or haven't had a professional clean in a while, we usually recommend starting with a deep clean.",
   },
   {
     q: "Do I need to be home during the clean?",

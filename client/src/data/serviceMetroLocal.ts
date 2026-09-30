@@ -27,7 +27,7 @@ export const SERVICE_METRO_LOCAL: Record<string, ServiceMetroLocal> = {
       },
       {
         q: "What is the difference between your standard clean and a deep clean?",
-        a: "A standard clean maintains kitchens, baths, floors, and dusting on a documented checklist. A deep clean adds detail work such as baseboards, inside appliances, and built-up grime. If it has been a long time since a professional visit, start with a deep clean.",
+        a: "A standard clean maintains kitchens, baths, floors, and dusting on a documented checklist. A deep clean adds detail work such as baseboards, inside the fridge and microwave, and built-up grime. If it has been a long time since a professional visit, start with a deep clean.",
       },
     ],
     cities: ["irvine", "pasadena", "long-beach", "santa-monica"],
@@ -97,7 +97,7 @@ export const SERVICE_METRO_LOCAL: Record<string, ServiceMetroLocal> = {
   },
   "las-vegas-nevada/deep-cleaning": {
     paragraphs: [
-      "Deep cleaning in Las Vegas is often about hard water. Mineral film on shower glass, chrome, and tile grout builds up over months, and a routine wipe-down does not lift it. A deep clean puts time into those areas, along with baseboards, inside appliances, and the dust that collects on fans and vents.",
+      "Deep cleaning in Las Vegas is often about hard water. Mineral film on shower glass, chrome, and tile grout builds up over months, and a routine wipe-down does not lift it. A deep clean puts time into those areas, along with baseboards, inside the fridge and microwave, and the dust that collects on fans and vents.",
       "Some etching cannot be reversed, and we would rather tell you that up front than promise a miracle. Our Las Vegas hard-water article walks through what a deep clean can and cannot fix. In Reno and Sparks, deep cleans are more often about dust, smoke, and winter grit.",
     ],
     faqs: [
