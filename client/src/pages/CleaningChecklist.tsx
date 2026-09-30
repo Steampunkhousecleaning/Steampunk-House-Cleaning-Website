@@ -55,7 +55,6 @@ const STANDARD = {
 
 const DEEP_EXTRA = {
   "Kitchen extras": [
-    "Clean inside oven, including racks and grates",
     "Clean inside microwave",
     "Clean inside refrigerator (shelves and drawers)",
     "Degrease range hood",
@@ -84,7 +83,8 @@ const DEEP_EXTRA = {
 };
 
 const NOT_STANDARD = [
-  "Inside oven, refrigerator, or cabinets (deep clean)",
+  "Inside oven (available as an add-on)",
+  "Inside refrigerator or cabinets (deep clean)",
   "Interior windows (deep clean)",
   "Baseboards and walls (deep clean)",
   "Laundry or dishes",
@@ -368,7 +368,8 @@ export default function CleaningChecklist() {
               }}
             >
               Everything in standard, plus interiors, baseboards, and detail work. First-time
-              clients often start here.
+              clients often start here. Inside oven cleaning is not part of a deep clean; it is
+              available as an add-on.
             </p>
           </div>
           <div

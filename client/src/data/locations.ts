@@ -37,7 +37,7 @@ const sharedServices: LocationService[] = [
   {
     label: "Deep Cleaning",
     href: "/deep-cleaning",
-    blurb: "Detail work for baseboards, appliances, grout, and neglected spots.",
+    blurb: "Detail work for baseboards, grout, and neglected spots.",
   },
   {
     label: "Recurring Cleaning",
@@ -242,7 +242,7 @@ export const METROS: MetroLocation[] = [
       },
       {
         q: "Do you offer deep cleaning for older Sacramento homes?",
-        a: "Yes. Deep cleans are a good fit for homes that need baseboards, appliances, and detail work beyond a standard visit. Start there if it has been a while since a professional clean.",
+        a: "Yes. Deep cleans are a good fit for homes that need baseboards, grout, and detail work beyond a standard visit. Start there if it has been a while since a professional clean.",
       },
       {
         q: "How fast can you schedule in the Sacramento area?",

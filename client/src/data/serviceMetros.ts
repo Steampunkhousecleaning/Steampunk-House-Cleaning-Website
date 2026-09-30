@@ -123,7 +123,7 @@ function buildStandard(m: MetroSeed): ServiceMetro {
     faqs: [
       {
         q: `What does standard cleaning include in ${m.shortName}?`,
-        a: "Major surfaces, high-traffic areas, bathrooms, kitchen, dusting, vacuuming, and mopping on a documented checklist. For inside ovens, baseboards detail, or grout focus, ask about deep cleaning.",
+        a: "Major surfaces, high-traffic areas, bathrooms, kitchen, dusting, vacuuming, and mopping on a documented checklist. For baseboard detail or grout focus, ask about deep cleaning. Inside oven cleaning is available as an add-on.",
       },
       {
         q: `How soon can I book standard cleaning in ${m.metroName}?`,
@@ -149,7 +149,7 @@ function buildDeep(m: MetroSeed): ServiceMetro {
     metroName: m.metroName,
     shortName: m.shortName,
     title: `Deep Cleaning in ${m.metroName} | Steampunk House Cleaning`,
-    description: `Deep house cleaning in ${m.regionPhrase}. Detail work for baseboards, appliances, baths, and neglected spots. Free quote from Steampunk.`,
+    description: `Deep house cleaning in ${m.regionPhrase}. Detail work for baseboards, grout, baths, and neglected spots. Free quote from Steampunk.`,
     h1: "Deep cleaning in",
     h1Accent: m.metroName,
     intro: [
