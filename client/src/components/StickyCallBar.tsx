@@ -15,6 +15,7 @@ export function StickyCallBar() {
     <div className="sticky-call-bar" data-metro={metroSlugFromPath(location) ?? "main"}>
       <a
         className="sticky-call-bar__link"
+        data-ga-location="call_bar"
         href={`tel:${phone.tel}`}
         aria-label={`Call Steampunk House Cleaning at ${phone.display}`}
       >

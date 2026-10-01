@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { Navbar, Footer } from "@/components/Layout";
 import { submitLead } from "@/lib/webhook";
+import { trackLead } from "@/lib/analytics";
 import { PromoBadge } from "@/components/PromoBadge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { SEO } from "@/components/SEO";
@@ -107,6 +108,16 @@ function useCountUp(target: number, duration = 1800) {
   return { count, ref };
 }
 
+// GA4 generate_lead "service" param: human-readable label for the select option values below
+const HOME_SERVICE_LABELS: Record<string, string> = {
+  standard: "Standard Cleaning",
+  deep: "Deep Cleaning",
+  recurring: "Recurring (Weekly / Bi-weekly)",
+  move: "Move-In / Move-Out",
+  airbnb: "Airbnb / Short-Term Rental",
+  commercial: "Commercial / Office",
+};
+
 // ─── Lead Form Component ───────────────────────────────────────────────────────
 function LeadForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
@@ -129,6 +140,11 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
         serviceType: form.service,
         bedrooms: form.bedrooms,
         sourcePage: window.location.pathname,
+      });
+      trackLead({
+        formLocation: "home",
+        city: form.location,
+        service: HOME_SERVICE_LABELS[form.service] ?? form.service,
       });
     } catch (err) {
       console.error("[Webhook] Submit error:", err);

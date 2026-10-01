@@ -6,6 +6,7 @@
 import { useState } from "react";
 import { CheckCircle, Loader2, Phone } from "lucide-react";
 import { submitLead } from "@/lib/webhook";
+import { trackLead } from "@/lib/analytics";
 import { TrustStrip } from "@/components/TrustStrip";
 
 const NAVY = "#3D5266";
@@ -86,6 +87,7 @@ export function QuoteForm({ defaultService = "", defaultCity = "", compact = fal
       });
       setVerified(result.verified);
       setSubmitted(true);
+      trackLead({ city: form.city, service: form.service });
     } catch (err) {
       console.error("[Webhook] Submit error:", err);
       setSubmitError(true);

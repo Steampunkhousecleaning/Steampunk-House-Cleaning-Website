@@ -11,6 +11,7 @@ import { ORG_ID, breadcrumbSchema, webPageSchema } from "@/lib/schema";
 import { CheckCircle, Star, Shield, Clock, Phone, AlertCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { submitLead } from "@/lib/webhook";
+import { trackLead } from "@/lib/analytics";
 import { PromoBadge } from "@/components/PromoBadge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { NEIGHBORHOODS, neighborhoodQuoteCity } from "@/data/neighborhoods";
@@ -90,6 +91,7 @@ export default function GetAQuote() {
       });
       setVerified(result.verified);
       setSubmitted(true);
+      trackLead({ formLocation: "get-a-quote", city: form.city, service: form.service });
     } catch (err) {
       console.error("[Webhook] Submit error:", err);
       setSubmitError(true);
