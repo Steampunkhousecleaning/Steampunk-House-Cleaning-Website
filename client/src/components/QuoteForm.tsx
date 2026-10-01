@@ -6,12 +6,15 @@
 import { useState } from "react";
 import { CheckCircle, Loader2, Phone } from "lucide-react";
 import { submitLead } from "@/lib/webhook";
+import { TrustStrip } from "@/components/TrustStrip";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
 
 interface QuoteFormProps {
   defaultService?: string;
+  /** Pre-selected city/region, e.g. "Irvine, CA". Must match an option below. */
+  defaultCity?: string;
   compact?: boolean;
 }
 
@@ -53,12 +56,12 @@ const cities = [
   "Other",
 ];
 
-export function QuoteForm({ defaultService = "", compact = false }: QuoteFormProps) {
+export function QuoteForm({ defaultService = "", defaultCity = "", compact = false }: QuoteFormProps) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
-    city: "",
+    city: cities.includes(defaultCity) ? defaultCity : "",
     service: defaultService,
     size: "",
   });
@@ -188,6 +191,7 @@ export function QuoteForm({ defaultService = "", compact = false }: QuoteFormPro
 
   return (
     <form onSubmit={handleSubmit}>
+      <TrustStrip style={{ paddingTop: 0 }} />
       <div
         style={{
           display: "grid",

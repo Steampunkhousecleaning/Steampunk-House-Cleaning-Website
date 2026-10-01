@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PROVIDER_REF, breadcrumbSchema, locationBusinessSchema } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
 import { getNeighborhoodsForMetro } from "@/data/neighborhoods";
-import { getServiceMetrosForMetro } from "@/data/serviceMetros";
+import { getServiceMetrosForMetro, metroQuoteCity } from "@/data/serviceMetros";
 import NotFound from "@/pages/NotFound";
 import {
   MapPin,
@@ -94,6 +94,8 @@ export default function LocationMetro() {
 
   const neighborhoods = getNeighborhoodsForMetro(metro.slug);
   const serviceMetros = getServiceMetrosForMetro(metro.slug);
+  const regionCity = metroQuoteCity(metro.slug);
+  const quoteHref = regionCity ? `/get-a-quote?city=${encodeURIComponent(regionCity)}` : "/get-a-quote";
   const neighborhoodByName = new Map(
     neighborhoods.map((n) => [n.name.toLowerCase(), n]),
   );
@@ -199,7 +201,7 @@ export default function LocationMetro() {
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
             <Link
-              href="/get-a-quote"
+              href={quoteHref}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -592,7 +594,7 @@ export default function LocationMetro() {
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
             <Link
-              href="/get-a-quote"
+              href={quoteHref}
               style={{
                 display: "inline-flex",
                 alignItems: "center",

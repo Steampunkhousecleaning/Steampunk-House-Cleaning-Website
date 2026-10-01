@@ -12,6 +12,8 @@ import { CheckCircle, Star, Shield, Clock, Phone, AlertCircle } from "lucide-rea
 import { useState, useEffect } from "react";
 import { submitLead } from "@/lib/webhook";
 import { PromoBadge } from "@/components/PromoBadge";
+import { TrustStrip } from "@/components/TrustStrip";
+import { NEIGHBORHOODS, neighborhoodQuoteCity } from "@/data/neighborhoods";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -37,6 +39,17 @@ const CITIES = [
   "Other",
 ];
 
+/** Specific city options (grouped by metro) so city pages can pre-select their own city. */
+const CITY_GROUPS: { label: string; cities: string[] }[] = [
+  { label: "Los Angeles / Orange County", slug: "los-angeles-orange-county" },
+  { label: "Las Vegas & Reno / Nevada", slug: "las-vegas-nevada" },
+  { label: "Sacramento", slug: "sacramento" },
+].map((g) => ({
+  label: g.label,
+  cities: NEIGHBORHOODS.filter((n) => n.metroSlug === g.slug).map(neighborhoodQuoteCity),
+}));
+const ALL_CITY_VALUES = new Set<string>([...CITIES, ...CITY_GROUPS.flatMap((g) => g.cities)]);
+
 const BEDROOMS = ["Studio", "1 Bedroom", "2 Bedrooms", "3 Bedrooms", "4 Bedrooms", "5+ Bedrooms"];
 
 export default function GetAQuote() {
@@ -55,7 +68,7 @@ export default function GetAQuote() {
       setForm((prev) => ({
         ...prev,
         service: prev.service || service || "",
-        city: prev.city || city || "",
+        city: prev.city || (city && ALL_CITY_VALUES.has(city) ? city : ""),
       }));
     }
   }, []);
@@ -230,6 +243,7 @@ export default function GetAQuote() {
                   <p style={{ fontSize: 13, color: "#8a9baa", marginBottom: 24, fontFamily: "'DM Sans', sans-serif" }}>
                     No commitment. We'll call you within minutes.
                   </p>
+                  <TrustStrip style={{ marginTop: -12, marginBottom: 12, marginLeft: -22, marginRight: -22 }} />
                   <PromoBadge />
 
                   {submitError && (
@@ -311,7 +325,13 @@ export default function GetAQuote() {
                         onChange={e => setForm({ ...form, city: e.target.value })}
                       >
                         <option value="">Select your city</option>
-                        {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
+                        {CITIES.filter((c) => c !== "Other").map(c => <option key={c} value={c}>{c}</option>)}
+                        {CITY_GROUPS.map((g) => (
+                          <optgroup key={g.label} label={g.label}>
+                            {g.cities.filter((c) => !CITIES.includes(c)).map((c) => <option key={c} value={c}>{c}</option>)}
+                          </optgroup>
+                        ))}
+                        <option value="Other">Other</option>
                       </select>
                     </div>
                     <div>

@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Router as WouterRouter, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { StickyCallBar } from "./components/StickyCallBar";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import StandardCleaning from "./pages/StandardCleaning";
@@ -98,6 +99,7 @@ function App() {
           <Toaster />
           <WouterRouter hrefs={withTrailingSlash}>
             <Router />
+            <StickyCallBar />
           </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>

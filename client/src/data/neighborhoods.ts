@@ -1141,3 +1141,9 @@ export function getFeaturedNeighborhoods(): Neighborhood[] {
   return NEIGHBORHOODS.filter((n) => n.featured);
 }
 
+
+/** Quote-form city value for a city page, e.g. "Irvine, CA" (matches the form's city options). */
+export function neighborhoodQuoteCity(n: Pick<Neighborhood, "name" | "stateLabel">): string {
+  const st = n.stateLabel === "Nevada" ? "NV" : "CA";
+  return `${n.name}, ${st}`;
+}
