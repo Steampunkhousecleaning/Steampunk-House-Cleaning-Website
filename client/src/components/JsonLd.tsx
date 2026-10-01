@@ -47,8 +47,7 @@ export const SERVICE_AREA_SERVED = [
 
 /**
  * Homepage-only graph: WebSite + Organization (official business name).
- * "GOOGLE_MAPS_PROFILE_URL" is an intentional placeholder; the owner will
- * supply the real Google Business Profile / Maps link.
+ * sameAs: the two Google Maps profiles (Las Vegas/Nevada, LA/OC/Sacramento).
  */
 export const HOME_JSON_LD = {
   "@context": "https://schema.org",
@@ -68,7 +67,10 @@ export const HOME_JSON_LD = {
       logo: "https://steampunkcleaning.com/logo.png",
       telephone: "+1-725-255-3688",
       email: "info@steampunkhousecleaning.com",
-      sameAs: ["GOOGLE_MAPS_PROFILE_URL"],
+      sameAs: [
+        "https://www.google.com/maps/place/Steampunk+House+Cleaning/@37.8099795,-117.4496316,7z/data=!3m1!4m6!3m5!1s0x8d2c4df7c357f579:0xc7f4d451e4317a4b!8m2!3d37.8099795!4d-117.4496316!16s%2Fg%2F11y5y03lkw",
+        "https://www.google.com/maps/place/Steampunk+House+Cleaning/@36.2162789,-119.8579726,7z/data=!3m1!4m6!3m5!1s0x253fd4c9f81a325b:0xe857a2f5aa4cda2b!8m2!3d36.2162789!4d-119.8579726!16s%2Fg%2F11w813j9pr",
+      ],
     },
   ],
 } as const;
