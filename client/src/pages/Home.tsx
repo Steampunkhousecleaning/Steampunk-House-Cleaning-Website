@@ -33,6 +33,7 @@ import {
 import { Navbar, Footer } from "@/components/Layout";
 import { submitLead } from "@/lib/webhook";
 import { PromoBadge } from "@/components/PromoBadge";
+import { TrustStrip } from "@/components/TrustStrip";
 import { SEO } from "@/components/SEO";
 import { JsonLd, HOME_JSON_LD } from "@/components/JsonLd";
 
@@ -205,7 +206,8 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
         <p className="sp-body text-sm mt-0.5" style={{ color: MUTED }}>Takes 2 minutes. We'll call you right away.</p>
         <div className="mt-3"><PromoBadge /></div>
       </div>
-      <div className={`p-6 ${compact ? "space-y-3" : "space-y-3.5"}`}>
+      <div className="px-6 pt-1"><TrustStrip /></div>
+      <div className={`px-6 pb-6 pt-2 ${compact ? "space-y-3" : "space-y-3.5"}`}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="sp-body text-xs font-medium mb-1 block" style={{ color: MUTED }}>Your name *</label>

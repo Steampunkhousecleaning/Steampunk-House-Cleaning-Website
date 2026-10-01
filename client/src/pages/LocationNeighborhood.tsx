@@ -9,7 +9,7 @@ import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
 import { PROVIDER_REF, breadcrumbSchema, locationBusinessSchema } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
-import { getNeighborhood, type Neighborhood } from "@/data/neighborhoods";
+import { getNeighborhood, neighborhoodQuoteCity, type Neighborhood } from "@/data/neighborhoods";
 import { CITY_LOCAL } from "@/data/cityLocal";
 
 /** City pages that have a directly relevant blog guide (real topical match only). */
@@ -106,7 +106,7 @@ export default function LocationNeighborhood({
   neighborhood: Neighborhood;
 }) {
   const metro = getMetroBySlug(neighborhood.metroSlug);
-  const quoteHref = `/get-a-quote?service=${encodeURIComponent("Standard Cleaning")}&city=${encodeURIComponent(neighborhood.quoteCity)}`;
+  const quoteHref = `/get-a-quote?service=${encodeURIComponent("Standard Cleaning")}&city=${encodeURIComponent(neighborhoodQuoteCity(neighborhood))}`;
 
   const local = CITY_LOCAL[neighborhood.slug];
   const allFaqs = local ? [local.faq, ...neighborhood.faqs] : neighborhood.faqs;

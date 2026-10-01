@@ -257,3 +257,8 @@ export function getServiceMetrosForMetro(metroSlug: string): ServiceMetro[] {
 }
 
 export const SERVICE_METRO_SLUGS = SERVICES.map((s) => s.serviceSlug);
+
+/** Region/metro-level quote-form city value for a metro hub (not a specific city). */
+export function metroQuoteCity(metroSlug: string | undefined): string | undefined {
+  return METRO_SEEDS.find((m) => m.metroSlug === metroSlug)?.quoteCity;
+}
