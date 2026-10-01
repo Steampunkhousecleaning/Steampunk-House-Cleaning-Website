@@ -24,6 +24,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+    <!-- Google Analytics 4 (steampunkcleaning.com stream). The config call sends the first-load
+         page_view; SPA route changes are covered by GA4 Enhanced Measurement "page changes based
+         on browser history events" (see client/src/lib/analytics.ts). Custom events live there too. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZ2CGFWDZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JZ2CGFWDZR');
+    </script>
   </head>
   <body>
     <div id="root"></div>

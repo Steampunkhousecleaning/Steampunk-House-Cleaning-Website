@@ -5,6 +5,7 @@ import { Route, Router as WouterRouter, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { StickyCallBar } from "./components/StickyCallBar";
+import { trackPageView, initTelClickTracking } from "@/lib/analytics";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import StandardCleaning from "./pages/StandardCleaning";
@@ -48,6 +49,17 @@ function ScrollToTop() {
   return null;
 }
 
+// GA4: tel: click delegation (+ optional manual SPA page_view, see lib/analytics.ts).
+// Rendered AFTER <Switch> so the page's <SEO> effect has already set document.title.
+function PageViewTracker() {
+  const [location] = useLocation();
+  useEffect(() => {
+    trackPageView();
+  }, [location]);
+  useEffect(() => initTelClickTracking(), []);
+  return null;
+}
+
 function Router() {
   return (
     <>
@@ -75,6 +87,7 @@ function Router() {
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
+      <PageViewTracker />
     </>
   );
 }
