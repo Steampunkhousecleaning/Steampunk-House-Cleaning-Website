@@ -429,8 +429,6 @@ export default function Home() {
                 Serving LA · Orange County · Las Vegas · Reno · Sacramento
               </div>
 
-              <PromoBadge variant="pill" />
-
               {/* Headline */}
               <h1 className="sp-display text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-4" style={{ color: NAVY }}>
                 Your home handled.{" "}
