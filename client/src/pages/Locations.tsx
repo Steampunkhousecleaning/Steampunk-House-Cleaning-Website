@@ -28,7 +28,7 @@ export default function Locations() {
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
       <SEO
-        title="Service Locations | LA/OC, Las Vegas & Reno, Sacramento | Steampunk"
+        title="Service Locations | Steampunk House Cleaning"
         description="Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Explore local cleaning pages and get a free quote."
         path="/locations"
       />
@@ -37,7 +37,7 @@ export default function Locations() {
         data={webPageSchema({
           type: "CollectionPage",
           path: "/locations",
-          name: "Service Locations | LA/OC, Las Vegas & Reno, Sacramento | Steampunk",
+          name: "Service Locations | Steampunk House Cleaning",
           description: "Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Explore local cleaning pages and get a free quote.",
           extra: {
             mainEntity: {

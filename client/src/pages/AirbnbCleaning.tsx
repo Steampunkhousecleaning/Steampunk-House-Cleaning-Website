@@ -67,7 +67,7 @@ export default function AirbnbCleaning() {
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
       <SEO
-        title="Airbnb & Short-Term Rental Cleaning | Steampunk House Cleaning"
+        title="Airbnb & STR Turnover Cleaning | Steampunk House Cleaning"
         description="Reliable Airbnb and STR turnover cleaning in LA/OC, Nevada, and Sacramento. Guest-ready every time. Free quote."
         path="/airbnb-cleaning"
       />

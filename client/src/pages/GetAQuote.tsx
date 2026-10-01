@@ -7,7 +7,7 @@
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
-import { BUSINESS_ID, breadcrumbSchema, webPageSchema } from "@/lib/schema";
+import { ORG_ID, breadcrumbSchema, webPageSchema } from "@/lib/schema";
 import { CheckCircle, Star, Shield, Clock, Phone, AlertCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { submitLead } from "@/lib/webhook";
@@ -123,7 +123,7 @@ export default function GetAQuote() {
           path: "/get-a-quote",
           name: "Get a Free Cleaning Quote | Steampunk House Cleaning",
           description: "Request a free house cleaning quote for LA/OC, Las Vegas, Reno, or Sacramento. No commitment — we call you within minutes. Takes about 2 minutes.",
-          extra: { about: { "@id": BUSINESS_ID } },
+          extra: { about: { "@id": ORG_ID } },
         })}
       />
       <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Get a Free Quote", path: "/get-a-quote" }])} />

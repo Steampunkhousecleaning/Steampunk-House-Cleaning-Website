@@ -2,17 +2,17 @@
  * Shared JSON-LD builders (pure functions, no React).
  *
  * Entity ids used across the site:
- *  - BUSINESS_ID  (#business)     the HomeAndConstructionBusiness defined in BUSINESS_JSON_LD (home page)
- *  - ORG_ID       (#organization) the brand Organization (blog author/publisher, About page)
- *  - WEBSITE_ID   (#website)      the WebSite
+ *  - ORG_ID       (#org)          the brand Organization (defined in the home page graph; also
+ *                                 referenced by blog author/publisher, About page, Service providers,
+ *                                 and the metro-hub LocalBusiness parentOrganization)
+ *  - WEBSITE_ID   (#website)      the WebSite (defined in the home page graph)
  * Every block only states things that are visible on the page it ships on.
  * No prices/offers and no rating/review markup are produced here.
  */
-import { BUSINESS_JSON_LD } from "@/components/JsonLd";
+import { SERVICE_AREA_SERVED } from "@/components/JsonLd";
 import { SITE_ORIGIN } from "@/components/SEO";
 
-export const BUSINESS_ID = `${SITE_ORIGIN}/#business`;
-export const ORG_ID = `${SITE_ORIGIN}/#organization`;
+export const ORG_ID = `${SITE_ORIGIN}/#org`;
 export const WEBSITE_ID = `${SITE_ORIGIN}/#website`;
 export const BRAND_NAME = "Steampunk House Cleaning";
 const LOGO_URL = `${SITE_ORIGIN}/logo.png`;
@@ -24,10 +24,10 @@ export function absUrl(path: string): string {
   return `${SITE_ORIGIN}${path.replace(/\/+$/, "")}/`;
 }
 
-/** Reference to the existing LocalBusiness entity (defined on the home page). */
-const BUSINESS_REF = {
-  "@type": "HomeAndConstructionBusiness",
-  "@id": BUSINESS_ID,
+/** Service provider reference: the brand Organization defined on the home page. */
+export const PROVIDER_REF = {
+  "@type": "Organization",
+  "@id": ORG_ID,
   name: BRAND_NAME,
 } as const;
 
@@ -106,9 +106,9 @@ export function serviceSchema(opts: {
     serviceType: opts.serviceType,
     description: opts.description,
     url,
-    provider: BUSINESS_REF,
-    // Same three real markets declared on the LocalBusiness entity.
-    areaServed: BUSINESS_JSON_LD.areaServed.map((a) => ({ ...a })),
+    provider: PROVIDER_REF,
+    // The three real markets we serve.
+    areaServed: SERVICE_AREA_SERVED.map((a) => ({ ...a })),
   };
 }
 
@@ -131,13 +131,12 @@ export function organizationSchema(founders: string[]) {
     "@type": "Organization",
     "@id": ORG_ID,
     name: BRAND_NAME,
-    alternateName: "Steampunk Cleaning Services",
+    alternateName: "Steampunk Cleaning",
     url: `${SITE_ORIGIN}/`,
     logo: { "@type": "ImageObject", url: LOGO_URL },
     telephone: "+17252553688",
     email: "info@steampunkhousecleaning.com",
     founder: founders.map((name) => ({ "@type": "Person", name })),
-    subOrganization: { "@id": BUSINESS_ID },
   };
 }
 
@@ -190,5 +189,42 @@ export function blogSchema(opts: {
       url: absUrl(`/blog/${p.slug}`),
       datePublished: p.date,
     })),
+  };
+}
+
+/**
+ * One LocalBusiness block per metro hub (server-rendered into <head> by the
+ * prerender). No street address, no rating markup.
+ */
+const LOCATION_AREAS: Record<string, string[]> = {
+  "/locations/los-angeles-orange-county": [
+    "Los Angeles", "Santa Monica", "Pasadena", "Glendale", "Burbank", "Long Beach",
+    "Torrance", "Irvine", "Anaheim", "Newport Beach", "Huntington Beach",
+    "Costa Mesa", "Santa Ana",
+  ],
+  "/locations/las-vegas-nevada": [
+    "Las Vegas", "Henderson", "Summerlin", "North Las Vegas", "Paradise",
+    "Spring Valley", "Enterprise", "Boulder City",
+  ],
+  "/locations/las-vegas-nevada/reno": ["Reno", "Sparks"],
+  "/locations/sacramento": [
+    "Sacramento", "Roseville", "Elk Grove", "Folsom", "Rancho Cordova",
+    "Citrus Heights", "Carmichael", "Davis", "West Sacramento",
+  ],
+};
+
+export function locationBusinessSchema(path: string) {
+  const areaServed = LOCATION_AREAS[path.replace(/\/+$/, "")];
+  if (!areaServed) return null;
+  return {
+    "@context": CONTEXT,
+    "@type": "LocalBusiness",
+    name: BRAND_NAME,
+    url: absUrl(path),
+    telephone: "+1-725-255-3688",
+    image: LOGO_URL,
+    parentOrganization: { "@id": ORG_ID },
+    areaServed,
+    openingHours: "Mo-Sa 08:00-18:00",
   };
 }

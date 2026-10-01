@@ -184,7 +184,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Santa Monica",
     stateLabel: "California",
     featured: true,
-    title: "House Cleaning in Santa Monica, CA | Steampunk",
+    title: "House Cleaning Santa Monica, CA | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Santa Monica. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -314,7 +314,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "West Hollywood",
     stateLabel: "California",
     featured: false,
-    title: "House Cleaning in West Hollywood, CA | Steampunk",
+    title: "House Cleaning West Hollywood, CA | Steampunk House Cleaning",
     description:
       "Professional house cleaning in West Hollywood. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -444,7 +444,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Huntington Beach",
     stateLabel: "California",
     featured: true,
-    title: "House Cleaning in Huntington Beach, CA | Steampunk",
+    title: "House Cleaning Huntington Beach | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Huntington Beach. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -470,7 +470,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Newport Beach",
     stateLabel: "California",
     featured: true,
-    title: "House Cleaning in Newport Beach, CA | Steampunk",
+    title: "House Cleaning Newport Beach, CA | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Newport Beach. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -626,7 +626,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Mission Viejo",
     stateLabel: "California",
     featured: false,
-    title: "House Cleaning in Mission Viejo, CA | Steampunk",
+    title: "House Cleaning Mission Viejo, CA | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Mission Viejo. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -716,7 +716,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Summerlin",
     stateLabel: "Nevada",
     featured: true,
-    title: "House Cleaning in Summerlin, Las Vegas | Steampunk",
+    title: "House Cleaning in Summerlin, NV | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Summerlin and the Las Vegas Valley. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -750,7 +750,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "North Las Vegas",
     stateLabel: "Nevada",
     featured: true,
-    title: "House Cleaning in North Las Vegas, NV | Steampunk",
+    title: "House Cleaning in North Las Vegas | Steampunk House Cleaning",
     description:
       "Professional house cleaning in North Las Vegas and the Las Vegas Valley. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -802,7 +802,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Spring Valley",
     stateLabel: "Nevada",
     featured: false,
-    title: "House Cleaning in Spring Valley, NV | Steampunk",
+    title: "House Cleaning Spring Valley, NV | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Spring Valley and the Las Vegas Valley. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -854,7 +854,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Centennial Hills",
     stateLabel: "Nevada",
     featured: false,
-    title: "House Cleaning in Centennial Hills, NV | Steampunk",
+    title: "House Cleaning Centennial Hills | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Centennial Hills and the Las Vegas Valley. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -880,7 +880,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Green Valley",
     stateLabel: "Nevada",
     featured: false,
-    title: "House Cleaning in Green Valley, NV | Steampunk",
+    title: "House Cleaning Green Valley, NV | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Green Valley and the Las Vegas Valley. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -932,7 +932,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Boulder City",
     stateLabel: "Nevada",
     featured: false,
-    title: "House Cleaning in Boulder City, NV | Steampunk",
+    title: "House Cleaning Boulder City, NV | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Boulder City and the Las Vegas Valley. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",
@@ -958,7 +958,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Sunrise Manor",
     stateLabel: "Nevada",
     featured: false,
-    title: "House Cleaning in Sunrise Manor, NV | Steampunk",
+    title: "House Cleaning Sunrise Manor, NV | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Sunrise Manor and the Las Vegas Valley. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",

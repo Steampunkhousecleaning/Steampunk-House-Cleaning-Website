@@ -148,11 +148,11 @@ export default function CleaningChecklist() {
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
       <SEO
-        title="Cleaning Checklist | What's Included | Steampunk House Cleaning"
+        title="Cleaning Checklist | Steampunk House Cleaning"
         description="See exactly what's included in Steampunk standard and deep residential cleaning — rooms, kitchens, bathrooms, and what is not covered. Serving LA/OC, Las Vegas, and Sacramento."
         path="/cleaning-checklist"
       />
-      <JsonLd id="webpage" data={webPageSchema({ path: "/cleaning-checklist", name: "Cleaning Checklist | What's Included | Steampunk House Cleaning", description: "See exactly what's included in Steampunk standard and deep residential cleaning — rooms, kitchens, bathrooms, and what is not covered. Serving LA/OC, Las Vegas, and Sacramento." })} />
+      <JsonLd id="webpage" data={webPageSchema({ path: "/cleaning-checklist", name: "Cleaning Checklist | Steampunk House Cleaning", description: "See exactly what's included in Steampunk standard and deep residential cleaning — rooms, kitchens, bathrooms, and what is not covered. Serving LA/OC, Las Vegas, and Sacramento." })} />
       <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Cleaning Checklist", path: "/cleaning-checklist" }])} />
 
       <section
