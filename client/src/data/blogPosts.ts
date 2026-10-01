@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "How Steampunk works with OC hosts",
         paragraphs: [
-          "Steampunk House Cleaning is a local team founded by Ryan and Daniel. We serve Irvine and surrounding Orange County cities with background-checked cleaners, supplies, and a documented process. Guests and homeowners have left us roughly 450+ verified Google reviews at 4.9★ — the pattern we protect for hosts is simple: show up, follow the list, leave the unit matching the listing.",
+          "Steampunk House Cleaning is a local team founded by Ryan and Daniel. We serve Irvine and surrounding Orange County cities with background-checked cleaners, supplies, and a documented process. Guests and homeowners have left us roughly 400+ verified Google reviews at 4.9★ — the pattern we protect for hosts is simple: show up, follow the list, leave the unit matching the listing.",
           "We do not push self-serve instant booking. You tell us the property details, turnover window, and linen plan; we confirm timing and pricing on a quote. That keeps same-day expectations honest instead of overselling a calendar slot that cannot work.",
         ],
       },
