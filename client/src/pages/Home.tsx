@@ -426,7 +426,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full sp-body text-xs font-semibold tracking-wide uppercase"
                 style={{ backgroundColor: `${TEAL}15`, color: TEAL }}>
                 <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ backgroundColor: TEAL }} />
-                Serving LA · Orange County · Las Vegas · Reno · Sacramento
+                Serving California &amp; Nevada
               </div>
 
               {/* Headline */}
