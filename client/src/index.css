@@ -429,6 +429,14 @@ button {
     font-weight: 700;
     text-decoration: none;
   }
+  /* Netlify's "Powered by Netlify" badge (iframe#nl-badge-frame, injected by /.netlify/scripts/hud)
+     is position:fixed; bottom:0; right:0 via INLINE styles, so it sits on top of the right half of
+     the call bar. Keep it visible/compliant but lift it so its box starts exactly where the bar ends
+     (bar = 4px + 44px link + 4px = 52px, plus the iOS safe-area inset). !important is required to
+     beat the inline style. */
+  #nl-badge-frame {
+    bottom: calc(52px + env(safe-area-inset-bottom, 0px)) !important;
+  }
   /* Reserve room so the fixed bar never covers footer content / submit buttons */
   body {
     padding-bottom: calc(52px + env(safe-area-inset-bottom, 0px));
