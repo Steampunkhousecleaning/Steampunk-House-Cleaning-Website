@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
-import { BUSINESS_ID, breadcrumbSchema } from "@/lib/schema";
+import { PROVIDER_REF, breadcrumbSchema, locationBusinessSchema } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
 import { getNeighborhood, type Neighborhood } from "@/data/neighborhoods";
 import { CITY_LOCAL } from "@/data/cityLocal";
@@ -124,17 +124,13 @@ export default function LocationNeighborhood({
     })),
   };
 
+  const localBusiness = locationBusinessSchema(neighborhood.path);
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `House Cleaning in ${neighborhood.name}`,
-    provider: {
-      "@type": "HomeAndConstructionBusiness",
-      "@id": BUSINESS_ID,
-      name: "Steampunk House Cleaning",
-      telephone: "+17252553688",
-      url: "https://steampunkcleaning.com",
-    },
+    provider: PROVIDER_REF,
     areaServed: {
       "@type": "City",
       name: `${neighborhood.name}, ${neighborhood.stateLabel}`,
@@ -153,6 +149,7 @@ export default function LocationNeighborhood({
       />
       <JsonLd id={`faq-nbh-${neighborhood.slug}`} data={faqSchema} />
       <JsonLd id={`service-nbh-${neighborhood.slug}`} data={serviceSchema} />
+      {localBusiness && <JsonLd id={`local-business-nbh-${neighborhood.slug}`} data={localBusiness} />}
       <JsonLd
         id={`breadcrumb-nbh-${neighborhood.slug}`}
         data={breadcrumbSchema([

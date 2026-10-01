@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "Airbnb Cleaning Irvine: Same-Day Turnover Checklist for Orange County Hosts",
     metaTitle:
-      "Airbnb Cleaning Irvine | STR Turnover Checklist | Steampunk",
+      "Airbnb Cleaning Irvine, CA | Steampunk House Cleaning",
     metaDescription:
       "Airbnb cleaning Irvine hosts trust for same-day turnovers. Use this short term rental turnover Orange County checklist — then book Steampunk for guest-ready results.",
     date: "2026-09-28",
@@ -191,7 +191,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "House Cleaning Las Vegas Hard Water: How Mineral Stains Take Over — and What a Deep Clean Fixes",
     metaTitle:
-      "House Cleaning Las Vegas Hard Water | Deep Clean Stains | Steampunk",
+      "Las Vegas Hard Water Cleaning | Steampunk House Cleaning",
     metaDescription:
       "House cleaning Las Vegas hard water problems show up on showers, glass, and fixtures. Learn what deep cleaning Las Vegas teams actually remove — and when stains need more than a wipe.",
     date: "2026-09-21",

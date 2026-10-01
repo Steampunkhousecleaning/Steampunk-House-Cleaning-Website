@@ -47,6 +47,8 @@ const SERVICES = [
 type MetroSeed = {
   metroSlug: string;
   metroName: string;
+  /** Short place name used only in <title> (keeps titles under ~60 chars) */
+  titleName: string;
   shortName: string;
   quoteCity: string;
   regionPhrase: string;
@@ -58,6 +60,7 @@ const METRO_SEEDS: MetroSeed[] = [
   {
     metroSlug: "los-angeles-orange-county",
     metroName: "Los Angeles / Orange County",
+    titleName: "LA & OC",
     shortName: "LA / OC",
     quoteCity: "Los Angeles / Orange County",
     regionPhrase: "Los Angeles and Orange County",
@@ -69,6 +72,7 @@ const METRO_SEEDS: MetroSeed[] = [
   {
     metroSlug: "las-vegas-nevada",
     metroName: "Las Vegas, Reno & Nevada",
+    titleName: "Las Vegas",
     shortName: "Nevada",
     quoteCity: "Las Vegas, NV",
     regionPhrase: "Las Vegas, Reno, and Nevada communities we can reach",
@@ -80,6 +84,7 @@ const METRO_SEEDS: MetroSeed[] = [
   {
     metroSlug: "sacramento",
     metroName: "Sacramento",
+    titleName: "Sacramento",
     shortName: "Sacramento",
     quoteCity: "Sacramento, CA",
     regionPhrase: "Sacramento and nearby communities like Roseville and Elk Grove",
@@ -101,7 +106,7 @@ function buildStandard(m: MetroSeed): ServiceMetro {
     quoteCity: m.quoteCity,
     metroName: m.metroName,
     shortName: m.shortName,
-    title: `Standard House Cleaning in ${m.metroName} | Steampunk`,
+    title: `Standard Cleaning in ${m.titleName} | Steampunk House Cleaning`,
     description: `Standard house cleaning across ${m.regionPhrase}. Checklist-driven visits for kitchens, baths, and floors. Background-checked cleaners. Free quote.`,
     h1: "Standard cleaning in",
     h1Accent: m.metroName,
@@ -148,7 +153,7 @@ function buildDeep(m: MetroSeed): ServiceMetro {
     quoteCity: m.quoteCity,
     metroName: m.metroName,
     shortName: m.shortName,
-    title: `Deep Cleaning in ${m.metroName} | Steampunk House Cleaning`,
+    title: `Deep Cleaning in ${m.titleName} | Steampunk House Cleaning`,
     description: `Deep house cleaning in ${m.regionPhrase}. Detail work for baseboards, grout, baths, and neglected spots. Free quote from Steampunk.`,
     h1: "Deep cleaning in",
     h1Accent: m.metroName,
@@ -195,7 +200,7 @@ function buildRecurring(m: MetroSeed): ServiceMetro {
     quoteCity: m.quoteCity,
     metroName: m.metroName,
     shortName: m.shortName,
-    title: `Recurring House Cleaning in ${m.metroName} | Steampunk`,
+    title: `Recurring Cleaning in ${m.titleName} | Steampunk House Cleaning`,
     description: `Weekly, bi-weekly, or monthly house cleaning in ${m.regionPhrase}. Consistent process, background-checked teams, free quote.`,
     h1: "Recurring cleaning in",
     h1Accent: m.metroName,

@@ -8,7 +8,7 @@ import { Link, useParams } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
-import { BUSINESS_ID, breadcrumbSchema } from "@/lib/schema";
+import { PROVIDER_REF, breadcrumbSchema, locationBusinessSchema } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
 import { getNeighborhoodsForMetro } from "@/data/neighborhoods";
 import { getServiceMetrosForMetro } from "@/data/serviceMetros";
@@ -111,17 +111,13 @@ export default function LocationMetro() {
     })),
   };
 
+  const localBusiness = locationBusinessSchema(metro.path);
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `House Cleaning in ${metro.name}`,
-    provider: {
-      "@type": "HomeAndConstructionBusiness",
-      "@id": BUSINESS_ID,
-      name: "Steampunk House Cleaning",
-      telephone: "+17252553688",
-      url: "https://steampunkcleaning.com",
-    },
+    provider: PROVIDER_REF,
     areaServed: {
       "@type": "AdministrativeArea",
       name: metro.name.endsWith(metro.stateLabel)
@@ -138,6 +134,7 @@ export default function LocationMetro() {
       <SEO title={metro.title} description={metro.description} path={metro.path} />
       <JsonLd id={`faq-${metro.slug}`} data={faqSchema} />
       <JsonLd id={`service-${metro.slug}`} data={serviceSchema} />
+      {localBusiness && <JsonLd id={`local-business-${metro.slug}`} data={localBusiness} />}
       <JsonLd
         id={`breadcrumb-${metro.slug}`}
         data={breadcrumbSchema([

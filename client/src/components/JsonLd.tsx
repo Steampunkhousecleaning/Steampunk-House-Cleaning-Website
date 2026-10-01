@@ -29,48 +29,48 @@ export function JsonLd({ id, data }: JsonLdProps) {
   return null;
 }
 
-export const BUSINESS_JSON_LD = {
+/** Site-wide service areas (used by the base service-page Service nodes). */
+export const SERVICE_AREA_SERVED = [
+  {
+    "@type": "AdministrativeArea",
+    name: "Los Angeles / Orange County, California",
+  },
+  {
+    "@type": "AdministrativeArea",
+    name: "Las Vegas & Reno / Nevada",
+  },
+  {
+    "@type": "AdministrativeArea",
+    name: "Sacramento, California",
+  },
+] as const;
+
+/**
+ * Homepage-only graph: WebSite + Organization (official business name).
+ * sameAs: the two Google Maps profiles (Las Vegas/Nevada, LA/OC/Sacramento).
+ */
+export const HOME_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "@id": "https://steampunkcleaning.com/#business",
-  name: "Steampunk House Cleaning",
-  alternateName: "Steampunk Cleaning Services",
-  url: "https://steampunkcleaning.com",
-  telephone: "+17252553688",
-  email: "info@steampunkhousecleaning.com",
-  image: "https://steampunkcleaning.com/logo.png",
-  logo: "https://steampunkcleaning.com/logo.png",
-  priceRange: "$$",
-  description:
-    "Professional house cleaning across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Background-checked cleaners, documented checklists, 4.9★ with 450+ Google reviews.",
-  areaServed: [
+  "@graph": [
     {
-      "@type": "AdministrativeArea",
-      name: "Los Angeles / Orange County, California",
+      "@type": "WebSite",
+      "@id": "https://steampunkcleaning.com/#website",
+      name: "Steampunk House Cleaning",
+      alternateName: ["Steampunk Cleaning"],
+      url: "https://steampunkcleaning.com/",
     },
     {
-      "@type": "AdministrativeArea",
-      name: "Las Vegas & Reno / Nevada",
-    },
-    {
-      "@type": "AdministrativeArea",
-      name: "Sacramento, California",
+      "@type": "Organization",
+      "@id": "https://steampunkcleaning.com/#org",
+      name: "Steampunk House Cleaning",
+      url: "https://steampunkcleaning.com/",
+      logo: "https://steampunkcleaning.com/logo.png",
+      telephone: "+1-725-255-3688",
+      email: "info@steampunkhousecleaning.com",
+      sameAs: [
+        "https://www.google.com/maps/place/Steampunk+House+Cleaning/@37.8099795,-117.4496316,7z/data=!3m1!4m6!3m5!1s0x8d2c4df7c357f579:0xc7f4d451e4317a4b!8m2!3d37.8099795!4d-117.4496316!16s%2Fg%2F11y5y03lkw",
+        "https://www.google.com/maps/place/Steampunk+House+Cleaning/@36.2162789,-119.8579726,7z/data=!3m1!4m6!3m5!1s0x253fd4c9f81a325b:0xe857a2f5aa4cda2b!8m2!3d36.2162789!4d-119.8579726!16s%2Fg%2F11w813j9pr",
+      ],
     },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    bestRating: "5",
-    worstRating: "1",
-    reviewCount: "450",
-  },
-  sameAs: [],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+17252553688",
-    contactType: "customer service",
-    email: "info@steampunkhousecleaning.com",
-    areaServed: ["US-CA", "US-NV"],
-    availableLanguage: ["English"],
-  },
 } as const;

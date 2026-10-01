@@ -68,7 +68,7 @@ export const METROS: MetroLocation[] = [
     name: "Los Angeles / Orange County",
     shortName: "LA / OC",
     stateLabel: "California",
-    title: "House Cleaning in Los Angeles & Orange County | Steampunk",
+    title: "House Cleaning in LA & OC | Steampunk House Cleaning",
     description:
       "Professional house cleaning across Los Angeles and Orange County. Background-checked cleaners, documented checklists, free quotes. Serving homes from LA to Irvine and beyond.",
     h1: "House cleaning in",
@@ -137,7 +137,7 @@ export const METROS: MetroLocation[] = [
     name: "Las Vegas & Reno / Nevada",
     shortName: "Nevada",
     stateLabel: "Nevada",
-    title: "House Cleaning in Las Vegas, Reno & Nevada | Steampunk",
+    title: "Las Vegas & Reno House Cleaning | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Las Vegas, Reno, and across Nevada. Trusted cleaners for homes, move-outs, and short-term rentals. Get a free quote today.",
     h1: "House cleaning in",
@@ -197,7 +197,7 @@ export const METROS: MetroLocation[] = [
     name: "Sacramento",
     shortName: "Sacramento",
     stateLabel: "California",
-    title: "House Cleaning in Sacramento | Steampunk House Cleaning",
+    title: "House Cleaning in Sacramento, CA | Steampunk House Cleaning",
     description:
       "Professional house cleaning in Sacramento and nearby communities. Recurring, deep, move-out, and Airbnb cleans with background-checked teams. Free quote.",
     h1: "House cleaning in",

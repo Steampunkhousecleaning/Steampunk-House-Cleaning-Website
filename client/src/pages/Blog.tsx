@@ -28,13 +28,13 @@ export default function Blog() {
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
       <SEO
-        title="Blog | House Cleaning Tips by Metro | Steampunk"
+        title="House Cleaning Tips Blog | Steampunk House Cleaning"
         description="Practical house cleaning guides for Las Vegas, LA/OC, Reno, and Sacramento — hard water, deep cleans, move-outs, Airbnb turnovers, and more from Steampunk House Cleaning."
         path="/blog"
       />
       <JsonLd
         id="blog"
-        data={blogSchema({ name: "Blog | House Cleaning Tips by Metro | Steampunk", description: "Practical house cleaning guides for Las Vegas, LA/OC, Reno, and Sacramento — hard water, deep cleans, move-outs, Airbnb turnovers, and more from Steampunk House Cleaning.", posts: blogPosts })}
+        data={blogSchema({ name: "House Cleaning Tips Blog | Steampunk House Cleaning", description: "Practical house cleaning guides for Las Vegas, LA/OC, Reno, and Sacramento — hard water, deep cleans, move-outs, Airbnb turnovers, and more from Steampunk House Cleaning.", posts: blogPosts })}
       />
       <JsonLd id="breadcrumb" data={breadcrumbSchema([{ name: "Blog", path: "/blog" }])} />
 

@@ -44,7 +44,7 @@ export default function AboutUs() {
             <span style={{ color: TEAL }}>we couldn't find.</span>
           </h1>
           <p style={{ fontSize: 18, color: "#4a5e6e", lineHeight: 1.7, maxWidth: 640, margin: "0 auto", fontFamily: "'DM Sans', sans-serif" }}>
-            Steampunk Cleaning Services was founded by Ryan and Daniel — two guys who got burned by unreliable cleaners one too many times and decided to do something about it.
+            Steampunk House Cleaning was founded by Ryan and Daniel — two guys who got burned by unreliable cleaners one too many times and decided to do something about it.
           </p>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function AboutUs() {
               </p>
             </div>
             <div style={{ backgroundColor: "#f7fbff", border: "1.5px solid #dde9f2", borderRadius: 16, padding: "32px", textAlign: "center" }}>
-              <img src={LOGO_URL} alt="Steampunk Cleaning Services" style={{ width: 180, height: "auto", marginBottom: 24, objectFit: "contain" }} />
+              <img src={LOGO_URL} alt="Steampunk House Cleaning" style={{ width: 180, height: "auto", marginBottom: 24, objectFit: "contain" }} />
               <div className="grid-2col" style={{ gap: "1rem" }}>
                 {[
                   { value: "2021", label: "Founded" },

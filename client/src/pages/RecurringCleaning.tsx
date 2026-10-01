@@ -99,7 +99,7 @@ export default function RecurringCleaning() {
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
       <SEO
-        title="Recurring House Cleaning | Weekly & Bi-Weekly | Steampunk"
+        title="Recurring House Cleaning | Steampunk House Cleaning"
         description="Weekly, bi-weekly, and monthly recurring cleaning in LA/OC, Nevada, and Sacramento. Same trusted team, same spotless results. Free quote."
         path="/recurring-cleaning"
       />
