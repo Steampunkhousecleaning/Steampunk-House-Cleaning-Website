@@ -9,7 +9,7 @@ import { getNeighborhood } from "@/data/neighborhoods";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
-import { BUSINESS_ID, breadcrumbSchema } from "@/lib/schema";
+import { PROVIDER_REF, breadcrumbSchema } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
 import type { ServiceMetro as ServiceMetroData } from "@/data/serviceMetros";
 import {
@@ -108,13 +108,7 @@ export default function ServiceMetro({ page }: { page: ServiceMetroData }) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `${page.serviceLabel} in ${page.metroName}`,
-    provider: {
-      "@type": "HomeAndConstructionBusiness",
-      "@id": BUSINESS_ID,
-      name: "Steampunk House Cleaning",
-      telephone: "+17252553688",
-      url: "https://steampunkcleaning.com",
-    },
+    provider: PROVIDER_REF,
     areaServed: {
       "@type": "AdministrativeArea",
       name: page.metroName,

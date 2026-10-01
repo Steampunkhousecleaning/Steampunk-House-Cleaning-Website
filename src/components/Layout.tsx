@@ -105,7 +105,7 @@ export function Navbar() {
           <Link href="/">
             <img
               src={LOGO_URL}
-              alt="Steampunk Cleaning Services"
+              alt="Steampunk House Cleaning"
               style={{
                 height: 58,
                 width: "auto",
@@ -258,7 +258,7 @@ export function Navbar() {
             <Link href="/">
               <img
                 src={LOGO_URL}
-                alt="Steampunk Cleaning Services"
+                alt="Steampunk House Cleaning"
                 style={{ height: 76, width: "auto", maxWidth: 280, cursor: "pointer", display: "block", objectFit: "contain" }}
               />
             </Link>
@@ -466,7 +466,7 @@ export function Footer() {
           <div>
             <img
               src={LOGO_URL}
-              alt="Steampunk Cleaning Services"
+              alt="Steampunk House Cleaning"
               style={{
                 height: 56,
                 width: "auto",
@@ -648,7 +648,7 @@ export function Footer() {
               margin: 0,
             }}
           >
-            &copy; {new Date().getFullYear()} Steampunk Cleaning Services. All rights reserved.
+            &copy; {new Date().getFullYear()} Steampunk House Cleaning. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
             {["Privacy Policy", "Terms of Service"].map((t) => (

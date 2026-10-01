@@ -34,7 +34,7 @@ import { Navbar, Footer } from "@/components/Layout";
 import { submitLead } from "@/lib/webhook";
 import { PromoBadge } from "@/components/PromoBadge";
 import { SEO } from "@/components/SEO";
-import { JsonLd, BUSINESS_JSON_LD } from "@/components/JsonLd";
+import { JsonLd, HOME_JSON_LD } from "@/components/JsonLd";
 
 // ─── Asset URLs ────────────────────────────────────────────────────────────────
 const HERO_HOME = "https://d2xsxph8kpxj0f.cloudfront.net/310519663372141965/eBTa9t88Gofgi7UbPusL8G/hero-clean-home_4649079f.jpg";
@@ -394,11 +394,11 @@ export default function Home() {
       {/* ─── SHARED NAVBAR ─────────────────────────────────────────────────── */}
       <Navbar />
       <SEO
-        title="Steampunk House Cleaning | Professional Cleaners in LA, OC, Las Vegas, Reno & Sacramento"
+        title="House Cleaning in CA & NV | Steampunk House Cleaning"
         description="Professional house cleaning across Los Angeles, Orange County, Las Vegas, Reno, and Sacramento. 4.9★ with 450+ reviews. Get a free quote in 2 minutes."
         path="/"
       />
-      <JsonLd id="local-business" data={BUSINESS_JSON_LD} />
+      <JsonLd id="home-graph" data={HOME_JSON_LD} />
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       {/* Reduced top padding so form is closer to nav — tighter above-the-fold */}
@@ -798,7 +798,7 @@ export default function Home() {
             <div className="animate-fade-up">
               <img
                 src={FOUNDERS}
-                alt="Ryan and Daniel, Steampunk Cleaning founders"
+                alt="Ryan and Daniel, Steampunk House Cleaning founders"
                 width={2400}
                 height={1792}
                 loading="lazy"
@@ -808,7 +808,7 @@ export default function Home() {
               />
               <div className="mt-4 text-center">
                 <p className="sp-body text-sm font-medium" style={{ color: NAVY }}>Ryan & Daniel</p>
-                <p className="sp-body text-xs" style={{ color: MUTED }}>Co-founders, Steampunk Cleaning Services</p>
+                <p className="sp-body text-xs" style={{ color: MUTED }}>Co-founders, Steampunk House Cleaning</p>
               </div>
             </div>
             <div className="animate-fade-up delay-2">
@@ -970,7 +970,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
             <div className="md:col-span-2">
               <div className="flex items-center mb-4">
-                <img src={LOGO_URL} alt="Steampunk Cleaning Services" className="w-auto object-contain" style={{ height: 52, maxWidth: 190, filter: "brightness(0) invert(1)" }} />
+                <img src={LOGO_URL} alt="Steampunk House Cleaning" className="w-auto object-contain" style={{ height: 52, maxWidth: 190, filter: "brightness(0) invert(1)" }} />
               </div>
               <p className="sp-body text-sm leading-relaxed max-w-xs" style={{ color: "#7a9bb0" }}>
                 Professional, background-checked cleaning services across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Built by homeowners who got burned, so you don't have to.
@@ -1015,7 +1015,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-            <p className="sp-body text-xs" style={{ color: "#4a6070" }}>© 2026 Steampunk Cleaning Services. All rights reserved. Licensed · Bonded · Insured.</p>
+            <p className="sp-body text-xs" style={{ color: "#4a6070" }}>© 2026 Steampunk House Cleaning. All rights reserved. Licensed · Bonded · Insured.</p>
             <div className="flex items-center gap-4">
               <a href="/privacy/" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Privacy Policy</a>
               <a href="/terms/" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Terms of Service</a>

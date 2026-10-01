@@ -333,7 +333,7 @@ async function main() {
     (r) =>
       r.route !== "/" &&
       r.title ===
-        "Steampunk House Cleaning | Professional Cleaners in LA, OC, Nevada & Sacramento",
+        "House Cleaning in CA & NV | Steampunk House Cleaning",
   );
   if (duplicates.length) {
     console.error(
