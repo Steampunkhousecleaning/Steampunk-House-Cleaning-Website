@@ -39,6 +39,156 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "move-out-cleaning-sacramento",
+    title:
+      "Move Out Cleaning Sacramento: What Landlords Actually Check Before Returning Your Deposit",
+    metaTitle:
+      "Move Out Cleaning Sacramento | Steampunk House Cleaning",
+    metaDescription:
+      "Move out cleaning Sacramento renters can trust. See what landlords check, how California deposit photo rules work, and what a deposit back cleaning covers.",
+    date: "2026-10-05",
+    metro: "Sacramento",
+    primaryKeyword: "move out cleaning Sacramento",
+    secondaryKeywords: [
+      "deposit back cleaning",
+      "empty home clean Roseville",
+    ],
+    ctaHeadline: "Need a move-out clean that protects your deposit?",
+    ctaBody:
+      "Send your move-out date, address, and number of bedrooms and baths, and we will quote your Sacramento, Roseville, Elk Grove, or Folsom move-out clean. Request a free quote online or call — real humans pick up.",
+    excerpt:
+      "Sacramento landlords inspect the same spots on almost every unit. Here is what move out cleaning in Sacramento should cover, how California deposit rules work, and how to prep an empty home in Roseville, Elk Grove, or Folsom.",
+    relatedLinks: [
+      {
+        href: "/move-in-move-out",
+        label: "Move-in / move-out cleaning",
+      },
+      {
+        href: "/locations/sacramento",
+        label: "House cleaning in the Sacramento area",
+      },
+      {
+        href: "/locations/sacramento/roseville",
+        label: "Roseville house cleaning",
+      },
+      {
+        href: "/locations/sacramento/elk-grove",
+        label: "Elk Grove house cleaning",
+      },
+      {
+        href: "/cleaning-checklist",
+        label: "Full cleaning checklist",
+      },
+      {
+        href: "/get-a-quote",
+        label: "Get a free quote",
+      },
+    ],
+    body: [
+      {
+        paragraphs: [
+          "Your keys are due back at the end of the month, the truck is booked, and the last thing between you and your security deposit is the walkthrough. That is why move out cleaning Sacramento renters book is less about making a place look nice and more about passing an inspection. Landlords and property managers across the region check the same short list of spots on almost every unit, and the ones that get missed tend to come back as cleaning deductions. This guide covers what they actually look at, how California's deposit rules work, and what a real deposit back cleaning includes.",
+          "Steampunk House Cleaning handles move-outs across [Sacramento](/locations/sacramento), [Roseville](/locations/sacramento/roseville), [Elk Grove](/locations/sacramento/elk-grove), and [Folsom](/locations/sacramento/folsom). Ryan and Daniel built the company on written checklists, and our [move-in/move-out cleaning](/move-in-move-out) service is the one we build around inspection day.",
+        ],
+      },
+      {
+        heading: "What California law says about cleaning and your deposit",
+        paragraphs: [
+          "California's security deposit law (Civil Code section 1950.5) only lets a landlord charge for the cleaning needed to return the unit to the same level of cleanliness it was in when your tenancy began. Ordinary wear and tear is not a cleaning charge. After you move out, the landlord has 21 days to return the deposit or send an itemized statement of deductions.",
+          "Two newer rules matter here. Since April 1, 2025, landlords have to photograph the unit after you hand it back and before any cleaning or repairs they plan to deduct for, photograph it again after that work is done, and include those photos with the itemized statement. For tenancies that began on or after July 1, 2025, they also have to photograph the unit at move-in. In plain terms, the condition of the home on key-return day is documented. A clean that only looks good from the doorway is a risk.",
+          "You can also ask for a pre-move-out inspection. California lets tenants request one up to two weeks before the lease ends, and the landlord has to give you a written list of the issues they would deduct for. That list is the best cleaning brief you will ever get. This is general information, not legal advice; your lease and your landlord's own move-out form still matter.",
+        ],
+      },
+      {
+        heading: "What Sacramento landlords actually check",
+        paragraphs: [
+          "A property manager with a Midtown fourplex, a Natomas rental house, or a Roseville apartment community will each have their own form, but the walkthrough lands in the same places:",
+        ],
+        bullets: [
+          "Kitchen cabinets and drawers, inside and out — crumbs and sticky shelves are an easy note on the form",
+          "Stovetop, range hood, and backsplash grease (inside oven cleaning is a separate paid add-on, so ask for it if your landlord's checklist lists the oven)",
+          "Bathroom grout, shower glass, and the door tracks where soap scum and grit collect",
+          "Toilets at the base and around the seat hinges, not just the bowl",
+          "Baseboards, door frames, and the scuffs at hallway and doorknob height",
+          "Window sills and tracks, where dust and dead bugs pile up through a long dry summer",
+          "Vents, registers, and ceiling fan blades",
+          "Closet shelves and floors once the boxes are gone",
+          "Light switches and outlet covers",
+          "Floor edges and corners that only show once the furniture is out",
+        ],
+      },
+      {
+        paragraphs: [
+          "None of these are exotic. They are the places a normal weekly tidy skips because furniture and daily life cover them. An empty unit hides nothing, and the inspector's flashlight finds the line of dust behind where the couch used to be.",
+        ],
+      },
+      {
+        heading: "Why Sacramento move-outs take more than a quick wipe",
+        paragraphs: [
+          "Sacramento's long, hot, dry summers push fine dust into window tracks, sills, and vent covers, and in a home that has run the AC with windows shut for months, a film settles on every flat surface. Spring pollen in the City of Trees adds a yellow layer to sills and sliding doors. Older homes in Midtown, East Sacramento, and Land Park have original wood trim, tall windows, and deep sills that hold more dust than newer builds. Newer two-stories in Elk Grove, Natomas, and Folsom bring big open kitchens, lots of tile and stone, and long runs of baseboard that take real time to detail.",
+          "Timing matters too. Many leases end on the last day of the month, so those final days are crowded for movers, cleaners, and property managers alike. Book early, especially if your move lands near month-end or a holiday weekend, and leave a buffer between the clean and the walkthrough.",
+        ],
+      },
+      {
+        heading: "Deposit back cleaning: what our move-out clean covers",
+        paragraphs: [
+          "A deposit back cleaning is a full-detail clean of an empty home, built around the inspection list rather than a regular housekeeping visit. Our [move-in/move-out cleaning](/move-in-move-out) checklist includes:",
+        ],
+        bullets: [
+          "Inside all cabinets and drawers",
+          "Degreasing the stovetop and range hood",
+          "Scrubbing bathroom tile grout, shower door tracks, and glass",
+          "Full bathroom detail: toilet, tub, sink, and mirrors",
+          "Wiping every baseboard, door frame, and door",
+          "Interior windows, plus sills, ledges, and tracks",
+          "Dusting vents and registers",
+          "Spot-cleaning walls and scuff marks",
+          "Sanitizing light switches and outlet covers",
+          "Vacuuming closets and shelving, then vacuuming and mopping every floor",
+        ],
+      },
+      {
+        paragraphs: [
+          "Inside oven cleaning is not part of a move-out clean; it is a paid add-on. If the oven is on your landlord's list, add it when you request your quote so it is scheduled rather than assumed. For the room-by-room breakdown, see our [cleaning checklist](/cleaning-checklist).",
+        ],
+      },
+      {
+        heading: "Empty home clean in Roseville, Elk Grove, and Folsom",
+        paragraphs: [
+          "Not every move-out is a renter handing back keys. If you are looking for an empty home clean Roseville sellers and landlords can count on, the checklist is the same, but the finish line changes: listing photos, a buyer's final walkthrough, or the next tenant's move-in day. Sellers in [Roseville](/locations/sacramento/roseville) and [Folsom](/locations/sacramento/folsom) often schedule the clean after the movers and before the photographer. Landlords in [Elk Grove](/locations/sacramento/elk-grove) usually need the unit turned between tenants on a tight window. Tell us which situation you are in so the crew knows what done looks like.",
+          "Moving in instead? A move-in clean before you unpack follows the same list. Cabinets, closets, and floors are far easier to clean before your things go in than after.",
+        ],
+      },
+      {
+        heading: "How to prep for a move-out clean",
+        bullets: [
+          "Move everything out first, including closets, cabinets, and the garage if it is part of the inspection",
+          "Empty the fridge, freezer, and pantry completely",
+          "Haul trash and leftover boxes to the bins, or tell us what is staying behind",
+          "Keep power and water on through the day of the clean",
+          "Patch nail holes and touch up paint before the clean, not after, so drywall dust does not land on clean floors",
+          "Share gate codes, lockbox details, and parking notes for apartment communities",
+          "Ask your property manager for their move-out checklist and send it with your quote request",
+        ],
+      },
+      {
+        heading: "Why Sacramento renters call Steampunk",
+        paragraphs: [
+          "Steampunk House Cleaning is a local team founded by Ryan and Daniel, with background-checked cleaners, our own supplies, and roughly 400+ verified Google reviews at 4.9★. Move-outs are where a checklist earns its keep: the same list on every job, worked top to bottom, so nothing depends on memory on a busy last-day-of-the-month schedule.",
+          "We do not do self-serve instant booking, and pricing is quote-based. Tell us the address, bedrooms and baths, move-out date, and the condition of the home, and we will confirm timing and your quote by phone or after you submit the form. Quotes are free. If your deadline is tight, call; a real person answers.",
+        ],
+      },
+      {
+        heading: "Book your Sacramento move-out clean",
+        paragraphs: [
+          "Send your move-out date, the address, and the number of bedrooms and baths, plus your landlord's checklist if you have one. Call [(725) 255-3688](tel:7252553688) or [request a free quote](/get-a-quote) and we will tell you whether your timeline works before you lock in the walkthrough.",
+          "Start here: [Get a free quote](/get-a-quote) · [Move-in/move-out cleaning](/move-in-move-out) · [Sacramento locations](/locations/sacramento) · [Roseville house cleaning](/locations/sacramento/roseville)",
+        ],
+      },
+    ],
+  },
+
+  {
     slug: "airbnb-cleaning-irvine",
     title:
       "Airbnb Cleaning Irvine: Same-Day Turnover Checklist for Orange County Hosts",
