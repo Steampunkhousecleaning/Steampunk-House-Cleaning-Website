@@ -28,7 +28,11 @@ export const METRO_CHIPS: { id: MetroFilter; label: string }[] = [
   { id: "sacramento", label: "Sacramento" },
 ];
 
-/** Deduped quotes sourced from existing page copy */
+/**
+ * Deduped quotes sourced from existing page copy.
+ * Each reviewer keeps ONE city (the one shown on the homepage where featured).
+ * Never re-tag or duplicate a reviewer under another metro to fill a filter.
+ */
 export const SITE_REVIEWS: Review[] = [
   {
     name: "Jessica T.",
@@ -53,46 +57,6 @@ export const SITE_REVIEWS: Review[] = [
     service: "Airbnb Turnover",
     metro: "la-oc",
     source: "Home.tsx",
-  },
-  {
-    name: "Carol R.",
-    location: "Los Angeles, CA",
-    text: "Very happy with this cleaning service. They did a move out cleaning for us including shampooing the carpet, cleaning all surfaces, refrigerator, oven etc. The realtor said they did a really good job. Happy customer.",
-    service: "Move-Out Cleaning",
-    metro: "la-oc",
-    source: "Google Business (5★)",
-  },
-  {
-    name: "Melanie C.",
-    location: "Los Angeles, CA",
-    text: "I highly recommend Steampunk cleaning services. Shyanne was prompt, professional, and thoroughly cleaned my house from top to bottom. We have the move out cleaning special and the price was extremely reasonable. Very happy with the results.",
-    service: "Move-Out Cleaning",
-    metro: "la-oc",
-    source: "Google Business (5★)",
-  },
-  {
-    name: "Jennifer M.",
-    location: "Pasadena / LA area, CA",
-    text: "Thank you so much Crystal for beautifying my house. Steampunk Cleaning was able to accommodate me with less than 24 hours notice. I was overwhelmed trying to get my house ready for its sales listing and Crystal saved me. Now it's photo ready.",
-    service: "Move-Out Cleaning",
-    metro: "la-oc",
-    source: "Google Business (5★)",
-  },
-  {
-    name: "Kristen S.",
-    location: "Los Angeles, CA",
-    text: "Claire was very helpful setting up my move-in cleaning. Great team was sent, they were quick but detailed in their work. I called around a few places in town and Steampunk had the best prices for the amount of services they provided — love that they offer carpet shampooing too!",
-    service: "Move-In Cleaning",
-    metro: "la-oc",
-    source: "Google Business (5★)",
-  },
-  {
-    name: "Carmen",
-    location: "Los Angeles, CA",
-    text: "Christie did an awesome job. The room was in terrible shape. I highly recommend using them. They were on time and stayed til the job was done.",
-    service: "Deep Cleaning",
-    metro: "la-oc",
-    source: "Google Business (5★)",
   },
   {
     name: "Keefe D.",

@@ -9,6 +9,7 @@
 import { useState, useEffect, type CSSProperties } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, ChevronDown, ChevronUp } from "lucide-react";
+import { quoteHrefForPath } from "@/lib/quoteHref";
 
 const LOGO_URL = "/logo.png";
 const NAVY = "#3D5266";
@@ -41,6 +42,7 @@ export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [location] = useLocation();
+  const quoteHref = quoteHrefForPath(location);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -122,7 +124,7 @@ export function Navbar() {
 
           {/* Right: compact CTA */}
           <Link
-            href="/get-a-quote"
+            href={quoteHref}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -286,7 +288,7 @@ export function Navbar() {
               (725) 255-3688
             </a>
             <Link
-              href="/get-a-quote"
+              href={quoteHref}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -414,7 +416,7 @@ export function Navbar() {
                 (725) 255-3688
               </a>
               <Link
-                href="/get-a-quote"
+                href={quoteHref}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -443,6 +445,8 @@ export function Navbar() {
 }
 
 export function Footer() {
+  const [location] = useLocation();
+  const quoteHref = quoteHrefForPath(location);
   const services = [
     { label: "Standard Cleaning", href: "/standard-cleaning" },
     { label: "Deep Cleaning", href: "/deep-cleaning" },
@@ -651,7 +655,7 @@ export function Footer() {
               Mon–Sat, 8am–6pm
             </p>
             <Link
-              href="/get-a-quote"
+              href={quoteHref}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
