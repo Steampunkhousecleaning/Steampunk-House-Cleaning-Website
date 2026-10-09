@@ -39,8 +39,8 @@ export default function Reviews() {
       metro === "all"
         ? SITE_REVIEWS
         : SITE_REVIEWS.filter((r) => r.metro === metro);
-    // Same Google quote may be tagged to multiple metros for filter depth —
-    // show each unique text once on "All".
+    // Safety net: show each unique review text once on "All".
+    // (Reviewers must not be duplicated across metros — see data/reviews.ts.)
     if (metro !== "all") return list;
     const seen = new Set<string>();
     return list.filter((r) => {
@@ -121,7 +121,7 @@ export default function Reviews() {
             }}
           >
             A selection of quotes already featured on our site from clients in Los Angeles /
-            Orange County, Las Vegas & Reno / Nevada, and Sacramento. Filter by metro below — including Reno.
+            Orange County, Las Vegas & Reno / Nevada, and Sacramento. Filter by metro below.
           </p>
         </div>
       </section>
