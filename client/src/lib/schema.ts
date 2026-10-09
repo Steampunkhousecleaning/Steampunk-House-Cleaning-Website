@@ -228,3 +228,21 @@ export function locationBusinessSchema(path: string) {
     openingHours: "Mo-Sa 08:00-18:00",
   };
 }
+
+/**
+ * LocalBusiness block for pages that are not keyed in LOCATION_AREAS
+ * (same format as the metro hubs). No street address, no rating markup.
+ */
+export function localBusinessSchemaForAreas(path: string, areaServed: readonly string[]) {
+  return {
+    "@context": CONTEXT,
+    "@type": "LocalBusiness",
+    name: BRAND_NAME,
+    url: absUrl(path),
+    telephone: "+1-725-255-3688",
+    image: LOGO_URL,
+    parentOrganization: { "@id": ORG_ID },
+    areaServed: [...areaServed],
+    openingHours: "Mo-Sa 08:00-18:00",
+  };
+}

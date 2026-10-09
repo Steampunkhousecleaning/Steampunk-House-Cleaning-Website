@@ -13,6 +13,7 @@ import { getMetroBySlug } from "@/data/locations";
 import { getNeighborhoodsForMetro } from "@/data/neighborhoods";
 import { getServiceMetrosForMetro, metroQuoteCity } from "@/data/serviceMetros";
 import NotFound from "@/pages/NotFound";
+import { MOVE_OUT_CARD_OVERRIDES } from "@/data/localMoveOut";
 import {
   MapPin,
   CheckCircle,
@@ -329,7 +330,10 @@ export default function LocationMetro() {
           >
             {metro.services.map((s) => {
               const local = serviceMetros.find((sm) => sm.serviceLabel === s.label);
-              const href = local ? local.path : s.href;
+              // DRAFT: hub Move-In / Move-Out card -> local move-out page where one exists
+              const moveOutLocal =
+                s.href === "/move-in-move-out" ? MOVE_OUT_CARD_OVERRIDES[metro.slug] : undefined;
+              const href = moveOutLocal ?? (local ? local.path : s.href);
               return (
               <Link key={s.href} href={href}>
                 <div

@@ -26,6 +26,9 @@ import Reviews from "./pages/Reviews";
 import CleaningChecklist from "./pages/CleaningChecklist";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import LocalMoveOut from "./pages/LocalMoveOut";
+import RenoHub from "./pages/RenoHub";
+import { LOCAL_MOVE_OUT_PAGES } from "./data/localMoveOut";
 
 // Scroll to top on every route change
 function ScrollToTop() {
@@ -74,6 +77,13 @@ function Router() {
         <Route path="/commercial-cleaning" component={CommercialCleaning} />
         <Route path="/about" component={AboutUs} />
         <Route path="/locations" component={Locations} />
+        {/* DRAFT local pages (owner review; not in sitemap). Must precede the generic routes. */}
+        {LOCAL_MOVE_OUT_PAGES.map((p) => (
+          <Route key={p.path} path={p.path}>
+            <LocalMoveOut page={p} />
+          </Route>
+        ))}
+        <Route path="/locations/reno" component={RenoHub} />
         <Route path="/locations/:metro/:child" component={LocationChild} />
         <Route path="/locations/:slug" component={LocationMetro} />
         <Route path="/faq" component={FAQ} />
