@@ -86,7 +86,7 @@ export const SERVICE_METRO_LOCAL: Record<string, ServiceMetroLocal> = {
       },
       {
         q: "Do you serve Reno and Sparks as well as the Las Vegas Valley?",
-        a: "Yes. Nevada is one of our three equal markets. Add your city and zip on the quote form and we will confirm coverage and timing.",
+        a: "Yes. Reno is one of our four markets, alongside Los Angeles & Orange County, Las Vegas, and Sacramento, and Sparks is part of our Reno service area. Add your city and zip on the quote form and we will confirm coverage and timing.",
       },
       {
         q: "Can you work with gated communities and HOA rules in Henderson and Summerlin?",

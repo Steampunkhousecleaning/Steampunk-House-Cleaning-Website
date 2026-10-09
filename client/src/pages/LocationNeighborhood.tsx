@@ -105,7 +105,8 @@ export default function LocationNeighborhood({
 }: {
   neighborhood: Neighborhood;
 }) {
-  const metro = getMetroBySlug(neighborhood.metroSlug);
+  // Parent hub for breadcrumbs and back links (Sparks -> Reno & Sparks hub; others -> metro hub).
+  const metro = neighborhood.parentHub ?? getMetroBySlug(neighborhood.metroSlug);
   const quoteHref = `/get-a-quote?service=${encodeURIComponent("Standard Cleaning")}&city=${encodeURIComponent(neighborhoodQuoteCity(neighborhood))}`;
 
   const local = CITY_LOCAL[neighborhood.slug];

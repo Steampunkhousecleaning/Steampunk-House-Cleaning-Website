@@ -140,7 +140,7 @@ export default function AboutUs() {
             Where we serve
           </h2>
           <p style={{ fontSize: 16, color: "#5a6e80", fontFamily: "'DM Sans', sans-serif", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
-            We operate across three equal metros — LA / OC, Las Vegas & Reno / Nevada, and Sacramento.
+            We operate across four markets — Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", maxWidth: 700, margin: "0 auto" }}>
             {[

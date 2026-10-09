@@ -1,6 +1,6 @@
 /**
  * LocationMetro.tsx — /locations/:slug
- * Equal-quality metro hubs for LA/OC, Las Vegas & Reno / Nevada, Sacramento.
+ * Metro hubs for Los Angeles & Orange County, Las Vegas, and Sacramento (Reno has its own hub).
  */
 
 import { useState, type CSSProperties } from "react";
@@ -318,8 +318,8 @@ export default function LocationMetro() {
                 margin: "0 auto",
               }}
             >
-              Same service menu across all three markets. Pick what you need, then request a local
-              quote.
+              Same service menu in Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.
+              Pick what you need, then request a local quote.
             </p>
           </div>
           <div

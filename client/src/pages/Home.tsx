@@ -502,7 +502,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TRUST BAR (bonded / insured / three metros) ───────────────────────── */}
+      {/* ─── TRUST BAR (bonded / insured / four markets) ───────────────────────── */}
       <section style={{ backgroundColor: WHITE, borderBottom: "1px solid #d4e8f2" }} className="py-5">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -778,7 +778,7 @@ export default function Home() {
                   { title: "Higher pay = lower turnover = same cleaner", body: "We pay our cleaners better. That means they stay longer, care more, and you get the same familiar face, not a different stranger every visit." },
                   { title: "Documented checklists on every clean", body: "We don't guess what 'clean' means. Every service type has a documented checklist. You know exactly what's included before we arrive." },
                   { title: "Satisfaction guarantee, no questions asked", body: "Not happy? We come back and make it right. That's how we've built 400+ five-star reviews." },
-                  { title: "Google Guaranteed: the highest trust badge in local search", body: "Licensed, bonded, and insured across our three metros. You're covered." },
+                  { title: "Google Guaranteed: the highest trust badge in local search", body: "Licensed, bonded, and insured in Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. You're covered." },
                 ].map((item, i) => (
                   <div key={item.title} className={`animate-fade-up delay-${i + 1} flex gap-4`}>
                     <div className="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5" style={{ backgroundColor: `${TEAL}15` }}>
@@ -837,11 +837,11 @@ export default function Home() {
                 Ryan and Daniel started Steampunk as short-term rental hosts who couldn't find a cleaner they could actually trust. They know what it feels like to need a reliable team and get let down instead.
               </p>
               <p className="sp-body text-lg leading-relaxed mb-7" style={{ color: MUTED }}>
-                Today, Steampunk serves 100+ homes every month across three equal metros — LA / OC, Las Vegas & Reno / Nevada, and Sacramento — with 400+ verified Google reviews and a 4.9-star average. The standard hasn't slipped, because we built it to hold.
+                Today, Steampunk serves 100+ homes every month across four markets — Los Angeles & Orange County, Las Vegas, Reno, and Sacramento — with 400+ verified Google reviews and a 4.9-star average. The standard hasn't slipped, because we built it to hold.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 sp-body text-sm font-medium" style={{ color: NAVY }}>
-                  <MapPin className="w-4 h-4" style={{ color: TEAL }} /> 3 markets · LA/OC, Las Vegas & Reno, Sacramento
+                  <MapPin className="w-4 h-4" style={{ color: TEAL }} /> 4 markets · LA/OC, Las Vegas, Reno, Sacramento
                 </div>
                 <div className="flex items-center gap-2 sp-body text-sm font-medium" style={{ color: NAVY }}>
                   <Clock className="w-4 h-4" style={{ color: TEAL }} /> We call within minutes of your request
@@ -934,7 +934,7 @@ export default function Home() {
             </div>
             <div className="animate-fade-up">
               {[
-                { q: "Do you serve my area?", a: "We serve three equal metros: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Select your city in the quote form and we'll confirm coverage when we call." },
+                { q: "Do you serve my area?", a: "We serve four markets: Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. Select your city in the quote form and we'll confirm coverage when we call." },
                 { q: "How quickly can you get someone to my home?", a: "We typically schedule within 1–3 business days depending on your location and availability. For urgent requests, call us directly at (725) 255-3688 and we'll do our best to accommodate you." },
                 { q: "Are your cleaners background-checked?", a: "Yes. Every cleaner goes through a thorough interview process and background check before they're ever assigned to a client's home." },
                 { q: "What if I'm not happy with the clean?", a: "We'll come back and make it right. No questions asked. Our satisfaction guarantee is how we've maintained a 4.9-star average across 400+ reviews." },

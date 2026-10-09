@@ -609,7 +609,7 @@ export default function StandardCleaning() {
               {
                 icon: <Star size={22} />,
                 title: "Google Guaranteed",
-                body: "Licensed, bonded, and insured across our three metros. The highest local trust badge available.",
+                body: "Licensed, bonded, and insured in Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. The highest local trust badge available.",
               },
             ].map((item, i) => (
               <div

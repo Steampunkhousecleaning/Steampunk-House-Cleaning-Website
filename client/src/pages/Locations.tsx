@@ -25,12 +25,24 @@ const ICE = "#B5E1F2";
 export default function Locations() {
   const [showAll, setShowAll] = useState(false);
   const featured = getFeaturedNeighborhoods();
+  // Popular-city cards. Reno links to the Reno & Sparks hub and sits just before Sparks.
+  const featuredCards = featured.flatMap((n) => {
+    const card = {
+      path: n.path,
+      name: n.name,
+      label: n.parentHub ? "Reno" : n.stateLabel === "Nevada" ? "Las Vegas" : n.metroSlug === "sacramento" ? "Sacramento" : "LA / OC",
+      highlight: false,
+    };
+    return n.parentHub?.path === RENO_HUB.path
+      ? [{ path: RENO_HUB.path, name: "Reno", label: "Reno", highlight: true }, card]
+      : [card];
+  });
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
       <Navbar />
       <SEO
         title="Service Locations | Steampunk House Cleaning"
-        description="Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Explore local cleaning pages and get a free quote."
+        description="Steampunk House Cleaning serves four markets: Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. Explore local cleaning pages and get a free quote."
         path="/locations"
       />
       <JsonLd
@@ -39,7 +51,7 @@ export default function Locations() {
           type: "CollectionPage",
           path: "/locations",
           name: "Service Locations | Steampunk House Cleaning",
-          description: "Steampunk House Cleaning serves three equal markets: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Explore local cleaning pages and get a free quote.",
+          description: "Steampunk House Cleaning serves four markets: Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. Explore local cleaning pages and get a free quote.",
           extra: {
             mainEntity: {
               "@type": "ItemList",
@@ -94,7 +106,7 @@ export default function Locations() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            Three markets.{" "}
+            Four markets.{" "}
             <span style={{ color: TEAL }}>Equal care.</span>
           </h1>
           <p
@@ -107,8 +119,8 @@ export default function Locations() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            Steampunk House Cleaning operates across Los Angeles / Orange County, Las Vegas &
-            Reno / Nevada, and Sacramento — with the same standards, checklist discipline, and booking
+            Steampunk House Cleaning operates across Los Angeles & Orange County, Las Vegas, Reno,
+            and Sacramento — with the same standards, checklist discipline, and booking
             process in each metro.
           </p>
         </div>
@@ -271,8 +283,8 @@ export default function Locations() {
                 lineHeight: 1.65,
               }}
             >
-              Curated dedicated pages across LA / OC, Las Vegas & Reno / Nevada, and Sacramento —
-              including Reno. Same quality bar on every city page.
+              Curated dedicated pages across Los Angeles & Orange County, Las Vegas, Reno, and
+              Sacramento. Same quality bar on every city page.
             </p>
           </div>
           <div
@@ -282,7 +294,7 @@ export default function Locations() {
               gap: "0.75rem",
             }}
           >
-            {featured.map((n) => (
+            {featuredCards.map((n) => (
               <Link
                 key={n.path}
                 href={n.path}
@@ -291,7 +303,7 @@ export default function Locations() {
                   flexDirection: "column",
                   gap: 4,
                   backgroundColor: "#fff",
-                  border: n.slug === "reno" ? `2px solid ${TEAL}` : "1.5px solid #dde9f2",
+                  border: n.highlight ? `2px solid ${TEAL}` : "1.5px solid #dde9f2",
                   borderRadius: 12,
                   padding: "14px 16px",
                   textDecoration: "none",
@@ -315,7 +327,7 @@ export default function Locations() {
                     fontFamily: "'DM Sans', sans-serif",
                   }}
                 >
-                  {n.stateLabel === "Nevada" ? "Nevada" : n.metroSlug === "sacramento" ? "Sacramento" : "LA / OC"}
+                  {n.label}
                 </span>
                 <span
                   style={{
@@ -360,11 +372,18 @@ export default function Locations() {
               {(
                 [
                   { label: "Los Angeles / Orange County", metro: "los-angeles-orange-county" },
-                  { label: "Las Vegas & Reno / Nevada", metro: "las-vegas-nevada" },
+                  { label: "Las Vegas", metro: "las-vegas-nevada" },
+                  { label: "Reno & Sparks", metro: "reno" },
                   { label: "Sacramento", metro: "sacramento" },
                 ] as const
               ).map((group) => {
-                const pages = NEIGHBORHOODS.filter((n) => n.metroSlug === group.metro);
+                const pages: { path: string; name: string }[] =
+                  group.metro === "reno"
+                    ? [
+                        { path: RENO_HUB.path, name: "Reno" },
+                        ...NEIGHBORHOODS.filter((n) => n.parentHub?.path === RENO_HUB.path),
+                      ]
+                    : NEIGHBORHOODS.filter((n) => n.metroSlug === group.metro && !n.parentHub);
                 const coverage = COVERAGE_ONLY_CITIES.filter((c) => c.metroSlug === group.metro);
                 return (
                   <div key={group.metro} style={{ marginBottom: 24 }}>
@@ -467,8 +486,8 @@ export default function Locations() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            We publish popular dedicated city pages plus a full coverage list across our three
-            metros. Request a quote with your city or zip and we will confirm whether we can reach
+            We publish popular dedicated city pages plus a full coverage list across Los Angeles &
+            Orange County, Las Vegas, Reno, and Sacramento. Request a quote with your city or zip and we will confirm whether we can reach
             you — no guesswork.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>

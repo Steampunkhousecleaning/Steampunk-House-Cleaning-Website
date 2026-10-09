@@ -1,6 +1,6 @@
 /**
  * RenoHub.tsx — standalone Reno & Sparks hub (/locations/reno).
- * Data: data/renoHub.ts. /locations/las-vegas-nevada/reno is untouched.
+ * Data: data/renoHub.ts. /locations/las-vegas-nevada/reno 301s here.
  * No reviews section (no real Reno reviews exist).
  */
 import { Link } from "wouter";
@@ -63,6 +63,20 @@ export default function RenoHub() {
       </Section>
 
       <Section>
+        <h2 style={h2Style}>Reno and Sparks neighborhoods we serve</h2>
+        <p style={pStyle}>{R.neighborhoodsIntro}</p>
+        <ul style={{ listStyle: "none", padding: 0, margin: "0 0 14px", display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {R.neighborhoods.map((n) => (
+            <li key={n} style={{ display: "inline-flex", alignItems: "center", gap: 6, backgroundColor: "#f7fbff", border: "1px solid #dde9f2", borderRadius: 999, padding: "8px 14px", fontSize: 14, fontWeight: 600, color: NAVY, fontFamily: "'DM Sans', sans-serif" }}>
+              <MapPin size={13} style={{ color: TEAL }} />
+              {n}
+            </li>
+          ))}
+        </ul>
+        <p style={{ ...pStyle, marginBottom: 0 }}>{R.neighborhoodsNote}</p>
+      </Section>
+
+      <Section bg="#f7fbff">
         <h2 style={h2Style}>House cleaning services in Reno and Sparks</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12 }}>
           {R.services.map((s) => (

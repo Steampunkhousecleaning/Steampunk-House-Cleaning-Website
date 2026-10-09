@@ -71,13 +71,25 @@
 
 [[redirects]]
   from = "/reno/"
-  to = "/locations/las-vegas-nevada/reno/"
+  to = "/locations/reno/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/reno"
-  to = "/locations/las-vegas-nevada/reno/"
+  to = "/locations/reno/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/las-vegas-nevada/reno/"
+  to = "/locations/reno/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/las-vegas-nevada/reno"
+  to = "/locations/reno/"
   status = 301
   force = true
 

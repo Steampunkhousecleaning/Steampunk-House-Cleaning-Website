@@ -113,7 +113,7 @@ export const METROS: MetroLocation[] = [
     faqs: [
       {
         q: "Do you clean homes across both LA County and Orange County?",
-        a: "Yes. Los Angeles / Orange County is one of our three primary markets. Tell us your city or zip in the quote form and we will confirm coverage and timing when we call.",
+        a: "Yes. Los Angeles / Orange County is one of our four markets, alongside Las Vegas, Reno, and Sacramento. Tell us your city or zip in the quote form and we will confirm coverage and timing when we call.",
       },
       {
         q: "How far in advance should I book in LA / OC?",
@@ -133,17 +133,17 @@ export const METROS: MetroLocation[] = [
   {
     slug: "las-vegas-nevada",
     path: "/locations/las-vegas-nevada",
-    name: "Las Vegas & Reno / Nevada",
-    shortName: "Nevada",
+    name: "Las Vegas",
+    shortName: "Las Vegas",
     stateLabel: "Nevada",
-    title: "Las Vegas & Reno House Cleaning | Steampunk House Cleaning",
+    title: "House Cleaning in Las Vegas, NV | Steampunk House Cleaning",
     description:
-      "Professional house cleaning in Las Vegas, Reno, and across Nevada. Trusted cleaners for homes, move-outs, and short-term rentals. Get a free quote today.",
+      "Professional house cleaning in Las Vegas and across the Las Vegas Valley. Trusted cleaners for homes, move-outs, and short-term rentals. Get a free quote today.",
     h1: "House cleaning in",
-    h1Accent: "Las Vegas, Reno & Nevada",
+    h1Accent: "Las Vegas",
     intro: [
-      "Steampunk House Cleaning serves Southern and Northern Nevada — including Las Vegas Valley communities and Reno — with the same reliability standard we hold in California: background-checked cleaners, clear communication, and a documented checklist on every visit.",
-      "From Valley homes and HOA communities to Reno households and short-term rentals, we schedule around your access details and preferred cadence — one-time, move-out, or recurring — and confirm coverage by zip when we quote.",
+      "Steampunk House Cleaning serves Las Vegas and Las Vegas Valley communities with the same reliability standard we hold in every market: background-checked cleaners, clear communication, and a documented checklist on every visit.",
+      "From Valley homes and HOA communities to short-term rentals near the Strip, we schedule around your access details and preferred cadence — one-time, move-out, or recurring — and confirm coverage by zip when we quote.",
     ],
     highlights: [
       "Background-checked cleaners",
@@ -151,15 +151,13 @@ export const METROS: MetroLocation[] = [
       "Recurring or one-time options",
       "Free quote by phone",
     ],
-    areasHeading: "Areas we commonly serve in Nevada",
+    areasHeading: "Areas we commonly serve in the Las Vegas Valley",
     areasNote:
-      "We serve the Las Vegas metro, Reno, and nearby Nevada communities we can reach reliably. Coverage varies by zip and schedule — request a quote and we will confirm.",
+      "We serve the Las Vegas metro and nearby Valley communities we can reach reliably. Coverage varies by zip and schedule — request a quote and we will confirm.",
     areas: [
       "Las Vegas",
       "Henderson",
       "Summerlin",
-      "Reno",
-      "Sparks",
       "North Las Vegas",
       "Paradise",
       "Spring Valley",
@@ -172,8 +170,8 @@ export const METROS: MetroLocation[] = [
     ],
     faqs: [
       {
-        q: "Is Nevada a primary market for Steampunk — including Reno?",
-        a: "Yes. Nevada is one of our three equal markets alongside LA / Orange County and Sacramento. We serve Las Vegas Valley communities and Reno when logistics work — local clients get the same process and standards.",
+        q: "Is Las Vegas a primary market for Steampunk House Cleaning?",
+        a: "Yes. Las Vegas is one of our four markets, alongside Los Angeles & Orange County, Reno, and Sacramento. Las Vegas Valley clients get the same background-checked cleaners, documented checklist, and booking process as every other market.",
       },
       {
         q: "Can you handle move-out cleans for apartments and rentals in Las Vegas?",
@@ -184,8 +182,8 @@ export const METROS: MetroLocation[] = [
         a: "We support Airbnb and STR turnovers in the metro when logistics work for both sides. Mention your property location and turnover window on the quote form.",
       },
       {
-        q: "How do I confirm you cover my Nevada zip code?",
-        a: "Select Nevada (or note Las Vegas, Reno, Henderson, or your city) on the quote form, or call (725) 255-3688. We confirm coverage when we follow up — we do not claim every Nevada zip.",
+        q: "How do I confirm you cover my Las Vegas-area zip code?",
+        a: "Select Las Vegas (or note Henderson, Summerlin, or your city) on the quote form, or call (725) 255-3688. We confirm coverage when we follow up — we do not claim every zip in the Valley.",
       },
     ],
     services: sharedServices,

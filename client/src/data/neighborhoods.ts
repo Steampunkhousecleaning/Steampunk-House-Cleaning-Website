@@ -1,7 +1,7 @@
 /**
  * City / neighborhood landing pages nested under metro hubs.
  * Keep unique local copy — no spun stubs.
- * Generated/expanded for equal-weight LA/OC, Las Vegas & Reno / Nevada, Sacramento.
+ * Covers Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.
  */
 
 export type Neighborhood = {
@@ -21,6 +21,12 @@ export type Neighborhood = {
   highlights: string[];
   faqs: { q: string; a: string }[];
   quoteCity: string;
+  /**
+   * Hub this page sits under when it is not the metro hub (e.g. Sparks sits
+   * under the Reno & Sparks hub). Used for breadcrumbs and back links, and
+   * keeps the page out of the metro hub's featured-city grid.
+   */
+  parentHub?: { name: string; shortName: string; path: string };
 };
 
 /** Coverage names without a dedicated page yet — link to quote */
@@ -62,7 +68,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Irvine",
     intro: [
-      "Irvine homes — HOA access rules, garage parking, and busy dual-career schedules — need cleaners who respect gate codes, visitor parking limits, or HOA quiet hours. Steampunk House Cleaning serves Orange County master-planned communities near the Spectrum as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Irvine homes — HOA access rules, garage parking, and busy dual-career schedules — need cleaners who respect gate codes, visitor parking limits, or HOA quiet hours. Steampunk House Cleaning serves Orange County master-planned communities near the Spectrum as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -96,7 +102,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Pasadena",
     intro: [
-      "Pasadena homes — Craftsman bungalows, hillside homes, and condo buildings — need cleaners who respect street parking and building elevators that vary block by block. Steampunk House Cleaning serves Pasadena and nearby LA County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Pasadena homes — Craftsman bungalows, hillside homes, and condo buildings — need cleaners who respect street parking and building elevators that vary block by block. Steampunk House Cleaning serves Pasadena and nearby LA County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -134,7 +140,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Los Angeles",
     intro: [
-      "Los Angeles homes — apartments, hillsides, and family homes across diverse neighborhoods — need cleaners who respect street cleaning days, building managers, and tight parking. Steampunk House Cleaning serves the City of Los Angeles as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Los Angeles homes — apartments, hillsides, and family homes across diverse neighborhoods — need cleaners who respect street cleaning days, building managers, and tight parking. Steampunk House Cleaning serves the City of Los Angeles as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -160,7 +166,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Long Beach",
     intro: [
-      "Long Beach homes — coastal condos, historic neighborhoods, and busy port-adjacent schedules — need cleaners who respect permit parking, elevators, and building entry rules. Steampunk House Cleaning serves Long Beach and the South Bay edge of LA County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Long Beach homes — coastal condos, historic neighborhoods, and busy port-adjacent schedules — need cleaners who respect permit parking, elevators, and building entry rules. Steampunk House Cleaning serves Long Beach and the South Bay edge of LA County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -190,7 +196,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Santa Monica",
     intro: [
-      "Santa Monica homes — coastal living, walk-up apartments, and premium mid-rises — need cleaners who respect visitor parking scarcity and building security desks. Steampunk House Cleaning serves Santa Monica on the Westside as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Santa Monica homes — coastal living, walk-up apartments, and premium mid-rises — need cleaners who respect visitor parking scarcity and building security desks. Steampunk House Cleaning serves Santa Monica on the Westside as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -216,7 +222,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Glendale",
     intro: [
-      "Glendale homes — Armenian and Armenian-American family homes plus hillside residences — need cleaners who respect steep driveways and street parking on busy corridors. Steampunk House Cleaning serves Glendale in the Verdugo foothills as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Glendale homes — Armenian and Armenian-American family homes plus hillside residences — need cleaners who respect steep driveways and street parking on busy corridors. Steampunk House Cleaning serves Glendale in the Verdugo foothills as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -242,7 +248,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Burbank",
     intro: [
-      "Burbank homes — entertainment-industry schedules and tree-lined residential blocks — need cleaners who respect garage codes and weekday street restrictions. Steampunk House Cleaning serves Burbank near the studios and Magnolia Park as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Burbank homes — entertainment-industry schedules and tree-lined residential blocks — need cleaners who respect garage codes and weekday street restrictions. Steampunk House Cleaning serves Burbank near the studios and Magnolia Park as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -268,7 +274,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Torrance",
     intro: [
-      "Torrance homes — family neighborhoods and Japanese-American community roots — need cleaners who respect driveway parking and HOA rules in planned tracts. Steampunk House Cleaning serves Torrance in the South Bay as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Torrance homes — family neighborhoods and Japanese-American community roots — need cleaners who respect driveway parking and HOA rules in planned tracts. Steampunk House Cleaning serves Torrance in the South Bay as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -294,7 +300,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Culver City",
     intro: [
-      "Culver City homes — studio-adjacent apartments and revitalized downtown living — need cleaners who respect alley parking, gated complexes, and metro-adjacent buildings. Steampunk House Cleaning serves Culver City between the Westside and Mid-City as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Culver City homes — studio-adjacent apartments and revitalized downtown living — need cleaners who respect alley parking, gated complexes, and metro-adjacent buildings. Steampunk House Cleaning serves Culver City between the Westside and Mid-City as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -320,7 +326,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "West Hollywood",
     intro: [
-      "West Hollywood homes — dense urban living, entertainment nightlife corridors, and design-forward homes — need cleaners who respect underground garages and doorman or call-box entry. Steampunk House Cleaning serves West Hollywood as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "West Hollywood homes — dense urban living, entertainment nightlife corridors, and design-forward homes — need cleaners who respect underground garages and doorman or call-box entry. Steampunk House Cleaning serves West Hollywood as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -346,7 +352,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Downey",
     intro: [
-      "Downey homes — family-oriented neighborhoods and established mid-century tracts — need cleaners who respect driveway and curb parking with straightforward entry. Steampunk House Cleaning serves Downey in southeast LA County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Downey homes — family-oriented neighborhoods and established mid-century tracts — need cleaners who respect driveway and curb parking with straightforward entry. Steampunk House Cleaning serves Downey in southeast LA County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -372,7 +378,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Inglewood",
     intro: [
-      "Inglewood homes — growing residential demand and busy event-weekend calendars — need cleaners who respect street parking and apartment complex gates. Steampunk House Cleaning serves Inglewood near SoFi and the Forum as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Inglewood homes — growing residential demand and busy event-weekend calendars — need cleaners who respect street parking and apartment complex gates. Steampunk House Cleaning serves Inglewood near SoFi and the Forum as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -398,7 +404,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Pomona",
     intro: [
-      "Pomona homes — university-adjacent rentals and larger family lots — need cleaners who respect driveway parking and straightforward residential streets. Steampunk House Cleaning serves Pomona in the eastern San Gabriel Valley as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Pomona homes — university-adjacent rentals and larger family lots — need cleaners who respect driveway parking and straightforward residential streets. Steampunk House Cleaning serves Pomona in the eastern San Gabriel Valley as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -424,7 +430,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Anaheim",
     intro: [
-      "Anaheim homes — resort-adjacent homes and busy family schedules near the resorts — need cleaners who respect HOA gates and guest parking limits in planned communities. Steampunk House Cleaning serves Anaheim in north Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Anaheim homes — resort-adjacent homes and busy family schedules near the resorts — need cleaners who respect HOA gates and guest parking limits in planned communities. Steampunk House Cleaning serves Anaheim in north Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -450,7 +456,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Huntington Beach",
     intro: [
-      "Huntington Beach homes — surf-town living, sandy floors, and outdoor-active households — need cleaners who respect beach-area parking and alley or garage entry. Steampunk House Cleaning serves Huntington Beach on the OC coast as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Huntington Beach homes — surf-town living, sandy floors, and outdoor-active households — need cleaners who respect beach-area parking and alley or garage entry. Steampunk House Cleaning serves Huntington Beach on the OC coast as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -476,7 +482,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Newport Beach",
     intro: [
-      "Newport Beach homes — premium coastal homes and guest-ready expectations — need cleaners who respect tight street parking, private gates, and building access codes. Steampunk House Cleaning serves Newport Beach and nearby harbor communities as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Newport Beach homes — premium coastal homes and guest-ready expectations — need cleaners who respect tight street parking, private gates, and building access codes. Steampunk House Cleaning serves Newport Beach and nearby harbor communities as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -502,7 +508,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Santa Ana",
     intro: [
-      "Santa Ana homes — urban core apartments and established family neighborhoods — need cleaners who respect street parking and multi-unit building entry. Steampunk House Cleaning serves Santa Ana in the heart of Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Santa Ana homes — urban core apartments and established family neighborhoods — need cleaners who respect street parking and multi-unit building entry. Steampunk House Cleaning serves Santa Ana in the heart of Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -528,7 +534,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Costa Mesa",
     intro: [
-      "Costa Mesa homes — creative-industry schedules and mixed residential stock — need cleaners who respect complex gates and visitor parking rules. Steampunk House Cleaning serves Costa Mesa between South Coast Plaza and the coast as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Costa Mesa homes — creative-industry schedules and mixed residential stock — need cleaners who respect complex gates and visitor parking rules. Steampunk House Cleaning serves Costa Mesa between South Coast Plaza and the coast as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -554,7 +560,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Fullerton",
     intro: [
-      "Fullerton homes — university-town energy and tree-lined residential streets — need cleaners who respect driveway parking and quiet-hour HOA rules. Steampunk House Cleaning serves Fullerton in north Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Fullerton homes — university-town energy and tree-lined residential streets — need cleaners who respect driveway parking and quiet-hour HOA rules. Steampunk House Cleaning serves Fullerton in north Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -580,7 +586,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Orange",
     intro: [
-      "Orange homes — historic district charm and suburban family pockets — need cleaners who respect street parking near the Plaza and driveway homes inland. Steampunk House Cleaning serves the City of Orange including Old Towne as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Orange homes — historic district charm and suburban family pockets — need cleaners who respect street parking near the Plaza and driveway homes inland. Steampunk House Cleaning serves the City of Orange including Old Towne as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -606,7 +612,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Tustin",
     intro: [
-      "Tustin homes — newer planned communities and established Old Town blocks — need cleaners who respect HOA gates and garage parking norms. Steampunk House Cleaning serves Tustin and the Legacy / Tustin Ranch corridors as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Tustin homes — newer planned communities and established Old Town blocks — need cleaners who respect HOA gates and garage parking norms. Steampunk House Cleaning serves Tustin and the Legacy / Tustin Ranch corridors as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -632,7 +638,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Mission Viejo",
     intro: [
-      "Mission Viejo homes — lake-community living and family-oriented planned neighborhoods — need cleaners who respect community gates and visitor parking rules. Steampunk House Cleaning serves Mission Viejo in south Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across our three equal metros.",
+      "Mission Viejo homes — lake-community living and family-oriented planned neighborhoods — need cleaners who respect community gates and visitor parking rules. Steampunk House Cleaning serves Mission Viejo in south Orange County as part of our Los Angeles / Orange County market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -658,7 +664,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Las Vegas",
     intro: [
-      "Las Vegas homes — desert dust, HOA villages, and busy hospitality-adjacent schedules — need cleaners who respect gate codes, HOA rules, and garage vs. street parking. Steampunk House Cleaning serves Las Vegas proper across the Valley as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Las Vegas homes — desert dust, HOA villages, and busy hospitality-adjacent schedules — need cleaners who respect gate codes, HOA rules, and garage vs. street parking. Steampunk House Cleaning serves Las Vegas proper across the Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -684,7 +690,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Henderson",
     intro: [
-      "Henderson homes — suburban reliability without the runaround — need cleaners who respect garage vs. street parking and gate codes. Steampunk House Cleaning serves Henderson from Green Valley to Anthem-area communities as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Henderson homes — suburban reliability without the runaround — need cleaners who respect garage vs. street parking and gate codes. Steampunk House Cleaning serves Henderson from Green Valley to Anthem-area communities as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -722,7 +728,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Summerlin",
     intro: [
-      "Summerlin homes — master-planned villages, golf-course neighborhoods, and HOA-managed streets — need cleaners who respect village gate codes and community rules. Steampunk House Cleaning serves Summerlin on the west side of the Las Vegas Valley as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Summerlin homes — master-planned villages, golf-course neighborhoods, and HOA-managed streets — need cleaners who respect village gate codes and community rules. Steampunk House Cleaning serves Summerlin on the west side of the Las Vegas Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -756,7 +762,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "North Las Vegas",
     intro: [
-      "North Las Vegas homes — growing suburban tracts and value-focused family homes — need cleaners who respect driveway parking and newer-community gates. Steampunk House Cleaning serves North Las Vegas as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "North Las Vegas homes — growing suburban tracts and value-focused family homes — need cleaners who respect driveway parking and newer-community gates. Steampunk House Cleaning serves North Las Vegas as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -782,7 +788,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Paradise",
     intro: [
-      "Paradise homes — condo living, short-term rentals, and high-traffic households — need cleaners who respect tower security desks and garage elevators. Steampunk House Cleaning serves Paradise Township near the Strip corridor as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Paradise homes — condo living, short-term rentals, and high-traffic households — need cleaners who respect tower security desks and garage elevators. Steampunk House Cleaning serves Paradise Township near the Strip corridor as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -808,7 +814,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Spring Valley",
     intro: [
-      "Spring Valley homes — dense residential blocks and busy dual-income households — need cleaners who respect apartment gates and street parking. Steampunk House Cleaning serves Spring Valley west of the Strip as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Spring Valley homes — dense residential blocks and busy dual-income households — need cleaners who respect apartment gates and street parking. Steampunk House Cleaning serves Spring Valley west of the Strip as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -834,7 +840,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Enterprise",
     intro: [
-      "Enterprise homes — newer construction and master-planned growth — need cleaners who respect HOA gates and garage-first parking. Steampunk House Cleaning serves Enterprise in the southwest Valley as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Enterprise homes — newer construction and master-planned growth — need cleaners who respect HOA gates and garage-first parking. Steampunk House Cleaning serves Enterprise in the southwest Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -860,7 +866,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Centennial Hills",
     intro: [
-      "Centennial Hills homes — foothill views, newer tracts, and family calendars — need cleaners who respect community gates and driveway parking. Steampunk House Cleaning serves Centennial Hills in the northwest Valley as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Centennial Hills homes — foothill views, newer tracts, and family calendars — need cleaners who respect community gates and driveway parking. Steampunk House Cleaning serves Centennial Hills in the northwest Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -886,7 +892,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Green Valley",
     intro: [
-      "Green Valley homes — established planned living and mature landscaping — need cleaners who respect HOA norms and visitor parking rules. Steampunk House Cleaning serves Green Valley in Henderson as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Green Valley homes — established planned living and mature landscaping — need cleaners who respect HOA norms and visitor parking rules. Steampunk House Cleaning serves Green Valley in Henderson as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -912,7 +918,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Whitney",
     intro: [
-      "Whitney homes — practical residential streets and value-focused homes — need cleaners who respect driveway and curb parking. Steampunk House Cleaning serves Whitney on the east side of the Valley as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Whitney homes — practical residential streets and value-focused homes — need cleaners who respect driveway and curb parking. Steampunk House Cleaning serves Whitney on the east side of the Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -938,7 +944,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Boulder City",
     intro: [
-      "Boulder City homes — small-city pace and historic downtown residential blocks — need cleaners who respect straightforward driveway parking. Steampunk House Cleaning serves Boulder City near Lake Mead as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Boulder City homes — small-city pace and historic downtown residential blocks — need cleaners who respect straightforward driveway parking. Steampunk House Cleaning serves Boulder City near Lake Mead as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -964,7 +970,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Sunrise Manor",
     intro: [
-      "Sunrise Manor homes — busy family households and practical cleaning needs — need cleaners who respect street parking and apartment complex entry. Steampunk House Cleaning serves Sunrise Manor on the east Valley as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Sunrise Manor homes — busy family households and practical cleaning needs — need cleaners who respect street parking and apartment complex entry. Steampunk House Cleaning serves Sunrise Manor on the east Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -979,46 +985,9 @@ export const NEIGHBORHOODS: Neighborhood[] = [
   },
   {
     metroSlug: "las-vegas-nevada",
-    slug: "reno",
-    path: "/locations/las-vegas-nevada/reno",
-    name: "Reno",
-    stateLabel: "Nevada",
-    featured: true,
-    title: "House Cleaning in Reno, NV | Steampunk House Cleaning",
-    description:
-      "Professional house cleaning in Reno. Standard, deep, and recurring cleans with background-checked teams. Free quote.",
-    h1: "House cleaning in",
-    h1Accent: "Reno",
-    intro: [
-      "Reno homes — foothill homes, midtown rentals, and newer subdivisions — need cleaners who respect Northern Nevada logistics that differ from the Las Vegas Valley. Steampunk House Cleaning serves Reno and the Northern Nevada corridor as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
-    ],
-    localNotes: [],
-    highlights: [
-      "Background-checked cleaners",
-      "Documented room-by-room checklist",
-      "Northern Nevada coverage when available",
-      "Free quote by phone",
-    ],
-    faqs: [
-      {
-        q: "Do you really clean in Reno, or only Las Vegas?",
-        a: "We serve both Southern and Northern Nevada when logistics work. Reno is part of our Nevada market (Las Vegas & Reno). Request a quote with your zip and we will confirm coverage and timing on the follow-up call.",
-      },
-      {
-        q: "Can I book recurring cleaning in Reno?",
-        a: "Weekly, bi-weekly, and monthly options are available subject to capacity. Recurring clients typically get a clearer long-term schedule once coverage is confirmed.",
-      },
-      {
-        q: "How do I get a Reno cleaning quote?",
-        a: "Use Get a Quote and select Reno, NV (or note Reno in the notes), or call (725) 255-3688. We confirm whether we can reach your address before you commit.",
-      },
-    ],
-    quoteCity: "Reno, NV",
-  },
-  {
-    metroSlug: "las-vegas-nevada",
     slug: "sparks",
     path: "/locations/las-vegas-nevada/sparks",
+    parentHub: { name: "Reno & Sparks", shortName: "Reno & Sparks", path: "/locations/reno" },
     name: "Sparks",
     stateLabel: "Nevada",
     featured: true,
@@ -1028,7 +997,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Sparks",
     intro: [
-      "Sparks homes — family neighborhoods and industrial-corridor schedules — need cleaners who respect driveway parking and straightforward residential access. Steampunk House Cleaning serves Sparks next to Reno as part of our Las Vegas & Reno / Nevada market with the same checklist-driven process we use across our three equal metros.",
+      "Sparks homes — family neighborhoods and industrial-corridor schedules — need cleaners who respect driveway parking and straightforward residential access. Steampunk House Cleaning serves Sparks next to Reno as part of our Reno market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -1040,7 +1009,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     faqs: [
       {
         q: "Do you clean in Sparks as well as Reno?",
-        a: "Yes — Sparks is part of our Northern Nevada coverage within the Las Vegas & Reno / Nevada market. Share your zip so we can confirm timing.",
+        a: "Yes. Sparks is part of our Reno service area. Share your zip on the quote form so we can schedule your visit.",
       },
     ],
     quoteCity: "Reno, NV",
@@ -1058,7 +1027,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Roseville",
     intro: [
-      "Roseville homes — school runs, commute days, and weekend guests — need cleaners who respect driveway parking and pet notes. Steampunk House Cleaning serves Roseville near Sacramento as part of our Sacramento market with the same checklist-driven process we use across our three equal metros.",
+      "Roseville homes — school runs, commute days, and weekend guests — need cleaners who respect driveway parking and pet notes. Steampunk House Cleaning serves Roseville near Sacramento as part of our Sacramento market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -1084,7 +1053,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Elk Grove",
     intro: [
-      "Elk Grove homes — family-oriented neighborhoods and larger floor plans — need cleaners who respect driveway parking and kid/pet-friendly scheduling. Steampunk House Cleaning serves Elk Grove south of Sacramento as part of our Sacramento market with the same checklist-driven process we use across our three equal metros.",
+      "Elk Grove homes — family-oriented neighborhoods and larger floor plans — need cleaners who respect driveway parking and kid/pet-friendly scheduling. Steampunk House Cleaning serves Elk Grove south of Sacramento as part of our Sacramento market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -1110,7 +1079,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Folsom",
     intro: [
-      "Folsom homes — active outdoor households and established suburbs — need cleaners who respect driveway parking and HOA rules in planned tracts. Steampunk House Cleaning serves Folsom near the lake and historic district as part of our Sacramento market with the same checklist-driven process we use across our three equal metros.",
+      "Folsom homes — active outdoor households and established suburbs — need cleaners who respect driveway parking and HOA rules in planned tracts. Steampunk House Cleaning serves Folsom near the lake and historic district as part of our Sacramento market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
     ],
     localNotes: [],
     highlights: [
@@ -1134,7 +1103,8 @@ export function getNeighborhood(
 }
 
 export function getNeighborhoodsForMetro(metroSlug: string): Neighborhood[] {
-  return NEIGHBORHOODS.filter((n) => n.metroSlug === metroSlug);
+  // Pages with their own parent hub (Sparks -> Reno & Sparks) are not featured on the metro hub.
+  return NEIGHBORHOODS.filter((n) => n.metroSlug === metroSlug && !n.parentHub);
 }
 
 export function getFeaturedNeighborhoods(): Neighborhood[] {
