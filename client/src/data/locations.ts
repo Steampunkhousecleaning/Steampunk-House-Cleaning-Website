@@ -109,7 +109,6 @@ export const METROS: MetroLocation[] = [
       "Pomona",
       "Downey",
       "Inglewood",
-      "West Hollywood",
     ],
     faqs: [
       {
