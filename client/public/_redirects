@@ -11,9 +11,12 @@
 /long-beach-ca-house-cleaning-services/        /locations/los-angeles-orange-county/long-beach/   301!
 /long-beach-ca-house-cleaning-services         /locations/los-angeles-orange-county/long-beach/   301!
 
-# Reno: previously-indexed /reno/ URL (GSC clicks) -> canonical Reno page (single hop)
-/reno/                                         /locations/las-vegas-nevada/reno/                 301!
-/reno                                          /locations/las-vegas-nevada/reno/                 301!
+# Reno: previously-indexed /reno/ URL (GSC clicks) and the old Nevada-nested Reno page
+# -> Reno & Sparks hub (single hop, approved by owner 10/9/26)
+/reno/                                         /locations/reno/                                   301!
+/reno                                          /locations/reno/                                   301!
+/locations/las-vegas-nevada/reno/              /locations/reno/                                   301!
+/locations/las-vegas-nevada/reno               /locations/reno/                                   301!
 
 # Duplicate of the Sacramento metro hub — consolidate
 /locations/sacramento/sacramento/   /locations/sacramento/   301!

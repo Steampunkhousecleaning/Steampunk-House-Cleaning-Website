@@ -52,7 +52,6 @@ const ROUTES = [
   "/locations/las-vegas-nevada/las-vegas",
   "/locations/las-vegas-nevada/north-las-vegas",
   "/locations/las-vegas-nevada/paradise",
-  "/locations/las-vegas-nevada/reno",
   "/locations/las-vegas-nevada/sparks",
   "/locations/las-vegas-nevada/spring-valley",
   "/locations/las-vegas-nevada/summerlin",

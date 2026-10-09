@@ -43,11 +43,15 @@ const CITIES = [
 /** Specific city options (grouped by metro) so city pages can pre-select their own city. */
 const CITY_GROUPS: { label: string; cities: string[] }[] = [
   { label: "Los Angeles / Orange County", slug: "los-angeles-orange-county" },
-  { label: "Las Vegas & Reno / Nevada", slug: "las-vegas-nevada" },
+  { label: "Las Vegas", slug: "las-vegas-nevada" },
+  { label: "Reno & Sparks", slug: "reno" },
   { label: "Sacramento", slug: "sacramento" },
 ].map((g) => ({
   label: g.label,
-  cities: NEIGHBORHOODS.filter((n) => n.metroSlug === g.slug).map(neighborhoodQuoteCity),
+  cities:
+    g.slug === "reno"
+      ? ["Reno, NV", ...NEIGHBORHOODS.filter((n) => n.parentHub?.path === "/locations/reno").map(neighborhoodQuoteCity)]
+      : NEIGHBORHOODS.filter((n) => n.metroSlug === g.slug && !n.parentHub).map(neighborhoodQuoteCity),
 }));
 const ALL_CITY_VALUES = new Set<string>([...CITIES, ...CITY_GROUPS.flatMap((g) => g.cities)]);
 

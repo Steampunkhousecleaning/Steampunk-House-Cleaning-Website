@@ -206,7 +206,6 @@ const LOCATION_AREAS: Record<string, string[]> = {
     "Las Vegas", "Henderson", "Summerlin", "North Las Vegas", "Paradise",
     "Spring Valley", "Enterprise", "Boulder City",
   ],
-  "/locations/las-vegas-nevada/reno": ["Reno", "Sparks"],
   "/locations/sacramento": [
     "Sacramento", "Roseville", "Elk Grove", "Folsom", "Rancho Cordova",
     "Citrus Heights", "Carmichael", "Davis", "West Sacramento",

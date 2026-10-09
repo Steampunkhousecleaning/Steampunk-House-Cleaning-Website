@@ -358,16 +358,6 @@ export const CITY_LOCAL: Record<string, CityLocal> = {
     },
     nearby: ["north-las-vegas", "whitney", "paradise", "las-vegas"],
   },
-  reno: {
-    areas: ["Midtown", "Old Southwest", "Caughlin Ranch", "Somersett", "Damonte Ranch", "Northwest Reno"],
-    detail:
-      "Reno sits at about 4,500 feet in a dry high-desert climate. Dust, wildfire-smoke days, and winter road grit all end up indoors, and older Old Southwest homes have original wood floors and windows that need more hand detail than newer builds in Somersett or Damonte Ranch.",
-    faq: {
-      q: "Do you clean after wildfire-smoke days or winter road-salt season?",
-      a: "Yes. Smoke and grit settle on window sills, floors, and vents. Ask for a deep clean after heavy smoke periods and we will focus on those areas.",
-    },
-    nearby: ["sparks"],
-  },
   sparks: {
     areas: ["Downtown Sparks", "Spanish Springs", "Wingfield Springs", "Sparks Marina area", "Sun Valley border", "Golden Eagle Regional Park area"],
     detail:
@@ -376,7 +366,7 @@ export const CITY_LOCAL: Record<string, CityLocal> = {
       q: "Do you serve Spanish Springs and outlying Sparks neighborhoods?",
       a: "Coverage depends on the address and schedule. Include your zip on the quote form and we will confirm when we call.",
     },
-    nearby: ["reno"],
+    nearby: [],
   },
   // ───────────────────────── Sacramento ─────────────────────────
   sacramento: {

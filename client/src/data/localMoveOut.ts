@@ -64,7 +64,7 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
     city: "Las Vegas",
     quoteCity: "Las Vegas, NV",
     quoteService: MOVE_OUT_QUOTE_SERVICE,
-    metroName: "Las Vegas & Reno / Nevada",
+    metroName: "Las Vegas",
     metroPath: "/locations/las-vegas-nevada",
     title: "Move-Out Cleaning in Las Vegas, NV | Steampunk House Cleaning",
     description:

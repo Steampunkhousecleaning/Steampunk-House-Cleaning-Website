@@ -17,7 +17,7 @@ const ICE = "#B5E1F2";
 const FAQS = [
   {
     q: "Where does Steampunk House Cleaning operate?",
-    a: "We serve three equal metros: Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. That includes Reno and Sparks in Northern Nevada as well as the Las Vegas Valley. Coverage varies by zip and schedule — request a quote with your city and we will confirm.",
+    a: "We serve four markets: Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. That includes Sparks alongside Reno in Northern Nevada, and communities across the Las Vegas Valley. Coverage varies by zip and schedule — request a quote with your city and we will confirm.",
   },
   {
     q: "How quickly can you get someone to my home?",

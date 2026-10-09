@@ -1,10 +1,9 @@
 /**
  * renoHub.ts — standalone Reno & Sparks hub (/locations/reno).
- * The existing /locations/las-vegas-nevada/reno page is left untouched (no
- * redirect, no canonical change) until the owner approves that plan.
+ * The old /locations/las-vegas-nevada/reno page 301s here (owner approved 10/9/26).
  * No reviews section: there are no real Reno reviews (never borrow).
- * No named Reno / Sparks neighborhoods: the owner has not confirmed which
- * ones we regularly clean in, so none are listed or claimed.
+ * Neighborhoods: only the ones the owner confirmed (10/9/26). Do not add more
+ * without owner confirmation.
  */
 import { costFaq, type FaqItem } from "@/lib/costFaq";
 
@@ -25,11 +24,16 @@ export const RENO_HUB = {
     },
     {
       heading: "Dry-climate dust",
-      text: "Low humidity keeps fine dust in the air, and it settles on window sills, blinds, vents and ceiling fan blades. Dusting high and low is on every Reno checklist, not just on deep cleans.",
+      text: "Low humidity keeps fine dust in the air, and it settles on window sills, blinds, vents and ceiling fan blades. Wildfire-smoke days add to it. Dusting high and low is on every Reno checklist, not just on deep cleans.",
     },
   ],
   founders:
     "Steampunk House Cleaning was started by Ryan and Daniel, and every visit runs off the same written checklist whether you are in Reno, Sparks or one of our other markets.",
+  neighborhoodsIntro:
+    "We clean homes across Reno and Sparks, including these neighborhoods:",
+  neighborhoods: ["Midtown", "South Meadows", "Somersett", "Caughlin Ranch", "Spanish Springs", "Sparks"],
+  neighborhoodsNote:
+    "Not listed? Put your zip code on the quote form and we will confirm your address.",
   services: [
     { label: "Standard Cleaning", href: "/standard-cleaning", blurb: "Routine cleaning for kitchens, bathrooms, floors and living areas." },
     { label: "Deep Cleaning", href: "/deep-cleaning", blurb: "Baseboards, grout and the build-up a long winter leaves behind." },
@@ -47,7 +51,7 @@ export const RENO_HUB = {
     }),
     {
       q: "Do you clean in Sparks as well as Reno?",
-      a: "Yes, when the schedule allows. Sparks is part of the Reno area we cover. Put your zip code on the quote form and we will confirm timing for your address before you book.",
+      a: "Yes. Sparks is part of our Reno service area. Put your zip code on the quote form and we will set up a time that works for you.",
     },
     {
       q: "How do you deal with winter grime and road salt tracked into the house?",
@@ -60,7 +64,7 @@ export const RENO_HUB = {
   ] as FaqItem[],
   links: [
     { href: "/locations/las-vegas-nevada/sparks", label: "Sparks house cleaning" },
-    { href: "/locations/las-vegas-nevada", label: "Nevada locations" },
+    { href: "/locations/las-vegas-nevada", label: "Las Vegas house cleaning" },
     { href: "/move-in-move-out", label: "Move-in / move-out cleaning" },
   ],
   areaServed: ["Reno", "Sparks"],
