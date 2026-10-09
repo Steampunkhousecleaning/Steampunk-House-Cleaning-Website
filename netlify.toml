@@ -19,6 +19,8 @@
 # Legacy WordPress / trailing-slash URLs → SPA routes
 
 
+# Kept in sync with client/public/_redirects (Netlify applies _redirects first).
+
 [[redirects]]
   from = "/los-angeles/"
   to = "/locations/los-angeles-orange-county/"
@@ -62,6 +64,12 @@
   force = true
 
 [[redirects]]
+  from = "/long-beach-ca-house-cleaning-services"
+  to = "/locations/los-angeles-orange-county/long-beach/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/reno/"
   to = "/locations/las-vegas-nevada/reno/"
   status = 301
@@ -70,6 +78,138 @@
 [[redirects]]
   from = "/reno"
   to = "/locations/las-vegas-nevada/reno/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/sacramento/sacramento/"
+  to = "/locations/sacramento/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/sacramento/sacramento"
+  to = "/locations/sacramento/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policies/"
+  to = "/privacy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policies"
+  to = "/privacy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-condition/"
+  to = "/terms/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-condition"
+  to = "/terms/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact-us/"
+  to = "/get-a-quote/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/get-a-quote/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/request-a-quote/"
+  to = "/get-a-quote/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/request-a-quote"
+  to = "/get-a-quote/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cleaning-services/"
+  to = "/standard-cleaning/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cleaning-services"
+  to = "/standard-cleaning/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/move-in-out-cleaning/"
+  to = "/move-in-move-out/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/move-in-out-cleaning"
+  to = "/move-in-move-out/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/move-in-out/"
+  to = "/move-in-move-out/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/move-in-out"
+  to = "/move-in-move-out/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/property-management/"
+  to = "/airbnb-cleaning/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/property-management"
+  to = "/airbnb-cleaning/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/las-vegas/"
+  to = "/locations/las-vegas-nevada/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/las-vegas"
+  to = "/locations/las-vegas-nevada/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sacramento/"
+  to = "/locations/sacramento/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sacramento"
+  to = "/locations/sacramento/"
   status = 301
   force = true
 

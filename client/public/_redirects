@@ -19,6 +19,29 @@
 /locations/sacramento/sacramento/   /locations/sacramento/   301!
 /locations/sacramento/sacramento    /locations/sacramento/   301!
 
+# Legacy WordPress soft-404s (GSC report 10/3/26) — approved by owner. Exact paths only; closest page, never homepage.
+/privacy-policies/                             /privacy/                                          301!
+/privacy-policies                              /privacy/                                          301!
+/terms-condition/                              /terms/                                            301!
+/terms-condition                               /terms/                                            301!
+/contact-us/                                   /get-a-quote/                                      301!
+/contact-us                                    /get-a-quote/                                      301!
+/request-a-quote/                              /get-a-quote/                                      301!
+/request-a-quote                               /get-a-quote/                                      301!
+/cleaning-services/                            /standard-cleaning/                                301!
+/cleaning-services                             /standard-cleaning/                                301!
+/move-in-out-cleaning/                         /move-in-move-out/                                 301!
+/move-in-out-cleaning                          /move-in-move-out/                                 301!
+/move-in-out/                                  /move-in-move-out/                                 301!
+/move-in-out                                   /move-in-move-out/                                 301!
+/property-management/                          /airbnb-cleaning/                                  301!
+/property-management                           /airbnb-cleaning/                                  301!
+/las-vegas/                                    /locations/las-vegas-nevada/                       301!
+/las-vegas                                     /locations/las-vegas-nevada/                       301!
+/sacramento/                                   /locations/sacramento/                             301!
+/sacramento                                    /locations/sacramento/                             301!
+# Left 404 on purpose (no matching page): /author/*, /feed/, /wp-content/*, /post-construction-cleaning/, /accessibility-statement/, spam posts.
+
 # Prerendered routes ship as directory index.html files (e.g. /about/index.html).
 # Only unknown paths fall through to a real HTTP 404.
 /*    /404.html   404
