@@ -55,13 +55,6 @@ export default function Reviews() {
     "@type": "LocalBusiness",
     name: "Steampunk House Cleaning",
     url: "https://steampunkcleaning.com/reviews/",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: String(REVIEW_STATS.ratingValue),
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: String(REVIEW_STATS.reviewCount),
-    },
   };
 
   return (

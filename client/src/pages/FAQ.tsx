@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: "How does pricing work?",
-    a: "Pricing is based on your home size, service type, and frequency. We give you a clear quote on the call — no hidden fees.",
+    a: "It depends on your home size, the type of service, and how often you book — a one-time deep clean is priced differently from a recurring visit. A free quote takes about 2 minutes: fill out our quote form or call (725) 255-3688, and we give you a clear number with no hidden fees.",
   },
   {
     q: "What's the difference between standard and deep cleaning?",
