@@ -53,7 +53,6 @@ const SKY = "#72B5D3";
 const ICE = "#EEF6FB";
 const MUTED = "#5a7080";
 const WHITE = "#ffffff";
-const DARK_FOOTER = "#1e2d3d";
 
 // ─── Scroll animation hook ─────────────────────────────────────────────────────
 function useScrollReveal() {
@@ -982,65 +981,6 @@ export default function Home() {
 
         {/* ─── SHARED FOOTER ───────────────────────────────────────────────── */}
       <Footer />
-      {/* OLD FOOTER BELOW — kept for reference, will be removed */}
-      <footer className="py-10 hidden" style={{ backgroundColor: DARK_FOOTER }}>
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-            <div className="md:col-span-2">
-              <div className="flex items-center mb-4">
-                <img src={LOGO_URL} alt="Steampunk House Cleaning" className="w-auto object-contain" style={{ height: 52, maxWidth: 190, filter: "brightness(0) invert(1)" }} />
-              </div>
-              <p className="sp-body text-sm leading-relaxed max-w-xs" style={{ color: "#7a9bb0" }}>
-                Professional, background-checked cleaning services across Los Angeles / Orange County, Las Vegas & Reno / Nevada, and Sacramento. Built by homeowners who got burned, so you don't have to.
-              </p>
-            </div>
-            <div>
-              <h4 className="sp-body text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#7a9bb0" }}>Services</h4>
-              <ul className="space-y-2">
-                {[
-                    { label: "Standard Cleaning", path: "/standard-cleaning" },
-                    { label: "Deep Cleaning", path: "/deep-cleaning" },
-                    { label: "Recurring Cleaning", path: "/recurring-cleaning" },
-                    { label: "Move-In / Move-Out", path: "/move-in-move-out" },
-                    { label: "Airbnb / STR Turnover", path: "/airbnb-cleaning" },
-                    { label: "Commercial / Office", path: "/commercial-cleaning" },
-                  ].map(({ label, path }) => (
-                  <li key={path}>
-                    <a href={`${path}/`} className="sp-body text-sm transition-colors hover:text-white" style={{ color: "#8fb5c8" }}>{label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="sp-body text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#7a9bb0" }}>Locations</h4>
-              <ul className="space-y-2">
-                {["Los Angeles / Orange County", "Las Vegas, NV", "Reno, NV", "Sacramento, CA"].map((l) => (
-                  <li key={l} className="flex items-center gap-1.5">
-                    <MapPin className="w-3 h-3 flex-shrink-0" style={{ color: TEAL }} />
-                    <span className="sp-body text-sm" style={{ color: "#8fb5c8" }}>{l}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6">
-                <h4 className="sp-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#7a9bb0" }}>Contact</h4>
-                <a href="tel:7252553688" className="flex items-center gap-2 sp-body text-sm font-medium" style={{ color: TEAL }}>
-                  <Phone className="w-4 h-4" /> (725) 255-3688
-                </a>
-                <a href="mailto:info@steampunkhousecleaning.com" className="sp-body text-sm mt-2 block" style={{ color: "#8fb5c8" }}>
-                  info@steampunkhousecleaning.com
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-            <p className="sp-body text-xs" style={{ color: "#4a6070" }}>© 2026 Steampunk House Cleaning. All rights reserved. Licensed · Bonded · Insured.</p>
-            <div className="flex items-center gap-4">
-              <a href="/privacy/" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Privacy Policy</a>
-              <a href="/terms/" className="sp-body text-xs transition-colors hover:text-white" style={{ color: "#4a6070" }}>Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
