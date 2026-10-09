@@ -1,8 +1,8 @@
 /**
- * LocalPageParts.tsx — small shared pieces for the local draft pages
+ * LocalPageParts.tsx — small shared pieces for the local pages
  * (local move-out pages and the Reno hub).
  */
-import { Fragment, type CSSProperties, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Link } from "wouter";
 import { ArrowRight, Phone } from "lucide-react";
 import { MAIN_PHONE } from "@/lib/phones";
@@ -28,28 +28,6 @@ export const pStyle: CSSProperties = {
   marginBottom: 16,
   fontFamily: "'DM Sans', sans-serif",
 };
-
-/** Renders text, highlighting any [OWNER: ...] placeholder so it is easy to spot in review. */
-export function OwnerText({ text }: { text: string }) {
-  const parts = text.split(/(\[OWNER:[^\]]*\])/g);
-  return (
-    <>
-      {parts.map((p, i) =>
-        /^\[OWNER:/.test(p) ? (
-          <mark
-            key={i}
-            data-owner-placeholder="true"
-            style={{ backgroundColor: "#fff1a8", color: "#6b5200", fontWeight: 700, padding: "0 3px", borderRadius: 3 }}
-          >
-            {p}
-          </mark>
-        ) : (
-          <Fragment key={i}>{p}</Fragment>
-        ),
-      )}
-    </>
-  );
-}
 
 export function Section({ children, bg = "#fff", id }: { children: ReactNode; bg?: string; id?: string }) {
   return (

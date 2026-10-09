@@ -92,7 +92,7 @@ const ROUTES = [
   "/locations/sacramento/standard-cleaning",
   "/locations/sacramento/deep-cleaning",
   "/locations/sacramento/recurring-cleaning",
-  // DRAFT local pages (owner review). Prerendered, but NOT in sitemap.xml.
+  // Local move-out pages + Reno & Sparks hub (also in sitemap.xml).
   "/locations/las-vegas-nevada/move-out-cleaning",
   "/locations/sacramento/move-out-cleaning",
   "/locations/reno",

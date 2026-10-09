@@ -14,6 +14,7 @@ import { getNeighborhoodsForMetro } from "@/data/neighborhoods";
 import { getServiceMetrosForMetro, metroQuoteCity } from "@/data/serviceMetros";
 import NotFound from "@/pages/NotFound";
 import { MOVE_OUT_CARD_OVERRIDES } from "@/data/localMoveOut";
+import { RENO_HUB } from "@/data/renoHub";
 import {
   MapPin,
   CheckCircle,
@@ -330,7 +331,7 @@ export default function LocationMetro() {
           >
             {metro.services.map((s) => {
               const local = serviceMetros.find((sm) => sm.serviceLabel === s.label);
-              // DRAFT: hub Move-In / Move-Out card -> local move-out page where one exists
+              // Hub Move-In / Move-Out card -> local move-out page where one exists
               const moveOutLocal =
                 s.href === "/move-in-move-out" ? MOVE_OUT_CARD_OVERRIDES[metro.slug] : undefined;
               const href = moveOutLocal ?? (local ? local.path : s.href);
@@ -493,6 +494,24 @@ export default function LocationMetro() {
             >
               {metro.areasNote}
             </p>
+            {metro.slug === "las-vegas-nevada" && (
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "#5a6e80",
+                  fontFamily: "'DM Sans', sans-serif",
+                  maxWidth: 640,
+                  margin: "10px auto 0",
+                  lineHeight: 1.65,
+                }}
+              >
+                In Reno or Sparks? See our{" "}
+                <Link href={RENO_HUB.path} style={{ color: TEAL, fontWeight: 700 }}>
+                  Reno &amp; Sparks house cleaning
+                </Link>{" "}
+                page.
+              </p>
+            )}
           </div>
           <ul
             style={{

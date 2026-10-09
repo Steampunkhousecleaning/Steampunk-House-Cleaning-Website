@@ -1,14 +1,14 @@
 /**
- * localMoveOut.ts — DRAFT local move-out pages (owner review before publishing).
+ * localMoveOut.ts — local move-out pages.
  *   /locations/las-vegas-nevada/move-out-cleaning
  *   /locations/sacramento/move-out-cleaning
  *
- * Rules: no prices, no invented reviews/stats/legal claims. Anything that needs
- * the owner is written as an [OWNER: ...] placeholder. Legal statements are
- * always marked [OWNER: verify]. Inside-oven cleaning is a PAID ADD-ON, never
- * part of the move-out checklist. Reviews are pulled verbatim from
- * data/reviews.ts by name + city (never re-tagged to another city).
- * Not in sitemap.xml until the owner approves.
+ * Rules: no prices, no invented reviews/stats/legal claims, and no owner
+ * placeholders in production. Still pending owner input, so NOT rendered
+ * (kept in the draft notes only): inside fridge included vs add-on,
+ * state deposit-law statements, and prices. Inside-oven cleaning is a PAID
+ * ADD-ON, never part of the move-out checklist. Reviews are pulled verbatim
+ * from data/reviews.ts by name + city (never re-tagged to another city).
  */
 import { costFaq, type FaqItem } from "@/lib/costFaq";
 import { SITE_REVIEWS, type Review } from "@/data/reviews";
@@ -36,7 +36,8 @@ export type LocalMoveOutPage = {
   addOns: ChecklistItem[];
   depositIntro: string;
   depositTips: string[];
-  depositLegal: string;
+  /** Neutral, non-legal note (deposit-law claims need owner approval first). */
+  depositNote: string;
   reviews: Review[];
   faqs: FaqItem[];
   nearby: PageLink[];
@@ -53,7 +54,8 @@ function review(name: string, location: string): Review {
   return r;
 }
 
-const FRIDGE_PLACEHOLDER = "[OWNER: confirm fridge included or add-on]";
+/** Neutral deposit note. Statute-specific claims stay out until the owner verifies them. */
+const DEPOSIT_NOTE = "Check your lease and local rules for deposit timelines.";
 
 export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
   {
@@ -82,7 +84,6 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
       { item: "Kitchen surfaces", note: "Stovetop and range hood degreased, inside microwave cleaned, sink and faucet descaled." },
       { item: "Bathrooms", note: "Toilet, tub, shower, sink, mirrors and grout scrubbed; tracks of sliding shower doors cleared." },
       { item: "Floors and closets", note: "Closet shelves wiped, then every floor vacuumed and mopped, including tile edges." },
-      { item: "Inside refrigerator and freezer", note: FRIDGE_PLACEHOLDER },
     ],
     addOns: [
       { item: "Inside the oven", note: "Paid add-on. Not included in move-out cleaning; add it to your quote if the oven is on your landlord's list." },
@@ -97,8 +98,7 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
       "Leave the power and water on through cleaning day, and arrange how we get in: lockbox, gate code, or a key from the leasing office.",
       "Walk the empty unit after the clean and take date-stamped photos or video of every room, including inside cabinets and closets.",
     ],
-    depositLegal:
-      "[OWNER: verify] Nevada law (NRS 118A.242) generally says a landlord may deduct only reasonable cleaning costs from a security deposit and must return the remaining deposit with an itemized written accounting within 30 days after the tenancy ends. This is general information, not legal advice; check your lease and the current statute.",
+    depositNote: DEPOSIT_NOTE,
     reviews: [
       review("Carol R.", "Las Vegas, NV"),
       review("Melanie C.", "Las Vegas, NV"),
@@ -162,7 +162,6 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
       { item: "Stairs and railings", note: "Treads, risers and banisters wiped in two-story homes." },
       { item: "Kitchen surfaces", note: "Stovetop and range hood degreased and inside the microwave cleaned." },
       { item: "Floors", note: "Hardwood cleaned with a damp, not wet, method; tile and vinyl vacuumed and mopped; closets vacuumed." },
-      { item: "Inside refrigerator and freezer", note: FRIDGE_PLACEHOLDER },
     ],
     addOns: [
       { item: "Inside the oven", note: "Paid add-on. It is not part of a move-out clean, so request it with your quote if your property manager inspects the oven." },
@@ -177,8 +176,7 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
       "During pollen season, ask for screen frames, sills and sliding-door tracks to be done last so new pollen does not undo the work before the inspection.",
       "Near Sac State or in Midtown, book as soon as you know your lease end date; the end of the semester and the end of the month are the busiest days.",
     ],
-    depositLegal:
-      "[OWNER: verify] California law (Civil Code section 1950.5) generally limits cleaning deductions to what is needed to return the unit to the level of cleanliness it had at move-in, requires the landlord to return the deposit or send an itemized statement within 21 days after move-out, and lets tenants ask for an initial inspection before moving out. Newer photo-documentation rules may also apply. This is general information, not legal advice; check your lease and the current statute.",
+    depositNote: DEPOSIT_NOTE,
     reviews: [
       review("Jennifer M.", "Sacramento, CA"),
       review("Kristen S.", "Sacramento, CA"),
@@ -222,7 +220,7 @@ export function getLocalMoveOutPage(path: string): LocalMoveOutPage | undefined 
   return LOCAL_MOVE_OUT_PAGES.find((x) => x.path === p);
 }
 
-/** Metro hub "Move-In / Move-Out" card overrides (draft branch only). */
+/** Metro hub "Move-In / Move-Out" card overrides -> local move-out page. */
 export const MOVE_OUT_CARD_OVERRIDES: Record<string, string> = Object.fromEntries(
   LOCAL_MOVE_OUT_PAGES.map((p) => [p.metroSlug, p.path]),
 );

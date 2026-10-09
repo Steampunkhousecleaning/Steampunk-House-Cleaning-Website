@@ -77,7 +77,7 @@ function Router() {
         <Route path="/commercial-cleaning" component={CommercialCleaning} />
         <Route path="/about" component={AboutUs} />
         <Route path="/locations" component={Locations} />
-        {/* DRAFT local pages (owner review; not in sitemap). Must precede the generic routes. */}
+        {/* Local move-out pages + Reno & Sparks hub. Must precede the generic routes. */}
         {LOCAL_MOVE_OUT_PAGES.map((p) => (
           <Route key={p.path} path={p.path}>
             <LocalMoveOut page={p} />

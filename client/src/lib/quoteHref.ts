@@ -12,7 +12,7 @@ import { RENO_HUB } from "@/data/renoHub";
 
 export function quoteHrefForPath(pathname: string): string {
   const clean = pathname.split(/[?#]/)[0];
-  // Draft local pages: local move-out (service + city) and the Reno hub (city).
+  // Local move-out pages (service + city) and the Reno & Sparks hub (city).
   const moveOut = getLocalMoveOutPage(clean);
   if (moveOut) {
     return `/get-a-quote?service=${encodeURIComponent(moveOut.quoteService)}&city=${encodeURIComponent(moveOut.quoteCity)}`;

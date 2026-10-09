@@ -1,8 +1,8 @@
 /**
- * LocalMoveOut.tsx — DRAFT local move-out pages
+ * LocalMoveOut.tsx — local move-out pages
  *   /locations/las-vegas-nevada/move-out-cleaning
  *   /locations/sacramento/move-out-cleaning
- * Data: data/localMoveOut.ts. Not in sitemap until the owner approves.
+ * Data: data/localMoveOut.ts.
  */
 import { Link } from "wouter";
 import { CheckCircle, PlusCircle, MapPin, Quote } from "lucide-react";
@@ -12,7 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PricingPlaceholderBlock } from "@/components/PricingPlaceholderBlock";
 import {
   NAVY, TEAL, ICE, BODY, h2Style, pStyle,
-  OwnerText, Section, CtaButtons, FaqList, LinkList, faqPageSchema,
+  Section, CtaButtons, FaqList, LinkList, faqPageSchema,
 } from "@/components/LocalPageParts";
 import { breadcrumbSchema, localBusinessSchemaForAreas } from "@/lib/schema";
 import type { LocalMoveOutPage } from "@/data/localMoveOut";
@@ -56,7 +56,7 @@ export default function LocalMoveOut({ page }: { page: LocalMoveOutPage }) {
           </h1>
           {page.intro.map((p) => (
             <p key={p.slice(0, 40)} style={{ fontSize: 17, color: "#4a5e6e", lineHeight: 1.75, maxWidth: 760, margin: "0 auto 24px", textAlign: "left", fontFamily: "'DM Sans', sans-serif" }}>
-              <OwnerText text={p} />
+              {p}
             </p>
           ))}
           <CtaButtons quoteHref={quoteHref} />
@@ -71,7 +71,7 @@ export default function LocalMoveOut({ page }: { page: LocalMoveOutPage }) {
             <li key={c.item} style={{ display: "flex", gap: 12, alignItems: "flex-start", backgroundColor: "#f7fbff", border: "1px solid #dde9f2", borderRadius: 10, padding: "12px 14px" }}>
               <CheckCircle size={18} style={{ color: TEAL, flexShrink: 0, marginTop: 3 }} />
               <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: BODY, lineHeight: 1.6 }}>
-                <strong style={{ color: NAVY }}>{c.item}.</strong> <OwnerText text={c.note} />
+                <strong style={{ color: NAVY }}>{c.item}.</strong> {c.note}
               </span>
             </li>
           ))}
@@ -98,7 +98,7 @@ export default function LocalMoveOut({ page }: { page: LocalMoveOutPage }) {
           ))}
         </ul>
         <p style={{ ...pStyle, fontSize: 14, borderLeft: `3px solid ${ICE}`, paddingLeft: 14 }}>
-          <OwnerText text={page.depositLegal} />
+          {page.depositNote}
         </p>
         <p style={{ ...pStyle, fontSize: 14, marginBottom: 0 }}>
           We clean to your landlord's checklist, but the deposit decision is theirs, so we cannot guarantee a specific outcome.

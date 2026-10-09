@@ -8,6 +8,7 @@ import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
 import { absUrl, breadcrumbSchema, webPageSchema } from "@/lib/schema";
 import { METROS } from "@/data/locations";
+import { RENO_HUB } from "@/data/renoHub";
 import {
   COVERAGE_ONLY_CITIES,
   NEIGHBORHOODS,
@@ -221,6 +222,23 @@ export default function Locations() {
                     </Link>
                   ))}
                 </div>
+                {state === "Nevada" && (
+                  <p
+                    style={{
+                      fontSize: 15,
+                      color: "#5a6e80",
+                      lineHeight: 1.65,
+                      marginTop: 14,
+                      fontFamily: "'DM Sans', sans-serif",
+                    }}
+                  >
+                    In Reno or Sparks? See our{" "}
+                    <Link href={RENO_HUB.path} style={{ color: TEAL, fontWeight: 700 }}>
+                      Reno &amp; Sparks house cleaning
+                    </Link>{" "}
+                    page.
+                  </p>
+                )}
               </div>
             );
           })}

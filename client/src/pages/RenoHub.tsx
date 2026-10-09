@@ -1,6 +1,6 @@
 /**
- * RenoHub.tsx — DRAFT standalone Reno & Sparks hub (/locations/reno).
- * Data: data/renoHub.ts. Not in sitemap; /locations/las-vegas-nevada/reno untouched.
+ * RenoHub.tsx — standalone Reno & Sparks hub (/locations/reno).
+ * Data: data/renoHub.ts. /locations/las-vegas-nevada/reno is untouched.
  * No reviews section (no real Reno reviews exist).
  */
 import { Link } from "wouter";
@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PricingPlaceholderBlock } from "@/components/PricingPlaceholderBlock";
 import {
   NAVY, TEAL, ICE, BODY, h2Style, pStyle,
-  OwnerText, Section, CtaButtons, FaqList, LinkList, faqPageSchema,
+  Section, CtaButtons, FaqList, LinkList, faqPageSchema,
 } from "@/components/LocalPageParts";
 import { breadcrumbSchema, localBusinessSchemaForAreas } from "@/lib/schema";
 import { RENO_HUB as R } from "@/data/renoHub";
@@ -50,19 +50,6 @@ export default function RenoHub() {
           <CtaButtons quoteHref={RENO_QUOTE_HREF} />
         </div>
       </section>
-
-      <Section>
-        <h2 style={h2Style}>Reno and Sparks neighborhoods we serve</h2>
-        <p style={{ ...pStyle, fontSize: 14 }}><OwnerText text={R.areasNote} /></p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12 }}>
-          {R.areas.map((a) => (
-            <div key={a.name} style={{ backgroundColor: "#f7fbff", border: "1px solid #dde9f2", borderRadius: 10, padding: "14px 16px" }}>
-              <h3 style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{a.name}</h3>
-              <p style={{ ...pStyle, fontSize: 14, marginBottom: 0, lineHeight: 1.6 }}>{a.note}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
 
       <Section bg="#f7fbff">
         <h2 style={h2Style}>Cleaning for Reno conditions</h2>
