@@ -15,3 +15,4 @@ Append a row after each Monday publish. Keep the keyword calendar in `docs/blog-
 | 2026-09-21 | https://steampunkcleaning.com/blog/house-cleaning-las-vegas-hard-water | house cleaning Las Vegas hard water | #14 |
 | 2026-09-28 | https://steampunkcleaning.com/blog/airbnb-cleaning-irvine | Airbnb cleaning Irvine | #20 |
 | 2026-10-05 | https://steampunkcleaning.com/blog/move-out-cleaning-sacramento | move out cleaning Sacramento (week 3; slug `move-out-cleaning-sacramento`) | [#37](https://github.com/Steampunkhousecleaning/Steampunk-House-Cleaning-Website/pull/37) |
+| 2026-10-12 | https://steampunkcleaning.com/blog/house-cleaning-reno-nv | house cleaning Reno NV (week 4; slug `house-cleaning-reno-nv`) | [#44](https://github.com/Steampunkhousecleaning/Steampunk-House-Cleaning-Website/pull/44) |
