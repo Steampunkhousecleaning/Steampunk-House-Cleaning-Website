@@ -15,6 +15,7 @@ import { getServiceMetrosForMetro, metroQuoteCity } from "@/data/serviceMetros";
 import NotFound from "@/pages/NotFound";
 import { MOVE_OUT_CARD_OVERRIDES } from "@/data/localMoveOut";
 import { RENO_HUB } from "@/data/renoHub";
+import { AIRBNB_CARD_OVERRIDES, draftCityPagesForMetro } from "@/data/localDraftPages";
 import {
   MapPin,
   CheckCircle,
@@ -98,9 +99,11 @@ export default function LocationMetro() {
   const serviceMetros = getServiceMetrosForMetro(metro.slug);
   const regionCity = metroQuoteCity(metro.slug);
   const quoteHref = regionCity ? `/get-a-quote?city=${encodeURIComponent(regionCity)}` : "/get-a-quote";
-  const neighborhoodByName = new Map(
-    neighborhoods.map((n) => [n.name.toLowerCase(), n]),
-  );
+  const neighborhoodByName = new Map<string, { path: string }>([
+    ...neighborhoods.map((n) => [n.name.toLowerCase(), n] as const),
+    // Draft city pages (e.g. Citrus Heights, Rancho Cordova) linked from "Areas we commonly serve"
+    ...draftCityPagesForMetro(metro.slug).map((p) => [p.place.toLowerCase(), p] as const),
+  ]);
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -334,7 +337,10 @@ export default function LocationMetro() {
               // Hub Move-In / Move-Out card -> local move-out page where one exists
               const moveOutLocal =
                 s.href === "/move-in-move-out" ? MOVE_OUT_CARD_OVERRIDES[metro.slug] : undefined;
-              const href = moveOutLocal ?? (local ? local.path : s.href);
+              // Hub Airbnb / STR card -> local Airbnb page where one exists
+              const airbnbLocal =
+                s.href === "/airbnb-cleaning" ? AIRBNB_CARD_OVERRIDES[metro.slug] : undefined;
+              const href = moveOutLocal ?? airbnbLocal ?? (local ? local.path : s.href);
               return (
               <Link key={s.href} href={href}>
                 <div

@@ -105,7 +105,7 @@ export default function LocalMoveOut({ page }: { page: LocalMoveOutPage }) {
         </p>
       </Section>
 
-      <PricingPlaceholderBlock serviceLabel={`Move-out cleaning in ${page.city}`} />
+      {!page.noPricingBlock && <PricingPlaceholderBlock serviceLabel={`Move-out cleaning in ${page.city}`} />}
 
       {page.reviews.length > 0 && (
         <Section>

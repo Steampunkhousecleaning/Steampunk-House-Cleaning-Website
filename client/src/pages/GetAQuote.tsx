@@ -4,6 +4,7 @@
  * CRO focus: Frictionless form, trust signals, reduce anxiety about commitment
  */
 
+import { DRAFT_QUOTE_CITIES } from "@/data/localDraftPages";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
@@ -51,7 +52,10 @@ const CITY_GROUPS: { label: string; cities: string[] }[] = [
   cities:
     g.slug === "reno"
       ? ["Reno, NV", ...NEIGHBORHOODS.filter((n) => n.parentHub?.path === "/locations/reno").map(neighborhoodQuoteCity)]
-      : NEIGHBORHOODS.filter((n) => n.metroSlug === g.slug && !n.parentHub).map(neighborhoodQuoteCity),
+      : [
+          ...NEIGHBORHOODS.filter((n) => n.metroSlug === g.slug && !n.parentHub).map(neighborhoodQuoteCity),
+          ...(DRAFT_QUOTE_CITIES[g.slug] ?? []),
+        ],
 }));
 const ALL_CITY_VALUES = new Set<string>([...CITIES, ...CITY_GROUPS.flatMap((g) => g.cities)]);
 

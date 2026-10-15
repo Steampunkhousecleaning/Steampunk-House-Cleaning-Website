@@ -44,6 +44,8 @@ export type LocalMoveOutPage = {
   blog: PageLink;
   /** City names shown on the page; used for LocalBusiness areaServed */
   areaServed: string[];
+  /** Owner rule for new pages: no "Starting at" block at all, not even hidden. */
+  noPricingBlock?: boolean;
 };
 
 export const MOVE_OUT_QUOTE_SERVICE = "Move-In / Move-Out";
@@ -212,6 +214,85 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
       label: "Move out cleaning Sacramento: what landlords check",
     },
     areaServed: ["Sacramento", "Roseville", "Elk Grove", "Folsom"],
+  },
+  {
+    metroSlug: "los-angeles-orange-county",
+    path: "/locations/los-angeles-orange-county/move-out-cleaning",
+    city: "Los Angeles & Orange County",
+    quoteCity: "Los Angeles / Orange County",
+    quoteService: MOVE_OUT_QUOTE_SERVICE,
+    metroName: "Los Angeles / Orange County",
+    metroPath: "/locations/los-angeles-orange-county",
+    title: "Move-Out Cleaning in LA & OC | Steampunk House Cleaning",
+    description:
+      "LA and Orange County move-out cleaning planned around building move-out hours, elevator reservations, street parking and Irvine HOA rules. Free quote.",
+    h1: "Move-Out Cleaning in Los Angeles & Orange County",
+    intro: [
+      "In Los Angeles and Orange County, a move-out often comes down to logistics before it comes down to cleaning. Many apartment buildings in Koreatown, Mid-Wilshire, Downtown LA and Santa Monica set move-out hours and ask you to reserve the service elevator, so the clean has to fit the same window as the movers or the next one the building allows. Street parking is its own puzzle: posted street-sweeping days, permit-only blocks and loading zones change from street to street, so we ask where a cleaner can park before we book. In Irvine and much of south Orange County, HOA communities add gate entry, guest-parking limits and quiet hours. Older duplexes and bungalows in places like Long Beach and Pasadena need more hand detail than a newer condo. Steampunk House Cleaning plans each move-out around your building's rules and your walkthrough time.",
+    ],
+    checklistIntro:
+      "This is what an LA or Orange County move-out clean covers in an empty home. The notes show where high-rise apartments, coastal homes and HOA townhomes change the work.",
+    included: [
+      { item: "Inside cabinets and drawers", note: "Kitchen and bathroom cabinets wiped shelf by shelf, plus closet shelving and the built-in organizers common in newer condos and townhomes." },
+      { item: "Baseboards, doors and switch plates", note: "Hand-wiped room by room, including the scuffs movers leave on door frames and hallway corners." },
+      { item: "Window sills and sliding-door tracks", note: "Sills and slider tracks cleared; near the coast that usually means sand and a salty film, inland it is mostly dust." },
+      { item: "Bathrooms", note: "Toilet, tub, shower, sink, mirrors and grout scrubbed; shower glass and fixtures polished." },
+      { item: "Kitchen surfaces", note: "Stovetop and range hood degreased, inside the microwave cleaned, counters, backsplash, sink and appliance fronts wiped." },
+      { item: "Light fixtures and ceiling fans", note: "Dusted once the furniture is gone, so nothing drifts down onto clean floors." },
+      { item: "Floors", note: "Hardwood, laminate and tile vacuumed and mopped; carpet vacuumed edge to edge, including closets." },
+    ],
+    addOns: [
+      { item: "Inside the oven", note: "Paid add-on. Not included in move-out cleaning; add it to your quote if your building manager or HOA inspects the oven." },
+      { item: "Carpet shampoo", note: "Paid add-on for carpeted bedrooms or stairs; mention it on the quote form." },
+    ],
+    depositIntro:
+      "In a big building or an HOA community, a smooth handover depends on timing as much as cleaning. These practical steps help:",
+    depositTips: [
+      "Ask your building manager or HOA for their move-out checklist and move-out hours, and send both with your quote request so we clean to their list inside their window.",
+      "If the building requires an elevator reservation, book a slot long enough for the movers and the clean, or tell us your movers' slot so we can schedule right after.",
+      "Tell us where a cleaner can park: a guest spot, a loading zone, or street parking. Check the posted street-sweeping signs on your block so we can avoid those hours.",
+      "In gated or HOA communities, register your cleaner with the gate or leave a guest pass, and let us know about any quiet hours.",
+      "Walk the empty unit after the clean and take date-stamped photos or video of every room, including inside cabinets and closets.",
+    ],
+    depositNote:
+      "Check your lease and local rules for deposit timelines. [OWNER: verify before adding any statement about California deposit rules; this page makes none]",
+    reviews: [
+      review("Jessica T.", "Los Angeles, CA"),
+      review("Lisa M.", "Los Angeles, CA"),
+    ],
+    faqs: [
+      costFaq({
+        service: "move-out cleaning",
+        city: "Los Angeles and Orange County",
+        localNote:
+          "Building rules matter too: a short elevator window or a long walk from parking can change how we plan and staff the job.",
+        mentionOvenAddOn: true,
+      }),
+      {
+        q: "My building only allows move-outs during set hours and needs an elevator reservation. Can you work with that?",
+        a: "Yes. Send us the building's move-out hours and your elevator reservation time when you request a quote. We schedule the clean inside that window, or right after your movers if the building allows it.",
+      },
+      {
+        q: "Where will your cleaner park?",
+        a: "Tell us what your building or street allows: a guest space, a loading zone, a parking pass or street parking. Street-sweeping days and permit rules vary from block to block in LA and OC, so check the posted signs and we will plan the arrival time around them.",
+      },
+      {
+        q: "Do you do move-out cleans in Irvine HOA communities?",
+        a: "Yes. Irvine's villages and many Orange County townhome communities have gate entry, guest-parking limits and quiet hours. Share the gate instructions and any HOA move-out rules, and we will plan the visit around them.",
+      },
+    ],
+    nearby: [
+      { href: "/locations/los-angeles-orange-county/los-angeles", label: "Los Angeles house cleaning" },
+      { href: "/locations/los-angeles-orange-county/irvine", label: "Irvine house cleaning" },
+      { href: "/locations/los-angeles-orange-county/long-beach", label: "Long Beach house cleaning" },
+      { href: "/locations/los-angeles-orange-county/pasadena", label: "Pasadena house cleaning" },
+    ],
+    blog: {
+      href: "/blog/airbnb-cleaning-irvine",
+      label: "Airbnb cleaning in Irvine: same-day turnover checklist",
+    },
+    areaServed: ["Los Angeles", "Irvine", "Long Beach", "Pasadena", "Santa Monica"],
+    noPricingBlock: true,
   },
 ];
 

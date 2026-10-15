@@ -9,6 +9,7 @@ import { getNeighborhood, neighborhoodQuoteCity } from "@/data/neighborhoods";
 import { getServiceMetro } from "@/data/serviceMetros";
 import { getLocalMoveOutPage } from "@/data/localMoveOut";
 import { RENO_HUB } from "@/data/renoHub";
+import { getLocalDraftPage, localDraftQuoteHref } from "@/data/localDraftPages";
 
 export function quoteHrefForPath(pathname: string): string {
   const clean = pathname.split(/[?#]/)[0];
@@ -17,6 +18,8 @@ export function quoteHrefForPath(pathname: string): string {
   if (moveOut) {
     return `/get-a-quote?service=${encodeURIComponent(moveOut.quoteService)}&city=${encodeURIComponent(moveOut.quoteCity)}`;
   }
+  const draft = getLocalDraftPage(clean);
+  if (draft) return localDraftQuoteHref(draft);
   if (clean.replace(/\/+$/, "") === RENO_HUB.path) {
     return `/get-a-quote?city=${encodeURIComponent(RENO_HUB.quoteCity)}`;
   }
