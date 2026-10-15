@@ -7,7 +7,6 @@ import { CheckCircle, PlusCircle, MapPin, Quote } from "lucide-react";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
-import { PricingPlaceholderBlock } from "@/components/PricingPlaceholderBlock";
 import {
   NAVY, TEAL, ICE, BODY, h2Style, pStyle,
   Section, CtaButtons, FaqList, LinkList, faqPageSchema,
@@ -124,8 +123,6 @@ export default function LocalDraftPage({ page }: { page: Page }) {
           <SectionBody s={s} />
         </Section>
       ))}
-
-      <PricingPlaceholderBlock serviceLabel={page.pricingLabel} />
 
       {page.reviews.length > 0 && (
         <Section>

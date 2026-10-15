@@ -44,6 +44,8 @@ export type LocalMoveOutPage = {
   blog: PageLink;
   /** City names shown on the page; used for LocalBusiness areaServed */
   areaServed: string[];
+  /** Owner rule for new pages: no "Starting at" block at all, not even hidden. */
+  noPricingBlock?: boolean;
 };
 
 export const MOVE_OUT_QUOTE_SERVICE = "Move-In / Move-Out";
@@ -290,6 +292,7 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
       label: "Airbnb cleaning in Irvine: same-day turnover checklist",
     },
     areaServed: ["Los Angeles", "Irvine", "Long Beach", "Pasadena", "Santa Monica"],
+    noPricingBlock: true,
   },
 ];
 

@@ -51,7 +51,6 @@ export type LocalDraftPage = {
   sitewide: PageLink;
   ctaHeading: string;
   ctaText: string;
-  pricingLabel: string;
   areaServed: string[];
 };
 
@@ -148,7 +147,6 @@ export const LOCAL_DRAFT_PAGES: LocalDraftPage[] = [
     sitewide: { href: "/deep-cleaning", label: "deep cleaning" },
     ctaHeading: "Book your Citrus Heights clean",
     ctaText: "Citrus Heights is already selected on the quote form. It takes about 2 minutes, or call us.",
-    pricingLabel: "House cleaning in Citrus Heights",
     areaServed: ["Citrus Heights"],
   },
 
@@ -236,7 +234,6 @@ export const LOCAL_DRAFT_PAGES: LocalDraftPage[] = [
     sitewide: { href: "/recurring-cleaning", label: "recurring cleaning" },
     ctaHeading: "Book your Rancho Cordova clean",
     ctaText: "Rancho Cordova is already selected on the quote form. It takes about 2 minutes, or call us.",
-    pricingLabel: "House cleaning in Rancho Cordova",
     areaServed: ["Rancho Cordova"],
   },
 
@@ -338,7 +335,6 @@ export const LOCAL_DRAFT_PAGES: LocalDraftPage[] = [
     sitewide: { href: "/airbnb-cleaning", label: "Airbnb and short-term rental cleaning" },
     ctaHeading: "Book your Las Vegas turnovers",
     ctaText: "Las Vegas and Airbnb / short-term rental are already selected on the quote form. It takes about 2 minutes, or call us.",
-    pricingLabel: "Airbnb cleaning in Las Vegas",
     areaServed: ["Las Vegas", "Henderson", "Summerlin", "Spring Valley", "Enterprise"],
   },
 
@@ -442,7 +438,6 @@ export const LOCAL_DRAFT_PAGES: LocalDraftPage[] = [
     sitewide: { href: "/airbnb-cleaning", label: "Airbnb and short-term rental cleaning" },
     ctaHeading: "Book your LA & OC turnovers",
     ctaText: "Los Angeles / Orange County and Airbnb / short-term rental are already selected on the quote form. It takes about 2 minutes, or call us.",
-    pricingLabel: "Airbnb cleaning in LA & OC",
     areaServed: ["Los Angeles", "Irvine", "Long Beach", "Huntington Beach", "Newport Beach"],
   },
 ];
