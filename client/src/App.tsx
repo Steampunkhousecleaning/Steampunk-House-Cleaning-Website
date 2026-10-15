@@ -26,6 +26,8 @@ import Reviews from "./pages/Reviews";
 import CleaningChecklist from "./pages/CleaningChecklist";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import LocalDraftPage from "@/pages/LocalDraftPage";
+import { LOCAL_DRAFT_PAGES } from "@/data/localDraftPages";
 import LocalMoveOut from "./pages/LocalMoveOut";
 import RenoHub from "./pages/RenoHub";
 import { LOCAL_MOVE_OUT_PAGES } from "./data/localMoveOut";
@@ -81,6 +83,12 @@ function Router() {
         {LOCAL_MOVE_OUT_PAGES.map((p) => (
           <Route key={p.path} path={p.path}>
             <LocalMoveOut page={p} />
+          </Route>
+        ))}
+        {/* DRAFT local city + Airbnb pages (not in sitemap until approved). */}
+        {LOCAL_DRAFT_PAGES.map((p) => (
+          <Route key={p.path} path={p.path}>
+            <LocalDraftPage page={p} />
           </Route>
         ))}
         <Route path="/locations/reno" component={RenoHub} />

@@ -96,6 +96,12 @@ const ROUTES = [
   "/locations/las-vegas-nevada/move-out-cleaning",
   "/locations/sacramento/move-out-cleaning",
   "/locations/reno",
+  // DRAFT pages (Oct 14): prerendered, but NOT in sitemap.xml until Ryan approves.
+  "/locations/sacramento/citrus-heights",
+  "/locations/sacramento/rancho-cordova",
+  "/locations/los-angeles-orange-county/move-out-cleaning",
+  "/locations/las-vegas-nevada/airbnb-cleaning",
+  "/locations/los-angeles-orange-county/airbnb-cleaning",
   "/404",
 ];
 
