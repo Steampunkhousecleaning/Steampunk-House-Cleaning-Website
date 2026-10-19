@@ -39,6 +39,136 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "deep-cleaning-pasadena",
+    title:
+      "Deep Cleaning Pasadena: When Your Home Needs a Deep Clean vs a Standard Tidy",
+    metaTitle:
+      "Deep Cleaning Pasadena | Steampunk House Cleaning",
+    metaDescription:
+      "Deep cleaning Pasadena homes need after dusty, busy seasons: baseboards, grout, built-ins, and Craftsman trim. Learn deep vs standard cleaning and get a free quote.",
+    date: "2026-10-19",
+    metro: "LA/OC",
+    primaryKeyword: "deep cleaning Pasadena",
+    secondaryKeywords: [
+      "spring cleaning Pasadena",
+      "baseboards grout clean",
+    ],
+    ctaHeadline: "Ready for a Pasadena deep clean?",
+    ctaBody:
+      "Tell us your Pasadena address, bedrooms and baths, and the spots that need the most attention — baseboards, grout, built-ins, or all of it. Request a free quote online or call (725) 255-3688.",
+    excerpt:
+      "Deep cleaning Pasadena homes is different from a weekly tidy: Craftsman trim, original wood floors, older tile grout, and foothill dust all need more time. Here is how to tell which visit your home needs.",
+    relatedLinks: [
+      {
+        href: "/locations/los-angeles-orange-county/pasadena",
+        label: "House cleaning in Pasadena",
+      },
+      {
+        href: "/deep-cleaning",
+        label: "Deep cleaning",
+      },
+      {
+        href: "/standard-cleaning",
+        label: "Standard cleaning",
+      },
+      {
+        href: "/recurring-cleaning",
+        label: "Recurring house cleaning",
+      },
+      {
+        href: "/locations/los-angeles-orange-county",
+        label: "Los Angeles & Orange County cleaning",
+      },
+      {
+        href: "/get-a-quote",
+        label: "Get a free quote",
+      },
+    ],
+    body: [
+      {
+        paragraphs: [
+          "Deep cleaning Pasadena homes is a different job from keeping them tidy week to week. Between foothill dust blowing down from the San Gabriel Mountains, Santa Ana wind days, and some of the oldest Craftsman bungalows in Southern California, plenty of Pasadena houses reach a point where a quick wipe-down no longer touches the real buildup. This guide explains when you need a one-time deep clean, when a standard visit is enough, and what a proper top-to-bottom deep clean covers — from baseboards and grout to built-in cabinetry and other hard-to-reach areas.",
+          "Steampunk House Cleaning serves [Pasadena](/locations/los-angeles-orange-county/pasadena) as part of our [Los Angeles & Orange County](/locations/los-angeles-orange-county) coverage. Ryan and Daniel built the company around written checklists and clear quotes, so you know exactly which visit you are booking before a crew ever shows up.",
+        ],
+      },
+      {
+        heading: "Why Pasadena homes collect buildup differently",
+        paragraphs: [
+          "Pasadena sits right against the foothills, and that shapes how dirt gets into a house. Dry, windy stretches push fine dust through window frames, screen doors, and the gaps around older wood sashes. It settles on sills, picture rails, ceiling fan blades, and the tops of door casings — the places a regular tidy rarely reaches.",
+          "Then there is the housing stock. Neighborhoods like Bungalow Heaven and the Playhouse District are full of early-1900s Craftsman homes with original hardwood floors, hex-tile bathrooms, built-in bookcases, and box-beam ceilings. Those details are beautiful, and they have a lot of edges and ledges. Homes around the Rose Bowl and Caltech span every era. Hillside homes near the Arroyo Seco and San Rafael Hills bring more windows and more outdoor traffic, while condos near Colorado Boulevard and Old Town Pasadena have their own patterns: compact kitchens that get heavy use and bathrooms that build soap film fast.",
+        ],
+      },
+      {
+        heading: "Deep clean vs standard tidy: how to tell which you need",
+        paragraphs: [
+          "A [standard cleaning](/standard-cleaning) keeps an occupied home in good shape on a regular rhythm: kitchens, bathrooms, floors, and reachable surfaces. It assumes the home is already at a maintained baseline. A [deep cleaning](/deep-cleaning) is the reset that gets you to that baseline — slower, more detailed, and focused on the built-up grime that accumulates when regular visits skip it.",
+          "You probably need deep cleaning in Pasadena if any of these sound familiar:",
+        ],
+        bullets: [
+          "Baseboards and door trim look gray up close, especially along hallways and stairs",
+          "Shower grout and tile corners have darkened, and a normal scrub no longer brightens them",
+          "Built-ins, window sills and tracks, blinds, and picture rails have a visible dust layer",
+          "It has been several months (or never) since the home had a top-to-bottom clean",
+          "You are starting a new recurring plan and want a first-time deep clean to set the baseline",
+          "Guests are coming for the holidays or for New Year's Day and the Rose Parade crowd",
+        ],
+      },
+      {
+        paragraphs: [
+          "If the home is already in decent shape and you mainly want it to stay that way, a standard visit on a [recurring schedule](/recurring-cleaning) is usually the better fit. Many Pasadena households do one deep clean first, then switch to weekly or biweekly standard visits.",
+        ],
+      },
+      {
+        heading: "What a Pasadena deep clean covers",
+        paragraphs: [
+          "Our deep clean follows the room-by-room list on our public [cleaning checklist](/cleaning-checklist). The difference from a standard visit is detail and time: crews work edges, corners, and surfaces that get skipped on lighter cleans.",
+        ],
+        bullets: [
+          "Baseboards hand-wiped throughout, plus door frames, door faces, and trim",
+          "Bathroom tile and grout scrubbed, with extra attention to shower corners and floor edges",
+          "Kitchen detail: cabinet fronts, backsplash, sink, stovetop degrease, and inside the refrigerator and microwave",
+          "Dusting high and low: ceiling fans, vents, light fixtures, blinds, window sills and tracks, and built-in shelving",
+          "Floors vacuumed and mopped, including under easy-to-move furniture and along the edges",
+          "Light switch plates, doorknobs, handles, and other high-touch spots wiped down",
+        ],
+      },
+      {
+        paragraphs: [
+          "Inside oven cleaning is available as an add-on; it is not included in a deep clean. If you want it, mention it on the quote form so we can plan the time.",
+        ],
+      },
+      {
+        heading: "Baseboards and grout: the two spots that tell the story",
+        paragraphs: [
+          "When people ask for a baseboards grout clean, they are usually describing the clearest signs that a home has drifted past maintenance level. Baseboards collect dust, pet hair, and mop splash at floor level, and in older Pasadena homes the profiles are often taller and more detailed than modern trim, so they hold more. Grout darkens slowly from soap, body oils, and moisture until it looks permanently stained.",
+          "Both respond well to patient hand work rather than harsh chemicals. On original hardwood, wood trim, and older tile with unsealed grout, we match products to the surface and avoid anything that could strip finishes or etch stone. If a surface is delicate, fragile, or recently restored, tell us when you book so the crew knows before they start.",
+        ],
+      },
+      {
+        heading: "Spring cleaning Pasadena — or any season",
+        paragraphs: [
+          "Spring cleaning Pasadena homeowners book in March and April is a great habit: windows open up, the rainy months are over, and pollen starts to drift in. But a deep clean does not have to wait for spring. Late fall is just as smart in Pasadena — after the dry, windy weeks and before holiday hosting season. Some households also book one after a remodel project wraps up, or right before listing a home for sale.",
+          "The best timing is simply when the buildup has gotten ahead of your regular routine. One thorough reset makes every standard visit afterward faster and more effective.",
+        ],
+      },
+      {
+        heading: "How booking works",
+        paragraphs: [
+          "We do not use self-serve instant booking. Share your address, bedrooms and bathrooms, and the areas you care about most — baseboards, grout, built-ins, or kitchen detail — and we send a free, quote-based estimate. Let us know about pets, parking, and any access notes for hillside streets or condo buildings near Old Pasadena so the visit starts on time.",
+          "Steampunk serves four markets: Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. Pasadena is a regular part of our Los Angeles route, alongside nearby Glendale and Burbank.",
+        ],
+      },
+      {
+        heading: "Book deep cleaning in Pasadena",
+        paragraphs: [
+          "Ready for a Pasadena deep clean? Tell us about your home and the spots that need the most attention. Call [(725) 255-3688](tel:7252553688) or [request a free quote](/get-a-quote) and we will confirm your Pasadena address and the right checklist.",
+          "Start here: [Get a free quote](/get-a-quote) · [Pasadena house cleaning](/locations/los-angeles-orange-county/pasadena) · [Deep cleaning](/deep-cleaning) · [Standard cleaning](/standard-cleaning)",
+        ],
+      },
+    ],
+  },
+
+  {
     slug: "house-cleaning-reno-nv",
     title:
       "House Cleaning Reno NV: Reliable Local Maid Service for the Truckee Meadows",
