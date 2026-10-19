@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     body: [
       {
         paragraphs: [
-          "Deep cleaning Pasadena homes is a different job from keeping them tidy week to week. Between foothill dust blowing down from the San Gabriel Mountains, Santa Ana wind days, and some of the oldest Craftsman bungalows in Southern California, plenty of Pasadena houses reach a point where a quick wipe-down no longer touches the real buildup. This guide explains when you need a deep clean, when a standard visit is enough, and what a proper deep clean covers — from baseboards and grout to built-in cabinetry.",
+          "Deep cleaning Pasadena homes is a different job from keeping them tidy week to week. Between foothill dust blowing down from the San Gabriel Mountains, Santa Ana wind days, and some of the oldest Craftsman bungalows in Southern California, plenty of Pasadena houses reach a point where a quick wipe-down no longer touches the real buildup. This guide explains when you need a one-time deep clean, when a standard visit is enough, and what a proper top-to-bottom deep clean covers — from baseboards and grout to built-in cabinetry and other hard-to-reach areas.",
           "Steampunk House Cleaning serves [Pasadena](/locations/los-angeles-orange-county/pasadena) as part of our [Los Angeles & Orange County](/locations/los-angeles-orange-county) coverage. Ryan and Daniel built the company around written checklists and clear quotes, so you know exactly which visit you are booking before a crew ever shows up.",
         ],
       },
@@ -95,21 +95,21 @@ export const blogPosts: BlogPost[] = [
         heading: "Why Pasadena homes collect buildup differently",
         paragraphs: [
           "Pasadena sits right against the foothills, and that shapes how dirt gets into a house. Dry, windy stretches push fine dust through window frames, screen doors, and the gaps around older wood sashes. It settles on sills, picture rails, ceiling fan blades, and the tops of door casings — the places a regular tidy rarely reaches.",
-          "Then there is the housing stock. Neighborhoods like Bungalow Heaven and the Playhouse District are full of early-1900s Craftsman homes with original wood floors, built-in bookcases, box-beam ceilings, and older tile bathrooms. Those details are beautiful, and they have a lot of edges and ledges. Hillside homes near the Arroyo Seco and San Rafael Hills bring more windows and more outdoor traffic, while condos near Colorado Boulevard and Old Pasadena have their own patterns: compact kitchens that get heavy use and bathrooms that build soap film fast.",
+          "Then there is the housing stock. Neighborhoods like Bungalow Heaven and the Playhouse District are full of early-1900s Craftsman homes with original hardwood floors, hex-tile bathrooms, built-in bookcases, and box-beam ceilings. Those details are beautiful, and they have a lot of edges and ledges. Homes around Old Town Pasadena, the Rose Bowl, and Caltech span every era, while hillside homes near the Arroyo Seco and San Rafael Hills bring more windows and more outdoor traffic, while condos near Colorado Boulevard and Old Pasadena have their own patterns: compact kitchens that get heavy use and bathrooms that build soap film fast.",
         ],
       },
       {
         heading: "Deep clean vs standard tidy: how to tell which you need",
         paragraphs: [
-          "A [standard cleaning](/standard-cleaning) keeps an occupied home in good shape on a regular rhythm: kitchens, bathrooms, floors, and reachable surfaces. It assumes the home is already at a maintained baseline. A [deep cleaning](/deep-cleaning) is the reset that gets you to that baseline — slower, more detailed, and focused on the buildup that accumulates when regular visits skip it.",
+          "A [standard cleaning](/standard-cleaning) keeps an occupied home in good shape on a regular rhythm: kitchens, bathrooms, floors, and reachable surfaces. It assumes the home is already at a maintained baseline. A [deep cleaning](/deep-cleaning) is the reset that gets you to that baseline — slower, more detailed, and focused on the built-up grime that accumulates when regular visits skip it.",
           "You probably need deep cleaning in Pasadena if any of these sound familiar:",
         ],
         bullets: [
           "Baseboards and door trim look gray up close, especially along hallways and stairs",
           "Shower grout and tile corners have darkened, and a normal scrub no longer brightens them",
-          "Built-ins, window sills, and picture rails have a visible dust layer",
+          "Built-ins, window sills and tracks, blinds, and picture rails have a visible dust layer",
           "It has been several months (or never) since the home had a top-to-bottom clean",
-          "You are starting a new recurring plan and want the first visit to set the baseline",
+          "You are starting a new recurring plan and want a first-time deep clean to set the baseline",
           "Guests are coming for the holidays or for New Year's Day and the Rose Parade crowd",
         ],
       },
@@ -127,9 +127,9 @@ export const blogPosts: BlogPost[] = [
           "Baseboards hand-wiped throughout, plus door frames, door faces, and trim",
           "Bathroom tile and grout scrubbed, with extra attention to shower corners and floor edges",
           "Kitchen detail: cabinet fronts, backsplash, sink, stovetop degrease, and inside the refrigerator and microwave",
-          "Dusting high and low: ceiling fans, vents, light fixtures, sills, and built-in shelving",
+          "Dusting high and low: ceiling fans, vents, light fixtures, blinds, window sills and tracks, and built-in shelving",
           "Floors vacuumed and mopped, including under easy-to-move furniture and along the edges",
-          "Switch plates, handles, and other high-touch spots wiped down",
+          "Light switch plates, doorknobs, handles, and other high-touch spots wiped down",
         ],
       },
       {
@@ -141,7 +141,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Baseboards and grout: the two spots that tell the story",
         paragraphs: [
           "When people ask for a baseboards grout clean, they are usually describing the clearest signs that a home has drifted past maintenance level. Baseboards collect dust, pet hair, and mop splash at floor level, and in older Pasadena homes the profiles are often taller and more detailed than modern trim, so they hold more. Grout darkens slowly from soap, body oils, and moisture until it looks permanently stained.",
-          "Both respond well to patient hand work rather than harsh chemicals. On original wood trim and older tile, we match products to the surface and avoid anything that could strip finishes or etch stone. If a surface is delicate, fragile, or recently restored, tell us when you book so the crew knows before they start.",
+          "Both respond well to patient hand work rather than harsh chemicals. On original hardwood, wood trim, and older tile with unsealed grout, we match products to the surface and avoid anything that could strip finishes or etch stone. If a surface is delicate, fragile, or recently restored, tell us when you book so the crew knows before they start.",
         ],
       },
       {
