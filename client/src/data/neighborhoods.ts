@@ -21,6 +21,8 @@ export type Neighborhood = {
   highlights: string[];
   faqs: { q: string; a: string }[];
   quoteCity: string;
+  /** Optional page-specific intro for the "Services in [City]" section (switches the heading and adds the local move-out card). */
+  servicesIntro?: string;
   /**
    * Hub this page sits under when it is not the metro hub (e.g. Sparks sits
    * under the Reno & Sparks hub). Used for breadcrumbs and back links, and
@@ -690,7 +692,8 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Henderson",
     intro: [
-      "Henderson homes — suburban reliability without the runaround — need cleaners who respect garage vs. street parking and gate codes. Steampunk House Cleaning serves Henderson from Green Valley to Anthem-area communities as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
+      "Henderson is Nevada's second-largest city and sits in the southeast part of the Las Vegas Valley. Steampunk House Cleaning cleans homes across Henderson, from established streets near Boulder Highway to the newer master-planned communities to the south and east.",
+      "Much of Henderson is master-planned. Anthem and Seven Hills sit on higher ground with golf-course and view homes, MacDonald Highlands is guard-gated, and Inspirada and Cadence are newer communities built around parks and trails. Lake Las Vegas adds resort-style homes and condos around a private lake. Many neighborhoods have guard gates or HOA rules about parking, so share those when you book and we will plan around them. Larger floor plans often mean several bathrooms, and the Valley's very hard water leaves scale in every one. Hillside homes with big windows also catch wind-blown desert dust, which shows up on sills and stone floors. Natural stone counters are common in newer models, so we use stone-safe products on them.",
     ],
     localNotes: [],
     highlights: [
@@ -701,18 +704,19 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     ],
     faqs: [
       {
-        q: "Do you serve Green Valley and other Henderson neighborhoods?",
-        a: "Often yes. Henderson is one of the cities we commonly serve in the Las Vegas metro. Include your neighborhood or zip on the quote form and we will confirm coverage.",
+        q: "How much does house cleaning cost in Henderson?",
+        a: "Henderson homes range from condos to large hillside houses, so pricing is quote-based. Bedrooms, bathrooms, the service level, and visit frequency all factor in, and a recurring plan is priced differently from a one-time clean. Use the free quote form or give us a call at (725) 255-3688.",
       },
       {
-        q: "Can you do move-out cleaning in Henderson?",
-        a: "Yes. Move-in and move-out cleans are a frequent request. Tell us the move date, home size, and condition so we can set a realistic scope and timing.",
+        q: "Do you clean in Inspirada, Cadence, and Lake Las Vegas?",
+        a: "Yes, Henderson is part of our Las Vegas service area. Add your community and zip code on the quote form and we will confirm your address and schedule.",
       },
       {
-        q: "How far ahead should I book in Henderson?",
-        a: "Most standard and recurring cleans can land within 1–3 business days. Peak weeks may need more lead time — call (725) 255-3688 if your date is firm.",
+        q: "What is a good first visit for a large Henderson home?",
+        a: "A deep clean is a strong first visit because it resets bathrooms, baseboards, and fixtures before regular visits begin. Inside-oven cleaning is a paid add-on and is never included unless you add it.",
       },
     ],
+    servicesIntro: "For large Henderson homes, a deep clean followed by recurring visits keeps bathrooms and floors under control. Moving out of a Henderson rental or selling a house? Our Las Vegas move-out cleaning page explains the empty-home checklist.",
     quoteCity: "Las Vegas, NV",
   },
   {
@@ -788,7 +792,8 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Paradise",
     intro: [
-      "Paradise homes — condo living, short-term rentals, and high-traffic households — need cleaners who respect tower security desks and garage elevators. Steampunk House Cleaning serves Paradise Township near the Strip corridor as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
+      "Paradise is the unincorporated town that holds most of the Las Vegas Strip, UNLV, and Harry Reid International Airport, even though its mailing addresses read Las Vegas. Steampunk House Cleaning cleans condos, apartments, and houses across it.",
+      "Housing here is very mixed. There are high-rise condo towers along the resort corridor, apartment complexes near UNLV and Maryland Parkway, the guard-gated Las Vegas Country Club, and 1960s mid-century homes in Paradise Palms. Each one changes how a visit works: a tower may need front-desk check-in and a loading-zone plan, while an original Paradise Palms house has older finishes we clean by hand. Some owners near the Strip use their place as a short-term rental and need resets between guests, which our Airbnb cleaning page covers. Hard water leaves white film on faucets and glass, and desert dust drifts in on windy days. If your tower limits when vendors can work, tell us the allowed hours and we will book inside them.",
     ],
     localNotes: [],
     highlights: [
@@ -798,7 +803,20 @@ export const NEIGHBORHOODS: Neighborhood[] = [
       "Free quote by phone",
     ],
     faqs: [
+      {
+        q: "How much does house cleaning cost in Paradise?",
+        a: "It depends on what you are cleaning. A Strip-corridor condo, a UNLV-area apartment, and a Country Club home take very different amounts of time, so we price each one by size, service type, and visit frequency. Request a free quote through our form, or call us at (725) 255-3688 and we will walk through it with you.",
+      },
+      {
+        q: "Can you clean a high-rise condo near the Strip?",
+        a: "Yes. Let us know your building's check-in steps, such as front-desk registration, a loading-zone spot, or an elevator reservation, so your cleaner can get to your floor without delays.",
+      },
+      {
+        q: "Do you clean mid-century homes in Paradise Palms?",
+        a: "Yes. Older homes like these can have original wood paneling, terrazzo, or clerestory windows. Mention any original finishes when you request a quote and we will choose products that suit them.",
+      },
     ],
+    servicesIntro: "Paradise condos and apartments often need standard or recurring cleaning, and hosts near the Strip can book turnover cleans through our Airbnb / STR service. Renters near UNLV who are handing back keys can use our Las Vegas move-out cleaning.",
     quoteCity: "Las Vegas, NV",
   },
   {
@@ -814,7 +832,8 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Spring Valley",
     intro: [
-      "Spring Valley homes — dense residential blocks and busy dual-income households — need cleaners who respect apartment gates and street parking. Steampunk House Cleaning serves Spring Valley west of the Strip as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
+      "Spring Valley is the unincorporated town about two miles west of the Strip, reaching from Decatur Boulevard out toward Summerlin South. Steampunk House Cleaning cleans apartments, townhomes, and single-family homes throughout it.",
+      "A lot of Spring Valley is apartment and condo living, from complexes along Rainbow Boulevard and Desert Inn Road to newer buildings near Chinatown on Spring Mountain Road. Farther southwest, Rhodes Ranch is a gated master-planned community with golf-course homes, and older single-story houses with small yards fill many of the blocks in between. Gated apartment entries and limited visitor parking are the main access issues, so add your call box steps or gate code to the quote form. Shared walls and small patios mean dust from monsoon wind and nearby construction finds its way inside quickly. Hard water also builds up on sliding shower doors and kitchen faucets, which we treat on every visit. If your complex has quiet hours, note them on the form so we can plan the start time.",
     ],
     localNotes: [],
     highlights: [
@@ -824,7 +843,20 @@ export const NEIGHBORHOODS: Neighborhood[] = [
       "Free quote by phone",
     ],
     faqs: [
+      {
+        q: "How much does house cleaning cost in Spring Valley?",
+        a: "There is no single flat price. We look at your unit or home size, the service you want, its current condition, and how often you would like visits, then give you a quote. Getting one is free: send the quote form or phone (725) 255-3688.",
+      },
+      {
+        q: "Do you clean apartments near Chinatown and Spring Mountain Road?",
+        a: "Yes, apartments and condos are welcome. Include your complex name and unit number so we can plan parking and the walk to your door.",
+      },
+      {
+        q: "Can you help with hard-water buildup on sliding shower doors?",
+        a: "Yes. We treat the glass, door tracks, and fixtures for mineral film during the clean. Heavily etched glass may stay cloudy, and we will tell you honestly if that is the case.",
+      },
     ],
+    servicesIntro: "Spring Valley renters and owners can book standard, deep, or recurring cleaning, plus our Las Vegas move-out cleaning when a lease is ending. Investors with units close to the Strip can also look at our Airbnb / STR page.",
     quoteCity: "Las Vegas, NV",
   },
   {
@@ -840,7 +872,8 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Enterprise",
     intro: [
-      "Enterprise homes — newer construction and master-planned growth — need cleaners who respect HOA gates and garage-first parking. Steampunk House Cleaning serves Enterprise in the southwest Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
+      "Enterprise is the unincorporated Clark County town that covers much of the southwest Las Vegas Valley, south of Sunset Road and west of Paradise. Steampunk House Cleaning cleans homes here for households that want a reliable, checklist-based visit.",
+      "Most of the housing went up after the 215 Beltway opened the area, so you will find newer two-story tract homes, townhomes, and apartment communities. Mountain's Edge and Southern Highlands are the two big master-planned communities, and parts of Southern Highlands are guard-gated with their own visitor rules. Tell us your gate process and HOA parking rules when you book. Even newer homes pick up fine desert dust from open lots nearby and from summer monsoon storms, and it collects on window tracks, ceiling fans, and baseboards. Southern Nevada tap water is very hard, so we plan time for mineral spots on shower glass and faucets. Tile floors in big open kitchens show every footprint, so we finish them with a damp mop instead of a dry sweep.",
     ],
     localNotes: [],
     highlights: [
@@ -850,7 +883,20 @@ export const NEIGHBORHOODS: Neighborhood[] = [
       "Free quote by phone",
     ],
     faqs: [
+      {
+        q: "How much does house cleaning cost in Enterprise?",
+        a: "We don't publish set prices because every Enterprise home is different. Your quote depends on square footage, how many bathrooms you have, the type of clean, and whether you book once or on a schedule. For a free quote, fill out the quote form on this page or call (725) 255-3688.",
+      },
+      {
+        q: "Can you get past the gate in Southern Highlands or Mountain's Edge?",
+        a: "Yes, as long as we know the process ahead of time. Put the gate code, guard-desk instructions, or the name to leave on the guest list in the notes of your quote request, and your cleaner will use them on arrival.",
+      },
+      {
+        q: "Do you clean townhomes and apartments in Enterprise, or only houses?",
+        a: "Both. We clean single-family homes, townhomes, condos, and apartments. For apartment communities, tell us where visitors park and how to reach your unit.",
+      },
     ],
+    servicesIntro: "A newly finished Enterprise house is a good candidate for a deep clean first, then standard or recurring visits to keep dust down. Leaving a southwest Valley rental? Book Las Vegas move-out cleaning to get cabinets, baseboards, and fixtures ready for the walkthrough.",
     quoteCity: "Las Vegas, NV",
   },
   {
@@ -892,7 +938,8 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Green Valley",
     intro: [
-      "Green Valley homes — established planned living and mature landscaping — need cleaners who respect HOA norms and visitor parking rules. Steampunk House Cleaning serves Green Valley in Henderson as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
+      "Green Valley is the master-planned community in western Henderson that American Nevada Corporation started in 1978, the first of its kind in Southern Nevada. Steampunk House Cleaning cleans homes in Green Valley, Green Valley South, and Green Valley Ranch.",
+      "Because building started decades ago, the housing spans several eras. The older sections have homes with mature trees and established HOAs, while Green Valley Ranch, which began construction in 1994, has newer houses, gated villages, and condos near The District and Green Valley Parkway. Most streets fall under an HOA and some villages are gated, so let us know the entry process and parking rules. Older homes often have original tile and grout that hold years of hard-water film, and mature landscaping tracks leaves and dust toward the doors. Monsoon wind in late summer pushes fine dust onto patios, sliding-door tracks, and window sills. A deep clean first, then recurring visits, works well here.",
     ],
     localNotes: [],
     highlights: [
@@ -902,7 +949,20 @@ export const NEIGHBORHOODS: Neighborhood[] = [
       "Free quote by phone",
     ],
     faqs: [
+      {
+        q: "How much does house cleaning cost in Green Valley?",
+        a: "Pricing is quote-based, not a flat rate. For Green Valley homes we look at size, bathroom count, the service you choose, and whether you want one visit or a recurring plan. You can get a free quote with the online form or by calling (725) 255-3688.",
+      },
+      {
+        q: "Do you clean in Green Valley Ranch and its gated villages?",
+        a: "Yes. Send us your village name, gate instructions, and any HOA parking rules with your quote request so your cleaner can get in on time.",
+      },
+      {
+        q: "Can you clean condos near The District at Green Valley Ranch?",
+        a: "Yes, we clean condos and townhomes there too. Let us know the building entrance, where to park, and the unit number.",
+      },
     ],
+    servicesIntro: "Green Valley households often pair a first deep clean with recurring visits. If you are moving out of a Green Valley Ranch condo or rental, see our Las Vegas move-out cleaning page for the empty-home checklist.",
     quoteCity: "Las Vegas, NV",
   },
   {
@@ -918,7 +978,8 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     h1: "House cleaning in",
     h1Accent: "Whitney",
     intro: [
-      "Whitney homes — practical residential streets and value-focused homes — need cleaners who respect driveway and curb parking. Steampunk House Cleaning serves Whitney on the east side of the Valley as part of our Las Vegas market with the same checklist-driven process we use across Los Angeles & Orange County, Las Vegas, Reno, and Sacramento.",
+      "Whitney is the unincorporated town on the east side of the Valley along Boulder Highway, between Sunrise Manor and Henderson. It was called East Las Vegas until it was renamed in 1993. We clean single-family houses and apartment units throughout Whitney.",
+      "Whitney is one of the older parts of the Valley, with roots in a ranch that was subdivided in 1931 when Boulder Highway was built. Many homes are single-story houses with block walls, gravel yards, and older tile, and there are apartment complexes near Boulder Highway, Tropicana Avenue, and Russell Road, close to the former Sam Boyd Stadium. Older homes tend to have more gaps around doors and windows, so fine dust from open desert lots and summer monsoon storms settles fast on sills, blinds, and ceiling fans. Older fixtures also hold years of hard-water scale. Renters can book a move-out clean before a walkthrough, and owners often do best with one deep clean and then regular visits.",
     ],
     localNotes: [],
     highlights: [
@@ -928,7 +989,20 @@ export const NEIGHBORHOODS: Neighborhood[] = [
       "Free quote by phone",
     ],
     faqs: [
+      {
+        q: "How much does house cleaning cost in Whitney?",
+        a: "Each quote is built around your home: its size, its condition, which service you pick, and how often you want us back. There is no charge for a quote. Fill out the form or call (725) 255-3688 and we will get back to you with one.",
+      },
+      {
+        q: "Can you clean my rental before I move out?",
+        a: "Yes. Tell us your move-out date, unit size, and how we get in, whether that is a lockbox or a key from the leasing office. The Las Vegas move-out page has the room-by-room list.",
+      },
+      {
+        q: "How often should an older Whitney home be cleaned?",
+        a: "We can set weekly, every-two-weeks, or monthly visits. If dust builds up fast in your home, a shorter gap between visits keeps it manageable.",
+      },
     ],
+    servicesIntro: "Whitney homeowners can start with a deep clean and move to recurring visits, while renters can use our Las Vegas move-out cleaning before handing back keys. Standard one-time visits are available too.",
     quoteCity: "Las Vegas, NV",
   },
   {

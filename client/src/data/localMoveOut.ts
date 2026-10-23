@@ -41,6 +41,8 @@ export type LocalMoveOutPage = {
   reviews: Review[];
   faqs: FaqItem[];
   nearby: PageLink[];
+  /** Optional "We also serve ..." sentence with links to more city pages. */
+  alsoServe?: PageLink[];
   blog: PageLink;
   /** City names shown on the page; used for LocalBusiness areaServed */
   areaServed: string[];
@@ -129,6 +131,14 @@ export const LOCAL_MOVE_OUT_PAGES: LocalMoveOutPage[] = [
       { href: "/locations/las-vegas-nevada/las-vegas", label: "Las Vegas house cleaning" },
       { href: "/locations/las-vegas-nevada/henderson", label: "Henderson house cleaning" },
       { href: "/locations/las-vegas-nevada/summerlin", label: "Summerlin house cleaning" },
+    ],
+    alsoServe: [
+      { href: "/locations/las-vegas-nevada/enterprise", label: "Enterprise" },
+      { href: "/locations/las-vegas-nevada/paradise", label: "Paradise" },
+      { href: "/locations/las-vegas-nevada/spring-valley", label: "Spring Valley" },
+      { href: "/locations/las-vegas-nevada/henderson", label: "Henderson" },
+      { href: "/locations/las-vegas-nevada/whitney", label: "Whitney" },
+      { href: "/locations/las-vegas-nevada/green-valley", label: "Green Valley" },
     ],
     blog: {
       href: "/blog/house-cleaning-las-vegas-hard-water",
