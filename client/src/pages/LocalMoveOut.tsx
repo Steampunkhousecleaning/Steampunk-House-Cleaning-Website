@@ -138,6 +138,18 @@ export default function LocalMoveOut({ page }: { page: LocalMoveOutPage }) {
           <Link href="/move-in-move-out" style={{ color: TEAL, fontWeight: 700 }}>move-in / move-out cleaning</Link> page.
         </p>
         <LinkList links={page.nearby} />
+        {page.alsoServe && page.alsoServe.length > 0 && (
+          <p style={pStyle}>
+            We also serve{" "}
+            {page.alsoServe.map((l, i, arr) => (
+              <span key={l.href}>
+                {i > 0 && (i === arr.length - 1 ? ", and " : ", ")}
+                <Link href={l.href} style={{ color: TEAL, fontWeight: 700 }}>{l.label}</Link>
+              </span>
+            ))}
+            .
+          </p>
+        )}
       </Section>
 
       <section style={{ padding: "48px 0", backgroundColor: NAVY }}>

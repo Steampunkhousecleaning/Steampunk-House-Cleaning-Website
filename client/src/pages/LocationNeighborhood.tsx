@@ -8,7 +8,7 @@ import { Link } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { JsonLd } from "@/components/JsonLd";
-import { PROVIDER_REF, breadcrumbSchema, locationBusinessSchema } from "@/lib/schema";
+import { PROVIDER_REF, breadcrumbSchema, locationBusinessSchema, localBusinessSchemaForAreas } from "@/lib/schema";
 import { getMetroBySlug } from "@/data/locations";
 import { getNeighborhood, neighborhoodQuoteCity, type Neighborhood } from "@/data/neighborhoods";
 import { CITY_LOCAL } from "@/data/cityLocal";
@@ -101,6 +101,13 @@ const SERVICE_LINKS = [
   { label: "Commercial / Office", href: "/commercial-cleaning" },
 ];
 
+const SITEWIDE_SERVICE_LINKS = [
+  { label: "Standard cleaning", href: "/standard-cleaning" },
+  { label: "Deep cleaning", href: "/deep-cleaning" },
+  { label: "Recurring cleaning", href: "/recurring-cleaning" },
+  { label: "Move-in / move-out", href: "/move-in-move-out" },
+];
+
 export default function LocationNeighborhood({
   neighborhood,
 }: {
@@ -111,7 +118,18 @@ export default function LocationNeighborhood({
   const quoteHref = `/get-a-quote?service=${encodeURIComponent("Standard Cleaning")}&city=${encodeURIComponent(neighborhoodQuoteCity(neighborhood))}`;
 
   const local = CITY_LOCAL[neighborhood.slug];
-  const allFaqs = local ? [local.faq, ...neighborhood.faqs] : neighborhood.faqs;
+  const serviceLinks =
+    neighborhood.servicesIntro && neighborhood.metroSlug === "las-vegas-nevada"
+      ? [{ label: "Las Vegas Move-Out Cleaning", href: "/locations/las-vegas-nevada/move-out-cleaning" }, ...SERVICE_LINKS]
+      : SERVICE_LINKS;
+  // A page-level cost FAQ ("How much does ... cost in [City]?") always stays first.
+  const [firstFaq, ...restFaqs] = neighborhood.faqs;
+  const costFirst = Boolean(firstFaq && /^How much does /.test(firstFaq.q));
+  const allFaqs = local
+    ? costFirst
+      ? [firstFaq, local.faq, ...restFaqs]
+      : [local.faq, ...neighborhood.faqs]
+    : neighborhood.faqs;
   const nearby = (local?.nearby ?? [])
     .map((slug) => getNeighborhood(neighborhood.metroSlug, slug))
     .filter((n): n is Neighborhood => Boolean(n));
@@ -126,7 +144,13 @@ export default function LocationNeighborhood({
     })),
   };
 
-  const localBusiness = locationBusinessSchema(neighborhood.path);
+  // City pages are not keyed in LOCATION_AREAS; rewritten pages (servicesIntro set) get
+  // their own LocalBusiness block scoped to the city, same format as the hubs.
+  const localBusiness =
+    locationBusinessSchema(neighborhood.path) ??
+    (neighborhood.servicesIntro
+      ? localBusinessSchemaForAreas(neighborhood.path, [neighborhoodQuoteCity(neighborhood)])
+      : null);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -268,6 +292,20 @@ export default function LocationNeighborhood({
 
       <section style={{ padding: "40px 0", backgroundColor: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 1.5rem" }}>
+          {neighborhood.intro.slice(1).map((para) => (
+            <p
+              key={para.slice(0, 40)}
+              style={{
+                fontSize: 16,
+                color: "#4a5e6e",
+                lineHeight: 1.8,
+                marginBottom: 20,
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              {para}
+            </p>
+          ))}
           {local && (
             <>
               <p
@@ -407,7 +445,7 @@ export default function LocationNeighborhood({
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Cleaning services in {neighborhood.name}
+              {neighborhood.servicesIntro ? "Services in" : "Cleaning services in"} {neighborhood.name}
             </h2>
             <p
               style={{
@@ -418,7 +456,7 @@ export default function LocationNeighborhood({
                 margin: "0 auto",
               }}
             >
-              Local pages for top services, plus our full service menu.
+              {neighborhood.servicesIntro ?? "Local pages for top services, plus our full service menu."}
             </p>
           </div>
           <div
@@ -428,7 +466,7 @@ export default function LocationNeighborhood({
               gap: "1rem",
             }}
           >
-            {SERVICE_LINKS.map((s) => {
+            {serviceLinks.map((s) => {
               const href =
                 "slug" in s && s.slug
                   ? `/locations/${neighborhood.metroSlug}/${s.slug}`
@@ -475,6 +513,28 @@ export default function LocationNeighborhood({
               );
             })}
           </div>
+          {neighborhood.servicesIntro && (
+            <p
+              style={{
+                fontSize: 15,
+                color: "#5a6e80",
+                lineHeight: 1.7,
+                marginTop: 20,
+                textAlign: "center",
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              Sitewide service pages:{" "}
+              {SITEWIDE_SERVICE_LINKS.map((l, i) => (
+                <span key={l.href}>
+                  {i > 0 && " · "}
+                  <Link href={l.href} style={{ color: TEAL, fontWeight: 700 }}>
+                    {l.label}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          )}
         </div>
       </section>
 
