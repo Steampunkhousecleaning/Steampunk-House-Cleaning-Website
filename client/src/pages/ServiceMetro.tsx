@@ -3,6 +3,7 @@
  */
 
 import { useState } from "react";
+import { PhoneText } from "@/lib/phoneText";
 import { Link } from "wouter";
 import { SERVICE_METRO_LOCAL } from "@/data/serviceMetroLocal";
 import { getNeighborhood } from "@/data/neighborhoods";
@@ -74,7 +75,7 @@ function LocalFaq({ faqs }: { faqs: { q: string; a: string }[] }) {
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              {faq.a}
+              <PhoneText text={faq.a} />
             </p>
           )}
         </div>

@@ -304,7 +304,7 @@ export function QuoteForm({ defaultService = "", defaultCity = "", compact = fal
 
       {submitError && (
         <p role="alert" style={{ marginTop: 14, fontSize: 13, color: "#c53030", fontFamily: "'DM Sans', sans-serif" }}>
-          We couldn't confirm your submission. Please try again or call (725) 255-3688.
+          We couldn't confirm your submission. Please try again or call <a href="tel:7252553688" data-ga-location="body" style={{ color: "inherit", textDecoration: "underline" }}>(725) 255-3688</a>.
         </p>
       )}
 

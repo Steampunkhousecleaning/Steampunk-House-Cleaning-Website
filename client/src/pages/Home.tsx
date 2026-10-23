@@ -23,6 +23,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { PhoneText } from "@/lib/phoneText";
 import WorkGallery from "@/components/WorkGallery";
 import { useLocation } from "wouter";
 import {
@@ -342,7 +343,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           style={{ color: NAVY, transform: open ? "rotate(180deg)" : "rotate(0deg)" }} />
       </div>
       <div className="overflow-hidden transition-all duration-300" style={{ maxHeight: open ? "300px" : "0px" }}>
-        <p className="sp-body text-sm pb-5 leading-relaxed" style={{ color: MUTED }}>{a}</p>
+        <p className="sp-body text-sm pb-5 leading-relaxed" style={{ color: MUTED }}><PhoneText text={a} /></p>
       </div>
     </div>
   );

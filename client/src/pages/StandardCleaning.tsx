@@ -7,6 +7,7 @@
  */
 
 import { Navbar, Footer } from "@/components/Layout";
+import { PhoneText } from "@/lib/phoneText";
 import { QuoteForm } from "@/components/QuoteForm";
 import {
   CheckCircle,
@@ -170,7 +171,7 @@ function FAQ() {
                 lineHeight: 1.7,
               }}
             >
-              {faq.a}
+              <PhoneText text={faq.a} />
             </div>
           )}
         </div>

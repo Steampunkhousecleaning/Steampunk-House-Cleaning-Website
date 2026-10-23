@@ -3,6 +3,7 @@
  * (local move-out pages and the Reno hub).
  */
 import type { CSSProperties, ReactNode } from "react";
+import { PhoneText } from "@/lib/phoneText";
 import { Link } from "wouter";
 import { ArrowRight, Phone } from "lucide-react";
 import { MAIN_PHONE } from "@/lib/phones";
@@ -66,7 +67,7 @@ export function FaqList({ faqs }: { faqs: readonly { q: string; a: string }[] })
       {faqs.map((f) => (
         <div key={f.q} style={{ borderBottom: "1px solid #e8edf2", padding: "16px 0" }}>
           <h3 style={{ fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 8, fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.4 }}>{f.q}</h3>
-          <p style={{ ...pStyle, fontSize: 15, marginBottom: 0 }}>{f.a}</p>
+          <p style={{ ...pStyle, fontSize: 15, marginBottom: 0 }}><PhoneText text={f.a} /></p>
         </div>
       ))}
     </div>
