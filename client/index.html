@@ -31,6 +31,23 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      // Staff opt-out: visit any page with ?staff=1 once (?staff=0 clears it). Flagged browsers
+      // send traffic_type=internal so GA4's "Internal Traffic" data filter can exclude them.
+      (function () {
+        var KEY = 'sp_staff';
+        try {
+          var p = new URLSearchParams(location.search).get('staff');
+          if (p === '1') {
+            localStorage.setItem(KEY, '1');
+            document.cookie = KEY + '=1; path=/; max-age=63072000; SameSite=Lax; Secure';
+          } else if (p === '0') {
+            localStorage.removeItem(KEY);
+            document.cookie = KEY + '=; path=/; max-age=0; SameSite=Lax; Secure';
+          }
+          var on = localStorage.getItem(KEY) === '1' || /(?:^|; )sp_staff=1(?:;|$)/.test(document.cookie);
+          if (on) gtag('set', { traffic_type: 'internal' });
+        } catch (e) { /* storage blocked: ignore */ }
+      })();
       gtag('config', 'G-JZ2CGFWDZR');
     </script>
   </head>
