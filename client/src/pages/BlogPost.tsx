@@ -3,6 +3,7 @@
  */
 
 import { Fragment, type ReactNode } from "react";
+import { PhoneText } from "@/lib/phoneText";
 import { Link, useParams } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
@@ -45,7 +46,7 @@ function RichText({ text }: { text: string }) {
   while ((match = re.exec(text)) !== null) {
     if (match.index > last) {
       nodes.push(
-        <Fragment key={`t-${key++}`}>{text.slice(last, match.index)}</Fragment>,
+        <Fragment key={`t-${key++}`}><PhoneText text={text.slice(last, match.index)} /></Fragment>,
       );
     }
     const label = match[1];
@@ -77,7 +78,7 @@ function RichText({ text }: { text: string }) {
     last = match.index + match[0].length;
   }
   if (last < text.length) {
-    nodes.push(<Fragment key={`t-${key++}`}>{text.slice(last)}</Fragment>);
+    nodes.push(<Fragment key={`t-${key++}`}><PhoneText text={text.slice(last)} /></Fragment>);
   }
   return <>{nodes}</>;
 }
@@ -333,7 +334,7 @@ export default function BlogPost() {
               lineHeight: 1.6,
             }}
           >
-            {ctaBody}
+            <PhoneText text={ctaBody} />
           </p>
           <PromoBadge variant="dark" />
           <div

@@ -5,6 +5,7 @@
  */
 
 import { Navbar, Footer } from "@/components/Layout";
+import { PhoneText } from "@/lib/phoneText";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle, Star, Shield, Clock, RefreshCw, ChevronDown, ChevronUp, Repeat } from "lucide-react";
 import { useState } from "react";
@@ -86,7 +87,7 @@ function FAQ() {
             {open === i ? <ChevronUp size={20} style={{ color: TEAL, flexShrink: 0 }} /> : <ChevronDown size={20} style={{ color: SKY, flexShrink: 0 }} />}
           </button>
           {open === i && (
-            <div style={{ paddingBottom: 18, fontSize: 15, color: "#5a6e80", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>{faq.a}</div>
+            <div style={{ paddingBottom: 18, fontSize: 15, color: "#5a6e80", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}><PhoneText text={faq.a} /></div>
           )}
         </div>
       ))}

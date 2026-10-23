@@ -3,6 +3,7 @@
  */
 
 import { useState } from "react";
+import { PhoneText } from "@/lib/phoneText";
 import { Link } from "wouter";
 import { Navbar, Footer } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
@@ -82,7 +83,7 @@ function LocalFaq({ faqs }: { faqs: { q: string; a: string }[] }) {
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              {faq.a}
+              <PhoneText text={faq.a} />
             </p>
           )}
         </div>
