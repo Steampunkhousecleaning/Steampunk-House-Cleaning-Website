@@ -39,6 +39,137 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "airbnb-cleaning-las-vegas",
+    title:
+      "Airbnb Cleaning Las Vegas: Strip-Area Turnover Timing, Photos, and 5-Star Cleanliness",
+    metaTitle:
+      "Airbnb Cleaning Las Vegas | Steampunk House Cleaning",
+    metaDescription:
+      "Airbnb cleaning Las Vegas hosts can count on: same-day turnovers near the Strip and in Henderson, photos after every clean, and 5-star cleanliness. Free quote.",
+    date: "2026-10-26",
+    metro: "Las Vegas",
+    primaryKeyword: "Airbnb cleaning Las Vegas",
+    secondaryKeywords: [
+      "VRBO turnover Strip",
+      "short term rental cleaners Henderson",
+    ],
+    ctaHeadline: "Need Airbnb cleaning in Las Vegas before your next check-in?",
+    ctaBody:
+      "Send us your checkout and check-in times, the rental's address near the Strip or in Henderson, and the bedroom and bath count. Request a free quote online or call (725) 255-3688.",
+    excerpt:
+      "Airbnb cleaning Las Vegas hosts can plan around: timing turnovers near the Strip, photo proof after every clean, and the hard-water and desert-dust details behind 5-star cleanliness.",
+    relatedLinks: [
+      {
+        href: "/airbnb-cleaning/",
+        label: "Airbnb & short-term rental cleaning",
+      },
+      {
+        href: "/locations/las-vegas-nevada/",
+        label: "Las Vegas house cleaning",
+      },
+      {
+        href: "/locations/las-vegas-nevada/henderson/",
+        label: "House cleaning in Henderson",
+      },
+      {
+        href: "/deep-cleaning/",
+        label: "Deep cleaning",
+      },
+      {
+        href: "/get-a-quote/",
+        label: "Get a free quote",
+      },
+    ],
+    body: [
+      {
+        paragraphs: [
+          "Airbnb cleaning Las Vegas hosts can rely on comes down to three things: hitting the window between checkout and check-in, proving the unit is guest-ready with photos, and leaving it clean enough that guests mention it in a five-star review. Near the Strip, that window is tighter and the stakes are higher. Guests come in for convention weeks, concerts, and fight nights, and they compare your listing to the hotel down the street. This guide covers how we plan an Airbnb turnover cleaning in Las Vegas, what a VRBO turnover Strip-side involves, and what short term rental cleaners Henderson hosts book should handle.",
+          "Steampunk House Cleaning cleans homes and short-term rentals across [Las Vegas](/locations/las-vegas-nevada/) and [Henderson](/locations/las-vegas-nevada/henderson/). Our founders, Ryan and Daniel, are former Airbnb hosts. They dealt with no-shows and uneven cleans from the host side, which is why our [Airbnb cleaning](/airbnb-cleaning/) service runs on written checklists, confirmed arrival times, and photos after every turnover.",
+        ],
+      },
+      {
+        heading: "Timing: build the turnover around checkout and check-in",
+        paragraphs: [
+          "Many hosts set checkout around 11 a.m. and check-in around 3 or 4 p.m. On back-to-back bookings, those few hours have to cover drive time, the clean, the linen change, restocking, and a final photo walk. Strip-area traffic eats into that window: Las Vegas Boulevard, the I-15 interchanges, and event nights around Allegiant Stadium and T-Mobile Arena can all slow a crew down.",
+          "A same-day turnover goes smoothly when the crew has everything before they leave for your unit. Send us:",
+        ],
+        bullets: [
+          "Checkout and check-in times for each booking, plus any early check-ins or late checkouts you have approved",
+          "Door code, lockbox, or smart-lock instructions that still work after the guest leaves",
+          "Parking details: the unit's assigned spot, visitor parking, or street rules",
+          "Your property checklist: which beds take which linens, where restock supplies are kept, and how rooms are staged",
+          "Who to contact if a guest leaves damage or something is missing",
+        ],
+      },
+      {
+        paragraphs: [
+          "We confirm the arrival time before every turnover and assign a consistent team to your property, so the crew already knows the layout and your preferences.",
+        ],
+      },
+      {
+        heading: "VRBO turnover Strip-side: condos, towers, and Paradise",
+        paragraphs: [
+          "Most of what visitors call the Strip sits in Paradise, an unincorporated town in Clark County that also covers the neighborhoods around UNLV and Harry Reid International Airport. Rentals close to the Strip are often high-rise condos or compact units, and a VRBO turnover Strip-side has its own logistics: front-desk or concierge check-in, elevator access, visitor or loading parking, and building rules about when outside vendors can work. Tell us those details up front so the crew is not waiting in a lobby while your window shrinks. We do not provide building certificates of insurance or complete condo vendor sign-up packets. If your building requires those before outside cleaners can work, check with the front desk or HOA first.",
+          "Small units do not mean a quick wipe. Short, busy stays can leave more trash, glassware, and used towels than the bedroom count suggests, so we plan time for a full reset rather than a touch-up.",
+        ],
+      },
+      {
+        heading: "Short term rental cleaners Henderson hosts can plan around",
+        paragraphs: [
+          "Henderson rentals look different from Strip-area condos. Many are larger single-family homes in master-planned communities such as Green Valley Ranch, Anthem, and Seven Hills, often behind guard gates, with Lake Las Vegas nearby. Bigger kitchens and more bathrooms mean more time per turnover, and a gate that will not open costs minutes you do not have.",
+          "Short term rental cleaners Henderson hosts book should have the gate code, guest-list process, or HOA access steps on file before the first visit. Share them when you [request a quote](/get-a-quote/) and we keep them with your property checklist. See our [Henderson house cleaning](/locations/las-vegas-nevada/henderson/) page for the neighborhoods we cover.",
+        ],
+      },
+      {
+        heading: "Photos: proof the unit is guest-ready",
+        paragraphs: [
+          "Every Steampunk turnover ends with photo documentation of the completed property, sent directly to the host. We also take condition-on-arrival photos, so if a guest leaves damage, a stain, or a missing item, you have pictures instead of a guess. That record helps when a guest claims the place was not clean, and it lets you check a unit across town without driving over.",
+          "Photos also keep your staging consistent. Send us your listing photos, showing how the throw sits on the bed or how the coffee station is set, and we stage to match them so the unit looks the way guests saw it when they booked.",
+        ],
+      },
+      {
+        heading: "5-star cleanliness in the desert: what guests notice first",
+        paragraphs: [
+          "The cleanliness rating is where turnovers win or lose reviews. In Las Vegas, two local conditions show up fast: very hard tap water and fine desert dust. Here is what we focus on every visit:",
+        ],
+        bullets: [
+          "Hard water: shower glass, faucets, and kettles pick up white mineral film quickly in Las Vegas, so glass and chrome get attention every turnover before spots build up",
+          "Desert dust: it settles on window sills, baseboards, ceiling fan blades, and tile floors, especially after windy days, and patio doors and balconies track it inside",
+          "Bathrooms: hair and odor are the fastest complaints, so toilets, showers, sinks, mirrors, and floors are scrubbed and sanitized",
+          "Beds and towels: fresh linens made on all beds, towels folded and staged",
+          "Kitchen and trash: counters and appliance exteriors wiped, kitchen reset, trash removed, and bins relined",
+          "High-touch surfaces: remotes, light switches, door handles, and the thermostat",
+        ],
+      },
+      {
+        paragraphs: [
+          "Toiletries, coffee, and paper goods are restocked from the supplies you keep on site. We remake beds and stage towels using the host's linens at the rental. We do not offer off-site linen laundry in Las Vegas. For the full room-by-room list, see our [cleaning checklist](/cleaning-checklist/).",
+        ],
+      },
+      {
+        heading: "When a turnover is not enough",
+        paragraphs: [
+          "After a long booking, a heavy-use weekend, or a few months of back-to-back stays, schedule a [deep cleaning](/deep-cleaning/) between guests. It covers the detail a turnover skips: baseboards hand-wiped, grout scrubbed, vents dusted, and inside the refrigerator and microwave. Inside oven cleaning is available as an add-on; it is not included in a turnover or a deep clean.",
+          "If a guest leaves the unit in a state far beyond a normal turnover, we contact you before going further, so there are no surprises.",
+        ],
+      },
+      {
+        heading: "How booking works",
+        paragraphs: [
+          "We do not use self-serve instant booking. Tell us the address, bedrooms and bathrooms, your usual checkout and check-in times, and how many units you run, and we send a free quote. Pricing is quote-based because a Strip-area studio and a four-bedroom Henderson home are very different jobs. We work with individual hosts and with property managers who run several units, with a single point of contact.",
+          "Steampunk serves four markets: Los Angeles & Orange County, Las Vegas, Reno, and Sacramento. The Strip-area neighborhoods and Henderson are a regular part of our Las Vegas route.",
+        ],
+      },
+      {
+        heading: "Book Airbnb cleaning in Las Vegas",
+        paragraphs: [
+          "Need a guest-ready unit before your next check-in? Call [(725) 255-3688](tel:7252553688) or [request a free quote](/get-a-quote/) and tell us your checkout and check-in times.",
+          "Start here: [Get a free quote](/get-a-quote/) · [Airbnb cleaning](/airbnb-cleaning/) · [Las Vegas house cleaning](/locations/las-vegas-nevada/) · [Henderson house cleaning](/locations/las-vegas-nevada/henderson/)",
+        ],
+      },
+    ],
+  },
+  {
     slug: "deep-cleaning-pasadena",
     title:
       "Deep Cleaning Pasadena: When Your Home Needs a Deep Clean vs a Standard Tidy",
