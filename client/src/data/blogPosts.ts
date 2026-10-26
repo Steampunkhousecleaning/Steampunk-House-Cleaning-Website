@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "VRBO turnover Strip-side: condos, towers, and Paradise",
         paragraphs: [
-          "Most of what visitors call the Strip sits in Paradise, an unincorporated town in Clark County that also covers the neighborhoods around UNLV and Harry Reid International Airport. Rentals close to the Strip are often high-rise condos or compact units, and a VRBO turnover Strip-side has its own logistics: front-desk or concierge check-in, elevator access, visitor or loading parking, and building rules about when outside vendors can work. Tell us those details up front so the crew is not waiting in a lobby while your window shrinks. [OWNER: confirm whether we can provide a certificate of insurance or complete vendor sign-up when a condo building asks for it.]",
+          "Most of what visitors call the Strip sits in Paradise, an unincorporated town in Clark County that also covers the neighborhoods around UNLV and Harry Reid International Airport. Rentals close to the Strip are often high-rise condos or compact units, and a VRBO turnover Strip-side has its own logistics: front-desk or concierge check-in, elevator access, visitor or loading parking, and building rules about when outside vendors can work. Tell us those details up front so the crew is not waiting in a lobby while your window shrinks. We do not provide building certificates of insurance or complete condo vendor sign-up packets. If your building requires those before outside cleaners can work, check with the front desk or HOA first.",
           "Small units do not mean a quick wipe. Short, busy stays can leave more trash, glassware, and used towels than the bedroom count suggests, so we plan time for a full reset rather than a touch-up.",
         ],
       },
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         paragraphs: [
-          "Toiletries, coffee, and paper goods are restocked from the supplies you keep on site. [OWNER: confirm whether Steampunk launders linens off-site in Las Vegas, or only uses and washes the host's linens on site.] For the full room-by-room list, see our [cleaning checklist](/cleaning-checklist/).",
+          "Toiletries, coffee, and paper goods are restocked from the supplies you keep on site. We remake beds and stage towels using the host's linens at the rental. We do not offer off-site linen laundry in Las Vegas. For the full room-by-room list, see our [cleaning checklist](/cleaning-checklist/).",
         ],
       },
       {
