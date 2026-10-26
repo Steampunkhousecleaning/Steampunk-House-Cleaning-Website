@@ -43,6 +43,7 @@ const ROUTES = [
   "/blog/move-out-cleaning-sacramento",
   "/blog/house-cleaning-reno-nv",
   "/blog/deep-cleaning-pasadena",
+  "/blog/airbnb-cleaning-las-vegas",
   "/get-a-quote",
   "/privacy",
   "/terms",
