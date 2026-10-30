@@ -14,7 +14,7 @@ import { submitLead } from "@/lib/webhook";
 import { trackLead } from "@/lib/analytics";
 import { PromoBadge } from "@/components/PromoBadge";
 import { TrustStrip } from "@/components/TrustStrip";
-import { NEIGHBORHOODS, neighborhoodQuoteCity } from "@/data/neighborhoods";
+import { HUB_CITIES, CITY_GROUPS, ALL_CITY_VALUES } from "@/data/quoteCities";
 
 const NAVY = "#3D5266";
 const TEAL = "#1A9E8F";
@@ -32,28 +32,7 @@ const SERVICES = [
   "Not sure yet",
 ];
 
-const CITIES = [
-  "Los Angeles / Orange County",
-  "Las Vegas, NV",
-  "Reno, NV",
-  "Sacramento, CA",
-  "Other",
-];
-
-/** Specific city options (grouped by metro) so city pages can pre-select their own city. */
-const CITY_GROUPS: { label: string; cities: string[] }[] = [
-  { label: "Los Angeles / Orange County", slug: "los-angeles-orange-county" },
-  { label: "Las Vegas", slug: "las-vegas-nevada" },
-  { label: "Reno & Sparks", slug: "reno" },
-  { label: "Sacramento", slug: "sacramento" },
-].map((g) => ({
-  label: g.label,
-  cities:
-    g.slug === "reno"
-      ? ["Reno, NV", ...NEIGHBORHOODS.filter((n) => n.parentHub?.path === "/locations/reno").map(neighborhoodQuoteCity)]
-      : NEIGHBORHOODS.filter((n) => n.metroSlug === g.slug && !n.parentHub).map(neighborhoodQuoteCity),
-}));
-const ALL_CITY_VALUES = new Set<string>([...CITIES, ...CITY_GROUPS.flatMap((g) => g.cities)]);
+const CITIES = [...HUB_CITIES, "Other"];
 
 const BEDROOMS = ["Studio", "1 Bedroom", "2 Bedrooms", "3 Bedrooms", "4 Bedrooms", "5+ Bedrooms"];
 

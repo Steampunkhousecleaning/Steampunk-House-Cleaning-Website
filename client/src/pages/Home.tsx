@@ -23,6 +23,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { HUB_CITIES, CITY_GROUPS } from "@/data/quoteCities";
 import { PhoneText } from "@/lib/phoneText";
 import WorkGallery from "@/components/WorkGallery";
 import { useLocation } from "wouter";
@@ -253,22 +254,12 @@ function LeadForm({ compact = false }: { compact?: boolean }) {
             <select name="location" required value={form.location} onChange={handleChange}
               style={{ ...inputStyle, color: form.location ? NAVY : MUTED, appearance: "none" as const }}>
               <option value="" disabled>Select your city</option>
-              <option value="Los Angeles, CA">Los Angeles, CA</option>
-              <option value="Long Beach, CA">Long Beach, CA</option>
-              <option value="Irvine, CA">Irvine, CA</option>
-              <option value="Pasadena, CA">Pasadena, CA</option>
-              <option value="Anaheim, CA">Anaheim, CA</option>
-              <option value="Huntington Beach, CA">Huntington Beach, CA</option>
-              <option value="Los Angeles / Orange County">Los Angeles / Orange County</option>
-              <option value="Las Vegas, NV">Las Vegas, NV</option>
-              <option value="Henderson, NV">Henderson, NV</option>
-              <option value="Summerlin, NV">Summerlin, NV</option>
-              <option value="Reno, NV">Reno, NV</option>
-              <option value="Sparks, NV">Sparks, NV</option>
-              <option value="Sacramento, CA">Sacramento, CA</option>
-              <option value="Roseville, CA">Roseville, CA</option>
-              <option value="Elk Grove, CA">Elk Grove, CA</option>
-              <option value="Folsom, CA">Folsom, CA</option>
+              {HUB_CITIES.map((c) => <option key={c} value={c}>{c}</option>)}
+              {CITY_GROUPS.map((g) => (
+                <optgroup key={g.label} label={g.label}>
+                  {g.cities.map((c) => <option key={c} value={c}>{c}</option>)}
+                </optgroup>
+              ))}
               <option value="Other">Other</option>
             </select>
           </div>
@@ -375,7 +366,7 @@ export default function Home() {
 
   const reviews = useCountUp(400);
   const jobs = useCountUp(100);
-  const markets = useCountUp(3);
+  const markets = useCountUp(4);
 
   const [, navigate] = useLocation();
   const scrollToForm = () => {
@@ -412,7 +403,7 @@ export default function Home() {
       {/* ─── SHARED NAVBAR ─────────────────────────────────────────────────── */}
       <Navbar />
       <SEO
-        title="House Cleaning in CA & NV | Steampunk House Cleaning"
+        title="House Cleaning in LA, OC, Las Vegas, Reno & Sacramento | Steampunk House Cleaning"
         description="Professional house cleaning across Los Angeles, Orange County, Las Vegas, Reno, and Sacramento. 4.9★ with 400+ reviews. Get a free quote in 2 minutes."
         path="/"
       />
@@ -441,10 +432,10 @@ export default function Home() {
             {/* Left: Headline + Trust */}
             <div>
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full sp-body text-xs font-semibold tracking-wide uppercase"
+              <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full sp-body text-xs sm:text-sm font-semibold leading-snug max-w-full"
                 style={{ backgroundColor: `${TEAL}15`, color: TEAL }}>
                 <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ backgroundColor: TEAL }} />
-                Serving California &amp; Nevada
+                House cleaning in Los Angeles, Orange County, Las Vegas, Reno &amp; Sacramento
               </div>
 
               {/* Headline */}
@@ -526,10 +517,11 @@ export default function Home() {
             <div className="sp-body text-sm font-semibold text-center md:text-right" style={{ color: MUTED }}>
               Serving <span style={{ color: NAVY }}>LA / OC</span>
               {" · "}
-              <span style={{ color: NAVY }}>Las Vegas & Reno</span>
+              <span style={{ color: NAVY }}>Las Vegas</span>
+              {" · "}
+              <span style={{ color: NAVY }}>Reno</span>
               {" · "}
               <span style={{ color: NAVY }}>Sacramento</span>
-              {" equally"}
             </div>
           </div>
         </div>
@@ -543,7 +535,7 @@ export default function Home() {
               { ref: reviews.ref, count: reviews.count, suffix: "+", label: "Verified Google Reviews" },
               { ref: jobs.ref, count: jobs.count, suffix: "+", label: "Homes Cleaned Per Month" },
               { ref: null, count: 4.9, suffix: "★", label: "Average Star Rating", isDecimal: true },
-              { ref: markets.ref, count: markets.count, suffix: "", label: "Metro Markets Served" },
+              { ref: markets.ref, count: markets.count, suffix: "", label: "Markets Served" },
             ].map((stat, i) => (
               <div key={i} className="animate-fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="sp-display text-4xl lg:text-5xl font-extrabold mb-1 text-white">
