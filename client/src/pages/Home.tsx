@@ -26,7 +26,7 @@ import { useEffect, useRef, useState } from "react";
 import { HUB_CITIES, CITY_GROUPS } from "@/data/quoteCities";
 import { PhoneText } from "@/lib/phoneText";
 import WorkGallery from "@/components/WorkGallery";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import {
   Phone, Star, Shield, CheckCircle2, ChevronDown, ArrowRight,
   MapPin, Clock, Award, Users, Home as HomeIcon, Sparkles,
@@ -913,6 +913,41 @@ export default function Home() {
             <div className="flex-shrink-0">
               <TealBtn onClick={scrollToForm}>Book Your Clean <ArrowRight className="w-4 h-4" /></TealBtn>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WHERE WE CLEAN ──────────────────────────────────────────────────── */}
+      <section id="where-we-clean" className="py-10" style={{ backgroundColor: ICE }} aria-labelledby="where-we-clean-heading">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-8 animate-fade-up">
+            <div className="sp-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: TEAL }}>Service areas</div>
+            <h2 id="where-we-clean-heading" className="sp-display text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: NAVY }}>Where we clean</h2>
+            <p className="sp-body text-lg" style={{ color: MUTED }}>We clean homes across four markets. Pick yours to see the cities we cover and get a free quote.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { title: "Los Angeles & Orange County", hub: "/locations/los-angeles-orange-county/", footer: "See all LA & OC cities", links: [
+                ["Irvine", "/locations/los-angeles-orange-county/irvine/"], ["Pasadena", "/locations/los-angeles-orange-county/pasadena/"], ["Long Beach", "/locations/los-angeles-orange-county/long-beach/"], ["Santa Monica", "/locations/los-angeles-orange-county/santa-monica/"], ["Newport Beach", "/locations/los-angeles-orange-county/newport-beach/"]] },
+              { title: "Las Vegas", hub: "/locations/las-vegas-nevada/", footer: "See all Las Vegas cities", links: [
+                ["Henderson", "/locations/las-vegas-nevada/henderson/"], ["Enterprise", "/locations/las-vegas-nevada/enterprise/"], ["Paradise", "/locations/las-vegas-nevada/paradise/"], ["Summerlin", "/locations/las-vegas-nevada/summerlin/"], ["Spring Valley", "/locations/las-vegas-nevada/spring-valley/"]] },
+              { title: "Reno & Sparks", hub: "/locations/reno/", footer: "See Reno & Sparks", links: [
+                ["Sparks", "/locations/las-vegas-nevada/sparks/"], ["Reno house cleaning guide", "/blog/house-cleaning-reno-nv/"]] },
+              { title: "Sacramento", hub: "/locations/sacramento/", footer: "See all Sacramento-area cities", links: [
+                ["Roseville", "/locations/sacramento/roseville/"], ["Elk Grove", "/locations/sacramento/elk-grove/"], ["Folsom", "/locations/sacramento/folsom/"], ["Sacramento move-out cleaning", "/locations/sacramento/move-out-cleaning/"]] },
+            ].map((m, i) => (
+              <div key={m.title} className={`animate-fade-up delay-${i + 1} rounded-xl p-6 flex flex-col`} style={{ backgroundColor: WHITE, border: "1px solid #d4e8f2" }}>
+                <h3 className="sp-display text-xl font-semibold mb-3" style={{ color: NAVY }}>
+                  <Link href={m.hub} className="hover:underline underline-offset-4">{m.title}</Link>
+                </h3>
+                <ul className="sp-body text-sm space-y-2 mb-5 flex-1">
+                  {m.links.map(([label, href]) => (
+                    <li key={href}><Link href={href} className="hover:underline underline-offset-4" style={{ color: MUTED }}>{label}</Link></li>
+                  ))}
+                </ul>
+                <Link href={m.hub} className="sp-body text-sm font-semibold hover:underline underline-offset-4" style={{ color: TEAL }}>{m.footer} →</Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
