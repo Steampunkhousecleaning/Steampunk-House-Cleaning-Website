@@ -4,6 +4,7 @@
  */
 
 import { useState } from "react";
+import { HUB_CITIES, CITY_GROUPS, ALL_CITY_VALUES } from "@/data/quoteCities";
 import { CheckCircle, Loader2, Phone } from "lucide-react";
 import { submitLead } from "@/lib/webhook";
 import { trackLead } from "@/lib/analytics";
@@ -28,34 +29,7 @@ const services = [
   "Commercial / Office",
 ];
 
-const cities = [
-  "Los Angeles, CA",
-  "Long Beach, CA",
-  "Santa Monica, CA",
-  "Pasadena, CA",
-  "Glendale, CA",
-  "Burbank, CA",
-  "Irvine, CA",
-  "Anaheim, CA",
-  "Huntington Beach, CA",
-  "Newport Beach, CA",
-  "Santa Ana, CA",
-  "Costa Mesa, CA",
-  "Fullerton, CA",
-  "Orange, CA",
-  "Las Vegas, NV",
-  "Henderson, NV",
-  "Summerlin, NV",
-  "North Las Vegas, NV",
-  "Reno, NV",
-  "Sparks, NV",
-  "Sacramento, CA",
-  "Roseville, CA",
-  "Elk Grove, CA",
-  "Folsom, CA",
-  "Los Angeles / Orange County",
-  "Other",
-];
+const cities = Array.from(ALL_CITY_VALUES);
 
 export function QuoteForm({ defaultService = "", defaultCity = "", compact = false }: QuoteFormProps) {
   const [form, setForm] = useState({
@@ -262,9 +236,13 @@ export function QuoteForm({ defaultService = "", defaultCity = "", compact = fal
             onBlur={(e) => ((e.target as HTMLSelectElement).style.borderColor = "#dde4ea")}
           >
             <option value="">Select your city</option>
-            {cities.map((c) => (
-              <option key={c} value={c}>{c}</option>
+            {HUB_CITIES.map((c) => <option key={c} value={c}>{c}</option>)}
+            {CITY_GROUPS.map((g) => (
+              <optgroup key={g.label} label={g.label}>
+                {g.cities.map((c) => <option key={c} value={c}>{c}</option>)}
+              </optgroup>
             ))}
+            <option value="Other">Other</option>
           </select>
         </div>
         <div>

@@ -561,7 +561,7 @@ export function Footer() {
             </p>
             <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
               {[
-                { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61561299402312&mibextid=wwXIfr", path: "M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v1.9H8V11.6h2.6V21.5h3.4V11.6h2.6l.4-3.1z" },
+                { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61561299402312", path: "M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v1.9H8V11.6h2.6V21.5h3.4V11.6h2.6l.4-3.1z" },
                 { name: "Instagram", href: "https://www.instagram.com/steampunkcleaning/", path: "M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.3-3.3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" },
                 { name: "LinkedIn", href: "https://www.linkedin.com/company/steampunk-house-cleaning", path: "M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6v5.4h-4v-4.8c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v4.9h-4v-11z" },
               ].map((s) => (
